@@ -21,13 +21,13 @@ complèterai les équipes.
 	2. Minimalement, une branche de production et une branche de développement.
 	3. La branche de production doit être fonctionnel et exempt de bug.
 	4. La quantité de travail individuel est évaluée selon vos commits.
-	5. Formation sur Git: [Gestion de projet Agiles](URL "https://openclassrooms.com/fr/courses/7162856-gerez-du-code-avec-git-et-github")
+	5. Formation sur Git: [Gestion de projet Agiles link](https://openclassrooms.com/fr/courses/7162856-gerez-du-code-avec-git-et-github)
 	6. Mettrez une capture d’écran de la réussite de votre formation dans le dépôt Git.
 >####  Méthodologie Agile :
 	1. Une mêlée quotidienne (daily scrum) par période de cours.
 	2. Désigner un responsable du produit (product owner) et un chef de mêlée scrum master.
 	3. Les mêlées seront consignées dans un journal de bord.
-	4. Regarder les vidéos: [Meilleures pratiques en gestion de projets agile](URL "https://youtu.be/ZBaCbdWYLeA") [Le guide Scrum](URL "https://youtu.be/2wRGhYQAnOc")
+	4. Regarder les vidéos: [Meilleures pratiques en gestion de projets agile](https://youtu.be/ZBaCbdWYLeA) [Le guide Scrum](https://youtu.be/2wRGhYQAnOc)
 	5. Écrire un résumé de deux pages des deux vidéos
 	6. En équipe: mettre en commun ce que vous avez compris des vidéos pour déterminer comment vous allez gérer votre projet.
 >####  Gestion de projet :
