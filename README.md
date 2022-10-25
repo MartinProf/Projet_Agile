@@ -1,7 +1,7 @@
 #  **Projet de session `Git Agile`**
 
 ## Travail présenté à: **Sylvain Labranche**
->##### Travail réalisé par ***Martin Forget*** et ***Martin Vézina***
+>##### Travail réalisé par ***Martin Vézina***
 
 ![Logo_Rosemont](/images/logo_college_rosemontReduit.png)
 
@@ -21,15 +21,18 @@ complèterai les équipes.
 	2. Minimalement, une branche de production et une branche de développement.
 	3. La branche de production doit être fonctionnel et exempt de bug.
 	4. La quantité de travail individuel est évaluée selon vos commits.
-	5. Formation sur Git: [Gestion de projet Agiles link](https://openclassrooms.com/fr/courses/7162856-gerez-du-code-avec-git-et-github)
-	6. Mettrez une capture d’écran de la réussite de votre formation dans le dépôt Git.
+	5. Mettrez une capture d’écran de la réussite de votre formation dans le dépôt Git.
+Formation sur Git: [Formation sur OpenClassroom](https://openclassrooms.com/fr/courses/7162856-gerez-du-code-avec-git-et-github)
 >####  Méthodologie Agile :
 	1. Une mêlée quotidienne (daily scrum) par période de cours.
 	2. Désigner un responsable du produit (product owner) et un chef de mêlée scrum master.
 	3. Les mêlées seront consignées dans un journal de bord.
-	4. Regarder les vidéos: [Meilleures pratiques en gestion de projets agile](https://youtu.be/ZBaCbdWYLeA) [Le guide Scrum](https://youtu.be/2wRGhYQAnOc)
-	5. Écrire un résumé de deux pages des deux vidéos
-	6. En équipe: mettre en commun ce que vous avez compris des vidéos pour déterminer comment vous allez gérer votre projet.
+	4. Écrire un résumé de deux pages des deux vidéos
+	5. En équipe: mettre en commun ce que vous avez compris des vidéos pour déterminer comment vous allez gérer votre projet.
+Regarder les vidéos:
+>1. [Meilleures pratiques en gestion de projets agile](https://youtu.be/ZBaCbdWYLeA)
+>2. [Le guide Scrum](https://youtu.be/2wRGhYQAnOc)
+
 >####  Gestion de projet :
 	1. Décider d’un commun accord d’un logiciel de gestion de projet.
 	2. Vous m’indiquez votre choix dans le résumé d’équipe sur Git. Vous remettez sur GitHub une ou plusieurs captures d’écran de la mise en place du logiciel.
