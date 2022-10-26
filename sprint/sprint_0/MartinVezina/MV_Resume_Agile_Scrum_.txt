@@ -1,0 +1,90 @@
+Agile - Méthode de gestion de projet
+
+Cycle de vie:
+	1. Méthode Prédictif: WBS (méthode conventionnelle)
+
+	2. Méthode adaptatif: Incrémental(clôture) et itératif(sprint)
+			Conception -> Développement -> Intégration
+
+	La méthode adaptative est à préconiser dans les projets d'appplication.
+		Elle est caractérisé par le découpage des tâches en petit lot et une mise en opération rapide.
+	
+	Un sprint s'attaque à quelques fonctions qui mêne vers un incrément et non à un projet entier
+	Donc les phases de conception, développement ainsi que l'intégration sont consu dans une multitude de petit projet à l'intérieur de gros projet.
+	Avec plusieurs incréments, il est possible de faire la mise en opération des nouveaux modules modifiés et ces modules viennent s'intégrer à l'application modifié.
+
+Rôles:
+	1. Product Owner: Responsable du produit (établi les priorités et décide sur quoi on travail)
+	2. Scrum Master: Guide l'équipe dans le processus Agile
+	3. Équipe Scrum: Équipe pluridiciplinaire qui a une expertise complète pour faire un sprint (inclu un utilisateur)
+	4. Parties prenantes et utilisateurs: Supporte l'équipe de projet
+
+Livrable en SCRUM
+	1. Vision du produit: Répond aux questions quoi et pourquoi
+		C'est ici que le Product Owner montre sa vision du projet
+	2. Backlog du produit: Défini la liste des livrables (avec caractéristiques)
+		Défini les User story qui répondent à des besoins précis (rôle, besoin, justification)
+		Structure du document:  Id;Catégorie;Description User story;Status;Efforts(heures);Sprint;Priorité(fonction obligatoire et essentiel);Commentraires
+		Pour le calcul des sprint -->> On prend le nombre d'heure de l'équipe disponiple sur 1 mois et on divise les efforts en heure de disponibilité 
+	3. Plan de livraison: Planification dans le temps et en argents
+		Structure du document 
+			Plan de livraison: Livrable; début;Durée;fin;Efforts;Status;Date Livraison; But
+			Plan du sprint: Sprint;Début;Durée;Fin;Efforts;Status;Date livraison;But;Livraison
+
+	4. Backlog du sprint: Listes de tâches nécessaire pour les fonctionnalités
+	5. Burndown du sprint: Rapport d'avancement
+	6. Listes de problèmes: C'est la listes des problèmes rencontrés et elle est géré par le Scrum Master
+
+Processus:
+	Sprint zéro: (Démarrage du projet)
+		Constitué de la "Vision du produit", "Backlog du produit" et du "Plan de livraison"
+	Sprint: planification
+		Constitue le BackLog: Découpage du projet en tâche précise pour 1 sprint
+		Backlog du sprint: Description de la tâche; id; Responsable; Statut; Estimation;Restant
+	Exécution/Suivi contrôle: 
+		Scrum Meeting: Ce meeting (15 minutes) est utilisé pour répondre aux questions: Ce que j'avais à faire hier et fait? Qu'est ce que je fait aujourd'hui? Problème?
+		Burndown Chart: Présentation de l'état d'avancement du projet / temps
+		Tableau des tâches: A faire, En cours, Terminé, Repoussé
+		Liste des problèmes: TODO liste du scrum master pour régler les problèmes des équipes scrum
+		Clôture: Imcrémentation de produit qui apporte une valeur
+			Revue: Doit faire la démonstration que les fonctionnalités fonctionnent
+			Rétrospective: Mini post-mortem si l'équipe peu s'améliorer dans le prochain sprint
+
+
+
+SCRUM - Cadre de travail en équipe (Léger - Simple - Difficile à maîtriser) 
+
+	1. Transparence
+		Définir ce qu'est être terminé
+
+	2. Inspection
+		Faire des tâches de validation
+
+	3. Adaptation
+		Ajuster le projet le plus rapidement possible
+
+	Participants
+		Product Owner
+		Development Team (2-9 personnes)
+		Scrum Master
+
+	Suite à une demande du client
+		Product Owner: Dresse une liste de fonctionnalité qui se retrouveront dans le Backlog (user Stories)
+			Sprint planning: L'équipe complète est présente et on défini les priorité des fonctionnalité et savoir si c'est réalisable
+			Sprint backlog: Tâche terminé (déterminé)
+		Development Team: 
+			Sprint: Déterminé la durée du sprint
+			Daily scrum (15 minutes max): Qu'est ce qui a été fait, qu'est ce qui sera fait aujourd'hui et quels sont les obstacles
+		Product Owner + Scrum Master:
+			Sprint Review (1 à 4h): Vérifie toute les tâches si les tâches sont bien terminé et Decision de faire la release (incrément)
+			Sprint retrospective(1 à 3h): La manière de travailler est bonne?
+
+Visual Studio Online -->> 
+	Work Items Template									Bug()
+		Epic(grande catégorie) -> Feature(module) -> Story(fonction) -> Task(Tâches technique) -> Issue()
+
+	Méthode 1: Backlog & Board 
+		Liste des fonctions à faire avec une liste de tâches (bon de travail)(ex: En tant que ... je voudrait ... ainsi ...) 
+
+
+
