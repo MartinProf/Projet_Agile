@@ -1,0 +1,106 @@
+---Gestion de projet agile
+
+Methode Predictif: waterfall wds
+
+	(fix)clarifie le scope--(variable)etablie echeancier/cout
+	concevoir 100% de la solution
+	developper 100% de la solution
+	integrer 100$ de la solution
+	beaucoup de temps entre chaque phase
+
+cinq groupes de processus:
+Demarrage
+	clarifie le mandat et redige charte
+
+Planification
+	elaboration de la strategie et plan de projet 
+
+Execution/Controle :
+	concevoir implementer tester
+
+Cloture
+	
+Methode Adaptatif:
+
+	est incremental et iteratif
+	perspective timeboxed(sprint et cout fix)
+	(variable) contenu du produit
+	concevoir developper et integrer par sprint 
+	sprint 1: a une version sprint 2: une version avec plus de contenu ...
+	fait de facon iterative	
+
+
+
+Sprint 0 :
+	vision du produit
+		product owner donne vision du produit
+		concept du product vision box
+		une maquette
+
+	backlog du produit
+		definie la liste des livrables
+		product owner
+		priorite/temps estimer
+		temps disponible par personne
+
+	plan de livraison
+		planifie le projet dans le temps/argent
+		
+Sprint :
+
+	backlog du sprint
+		liste de tache du sprint
+
+	burndown chart/liste de problemes
+		raport du sprint
+		chef de projet regarde et regle problemes
+		doit atteindre le 0 sur chart a la fin d'un sprint le plus possible
+		
+revue
+
+retrospective
+
+-Roles
+
+Agile :
+	Product owner :
+
+	client payeur
+	prend les decisions
+	role preponderant
+	etablie les priorites 
+
+	Scrum master :
+		
+		guide l'equipe
+	
+	Equipe scrum :
+	
+		implique un ou des utilisateurs
+		developpe
+
+
+--- Guide Scrum
+
+Scrum est leger, simple a comprendre, difficile a maitrise
+
+1. Transparence
+	tous les processus doivent etre visibles 
+	standard commun
+
+2. Inspection
+	doit frequemment inspecter avancement et les artefacts scrum
+
+3. Adaptation
+	ajuster des que possible les derives detectees
+
+users stories
+sprint planning
+sprint
+daily scrum pour mettre a jours
+sprint review pour verifier la fin du sprint
+increment
+spint retrospective
+
+
+
