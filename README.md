@@ -1,7 +1,7 @@
 #  **Projet de session `Git Agile`**
 
 ## Travail présenté à: **Sylvain Labranche**
->##### Travail réalisé par ***Martin Vézina***
+>##### Travail réalisé par ***Martin Vézina*** ***Martin Forget***
 
 ![Logo_Rosemont](/images/logo_college_rosemontReduit.png)
 
