@@ -5,7 +5,7 @@
 
 ![Logo_Rosemont](/images/logo_college_rosemontReduit.png)
 
-# **Présentation du projet**
+# **Présentation du projet 2**
 
 ## Mise en contexte :
 >Le but du cours est de vous faire développer une application informatique du début à la fin, soit de la rencontre client à la livraison de l’applications et au support technique.
