@@ -1,11 +1,11 @@
 #  **Projet de session `Git Agile`**
 
 ## Travail présenté à: **Sylvain Labranche**
->##### Travail réalisé par ***Martin Vézina*** ***Martin Forget***
+>##### Travail réalisé par ***Martin Vézina*** ***Martin Forget*** ***Anthony Menard-Boucher*** ***Guillaume Tremblay*** ***Sebastian Toledo***
 
 ![Logo_Rosemont](/images/logo_college_rosemontReduit.png)
 
-# **Présentation du projet 2**
+# **Présentation du Sprint 0**
 
 ## Mise en contexte :
 >Le but du cours est de vous faire développer une application informatique du début à la fin, soit de la rencontre client à la livraison de l’applications et au support technique.
