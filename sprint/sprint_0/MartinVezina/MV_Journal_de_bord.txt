@@ -1,2 +1,3 @@
 Mardi 25 oct: 4h formation Git et Agile avec rédaction du résumé + Conception du dépôt Git
 Mercredi 26 oct: 2h formation Scrum + rédaction du résumé
+Vendredi 28 oct: 2h Faire le fichier Excel comme programme de gestion de projet
