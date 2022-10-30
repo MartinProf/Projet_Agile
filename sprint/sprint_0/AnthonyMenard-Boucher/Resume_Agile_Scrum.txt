@@ -1,0 +1,56 @@
+Meilleures pratique en gestion de projets agile [Webinaire]
+
+Cycle de vie adaptif(Agile)
+- Determination du temps et du couts au debut du projet pour finir avec un contenu qui contient les options principales en prioriter qui evolu avec le temps.
+- Le temps et les couts sont fixe comparer au cycle de vie cascade.
+- Le contenu est variable, mais les fonctionalitees importantes sont presente.
+
+Les livraison sont divisees en partie appelles sprints
+-Sprint 0 :On determine la vision du produit,le temps, le cout et le plan de livraison ainsi que les equipes qui travail sur quoi.
+-Sprint 1 :On concoit, on developpe et on integre quelque fonctionalitees.
+-Sprint 2 :On refait les memes instructions en incluants les fonctionalitees precedente.
+-Sprint 3 :On refait les memes instructions en incluants les fonctionalitees precedente.
+-Sprint (3-4) :On fait la mise en operation(ex: mise en ligne du site internet).
+
+Durant les sprints on prend en notes les avancements,les rencontre quotidiennes et les problemes du projet.
+-La vision du produit de facon visuel.
+-Backlog du produit (Liste des taches a effectuer et leur prioriter).
+-La capaciter de l'equipe (Disponibilite).
+-Plan de livraison (Planification des sprints).
+-Burndown chart (Liste des problemes rencontrer et ajustement du sprint en consequence)
+
+Roles
+-Product owner (Le client ou le representant du client qui demande les taches obligatoires)
+-Scrum master (Le gestionnaire/chef d'equipe du temps et des taches)
+-Equipe scrum (Developpeurs qui effectue les taches etablies et demander)
+---------------------------------------------------------------------------------------------------------------
+ DevApps - Podcast 02 - Le guide Scrum (résumé)
+
+Trois piliers
+-Transparence : Tous le monde a access a l'etat du projet.
+-Inspection : Verification de l'avancement du projet de facons courante.
+-Adaptation : Flexibilitee du plan pour les problemes rencontrer, mais des que possible les faire fonctionner.
+
+Participants
+-Product Owner (Client ou represantant du client)
+-Scrum master (Chef d'equipe/ gestionnaire)
+-Development team
+
+Evenements - User stories
+-Product owner idea(Mise en mots des fonctionalitees demander).
+-Dev team user stories (Representation des fonctionalitees demander).
+
+Evenements - Sprint planning
+-Explication des elements a developer.
+-Plannification des taches des sprints/du sprint actuel (Temps/couts).
+
+Evenements - Daily scrum
+-Rencontre de 15 mins.
+-Travail fait depuis dernier scrum.
+-Travail qui va etre fait au prochain scrum.
+-Problemes rencontrer.
+
+Evenements - Sprint Review
+-Reunion 1h-4h.
+-Verifications des taches accomplies et non accomplies du sprint initial.
+-Discution des promblemes rencontrer replacer et transferer au prochain sprint si il sont toujours demander.
