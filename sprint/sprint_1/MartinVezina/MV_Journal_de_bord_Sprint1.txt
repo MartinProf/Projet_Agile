@@ -1,0 +1,2 @@
+30 oct: 1H - Test fait pour intégrer une application console dans le dếpôt git 
+30 oct: 3h - Création d'un template UML du projet
