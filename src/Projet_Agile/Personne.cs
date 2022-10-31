@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projet_Agile
 {
+    //Cette classe est la classe mère des classes "Administrator" et "Employee"
     class Personne
     {
         public string lastName
