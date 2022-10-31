@@ -35,5 +35,13 @@ namespace Projet_Agile
             set;
         }
 
+        public Personne(string lastName, string firstName, string email, string password, string inscriptionDate)
+        {
+            this.lastName = lastName;
+            this.firstName = firstName;
+            this.email = email;
+            this.Password = password;
+            this.inscriptionDate = inscriptionDate;
+        }
     }
 }
