@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace Projet_Agile
 {
     //Cette classe est la classe mère des classes "Administrator" et "Employee"
-    class Personne
+    class Person
     {
-        public Personne(string lastName, string firstName, string email, string password, string inscriptionDate)
+        public Person(string lastName, string firstName, string email, string password, string inscriptionDate)
         {
             this.lastName = lastName;
             this.firstName = firstName;
