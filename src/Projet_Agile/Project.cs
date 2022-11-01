@@ -8,7 +8,13 @@ namespace Projet_Agile
 {
     class Project
     {
-       public int idProject
+        public Project(int idProject, int codeProject)
+        {
+            this.idProject = idProject;
+            this.codeProject = codeProject;
+        }
+
+        public int idProject
         {
             get;
             set;
@@ -18,10 +24,6 @@ namespace Projet_Agile
             get;
             set;
         }
-        public Project(int idProject,int codeProject)
-        {
-            this.idProject = idProject;
-            this.codeProject = codeProject;
-        }
+       
     }
 }

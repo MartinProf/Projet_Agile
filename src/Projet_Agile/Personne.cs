@@ -9,6 +9,15 @@ namespace Projet_Agile
     //Cette classe est la classe mère des classes "Administrator" et "Employee"
     class Personne
     {
+        public Personne(string lastName, string firstName, string email, string password, string inscriptionDate)
+        {
+            this.lastName = lastName;
+            this.firstName = firstName;
+            this.email = email;
+            this.password = password;
+            this.inscriptionDate = inscriptionDate;
+        }
+
         public string lastName
         {
             get;
@@ -37,15 +46,6 @@ namespace Projet_Agile
             set;
         }
 
-        public Personne(string lastName, string firstName, string email, string password, string inscriptionDate)
-        {
-            this.lastName = lastName;
-            this.firstName = firstName;
-            this.email = email;
-
-            this.password = password;
-
-            this.inscriptionDate = inscriptionDate;
-        }
+       
     }
 }
