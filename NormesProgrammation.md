@@ -24,6 +24,14 @@ Nom des variables, méthodes et fonctions : Anglais
 1. Les varibles : constitue le spremières lignes de code.
 2. Initialisation des variables lorsqu’elle est déclarée : numérique = 0; string = empty; boolean = false;
 
+###**L'ordre d'apparition des éléments dans les classes**
+#####***Dans cet ordre***
+1. Variabales
+2. Constructeurs
+3. Getter et Setter
+4. ToString
+5. Méthodes
+
 ###**Espaces**
 1. Aucun blanc à l’intérieur des parenthèses () et des crochets [].
 2. Un espace avant et après chaque opérateurs.
