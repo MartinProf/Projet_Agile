@@ -7,9 +7,9 @@
 1. Project Owner : Martin Vézina (MartinProf)
 2. Scrum Master : Martin Forget (UltimateBooBoo)
 3. Équipe Scrum :
-    - Guillaume Tremblay (Gui-Trem)
-    - Sebastian Toledo (Sebastiant1012)
-    - Anthony Ménard-Boucher (MercyForKohai)
+	- Guillaume Tremblay (Gui-Trem)
+	- Sebastian Toledo (Sebastiant1012)
+	- Anthony Ménard-Boucher (MercyForKohai)
 
 
 ###Rencontres (Daily Scrum et rencontres extraordinaires) :
@@ -31,3 +31,5 @@
 1. C# (possibilité d'implémenter la structure de l'application avec Entity, WPF, .NET ou ASP).
 2. GitHub (nom de dépôt : https://github.com/MartinProf/Projet_Agile.git).
 3. SQL
+
+

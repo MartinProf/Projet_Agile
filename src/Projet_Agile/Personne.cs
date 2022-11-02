@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +24,9 @@ namespace Projet_Agile
             get;
             set;
         }
-        public string Password
+
+        public string password
+
         {
             get;
             set;
@@ -40,7 +42,9 @@ namespace Projet_Agile
             this.lastName = lastName;
             this.firstName = firstName;
             this.email = email;
-            this.Password = password;
+
+            this.password = password;
+
             this.inscriptionDate = inscriptionDate;
         }
     }
