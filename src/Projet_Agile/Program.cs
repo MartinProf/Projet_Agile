@@ -11,7 +11,9 @@ namespace Projet_Agile
         static void Main(string[] args)
         {
 
-            //Tests unitaires
+            /********************** TESTS UNITAIRES **************************/
+
+
             //Classe Person
             var person = new Person("Walsh", "Bob", "Bobby@bobby.com", "12345", "23 août 2022");
             //Getters
