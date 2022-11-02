@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,14 +14,14 @@ namespace Projet_Agile
 
             /********************** TESTS UNITAIRES **************************/
 
-
+            string jsonString = JsonSerializer.Serialize();
             //Classe Person
-            var person = new Person("Walsh", "Bob", "Bobby@bobby.com", "12345", "23 août 2022");
+            var person = new Person("Walsh", "Bob", "Bobby@bobby.com", "12345");
             //Getters
             String msgPerson1 = person.lastName + " " + person.firstName + " " + person.email + " " + person.password + " " + person.inscriptionDate;
             Console.WriteLine("Getters Person = " + msgPerson1);
             //Setters
-            string msgPerson2 = (person.lastName = "Forget") + " " + (person.firstName = "Martin") + " " + (person.email = "pasbobby@pasbobby.com") + " " + (person.password = "54321") + " " + (person.inscriptionDate = "21 janvier 2021");
+            string msgPerson2 = (person.lastName = "Forget") + " " + (person.firstName = "Martin") + " " + (person.email = "pasbobby@pasbobby.com") + " " + (person.password = "54321");
             Console.WriteLine("Setters Person = " + msgPerson2);
 
             Console.WriteLine("******************************************************************************");
@@ -31,7 +32,7 @@ namespace Projet_Agile
             String msgEmploye1 = employe.noUser + " " + employe.lastName + " " + employe.firstName + " " + employe.email + " " + employe.password + " " + employe.inscriptionDate;
             Console.WriteLine("Getters Employe = " + msgEmploye1);
             //Setters
-            string msgEmploye2 = (employe.noUser = 2) + " " + (employe.lastName = "Red") + " " + (employe.firstName = "Roseline") + " " + (employe.email = "Rosie@red.com") + " " + (employe.password = "34543") + " " + (employe.inscriptionDate = "20 mars 2019");
+            string msgEmploye2 = (employe.noUser = 2) + " " + (employe.lastName = "Red") + " " + (employe.firstName = "Roseline") + " " + (employe.email = "Rosie@red.com") + " " + (employe.password = "34543");
             Console.WriteLine("Setters Employe = " + msgEmploye2);
 
             Console.WriteLine("******************************************************************************");
@@ -42,7 +43,7 @@ namespace Projet_Agile
             String msgAdmin1 = administrator.noUser + " " + administrator.lastName + " " + administrator.firstName + " " + administrator.email + " " + administrator.password + " " + administrator.inscriptionDate;
             Console.WriteLine("Getters Administrator = " + msgAdmin1);
             //Setters
-            string msgAdmin2 = (administrator.noUser = 2) + " " + (administrator.lastName = "Blue") + " " + (administrator.firstName = "Bubble") + " " + (administrator.email = "Bubble@blue.com") + " " + (administrator.password = "32343") + " " + (administrator.inscriptionDate = "23 mars 2028");
+            string msgAdmin2 = (administrator.noUser = 2) + " " + (administrator.lastName = "Blue") + " " + (administrator.firstName = "Bubble") + " " + (administrator.email = "Bubble@blue.com") + " " + (administrator.password = "32343");
             Console.WriteLine("Setters Administrator = " + msgAdmin2);
 
             Console.WriteLine("******************************************************************************");
