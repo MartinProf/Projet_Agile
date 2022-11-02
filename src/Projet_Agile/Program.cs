@@ -14,7 +14,6 @@ namespace Projet_Agile
 
             /********************** TESTS UNITAIRES **************************/
 
-            string jsonString = JsonSerializer.Serialize();
             //Classe Person
             var person = new Person("Walsh", "Bob", "Bobby@bobby.com", "12345");
             //Getters
