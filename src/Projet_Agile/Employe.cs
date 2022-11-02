@@ -10,11 +10,6 @@ namespace Projet_Agile
     {
         public Employe(int noUser, string lastName, string firstName, string email, string password, string inscriptionDate) : base (lastName, firstName, email, password)
         {
-            if(noUser < 1000)
-            {
-                Console.WriteLine("Le numéro de user est invalide pour cette catégorie d'employé");
-            }
-            else
                 this.noUser = noUser;
         }
 
