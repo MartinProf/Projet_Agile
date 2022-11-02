@@ -10,12 +10,27 @@ namespace Projet_Agile
     {
         public Administrator(int noUser, string lastName, string firstName, string email, string password, string inscriptionDate) : base(lastName, firstName, email, password)
         {
-            this.noUser = noUser;
+            if(noUser >= 1000)
+            {
+                this.noUser = int.Parse(null);
+                this.lastName = null; 
+                this.firstName = null;
+                this.email = null;
+                this.password = null;
+                Console.WriteLine("Le numéro de user est invalide pour cette catégorie d'employé");
+            }
+            else
+                this.noUser = noUser;
         }
 
         public int noUser
         {
             get; set;
+        }
+
+        public Project createProject(int id, int code)
+        {           
+            return new Project(id, code);
         }
     }
 }
