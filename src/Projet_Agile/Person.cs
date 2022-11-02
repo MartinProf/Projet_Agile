@@ -9,13 +9,13 @@ namespace Projet_Agile
     //Cette classe est la classe mère des classes "Administrator" et "Employee"
     public class Person
     {
-        public Person(string lastName, string firstName, string email, string password, string inscriptionDate)
+        public Person(string lastName, string firstName, string email, string password)
         {
             this.lastName = lastName;
             this.firstName = firstName;
             this.email = email;
             this.password = password;
-            this.inscriptionDate = inscriptionDate;
+            inscriptionDate = DateTime.Now.ToString();
         }
 
         public string lastName
@@ -43,7 +43,6 @@ namespace Projet_Agile
         public string inscriptionDate
         {
             get;
-            set;
         }
 
        
