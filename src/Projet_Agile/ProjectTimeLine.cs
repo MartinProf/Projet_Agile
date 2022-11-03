@@ -12,12 +12,15 @@ namespace Projet_Agile
     {
         public ProjectTimeline(int idTimeline, int idProject, int codeProject, int idUser, DateTime entry, DateTime output )
         {
+            var src = DateTime.Now;
+            var hm = new DateTime(src.Year, src.Month, src.Day, src.Hour, src.Minute, 0);
+
             this.idTimeline = idTimeline;
             this.idProject = idProject;
             this.codeProject = codeProject;
             this.idUser = idUser;
-            this.entry = entry;
-            this.output = output;
+            this.entry = hm;
+            this.output = hm;
             appendTimeline(idTimeline,idProject,codeProject,idUser,entry,output);
         }
 
