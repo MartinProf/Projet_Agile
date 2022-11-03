@@ -1,0 +1,7 @@
+RENCONTRE DU 31 OCTOBRE 2022
+
+•	Présentation du « Project Owner » des « Userstories » du sprint 1 sur Jira.
+•	Présentation du « Project Owner » diagramme UML représentant le sprint 1.
+•	Délibération d’équipe sur les deux sujets susmentionés.
+•	Délégation par le « Scrum Master » des tâches du sprint 1 à « l’équipe Scrum ».
+•	Élaboration du document faisant la liste des outils et acteurs du projet.

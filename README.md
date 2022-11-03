@@ -8,7 +8,7 @@
 # **Présentation du Sprint 1**
 
 
-##**Mise en contexte**
+## **Mise en contexte**
 >Le but du cours est de vous faire développer une application informatique du début à la fin, soit de la rencontre
 client à la livraison de l’applications et au support technique.
 Le sprint 1 consiste en la première demande du client.
@@ -17,7 +17,7 @@ s’étalera sur toute la session et que vous diviserez en trois sprints. Nous p
 confirmer le projet.
 
 
-###**Demande du client 1**
+### **Demande du client 1**
 >L’application à développer est un logiciel qui effectuera la validation du temps travaillé par des employés dans le
 respect des règles de l’entreprise.
 
@@ -32,10 +32,10 @@ temps viole les règles.
 l’application.
 
 
-###**Fonctionnalités**
+### **Fonctionnalités**
 
-~Voir le fichier FeuilleTempExemple.json pour un exemple de fichier d’entrée.~
-~Voir le fichier sortieExemple.json pour le fichier de sortie correspondant.~
+_Voir le fichier FeuilleTempExemple.json pour un exemple de fichier d’entrée._
+_Voir le fichier sortieExemple.json pour le fichier de sortie correspondant._
 
 >Le programme devra prendre ce fichier comme argument lors de l’exécution du logiciel dans une console. Le fichier
 où devra être placé le résultat devra également être spécifié à la console. Exemple :
@@ -63,9 +63,9 @@ java -jar TimeSheet.jar inputfile.json result.json
 	7. Les employés de l’administration doivent faire un minimum quotidien de 4 heures au bureau pour les jours
 	ouvrables (lundi au vendredi). Les employés doivent travailler même les journées de congé férié.
 
-~Le client s’attend à ce qu’un fichier JSON montre le fonctionnement de chacune des règles.~
+_Le client s’attend à ce qu’un fichier JSON montre le fonctionnement de chacune des règles._
 
-###**Contraintes technologiques**
+### **Contraintes technologiques**
 1. Les fichiers d’entrées et de sorties doivent être des documents JSON.
 2. Les sources doivent être entreposées dans un dépôt GIT sous github.
 
