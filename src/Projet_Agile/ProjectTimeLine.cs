@@ -54,8 +54,18 @@ namespace Projet_Agile
         public void appendTimeline(int idTimeline, int idProject, int codeProject, int idUser, DateTime entry, DateTime output) 
         {
             string fileName = "TimeSheet.json";
-            string jsonString = JsonConvert.SerializeObject(this);
-            File.WriteAllText(fileName, jsonString);
+
+            if (!File.Exists(fileName))
+            {
+                string jsonString = JsonConvert.SerializeObject(this) + Environment.NewLine;
+                File.WriteAllText(fileName, jsonString);
+            }
+            else
+            {
+                string jsonStringExtra = JsonConvert.SerializeObject(this) + Environment.NewLine;
+                File.AppendAllText(fileName, jsonStringExtra);
+            }
+
             Console.WriteLine(File.ReadAllText(fileName));
         }
     }
