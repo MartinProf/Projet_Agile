@@ -44,32 +44,32 @@ java -jar TimeSheet.jar inputfile.json result.json
 
 **Voici ce que vous devez savoir en premier lieu :**
 
-1.Les codes de projet supérieurs à 900 sont des codes de télétravail.
-2.Si l’employé ne travaille pas durant une journée, elle est présente dans la feuille de temps mais vide, comme
+1. Les codes de projet supérieurs à 900 sont des codes de télétravail.
+2. Si l’employé ne travaille pas durant une journée, elle est présente dans la feuille de temps mais vide, comme
 jours et weekend1 dans le fichier d’exemple.
-3.Il est possible qu’un employé travaille la fin de semaine.
-4.Un employé dont le numéro est inférieur à 1000 est un employé de l’administration.
-5.Un employé dont le numéro est supérieur ou égal à 1000 est un employé normal.
-6.jour1 à jour5 correspondent au lundi à vendredi ; weekend1 correspond à samedi et weekend2 correspond à
+3. Il est possible qu’un employé travaille la fin de semaine.
+4. Un employé dont le numéro est inférieur à 1000 est un employé de l’administration.
+5. Un employé dont le numéro est supérieur ou égal à 1000 est un employé normal.
+6. Jour1 à jour5 correspondent au lundi à vendredi ; weekend1 correspond à samedi et weekend2 correspond à
 dimanche.
 
 **Voici les règles que vous devez vérifier :**
 
-1.Les employés de l’administration doivent travailler au moins 36 heures au bureau par semaine (excluant le
+1. Les employés de l’administration doivent travailler au moins 36 heures au bureau par semaine (excluant le
 télétravail).
-2.Les employés normaux doivent travailler au moins 38 heures au bureau par semaine (excluant le télétravail).
-3.Aucun employé n’a le droit de passer plus de 43 heures au bureau.
-4.Les employés de l’administration ne doivent pas faire plus de 10 heures de télétravail par semaine.
-5.Les employés normaux peuvent faire autant de télétravail qu’ils le souhaitent.
-6.Les employés normaux doivent faire un minimum quotidien de 6 heures au bureau pour les jours ouvrables
+2. Les employés normaux doivent travailler au moins 38 heures au bureau par semaine (excluant le télétravail).
+3. Aucun employé n’a le droit de passer plus de 43 heures au bureau.
+4. Les employés de l’administration ne doivent pas faire plus de 10 heures de télétravail par semaine.
+5. Les employés normaux peuvent faire autant de télétravail qu’ils le souhaitent.
+6. Les employés normaux doivent faire un minimum quotidien de 6 heures au bureau pour les jours ouvrables
 (lundi au vendredi). Les employés doivent travailler même les journées de congé férié.
-7.Les employés de l’administration doivent faire un minimum quotidien de 4 heures au bureau pour les jours
+7. Les employés de l’administration doivent faire un minimum quotidien de 4 heures au bureau pour les jours
 ouvrables (lundi au vendredi). Les employés doivent travailler même les journées de congé férié.
 
 _Le client s’attend à ce qu’un fichier JSON montre le fonctionnement de chacune des règles._
 
 ### **Contraintes technologiques**
 
-1.Les fichiers d’entrées et de sorties doivent être des documents JSON.
-2.Les sources doivent être entreposées dans un dépôt GIT sous github.
+1. Les fichiers d’entrées et de sorties doivent être des documents JSON.
+2. Les sources doivent être entreposées dans un dépôt GIT sous github.
 
