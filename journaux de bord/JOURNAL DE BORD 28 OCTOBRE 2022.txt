@@ -1,0 +1,6 @@
+RENCONTRE DU 28 OCTOBRE 2022
+
+•	Il y a eu attribution des rôles de « Project Owner : Martin Vézina » et de « Scrum Master : Martin Forget ».
+•	Le document relatant les normes de programmation a été créé et complété.
+•	Une discussion informelle sur les vidéos d’Agile a eu lieu. Celle-ci a amené à quelques éclaircissements qui feront partis des éléments consignés dans le résumé d’équipe.
+•	Il y a eu discussion sur le fonctionnement de Git et GitHub. Ceux qui avaient déjà usé du service ont pu donner quelques informations aux nouveaux utilisateurs du groupe, avec quelques exemples. Une manière de fonctionné a été discutée. 

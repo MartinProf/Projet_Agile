@@ -1,0 +1,7 @@
+RENCONTRE DU 2 NOVEMBRE 2022
+
+•	Un rappel a été émis quant au respect des délais de réalisation des tâches.
+•	Discussion concernant les fichiers Json.
+•	Mention de fonctionnalités ayant été oubliées ou étant non-fonctionnelles. 
+•	Discussion sur les fonctionnalités de Jira nouvellement découvertes et essais de certaines.
+•	Discussion sur la classe a développer d'ici vendredi.
