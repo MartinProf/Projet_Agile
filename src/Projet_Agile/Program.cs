@@ -56,6 +56,12 @@ namespace Projet_Agile
             string msgProject2 = (project.idProject = 666) + " " + (project.codeProject = 999);
             Console.WriteLine("Setters Project = " + msgProject2);
 
+            Console.WriteLine("******************************************************************************");
+
+            var date = DateTime.Parse("11-5-2022");
+
+            var projectTimeLine = new ProjectTimeline(1, project.idProject,project.codeProject, employe.noUser, DateTime.Now, date);
+            
             Console.ReadKey();
         }
     }
