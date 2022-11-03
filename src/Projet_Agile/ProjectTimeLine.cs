@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using Newtonsoft.Json;
 
 namespace Projet_Agile
 {
     class ProjectTimeline
     {
-        public ProjectTimeline(int idTimeline, int idProject, int codeProject, int idUser, DateTime entry, DateTime output)
+        public ProjectTimeline(int idTimeline, int idProject, int codeProject, int idUser, DateTime entry, DateTime output )
         {
             this.idTimeline = idTimeline;
             this.idProject = idProject;
@@ -17,6 +18,7 @@ namespace Projet_Agile
             this.idUser = idUser;
             this.entry = entry;
             this.output = output;
+            appendTimeline(idTimeline,idProject,codeProject,idUser,entry,output);
         }
 
         public int idTimeline 
@@ -49,9 +51,12 @@ namespace Projet_Agile
             get;
             set; 
         }
-        public void appendTimeline() 
+        public void appendTimeline(int idTimeline, int idProject, int codeProject, int idUser, DateTime entry, DateTime output) 
         {
-            string JString = JsonConvert.SerializeObject(this);
+            string fileName = "TimeSheet.json";
+            string jsonString = JsonConvert.SerializeObject(this);
+            File.WriteAllText(fileName, jsonString);
+            Console.WriteLine(File.ReadAllText(fileName));
         }
     }
 }
