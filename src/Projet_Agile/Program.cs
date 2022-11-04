@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,8 +10,11 @@ namespace Projet_Agile
 {
     class Program
     {
+        static string jsonTimeline;
+        static JsonSerializer serializer;
         static void Main(string[] args)
         {
+            serializer = new JsonSerializer();
 
             /********************** TESTS UNITAIRES **************************/
 
@@ -58,14 +62,87 @@ namespace Projet_Agile
 
              Console.WriteLine("******************************************************************************");
 
-            var date = DateTime.Parse("11-5-2022");
+            var date = DateTime.Parse("11-3-2022");
             //Classe ProjectTimeline
-            var projectTimeLine = new ProjectTimeline(1, project.idProject,project.codeProject, employe.noUser, DateTime.Now, date);
+            Serializer(1, 1,1, 666, date, DateTime.Now);
+            Export();
+            Import();
             //Test d'ajout au fichier TimeSheet.json
-            var projectTimeLine2 = new ProjectTimeline(2, project.idProject, project.codeProject, administrator.noUser, DateTime.Now, date);
-            var projectTimeLine3 = new ProjectTimeline(3, project.idProject, project.codeProject, employe.noUser, DateTime.Now, date);
+            //var projectTimeLine2 = new ProjectTimeline(2, project.idProject, project.codeProject, administrator.noUser, DateTime.Now, date);
+            //var projectTimeLine3 = new ProjectTimeline(3, project.idProject, project.codeProject, employe.noUser, DateTime.Now, date);
+
+            Console.WriteLine("******************************************************************************");
+
+
 
             Console.ReadKey();
+        }
+
+        static void Serializer(int idTimeline, int idProject, int codeProject, int idUser, DateTime entry, DateTime output)
+        {
+            var src = DateTime.Now;
+            var hm = new DateTime(src.Year, src.Month, src.Day, src.Hour, src.Minute, 0);
+            TimeSpan timeSpan = output.Subtract(entry);
+            int minutesEcoule = (int)timeSpan.TotalMinutes;
+
+            ProjectTimeline conversionDate = new ProjectTimeline 
+            {
+                entry = hm,
+                output = hm
+            };
+
+            var projectTimeline = new ProjectTimeline
+            {
+                idTimeline = idTimeline,
+                idProject = idProject,
+                codeProject = codeProject,
+                idUser = idUser,
+                entry = entry,
+                output = output,
+                minute = minutesEcoule
+            };
+            jsonTimeline = JsonConvert.SerializeObject(projectTimeline, Formatting.Indented);
+
+            string fileName = "TimeSheet.json";
+
+            if (!File.Exists(fileName))
+            {
+                string jsonString = JsonConvert.SerializeObject(jsonTimeline);
+                File.WriteAllText(fileName, jsonString);
+            }
+            else
+            {
+                string jsonStringExtra = JsonConvert.SerializeObject(jsonTimeline);
+                File.AppendAllText(fileName, jsonStringExtra);
+            }
+        }
+
+        static void Export() 
+        {
+            string fileName = "TimeSheet.json";
+            using (var streamWriter = new StreamWriter(fileName)) 
+            {
+                using (var jsonWriter = new JsonTextWriter(streamWriter)) 
+                {
+                    jsonWriter.Formatting = Formatting.Indented;
+                    serializer.Serialize(jsonWriter, JsonConvert.DeserializeObject(jsonTimeline));
+                    Console.WriteLine(jsonWriter.ToString());
+                }
+            }
+        }
+
+        static void Import()
+        {
+            string fileName = "TimeSheet.json";
+
+            using (var streamReader = new StreamReader(fileName))
+            {
+                using (var jsonReader = new JsonTextReader(streamReader))
+                {
+                    var projectTimeline = serializer.Deserialize<ProjectTimeline>(jsonReader);
+                    Console.WriteLine(projectTimeline.ToString());
+                }
+            }
         }
     }
  }

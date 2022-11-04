@@ -10,6 +10,29 @@ namespace Projet_Agile
 {
     class ProjectTimeline
     {
+        public int idTimeline { get; set; }
+        public int idProject { get; set; }
+        public int codeProject { get; set; }
+        public int idUser { get; set; }
+        public DateTime entry { get; set; }
+        public DateTime output { get; set; }
+        public int minute { get; set; }
+
+
+        public ProjectTimeline() { }
+
+        public override string ToString()
+        {
+            return $"idTimeline : {idTimeline}\n" +
+                    $"idProject : {idTimeline}\n" +
+                    $"codeProject : {idTimeline}\n" +
+                    $"idUser : {idTimeline}\n" +
+                    $"entry : {idTimeline}\n" +
+                    $"output : {idTimeline}\n" +
+                    $"minute : {minute}\n\n";
+        }
+
+        /*
         public ProjectTimeline(int idTimeline, int idProject, int codeProject, int idUser, DateTime entry, DateTime output )
         {
             var src = DateTime.Now;
@@ -60,16 +83,25 @@ namespace Projet_Agile
 
             if (!File.Exists(fileName))
             {
-                string jsonString = JsonConvert.SerializeObject(this) + Environment.NewLine;
+                string jsonString = JsonConvert.SerializeObject(this);
                 File.WriteAllText(fileName, jsonString);
             }
             else
             {
-                string jsonStringExtra = JsonConvert.SerializeObject(this) + Environment.NewLine;
+                string jsonStringExtra = JsonConvert.SerializeObject(this);
                 File.AppendAllText(fileName, jsonStringExtra);
             }
-
-            Console.WriteLine(File.ReadAllText(fileName));
         }
+        
+        ProjectTimeline[] projectTimeline;
+        public void ReadTimeline()
+        {
+            string fileName = @"TimeSheet.json";
+            if (File.Exists(fileName))
+            {
+                 projectTimeline = JsonConvert.DeserializeObject<ProjectTimeline>(File.ReadAllText(fileName));
+
+            }
+        }*/
     }
 }
