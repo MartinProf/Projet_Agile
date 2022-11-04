@@ -12,6 +12,7 @@ namespace Projet_Agile
     {
         static string jsonTimeline;
         static JsonSerializer serializer;
+        static List<ProjectTimeline> projectTimelines;
         static void Main(string[] args)
         {
             serializer = new JsonSerializer();
@@ -62,11 +63,12 @@ namespace Projet_Agile
 
              Console.WriteLine("******************************************************************************");
 
-            var date = DateTime.Parse("11-3-2022");
+            var date = DateTime.Parse("11-4-2022");
             //Classe ProjectTimeline
-            Serializer(1, 1,1, 666, date, DateTime.Now);
-            Export();
-            Import();
+            //Serializer(1, 1, 1, 666, date, DateTime.Now);
+            Deserializer(@"TimeSheet.json");
+            //Export();
+            //Import();
             //Test d'ajout au fichier TimeSheet.json
             //var projectTimeLine2 = new ProjectTimeline(2, project.idProject, project.codeProject, administrator.noUser, DateTime.Now, date);
             //var projectTimeLine3 = new ProjectTimeline(3, project.idProject, project.codeProject, employe.noUser, DateTime.Now, date);
@@ -80,16 +82,9 @@ namespace Projet_Agile
 
         static void Serializer(int idTimeline, int idProject, int codeProject, int idUser, DateTime entry, DateTime output)
         {
-            var src = DateTime.Now;
-            var hm = new DateTime(src.Year, src.Month, src.Day, src.Hour, src.Minute, 0);
+            
             TimeSpan timeSpan = output.Subtract(entry);
             int minutesEcoule = (int)timeSpan.TotalMinutes;
-
-            ProjectTimeline conversionDate = new ProjectTimeline 
-            {
-                entry = hm,
-                output = hm
-            };
 
             var projectTimeline = new ProjectTimeline
             {
@@ -101,22 +96,35 @@ namespace Projet_Agile
                 output = output,
                 minute = minutesEcoule
             };
-            jsonTimeline = JsonConvert.SerializeObject(projectTimeline, Formatting.Indented);
+
+            jsonTimeline = JsonConvert.SerializeObject(projectTimeline);
 
             string fileName = "TimeSheet.json";
 
             if (!File.Exists(fileName))
             {
-                string jsonString = JsonConvert.SerializeObject(jsonTimeline);
-                File.WriteAllText(fileName, jsonString);
+                File.WriteAllText(fileName, jsonTimeline);
             }
             else
             {
-                string jsonStringExtra = JsonConvert.SerializeObject(jsonTimeline);
-                File.AppendAllText(fileName, jsonStringExtra);
+                File.AppendAllText(fileName, jsonTimeline);
             }
         }
 
+        static void Deserializer(string fileName) 
+        {
+            /*
+            ProjectTimeline projectTimeline1 = JsonConvert.DeserializeObject<ProjectTimeline>(File.ReadAllText(fileName));
+
+            using (StreamReader file = File.OpenText(fileName)) 
+            {
+                serializer = new JsonSerializer();
+                ProjectTimeline projectTimeline2 = (ProjectTimeline)serializer.Deserialize(file, typeof(ProjectTimeline));
+                Console.WriteLine(projectTimeline2.entry);
+            }*/
+            projectTimelines = JsonConvert.DeserializeObject<List<ProjectTimeline>>(File.OpenText(fileName).ReadToEnd());
+        }
+        /*
         static void Export() 
         {
             string fileName = "TimeSheet.json";
@@ -143,6 +151,6 @@ namespace Projet_Agile
                     Console.WriteLine(projectTimeline.ToString());
                 }
             }
-        }
+        }*/
     }
  }

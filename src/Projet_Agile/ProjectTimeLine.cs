@@ -33,6 +33,16 @@ namespace Projet_Agile
         }
 
         /*
+        var src = DateTime.Now;
+        var hm = new DateTime(src.Year, src.Month, src.Day, src.Hour, src.Minute, 0);
+
+        ProjectTimeline conversionDate = new ProjectTimeline 
+        {
+            entry = hm,
+            output = hm
+        };*/
+
+        /*
         public ProjectTimeline(int idTimeline, int idProject, int codeProject, int idUser, DateTime entry, DateTime output )
         {
             var src = DateTime.Now;
