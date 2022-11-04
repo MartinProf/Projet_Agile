@@ -1,0 +1,8 @@
+JOURNAL DE BORD 4 NOVEMBRE 2022
+
+•	Disussion quant à l'ajout d'une norme concernant les tests unitaires.
+•	Rappel quant à certaines tâches à ne pas réaliser si non-assignées.
+•	Revue de la classe de validation avec création des tâches s'y rattachant. 
+•	Discussion sur le format des entrées Json.
+•	Retour sur la validation du ID pour la création d'une personne avec partage des pistes de solutions.
+	

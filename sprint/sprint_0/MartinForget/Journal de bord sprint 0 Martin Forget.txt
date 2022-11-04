@@ -1,0 +1,10 @@
+Journal de bord sprint 0 Martin Forget
+
+
+	-Résumé agile avcec visionnement des deux vidéos (25 oct 2022 - durée 3hrs)
+	-Formation Git avec certification (25-26 oct 2022 - durée 7hrs)
+	-Création des classes Administrator et Employe (31 oct 2022 - durée 1hr)
+	-Composition des journaux de bord (chaque rencontres - durée 10min chacun)
+	-Animation de "Scrum" (chaque rencontre - durée de 15 à 30 min chacune)
+	-Co-animation des rencontres "extra-scrum" (Norme de programmation et diuscussion agile et Git) (à deux reprises - durée 2hrs chacune)
+	
