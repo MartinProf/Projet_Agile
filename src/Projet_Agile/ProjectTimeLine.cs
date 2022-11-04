@@ -10,25 +10,45 @@ namespace Projet_Agile
 {
     class ProjectTimeline
     {
-        public int idTimeline { get; set; }
-        public int idProject { get; set; }
-        public int codeProject { get; set; }
-        public int idUser { get; set; }
-        public DateTime entry { get; set; }
-        public DateTime output { get; set; }
-        public int minute { get; set; }
-
-
         public ProjectTimeline() { }
+
+        public int idTimeline 
+        { 
+            get; set; 
+        }
+        public int idProject 
+        { 
+            get; set; 
+        }
+        public int codeProject 
+        { 
+            get; set;
+        }
+        public int idUser 
+        { 
+            get; set;
+        }
+        public DateTime entry 
+        { 
+            get; set;
+        }
+        public DateTime output 
+        { 
+            get; set;
+        }
+        public int minute 
+        { 
+            get; set; 
+        }
 
         public override string ToString()
         {
             return $"idTimeline : {idTimeline}\n" +
-                    $"idProject : {idTimeline}\n" +
-                    $"codeProject : {idTimeline}\n" +
-                    $"idUser : {idTimeline}\n" +
-                    $"entry : {idTimeline}\n" +
-                    $"output : {idTimeline}\n" +
+                    $"idProject : {idProject}\n" +
+                    $"codeProject : {codeProject}\n" +
+                    $"idUser : {idUser}\n" +
+                    $"entry : {entry}\n" +
+                    $"output : {output}\n" +
                     $"minute : {minute}\n\n";
         }
 
@@ -57,36 +77,7 @@ namespace Projet_Agile
             appendTimeline(idTimeline,idProject,codeProject,idUser,entry,output);
         }
 
-        public int idTimeline 
-        { 
-            get;
-            set; 
-        }
-        public int idProject 
-        { 
-            get;
-            set; 
-        }
-        public int codeProject 
-        { 
-            get;
-            set; 
-        }
-        public int idUser 
-        { 
-            get;
-            set; 
-        }
-        public DateTime entry 
-        { 
-            get; 
-            set; 
-        }
-        public DateTime output 
-        { 
-            get;
-            set; 
-        }
+
         public void appendTimeline(int idTimeline, int idProject, int codeProject, int idUser, DateTime entry, DateTime output) 
         {
             string fileName = "TimeSheet.json";

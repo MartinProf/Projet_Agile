@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace Projet_Agile
 {
+
     class Program
     {
-        static string jsonTimeline;
-        static JsonSerializer serializer;
-        static List<ProjectTimeline> projectTimelines;
+        static string jsonTimelineString;
+        public static List<ProjectTimeline> projectTimelinesList = new List<ProjectTimeline>();
         static void Main(string[] args)
         {
-            serializer = new JsonSerializer();
+            Deserializer();
 
             /********************** TESTS UNITAIRES **************************/
 
@@ -65,13 +65,8 @@ namespace Projet_Agile
 
             var date = DateTime.Parse("11-4-2022");
             //Classe ProjectTimeline
-            //Serializer(1, 1, 1, 666, date, DateTime.Now);
-            Deserializer(@"TimeSheet.json");
-            //Export();
-            //Import();
-            //Test d'ajout au fichier TimeSheet.json
-            //var projectTimeLine2 = new ProjectTimeline(2, project.idProject, project.codeProject, administrator.noUser, DateTime.Now, date);
-            //var projectTimeLine3 = new ProjectTimeline(3, project.idProject, project.codeProject, employe.noUser, DateTime.Now, date);
+            Serializer(22, 34, 1, 666, date, DateTime.Now);
+            Console.WriteLine(projectTimelinesList[projectTimelinesList.Count()-1]);
 
             Console.WriteLine("******************************************************************************");
 
@@ -80,9 +75,9 @@ namespace Projet_Agile
             Console.ReadKey();
         }
 
-        static void Serializer(int idTimeline, int idProject, int codeProject, int idUser, DateTime entry, DateTime output)
+        public static void Serializer(int idTimeline, int idProject, int codeProject, int idUser, DateTime entry, DateTime output)
         {
-            
+            Deserializer();
             TimeSpan timeSpan = output.Subtract(entry);
             int minutesEcoule = (int)timeSpan.TotalMinutes;
 
@@ -97,60 +92,25 @@ namespace Projet_Agile
                 minute = minutesEcoule
             };
 
-            jsonTimeline = JsonConvert.SerializeObject(projectTimeline);
+            projectTimelinesList.Add(projectTimeline);
+
+            jsonTimelineString = JsonConvert.SerializeObject(projectTimelinesList);
 
             string fileName = "TimeSheet.json";
 
-            if (!File.Exists(fileName))
-            {
-                File.WriteAllText(fileName, jsonTimeline);
-            }
-            else
-            {
-                File.AppendAllText(fileName, jsonTimeline);
-            }
+            File.WriteAllText(fileName, jsonTimelineString);
+
         }
 
-        static void Deserializer(string fileName) 
+        public static void Deserializer() 
         {
-            /*
-            ProjectTimeline projectTimeline1 = JsonConvert.DeserializeObject<ProjectTimeline>(File.ReadAllText(fileName));
-
-            using (StreamReader file = File.OpenText(fileName)) 
+            string content;
+            using (StreamReader file = File.OpenText(@"TimeSheet.json"))
             {
-                serializer = new JsonSerializer();
-                ProjectTimeline projectTimeline2 = (ProjectTimeline)serializer.Deserialize(file, typeof(ProjectTimeline));
-                Console.WriteLine(projectTimeline2.entry);
-            }*/
-            projectTimelines = JsonConvert.DeserializeObject<List<ProjectTimeline>>(File.OpenText(fileName).ReadToEnd());
-        }
-        /*
-        static void Export() 
-        {
-            string fileName = "TimeSheet.json";
-            using (var streamWriter = new StreamWriter(fileName)) 
-            {
-                using (var jsonWriter = new JsonTextWriter(streamWriter)) 
-                {
-                    jsonWriter.Formatting = Formatting.Indented;
-                    serializer.Serialize(jsonWriter, JsonConvert.DeserializeObject(jsonTimeline));
-                    Console.WriteLine(jsonWriter.ToString());
-                }
+                content = file.ReadToEnd();
+                projectTimelinesList = JsonConvert.DeserializeObject<List<ProjectTimeline>>(content);
             }
+            
         }
-
-        static void Import()
-        {
-            string fileName = "TimeSheet.json";
-
-            using (var streamReader = new StreamReader(fileName))
-            {
-                using (var jsonReader = new JsonTextReader(streamReader))
-                {
-                    var projectTimeline = serializer.Deserialize<ProjectTimeline>(jsonReader);
-                    Console.WriteLine(projectTimeline.ToString());
-                }
-            }
-        }*/
     }
  }

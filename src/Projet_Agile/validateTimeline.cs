@@ -8,10 +8,9 @@ using System.Threading.Tasks;
 
 namespace Projet_Agile
 {
+    
     class validateTimeline
     {
-
-        //string timeSheetData = ReadTimeline();
 
 
     }
