@@ -65,7 +65,13 @@ namespace Projet_Agile
 
             var date = DateTime.Parse("11-4-2022");
             //Classe ProjectTimeline
-            Serializer(22, 34, 1, 666, date, DateTime.Now);
+            Serializer(22, 34, 1, 1, date, DateTime.Now);
+            Serializer(15, 34, 10, 2, date, DateTime.Now);
+            Serializer(30, 34, 100, 3, date, DateTime.Now);
+            Serializer(50, 35, 900, 4, date, DateTime.Now);
+            Serializer(24, 35, 900, 1000, date, DateTime.Now);
+            Serializer(10, 35, 900, 1001, date, DateTime.Now);
+            Serializer(1, 35, 900, 1002, date, DateTime.Now);
             Console.WriteLine(projectTimelinesList[projectTimelinesList.Count()-1]);
 
             Console.WriteLine("******************************************************************************");
@@ -77,7 +83,15 @@ namespace Projet_Agile
 
         public static void Serializer(int idTimeline, int idProject, int codeProject, int idUser, DateTime entry, DateTime output)
         {
-            Deserializer();
+            try
+            {
+                Deserializer();
+            }
+            catch
+            {
+                //a suprimer apres developpement
+                Console.WriteLine("deserialization manque");
+            }
             TimeSpan timeSpan = output.Subtract(entry);
             int minutesEcoule = (int)timeSpan.TotalMinutes;
 
@@ -91,14 +105,16 @@ namespace Projet_Agile
                 output = output,
                 minute = minutesEcoule
             };
+            
+                projectTimelinesList.Add(projectTimeline);
 
-            projectTimelinesList.Add(projectTimeline);
+                jsonTimelineString = JsonConvert.SerializeObject(projectTimelinesList);
 
-            jsonTimelineString = JsonConvert.SerializeObject(projectTimelinesList);
+                string fileName = "TimeSheet.json";
 
-            string fileName = "TimeSheet.json";
-
-            File.WriteAllText(fileName, jsonTimelineString);
+                File.WriteAllText(fileName, jsonTimelineString);
+            
+            
 
         }
 
