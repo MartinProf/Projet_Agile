@@ -7,44 +7,33 @@ using System.Threading.Tasks;
 namespace Projet_Agile
 {
     //Cette classe est la classe mère des classes "Administrator" et "Employee"
-    public class Person
+    public interface Person
     {
-        public Person(string lastName, string firstName, string email, string password)
-        {
-            this.lastName = lastName;
-            this.firstName = firstName;
-            this.email = email;
-            this.password = password;
-            inscriptionDate = DateTime.Now.ToString();
-        }
-
-        public string lastName
+        string lastName
         {
             get;
             set;
         }
-        public string firstName
+        string firstName
         {
             get;
             set;
         }
-        public string email
+        string email
         {
             get;
             set;
         }
 
-        public string password
+        string password
 
         {
             get;
             set;
         }
-        public string inscriptionDate
+        string inscriptionDate
         {
             get;
         }
-
-       
     }
 }

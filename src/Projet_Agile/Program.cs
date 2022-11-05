@@ -20,13 +20,13 @@ namespace Projet_Agile
             /********************** TESTS UNITAIRES **************************/
 
             //Classe Person
-            var person = new Person("Walsh", "Bob", "Bobby@bobby.com", "12345");
+            //var person = new Person("Walsh", "Bob", "Bobby@bobby.com", "12345");
             //Getters
-            String msgPerson1 = person.lastName + " " + person.firstName + " " + person.email + " " + person.password + " " + person.inscriptionDate;
-            Console.WriteLine("Getters Person = " + msgPerson1);
+            //String msgPerson1 = person.lastName + " " + person.firstName + " " + person.email + " " + person.password + " " + person.inscriptionDate;
+            //Console.WriteLine("Getters Person = " + msgPerson1);
             //Setters
-            string msgPerson2 = (person.lastName = "Forget") + " " + (person.firstName = "Martin") + " " + (person.email = "pasbobby@pasbobby.com") + " " + (person.password = "54321");
-            Console.WriteLine("Setters Person = " + msgPerson2);
+            //string msgPerson2 = (person.lastName = "Forget") + " " + (person.firstName = "Martin") + " " + (person.email = "pasbobby@pasbobby.com") + " " + (person.password = "54321");
+            //Console.WriteLine("Setters Person = " + msgPerson2);
 
             Console.WriteLine("******************************************************************************");
 
@@ -65,7 +65,7 @@ namespace Projet_Agile
 
             var date = DateTime.Parse("11-4-2022");
             //Classe ProjectTimeline
-            Serializer(22, 34, 1, 666, date, DateTime.Now);
+            //Serializer(22, 34, 1, 666, date, DateTime.Now);
             Console.WriteLine(projectTimelinesList[projectTimelinesList.Count()-1]);
 
             Console.WriteLine("******************************************************************************");
