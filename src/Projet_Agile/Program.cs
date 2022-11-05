@@ -31,7 +31,7 @@ namespace Projet_Agile
             Console.WriteLine("******************************************************************************");
 
             //Classe Employe
-            var employe = new Employe(1, "Forster", "James", "James@hotmail.com", "66666", "10 sept 2024");
+            var employe = new Employe(1000, "Forster", "James", "James@hotmail.com", "66666", "10 sept 2024");
             //Getters
             String msgEmploye1 = employe.noUser + " " + employe.lastName + " " + employe.firstName + " " + employe.email + " " + employe.password + " " + employe.inscriptionDate;
             Console.WriteLine("Getters Employe = " + msgEmploye1);
