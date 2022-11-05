@@ -52,57 +52,5 @@ namespace Projet_Agile
                     $"minute : {minute}\n\n";
         }
 
-        /*
-        var src = DateTime.Now;
-        var hm = new DateTime(src.Year, src.Month, src.Day, src.Hour, src.Minute, 0);
-
-        ProjectTimeline conversionDate = new ProjectTimeline 
-        {
-            entry = hm,
-            output = hm
-        };*/
-
-        /*
-        public ProjectTimeline(int idTimeline, int idProject, int codeProject, int idUser, DateTime entry, DateTime output )
-        {
-            var src = DateTime.Now;
-            var hm = new DateTime(src.Year, src.Month, src.Day, src.Hour, src.Minute, 0);
-
-            this.idTimeline = idTimeline;
-            this.idProject = idProject;
-            this.codeProject = codeProject;
-            this.idUser = idUser;
-            this.entry = hm;
-            this.output = hm;
-            appendTimeline(idTimeline,idProject,codeProject,idUser,entry,output);
-        }
-
-
-        public void appendTimeline(int idTimeline, int idProject, int codeProject, int idUser, DateTime entry, DateTime output) 
-        {
-            string fileName = "TimeSheet.json";
-
-            if (!File.Exists(fileName))
-            {
-                string jsonString = JsonConvert.SerializeObject(this);
-                File.WriteAllText(fileName, jsonString);
-            }
-            else
-            {
-                string jsonStringExtra = JsonConvert.SerializeObject(this);
-                File.AppendAllText(fileName, jsonStringExtra);
-            }
-        }
-        
-        ProjectTimeline[] projectTimeline;
-        public void ReadTimeline()
-        {
-            string fileName = @"TimeSheet.json";
-            if (File.Exists(fileName))
-            {
-                 projectTimeline = JsonConvert.DeserializeObject<ProjectTimeline>(File.ReadAllText(fileName));
-
-            }
-        }*/
     }
 }

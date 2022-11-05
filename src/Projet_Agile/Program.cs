@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 namespace Projet_Agile
 {
 
-    class Program
+    public static class Program
     {
-        static string jsonTimelineString;
-        public static List<ProjectTimeline> projectTimelinesList = new List<ProjectTimeline>();
+        public static string jsonTimelineString;
+        internal static List<ProjectTimeline> projectTimelinesList = new List<ProjectTimeline>();
         static void Main(string[] args)
         {
             Deserializer();
@@ -111,6 +111,11 @@ namespace Projet_Agile
                 projectTimelinesList = JsonConvert.DeserializeObject<List<ProjectTimeline>>(content);
             }
             
+        }
+
+        internal static IEnumerable<ProjectTimeline> GetProjectTimelineList()
+        {
+            return projectTimelinesList;
         }
     }
  }
