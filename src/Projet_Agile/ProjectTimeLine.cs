@@ -10,66 +10,47 @@ namespace Projet_Agile
 {
     class ProjectTimeline
     {
-        public ProjectTimeline(int idTimeline, int idProject, int codeProject, int idUser, DateTime entry, DateTime output )
-        {
-            var src = DateTime.Now;
-            var hm = new DateTime(src.Year, src.Month, src.Day, src.Hour, src.Minute, 0);
-
-            this.idTimeline = idTimeline;
-            this.idProject = idProject;
-            this.codeProject = codeProject;
-            this.idUser = idUser;
-            this.entry = hm;
-            this.output = hm;
-            appendTimeline(idTimeline,idProject,codeProject,idUser,entry,output);
-        }
+        public ProjectTimeline() { }
 
         public int idTimeline 
         { 
-            get;
-            set; 
+            get; set; 
         }
         public int idProject 
         { 
-            get;
-            set; 
+            get; set; 
         }
         public int codeProject 
         { 
-            get;
-            set; 
+            get; set;
         }
         public int idUser 
         { 
-            get;
-            set; 
+            get; set;
         }
         public DateTime entry 
         { 
-            get; 
-            set; 
+            get; set;
         }
         public DateTime output 
         { 
-            get;
-            set; 
+            get; set;
         }
-        public void appendTimeline(int idTimeline, int idProject, int codeProject, int idUser, DateTime entry, DateTime output) 
+        public int minute 
+        { 
+            get; set; 
+        }
+
+        public override string ToString()
         {
-            string fileName = "TimeSheet.json";
-
-            if (!File.Exists(fileName))
-            {
-                string jsonString = JsonConvert.SerializeObject(this) + Environment.NewLine;
-                File.WriteAllText(fileName, jsonString);
-            }
-            else
-            {
-                string jsonStringExtra = JsonConvert.SerializeObject(this) + Environment.NewLine;
-                File.AppendAllText(fileName, jsonStringExtra);
-            }
-
-            Console.WriteLine(File.ReadAllText(fileName));
+            return $"idTimeline : {idTimeline}\n" +
+                    $"idProject : {idProject}\n" +
+                    $"codeProject : {codeProject}\n" +
+                    $"idUser : {idUser}\n" +
+                    $"entry : {entry}\n" +
+                    $"output : {output}\n" +
+                    $"minute : {minute}\n\n";
         }
+
     }
 }

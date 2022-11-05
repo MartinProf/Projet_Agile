@@ -53,6 +53,7 @@
     <Compile Include="Project.cs" />
     <Compile Include="ProjectTimeLine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="validateTimeline.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
