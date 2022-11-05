@@ -1,2 +1,7 @@
 30 oct: 1H - Test fait pour intégrer une application console dans le dếpôt git 
 30 oct: 3h - Création d'un template UML du projet
+29 oct: 2h modification du UML
+30 oct: 2h Rédaction du backlog
+31 oct: 3h Faire le tour des fonctionnalité Jira
+3 nov: 4h travailler sur le lecture écriture .JSON (serialisation deserialisation)
+4 nov: 8h travailler sur le lecture écriture .JSON (serialisation deserialisation)
