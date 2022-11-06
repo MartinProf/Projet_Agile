@@ -12,17 +12,26 @@ namespace Projet_Agile
         {
             this.idProject = idProject;
             this.codeProject = codeProject;
+            if (codeProject > 900)
+            {
+                this.telework = true;
+            }
+            else
+                this.telework = false;
         }
 
         public int idProject
         {
             get;
-            set;
         }
         public int codeProject
         {
             get;
-            set;
+        }
+
+        public bool telework
+        {
+            get;
         }
        
     }
