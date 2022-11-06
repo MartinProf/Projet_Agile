@@ -79,10 +79,14 @@ namespace Projet_Agile
             Serializer(24, 35, 900, 1000, date, DateTime.Now);
             Serializer(10, 35, 900, 1001, date, DateTime.Now);
             Serializer(1, 35, 900, 1002, date, DateTime.Now);
+            Serializer(2, 35, 900, 1003, date, DateTime.Now);
+            Serializer(3, 35, 900, 1004, date, DateTime.Now);
             Console.WriteLine(projectTimelinesList[projectTimelinesList.Count()-1]);
 
             Console.WriteLine("******************************************************************************\n");
 
+            validateTimeline validate = new validateTimeline();
+            validate.validateAdmin36Hours(administrator);
 
 
             Console.ReadKey();
