@@ -19,6 +19,10 @@ namespace Projet_Agile
 
             /********************** TESTS UNITAIRES **************************/
 
+            Console.WriteLine("******** TESTS UNITAIRES ********\n\n");
+
+            Console.WriteLine("************************************* Classe Person ******************************************\n");
+
             //Classe Person
             var person = new Person("Walsh", "Bob", "Bobby@bobby.com", "12345");
             //Getters
@@ -28,7 +32,7 @@ namespace Projet_Agile
             string msgPerson2 = (person.lastName = "Forget") + " " + (person.firstName = "Martin") + " " + (person.email = "pasbobby@pasbobby.com") + " " + (person.password = "54321");
             Console.WriteLine("Setters Person = " + msgPerson2);
 
-            Console.WriteLine("******************************************************************************");
+            Console.WriteLine("\n************************************* Classe Employe *****************************************\n");
 
             //Classe Employe
             var employe = new Employe(1000, "Forster", "James", "James@hotmail.com", "66666", "10 sept 2024");
@@ -39,7 +43,7 @@ namespace Projet_Agile
             string msgEmploye2 = (employe.noUser = 2) + " " + (employe.lastName = "Red") + " " + (employe.firstName = "Roseline") + " " + (employe.email = "Rosie@red.com") + " " + (employe.password = "34543");
             Console.WriteLine("Setters Employe = " + msgEmploye2);
 
-            Console.WriteLine("******************************************************************************");
+            Console.WriteLine("\n************************************* Classe Administrator ***********************************\n");
 
             //Classe Administrator
             var administrator = new Administrator(1, "Woola", "Doodley", "Dood@hotmail.com", "78900", "12 juillet 2018");
@@ -49,19 +53,22 @@ namespace Projet_Agile
             //Setters
             string msgAdmin2 = (administrator.noUser = 2) + " " + (administrator.lastName = "Blue") + " " + (administrator.firstName = "Bubble") + " " + (administrator.email = "Bubble@blue.com") + " " + (administrator.password = "32343");
             Console.WriteLine("Setters Administrator = " + msgAdmin2);
+            //Create project
+            Console.WriteLine("Create project method = " + administrator.createProject(12345, 54321));
 
-            Console.WriteLine("******************************************************************************");
+            Console.WriteLine("\n************************************* Classe Project *****************************************\n");
 
             //Classe Project
             var project = new Project(1, 22);
+            var projectTelework = new Project(2, 901);
             //Getters
             string msgProject1 = project.idProject + " " + project.codeProject;
             Console.WriteLine("Getters Project = " + msgProject1);
-            //Setters
-            string msgProject2 = (project.idProject = 666) + " " + (project.codeProject = 999);
-            Console.WriteLine("Setters Project = " + msgProject2);
+            //Télétrail?  (telework bool)
+            Console.WriteLine("Is this telework? = " + project.telework + " codeProject = " + project.codeProject);
+            Console.WriteLine("Is this telework? = " + projectTelework.telework + " codeProject = " + projectTelework.codeProject);
 
-             Console.WriteLine("******************************************************************************");
+            Console.WriteLine("\n************************************* Classe ProjectTimeline *********************************\n");
 
             var date = DateTime.Parse("11-4-2022");
             //Classe ProjectTimeline
@@ -74,7 +81,7 @@ namespace Projet_Agile
             Serializer(1, 35, 900, 1002, date, DateTime.Now);
             Console.WriteLine(projectTimelinesList[projectTimelinesList.Count()-1]);
 
-            Console.WriteLine("******************************************************************************");
+            Console.WriteLine("******************************************************************************\n");
 
 
 
@@ -133,5 +140,5 @@ namespace Projet_Agile
         {
             return projectTimelinesList;
         }
-    }
+    } 
  }
