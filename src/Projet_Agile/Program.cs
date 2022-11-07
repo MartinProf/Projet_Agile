@@ -15,7 +15,18 @@ namespace Projet_Agile
         internal static List<ProjectTimeline> projectTimelinesList = new List<ProjectTimeline>();
         static void Main(string[] args)
         {
-            Deserializer();
+            /*
+            Console.WriteLine("Veuillez entrer l'extension de fichier de votre feuille de temps: ");
+            string extensionFIle = Console.ReadLine();
+            Deserializer(extensionFIle);
+            Console.WriteLine("Veuillez entrer le no d'employé que vous voulez valider:");
+            string empNumber = Console.ReadLine();
+
+            validateTimeline validateTimeline = new validateTimeline();
+            validateTimeline.validateTimesheet(empNumber, extensionFIle);
+            */
+
+
 
             /********************** TESTS UNITAIRES **************************/
 

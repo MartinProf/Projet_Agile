@@ -15,5 +15,14 @@ namespace Projet_Agile
     {
         List<ProjectTimeline> projectTimelinesList = (List<ProjectTimeline>)Program.GetProjectTimelineList();
 
+        public validateTimeline()
+        {
+            
+        }
+
+        public void validateTimesheet(string empNumber, string extensionFile) 
+        {
+            
+        }
     }
 }
