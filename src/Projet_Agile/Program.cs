@@ -12,36 +12,37 @@ namespace Projet_Agile
     public static class Program
     {
         public static string jsonTimelineString;
+        public static string extensionFile;
         internal static List<ProjectTimeline> projectTimelinesList = new List<ProjectTimeline>();
         static void Main(string[] args)
         {
-            /*
-            Console.WriteLine("Veuillez entrer l'extension de fichier de votre feuille de temps: ");
-            string extensionFIle = Console.ReadLine();
-            Deserializer(extensionFIle);
+            bool extConforme = false;
+
+            do
+            {
+                Console.WriteLine("Veuillez entrer l'extension de fichier de votre feuille de temps: ");
+                extensionFile = Console.ReadLine();
+                try
+                {
+                    Deserializer(extensionFile);
+                    extConforme = true;
+                }
+                catch (Exception)
+                {
+
+                    Console.WriteLine("La saisie de votre feuille de temps n'existe pas. Veuillez recommencer.\n\n");
+                }
+
+            } while (!extConforme);
+
+
             Console.WriteLine("Veuillez entrer le no d'employé que vous voulez valider:");
             string empNumber = Console.ReadLine();
 
             validateTimeline validateTimeline = new validateTimeline();
-            validateTimeline.validateTimesheet(empNumber, extensionFIle);
-            */
-            Deserializer();
-
-
-            /********************** TESTS UNITAIRES **************************/
+            validateTimeline.validateTimesheet(empNumber, extensionFile);
 
             Console.WriteLine("******** TESTS UNITAIRES ********\n\n");
-
-            Console.WriteLine("************************************* Classe Person ******************************************\n");
-
-            //Classe Person
-            //var person = new Person("Walsh", "Bob", "Bobby@bobby.com", "12345");
-            //Getters
-            //String msgPerson1 = person.lastName + " " + person.firstName + " " + person.email + " " + person.password + " " + person.inscriptionDate;
-            //Console.WriteLine("Getters Person = " + msgPerson1);
-            //Setters
-            //string msgPerson2 = (person.lastName = "Forget") + " " + (person.firstName = "Martin") + " " + (person.email = "pasbobby@pasbobby.com") + " " + (person.password = "54321");
-            //Console.WriteLine("Setters Person = " + msgPerson2);
 
             Console.WriteLine("\n************************************* Classe Employe *****************************************\n");
 
@@ -82,8 +83,9 @@ namespace Projet_Agile
             Console.WriteLine("\n************************************* Classe ProjectTimeline *********************************\n");
 
             var date = DateTime.Parse("11-4-2022");
-            //Classe ProjectTimeline
 
+            //Classe ProjectTimeline
+            /*
             Serializer(22, 34, 1, 1, date, DateTime.Now);
             Serializer(15, 34, 10, 2, date, DateTime.Now);
             Serializer(30, 34, 100, 3, date, DateTime.Now);
@@ -93,27 +95,18 @@ namespace Projet_Agile
             Serializer(1, 35, 900, 1002, date, DateTime.Now);
             Serializer(2, 35, 900, 1003, date, DateTime.Now);
             Serializer(3, 35, 900, 1004, date, DateTime.Now);
+            */
 
             Console.WriteLine(projectTimelinesList[projectTimelinesList.Count()-1]);
 
             Console.WriteLine("******************************************************************************\n");
-
-
 
             Console.ReadKey();
         }
 
         public static void Serializer(int idTimeline, int idProject, int codeProject, int idUser, DateTime entry, DateTime output)
         {
-            try
-            {
-                Deserializer();
-            }
-            catch
-            {
-                //a suprimer apres developpement
-                Console.WriteLine("deserialization manque");
-            }
+
             TimeSpan timeSpan = output.Subtract(entry);
             int minutesEcoule = (int)timeSpan.TotalMinutes;
 
@@ -128,22 +121,19 @@ namespace Projet_Agile
                 minute = minutesEcoule
             };
             
-                projectTimelinesList.Add(projectTimeline);
+            projectTimelinesList.Add(projectTimeline);
 
-                jsonTimelineString = JsonConvert.SerializeObject(projectTimelinesList);
+            jsonTimelineString = JsonConvert.SerializeObject(projectTimelinesList);
 
-                string fileName = "TimeSheet.json";
-
-                File.WriteAllText(fileName, jsonTimelineString);
-            
-            
+            File.WriteAllText(extensionFile, jsonTimelineString);
 
         }
 
-        public static void Deserializer() 
+        public static void Deserializer(string timeSheet) 
         {
             string content;
-            using (StreamReader file = File.OpenText(@"TimeSheet.json"))
+
+            using (StreamReader file = File.OpenText(timeSheet))
             {
                 content = file.ReadToEnd();
                 projectTimelinesList = JsonConvert.DeserializeObject<List<ProjectTimeline>>(content);
@@ -154,5 +144,5 @@ namespace Projet_Agile
         {
             return projectTimelinesList;
         }
-    } 
+    }
  }
