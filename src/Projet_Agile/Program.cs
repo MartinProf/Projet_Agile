@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -97,7 +98,7 @@ namespace Projet_Agile
             Serializer(3, 35, 900, 1004, date, DateTime.Now);
             */
 
-            Console.WriteLine(projectTimelinesList[projectTimelinesList.Count()-1]);
+            Console.WriteLine(projectTimelinesList[projectTimelinesList.Count() - 1]);
 
             Console.WriteLine("******************************************************************************\n");
 
@@ -120,7 +121,7 @@ namespace Projet_Agile
                 output = output,
                 minute = minutesEcoule
             };
-            
+
             projectTimelinesList.Add(projectTimeline);
 
             jsonTimelineString = JsonConvert.SerializeObject(projectTimelinesList);
@@ -129,7 +130,7 @@ namespace Projet_Agile
 
         }
 
-        public static void Deserializer(string timeSheet) 
+        public static void Deserializer(string timeSheet)
         {
             string content;
 
@@ -144,5 +145,25 @@ namespace Projet_Agile
         {
             return projectTimelinesList;
         }
+
+        public static DateTime FirstDateOfWeek(int year, int weekOfYear)
+        {
+            DateTime jan1 = new DateTime(year, 1, 1);
+            int daysOffset = DayOfWeek.Thursday - jan1.DayOfWeek;
+
+            DateTime firstThursday = jan1.AddDays(daysOffset);
+            var cal = CultureInfo.CurrentCulture.Calendar;
+            int firstWeek = cal.GetWeekOfYear(firstThursday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+
+            var weekNum = weekOfYear;
+            if (firstWeek == 1)
+            {
+                weekNum -= 1;
+            }
+
+            var result = firstThursday.AddDays(weekNum * 7);
+
+            return result.AddDays(-3);
+        }
     }
- }
+}
