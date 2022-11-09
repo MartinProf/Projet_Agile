@@ -5,3 +5,5 @@
 31 oct: 3h Faire le tour des fonctionnalité Jira
 3 nov: 4h travailler sur le lecture écriture .JSON (serialisation deserialisation)
 4 nov: 8h travailler sur le lecture écriture .JSON (serialisation deserialisation)
+8 nov: 2h Correctif sur la gestion des erreurs des fichiers json
+9 nov: 2h Bug avec git, correction du master et fichiers flottants
