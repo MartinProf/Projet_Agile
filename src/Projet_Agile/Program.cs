@@ -15,7 +15,18 @@ namespace Projet_Agile
         internal static List<ProjectTimeline> projectTimelinesList = new List<ProjectTimeline>();
         static void Main(string[] args)
         {
+            /*
+            Console.WriteLine("Veuillez entrer l'extension de fichier de votre feuille de temps: ");
+            string extensionFIle = Console.ReadLine();
+            Deserializer(extensionFIle);
+            Console.WriteLine("Veuillez entrer le no d'employé que vous voulez valider:");
+            string empNumber = Console.ReadLine();
+
+            validateTimeline validateTimeline = new validateTimeline();
+            validateTimeline.validateTimesheet(empNumber, extensionFIle);
+            */
             Deserializer();
+
 
             /********************** TESTS UNITAIRES **************************/
 
@@ -24,13 +35,13 @@ namespace Projet_Agile
             Console.WriteLine("************************************* Classe Person ******************************************\n");
 
             //Classe Person
-            var person = new Person("Walsh", "Bob", "Bobby@bobby.com", "12345");
+            //var person = new Person("Walsh", "Bob", "Bobby@bobby.com", "12345");
             //Getters
-            String msgPerson1 = person.lastName + " " + person.firstName + " " + person.email + " " + person.password + " " + person.inscriptionDate;
-            Console.WriteLine("Getters Person = " + msgPerson1);
+            //String msgPerson1 = person.lastName + " " + person.firstName + " " + person.email + " " + person.password + " " + person.inscriptionDate;
+            //Console.WriteLine("Getters Person = " + msgPerson1);
             //Setters
-            string msgPerson2 = (person.lastName = "Forget") + " " + (person.firstName = "Martin") + " " + (person.email = "pasbobby@pasbobby.com") + " " + (person.password = "54321");
-            Console.WriteLine("Setters Person = " + msgPerson2);
+            //string msgPerson2 = (person.lastName = "Forget") + " " + (person.firstName = "Martin") + " " + (person.email = "pasbobby@pasbobby.com") + " " + (person.password = "54321");
+            //Console.WriteLine("Setters Person = " + msgPerson2);
 
             Console.WriteLine("\n************************************* Classe Employe *****************************************\n");
 
@@ -72,6 +83,7 @@ namespace Projet_Agile
 
             var date = DateTime.Parse("11-4-2022");
             //Classe ProjectTimeline
+
             Serializer(22, 34, 1, 1, date, DateTime.Now);
             Serializer(15, 34, 10, 2, date, DateTime.Now);
             Serializer(30, 34, 100, 3, date, DateTime.Now);
@@ -81,12 +93,11 @@ namespace Projet_Agile
             Serializer(1, 35, 900, 1002, date, DateTime.Now);
             Serializer(2, 35, 900, 1003, date, DateTime.Now);
             Serializer(3, 35, 900, 1004, date, DateTime.Now);
+
             Console.WriteLine(projectTimelinesList[projectTimelinesList.Count()-1]);
 
             Console.WriteLine("******************************************************************************\n");
 
-            validateTimeline validate = new validateTimeline();
-            validate.validateAdmin36Hours(administrator);
 
 
             Console.ReadKey();
@@ -137,7 +148,6 @@ namespace Projet_Agile
                 content = file.ReadToEnd();
                 projectTimelinesList = JsonConvert.DeserializeObject<List<ProjectTimeline>>(content);
             }
-            
         }
 
         internal static IEnumerable<ProjectTimeline> GetProjectTimelineList()
