@@ -25,7 +25,7 @@ namespace Projet_Agile
             validateTimeline validateTimeline = new validateTimeline();
             validateTimeline.validateTimesheet(empNumber, extensionFIle);
             */
-
+            Deserializer();
 
 
             /********************** TESTS UNITAIRES **************************/
@@ -81,7 +81,7 @@ namespace Projet_Agile
 
             Console.WriteLine("******************************************************************************");
 
-
+            
 
             Console.ReadKey();
         }
@@ -121,7 +121,6 @@ namespace Projet_Agile
                 content = file.ReadToEnd();
                 projectTimelinesList = JsonConvert.DeserializeObject<List<ProjectTimeline>>(content);
             }
-            
         }
 
         internal static IEnumerable<ProjectTimeline> GetProjectTimelineList()

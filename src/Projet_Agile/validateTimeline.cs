@@ -20,6 +20,89 @@ namespace Projet_Agile
             
         }
 
+        /*
+        public void validateAdmin36Hours(Employe employe, int year, int weekNumber)
+        {
+            double weekWorkHours = 0;
+            DateTime monday = Program.FirstDateOfWeek(year, weekNumber);
+            DateTime sunday = monday.AddDays(6);
+
+            try
+            {
+                if (employe.isAdmin == false)
+                {
+                    Console.WriteLine("Cet employé n'est pas un administrateur");
+                }
+                else
+                {
+                    for (int i = 0; i < projectTimelinesList.Count; i++)
+                    {
+                        if (projectTimelinesList[i].entry >= monday && projectTimelinesList[i].output <= sunday)
+                        {
+                            if (projectTimelinesList[i].codeProject <= 900)
+                            {
+                                double daylyWorkHours = projectTimelinesList[i].minute / 60;
+
+                                weekWorkHours += Math.Round(daylyWorkHours);
+                            }
+                        }
+                    }
+                    if (weekWorkHours < 36)
+                    {
+                        Console.WriteLine("L'employé n'a pas travaillé le nombre d'heures minimum!");
+                    }
+                    else
+                        Console.WriteLine(weekWorkHours);
+                    //À enlever quand fonctionnel
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
+        public void validateUser38Hours(Employe employe, int year, int weekNumber)
+        {
+            double weekWorkHours = 0;
+            DateTime monday = Program.FirstDateOfWeek(year, weekNumber);
+            DateTime sunday = monday.AddDays(6);
+
+            try
+            {
+                if (employe.isAdmin == true)
+                {
+                    Console.WriteLine("Cet employé n'est pas de type normal");
+                }
+                else
+                {
+                    for (int i = 0; i < projectTimelinesList.Count; i++)
+                    {
+                        if (projectTimelinesList[i].entry >= monday && projectTimelinesList[i].output <= sunday)
+                        {
+                            if (projectTimelinesList[i].codeProject >= 900)
+                            {
+                                double daylyWorkHours = projectTimelinesList[i].minute / 60;
+
+                                weekWorkHours += Math.Round(daylyWorkHours);
+                            }
+                        }
+                    }
+                    if (weekWorkHours < 38)
+                    {
+                        Console.WriteLine("L'employé n'a pas travaillé le nombre d'heures minimum!");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }*/
+
         public void validateTimesheet(string empNumber, string extensionFile) 
         {
             
