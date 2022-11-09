@@ -17,7 +17,7 @@ namespace Projet_Agile
 
         public validateTimeline()
         {
-            
+
         }
 
         public void validateAdmin36Hours(int noUser, int year, int weekNumber)
@@ -102,9 +102,9 @@ namespace Projet_Agile
 
         }
 
-        public void validateTimesheet(string empNumber, string extensionFile) 
+        public void validateTimesheet(string empNumber, string extensionFile)
         {
-            
+
         }
     }
 }
