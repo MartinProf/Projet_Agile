@@ -60,7 +60,6 @@ namespace Projet_Agile
             {
                 throw;
             }
-
         }
 
         public void validateUser38Hours(int noUser, int year, int weekNumber)
@@ -81,7 +80,7 @@ namespace Projet_Agile
                     {
                         if (projectTimelinesList[i].entry >= monday && projectTimelinesList[i].output <= sunday)
                         {
-                            if (projectTimelinesList[i].codeProject >= 900)
+                            if (projectTimelinesList[i].codeProject <= 900)
                             {
                                 double daylyWorkHours = projectTimelinesList[i].minute / 60;
 
@@ -99,7 +98,37 @@ namespace Projet_Agile
             {
                 throw;
             }
+        }
 
+        public void validateUser43Hours(int noUser, int year, int weekNumber)
+        {
+            double weekWorkHours = 0;
+            DateTime monday = Program.FirstDateOfWeek(year, weekNumber);
+            DateTime sunday = monday.AddDays(6);
+
+            try
+            {                
+                for (int i = 0; i < projectTimelinesList.Count; i++)
+                {
+                    if (projectTimelinesList[i].entry >= monday && projectTimelinesList[i].output <= sunday)
+                    {
+                        if (projectTimelinesList[i].codeProject <= 900)
+                        {
+                            double daylyWorkHours = projectTimelinesList[i].minute / 60;
+
+                            weekWorkHours += Math.Round(daylyWorkHours);
+                        }
+                    }
+                }
+                if (weekWorkHours > 43)
+                {
+                    Console.WriteLine("L'employé a dépassé le temps de travail permis au bureau");
+                }               
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public void validateTimesheet(string empNumber, string extensionFile)
