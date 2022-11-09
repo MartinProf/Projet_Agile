@@ -20,8 +20,7 @@ namespace Projet_Agile
             
         }
 
-        /*
-        public void validateAdmin36Hours(Employe employe, int year, int weekNumber)
+        public void validateAdmin36Hours(int noUser, int year, int weekNumber)
         {
             double weekWorkHours = 0;
             DateTime monday = Program.FirstDateOfWeek(year, weekNumber);
@@ -29,7 +28,7 @@ namespace Projet_Agile
 
             try
             {
-                if (employe.isAdmin == false)
+                if (noUser < 1000)
                 {
                     Console.WriteLine("Cet employé n'est pas un administrateur");
                 }
@@ -64,7 +63,7 @@ namespace Projet_Agile
 
         }
 
-        public void validateUser38Hours(Employe employe, int year, int weekNumber)
+        public void validateUser38Hours(int noUser, int year, int weekNumber)
         {
             double weekWorkHours = 0;
             DateTime monday = Program.FirstDateOfWeek(year, weekNumber);
@@ -72,7 +71,7 @@ namespace Projet_Agile
 
             try
             {
-                if (employe.isAdmin == true)
+                if (noUser >= 1000)
                 {
                     Console.WriteLine("Cet employé n'est pas de type normal");
                 }
@@ -101,7 +100,7 @@ namespace Projet_Agile
                 throw;
             }
 
-        }*/
+        }
 
         public void validateTimesheet(string empNumber, string extensionFile) 
         {
