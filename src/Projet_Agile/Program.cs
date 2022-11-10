@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -17,6 +17,9 @@ namespace Projet_Agile
         internal static List<ProjectTimeline> projectTimelinesList = new List<ProjectTimeline>();
         static void Main(string[] args)
         {
+
+            
+             
             bool extConforme = false;
 
             do
@@ -36,13 +39,24 @@ namespace Projet_Agile
 
             } while (!extConforme);
 
-
-            Console.WriteLine("Veuillez entrer le no d'employé que vous voulez valider:");
-            string empNumber = Console.ReadLine();
-
             validateTimeline validateTimeline = new validateTimeline();
+            int empNumber;
+            bool empExist = false;
+
+            do
+            {
+                Console.WriteLine("Veuillez entrer le no d'employé que vous voulez valider:");
+                empNumber = int.Parse(Console.ReadLine());
+
+                if (validateTimeline.empExist(empNumber))
+                    empExist = true;
+                else 
+                    Console.WriteLine("\nLe numéro " + empNumber + " n'existe pas dans votre feuille de temps.\n");
+
+            } while (!empExist);
+
             validateTimeline.validateTimesheet(empNumber, extensionFile);
-           
+
             Console.WriteLine("******** TESTS UNITAIRES ********\n\n");
 
             Console.WriteLine("\n************************************* Classe Employe *****************************************\n");
@@ -87,15 +101,33 @@ namespace Projet_Agile
 
             //Classe ProjectTimeline
             /*
-            Serializer(22, 34, 1, 1, date, DateTime.Now);
-            Serializer(15, 34, 10, 2, date, DateTime.Now);
-            Serializer(30, 34, 100, 3, date, DateTime.Now);
-            Serializer(50, 35, 900, 4, date, DateTime.Now);
-            Serializer(24, 35, 900, 1000, date, DateTime.Now);
-            Serializer(10, 35, 900, 1001, date, DateTime.Now);
-            Serializer(1, 35, 900, 1002, date, DateTime.Now);
-            Serializer(2, 35, 900, 1003, date, DateTime.Now);
-            Serializer(3, 35, 900, 1004, date, DateTime.Now);
+            Serializer(1, 34, 1, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
+            Serializer(2, 34, 10, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
+            Serializer(3, 34, 100, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
+            Serializer(4, 35, 900, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
+            Serializer(5, 35, 900, 1001, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
+            Serializer(6, 35, 900, 1001, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
+            Serializer(7, 35, 900, 1001, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
+            Serializer(8, 35, 900, 1001, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
+            Serializer(9, 35, 900, 1001, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
+            Serializer(10, 34, 1, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
+            Serializer(11, 34, 10, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
+            Serializer(12, 34, 100, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
+            Serializer(13, 35, 900, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
+            Serializer(14, 35, 900, 1000, DateTime.Parse("2022-11-05T00:00:00"), DateTime.Parse("2022-11-04T12:00:00"));
+            Serializer(15, 35, 900, 1001, DateTime.Parse("2022-11-05T00:00:00"), DateTime.Parse("2022-11-04T12:00:00"));
+            Serializer(16, 35, 900, 1002, DateTime.Parse("2022-11-05T00:00:00"), DateTime.Parse("2022-11-04T12:00:00"));
+            Serializer(17, 35, 900, 1003, DateTime.Parse("2022-11-05T00:00:00"), DateTime.Parse("2022-11-04T12:00:00"));
+            Serializer(18, 35, 900, 1004, DateTime.Parse("2022-11-05T00:00:00"), DateTime.Parse("2022-11-04T12:00:00"));
+            Serializer(19, 34, 1, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
+            Serializer(20, 34, 10, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
+            Serializer(21, 34, 100, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
+            Serializer(22, 35, 900, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
+            Serializer(23, 35, 900, 1000, DateTime.Parse("2022-11-06T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
+            Serializer(24, 35, 900, 1000, DateTime.Parse("2022-11-06T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
+            Serializer(25, 35, 900, 1002, DateTime.Parse("2022-11-06T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
+            Serializer(26, 35, 900, 1003, DateTime.Parse("2022-11-06T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
+            Serializer(27, 35, 900, 1004, DateTime.Parse("2022-11-06T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
             */
 
             Console.WriteLine(projectTimelinesList[projectTimelinesList.Count() - 1]);
@@ -120,8 +152,9 @@ namespace Projet_Agile
                 idUser = idUser,
                 entry = entry,
                 output = output,
-                minute = minutesEcoule
-            };
+                minute = minutesEcoule,
+                weekNumber = CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(entry, CalendarWeekRule.FirstDay, DayOfWeek.Monday)
+        };
 
             projectTimelinesList.Add(projectTimeline);
 
@@ -145,26 +178,6 @@ namespace Projet_Agile
         internal static IEnumerable<ProjectTimeline> GetProjectTimelineList()
         {
             return projectTimelinesList;
-        }
-
-        public static DateTime FirstDateOfWeek(int year, int weekOfYear)
-        {
-            DateTime jan1 = new DateTime(year, 1, 1);
-            int daysOffset = DayOfWeek.Thursday - jan1.DayOfWeek;
-
-            DateTime firstThursday = jan1.AddDays(daysOffset);
-            var cal = CultureInfo.CurrentCulture.Calendar;
-            int firstWeek = cal.GetWeekOfYear(firstThursday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
-
-            var weekNum = weekOfYear;
-            if (firstWeek == 1)
-            {
-                weekNum -= 1;
-            }
-
-            var result = firstThursday.AddDays(weekNum * 7);
-
-            return result.AddDays(-3);
         }
     }
 }
