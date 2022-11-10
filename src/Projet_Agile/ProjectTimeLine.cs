@@ -41,6 +41,11 @@ namespace Projet_Agile
             get; set; 
         }
 
+        public int weekNumber
+        {
+            get; set;
+        }
+
         public override string ToString()
         {
             return $"idTimeline : {idTimeline}\n" +
@@ -49,7 +54,8 @@ namespace Projet_Agile
                     $"idUser : {idUser}\n" +
                     $"entry : {entry}\n" +
                     $"output : {output}\n" +
-                    $"minute : {minute}\n\n";
+                    $"minute : {minute}\n" +
+                    $"weekNumber : {weekNumber}\n\n";
         }
 
     }
