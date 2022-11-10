@@ -267,6 +267,62 @@ namespace Projet_Agile
 
             return result.AddDays(-3);
         }
+        public void validateAdminTelework10Hours(int empNumber)
+        {
+            int workFromHomeTime = 0;
+            int year = 0;
+            int weekNumber = 0;
+            
+            for (int i = 0; i < projectTimelinesList.Count; i++)
+                {
+                
+                if (empNumber == projectTimelinesList[i].idUser)
+                    {
+                        year = projectTimelinesList[i].entry.Year;
+                        weekNumber = weeknumber(projectTimelinesList[i].entry);
 
+                        DateTime monday = FirstDateOfWeek(year, weekNumber);
+                        DateTime sunday = monday.AddDays(6);
+
+                        for (int j = 0; j < projectTimelinesList.Count; j++)
+                            {
+                                if (projectTimelinesList[j].entry >= monday && projectTimelinesList[j].output <= sunday)
+                                {
+                                    if (projectTimelinesList[j].codeProject <= 900)
+                                    {
+                                        workFromHomeTime += projectTimelinesList[j].minute;
+                                    }
+                                }
+                            }
+                            if (workFromHomeTime > 600)
+                            {
+                                Console.WriteLine("L'administrateur a depassé les heures maximales permises de télétravail dans la semaine: " + weekNumber + "!" );
+                            }
+                        
+                        
+                    }
+                }
+            }
+            
+        
+
+        public void validateUser6HoursPerDay(int empNumber)
+        {
+           
+            foreach (var item in projectTimelinesList)
+            {
+                if (item.idUser == empNumber && empNumber < 1000)
+                {
+                    for (int i = 0; i < projectTimelinesList.Count; i++)
+                    {
+                        
+                        if (item.minute < 360)
+                            
+                            Console.WriteLine("L'employé n'a pas travaillé un minimum de 6h les jours de semaine!");
+                    }
+                }
+            }
+        }
+        
     }
 }
