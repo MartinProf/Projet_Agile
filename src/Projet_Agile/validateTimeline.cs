@@ -159,7 +159,26 @@ namespace Projet_Agile
             return CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(dateTime, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
 
         }
+        public void getUserInfo(int noUser)
+        {
 
+            if (noUser < 1000 && noUser > 0)
+            {
+                validateAdmin36Hours(noUser);
+                validateAdminTelework10Hours(noUser);
+                validateAdmin4HoursPerDay(noUser);
+            }
+            else if (noUser >= 1000)
+            {
+                validateUser38Hours(noUser);
+                validateUser43Hours(noUser);
+                validateUser6HoursPerDay(noUser);
+            }
+            else
+            {
+                Console.WriteLine("numero de user invalide");
+            }
+        }
         private DateTime FirstDateOfWeek(int year, int weekOfYear)
         {
             DateTime jan1 = new DateTime(year, 1, 1);
