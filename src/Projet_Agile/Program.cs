@@ -179,6 +179,20 @@ namespace Projet_Agile
         {
             return projectTimelinesList;
         }
+
+        public static void GenerateSerializations()
+        {
+            Random random = new Random();
+
+            int idTimeline = projectTimelinesList.Count;
+            int idProject = 35;
+            int codeProject = random.Next(1, 2000);
+            int idUser = random.Next(1, 2000);
+            DateTime entry = DateTime.Now.AddDays(random.Next(0, 21));
+            DateTime output = entry.AddHours(random.Next(1, 8));
+
+            Serializer(idTimeline, idProject, codeProject, idUser, entry, output);
+        }
     }
 }
 
