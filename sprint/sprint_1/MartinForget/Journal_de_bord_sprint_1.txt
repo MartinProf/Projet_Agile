@@ -1,0 +1,8 @@
+Journal de bord sprint 1 Martin Forget
+
+	-Semaine 31 oct. *Création de tâches sur Jira (1hr)*
+	-Semaine 31 oct et 7 nov *Animation de Scrum (3hrs)*
+	-7 nov *Création des méthodes FirstDayOfWeek(), Valdiate 38, 36 et 43HOurs (4hrs)*
+	-9 nov *Modifications méthodes de validation (2hrs)*
+	-10 nov *Création Méthode GenerateSerializations() (30 min)*
+	-10 nov *Journaux de bord perso et équipe (45min)*

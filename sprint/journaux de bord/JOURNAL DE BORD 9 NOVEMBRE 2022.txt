@@ -1,0 +1,7 @@
+RENCONTRE DU 2 NOVEMBRE 2022
+
+•	Réaffectation des rôles de Project Owner (Sebastian) et Scrum Master (Anthony). Certaines des tâches liées aux postes en question vont être assumées en équipe.
+•	Discussion quant au retour en arrière de certaines modifications au sein des classes du programme.
+•	Dépannage Git en équipe.
+•	Affection volontaire des tâches à effectuer.
+
