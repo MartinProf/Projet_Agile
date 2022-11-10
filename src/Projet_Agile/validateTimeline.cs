@@ -61,7 +61,6 @@ namespace Projet_Agile
             {
                 throw;
             }
-
         }
 
         public void validateUser38Hours(int noUser)
@@ -85,6 +84,7 @@ namespace Projet_Agile
                         try
                         {
                             if (noUser >= 1000)
+
                             {
                                 Console.WriteLine("Cet employé n'est pas de type normal");
                             }
@@ -157,6 +157,7 @@ namespace Projet_Agile
         private int weeknumber(DateTime dateTime) 
         {
             return CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(dateTime, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+
         }
 
         private DateTime FirstDateOfWeek(int year, int weekOfYear)

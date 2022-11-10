@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -57,8 +57,6 @@ namespace Projet_Agile
 
             validateTimeline.validateTimesheet(empNumber, extensionFile);
 
-            
-
             Console.WriteLine("******** TESTS UNITAIRES ********\n\n");
 
             Console.WriteLine("\n************************************* Classe Employe *****************************************\n");
@@ -98,7 +96,7 @@ namespace Projet_Agile
             Console.WriteLine("Is this telework? = " + projectTelework.telework + " codeProject = " + projectTelework.codeProject);
 
             Console.WriteLine("\n************************************* Classe ProjectTimeline *********************************\n");
-
+            
             var date = DateTime.Parse("11-4-2022");
 
             //Classe ProjectTimeline
@@ -135,11 +133,11 @@ namespace Projet_Agile
             Console.WriteLine(projectTimelinesList[projectTimelinesList.Count() - 1]);
 
             Console.WriteLine("******************************************************************************\n");
-
+            
 
             Console.ReadKey();
         }
-
+        
         public static void Serializer(int idTimeline, int idProject, int codeProject, int idUser, DateTime entry, DateTime output)
         {
 
