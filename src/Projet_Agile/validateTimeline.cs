@@ -160,25 +160,10 @@ namespace Projet_Agile
             }
         }
 
+        //TODO
         private void validateAdmin4HoursPerDay(int empNumber) 
         {
-            foreach (var item in projectTimelinesList)
-            {
-                if (item.idUser == empNumber) 
-                {
-                    for (int i = 0; i < 5; i++)
-                    {
-                        if (item.minute < 240)
-                            Console.WriteLine("L'administrateur n'a pas travaillé un minimum de 4h les jours de semaine!");
-                    }
-                }
-            }
-        }
 
-        public void validateTimesheet(int empNumber, string extensionFile)
-        {
-            
-            validateAdmin4HoursPerDay(empNumber);
         }
 
         public bool empExist(int empNumber) 
@@ -237,6 +222,7 @@ namespace Projet_Agile
 
             return result.AddDays(-3);
         }
+
         //Fonction validateAdminTelework10Hours, valide si l'administrateur a travaillé moins de 10 heures de télétravail par semaine 
         public void validateAdminTelework10Hours(int empNumber)
         {
@@ -293,6 +279,18 @@ namespace Projet_Agile
                     }
                 }
             }
+        }
+
+        public int[] listIdUser() 
+        {
+            int[] userList = new int[projectTimelinesList.Count()];
+
+            for (int i = 0; i < projectTimelinesList.Count(); i++)
+            {
+                userList[i] = projectTimelinesList[i].idUser;
+            }
+
+            return userList.Distinct().ToArray();
         }
         
     }
