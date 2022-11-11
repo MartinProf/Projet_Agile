@@ -241,7 +241,7 @@ namespace Projet_Agile
             {
                 validateUser38Hours(noUser);
                 validateUser43Hours(noUser);
-                validateUser6HoursPerDay(noUser);
+               validateUser6HoursPerDay(noUser);
             }
             else
             {
@@ -267,6 +267,7 @@ namespace Projet_Agile
 
             return result.AddDays(-3);
         }
+        //Fonction validateAdminTelework10Hours, valide si l'administrateur a travaillé moins de 10 heures de télétravail par semaine 
         public void validateAdminTelework10Hours(int empNumber)
         {
             int workFromHomeTime = 0;
@@ -288,7 +289,7 @@ namespace Projet_Agile
                             {
                                 if (projectTimelinesList[j].entry >= monday && projectTimelinesList[j].output <= sunday)
                                 {
-                                    if (projectTimelinesList[j].codeProject <= 900)
+                                    if (projectTimelinesList[j].codeProject == 900)
                                     {
                                         workFromHomeTime += projectTimelinesList[j].minute;
                                     }
@@ -303,15 +304,15 @@ namespace Projet_Agile
                     }
                 }
             }
-            
-        
 
+
+        //Fonction validateUser6HoursPerDay, valide si l'employé a travaillé moins de 6 heures par jour
         public void validateUser6HoursPerDay(int empNumber)
         {
            
             foreach (var item in projectTimelinesList)
             {
-                if (item.idUser == empNumber && empNumber < 1000)
+                if (item.idUser == empNumber && empNumber >= 1000)
                 {
                     for (int i = 0; i < projectTimelinesList.Count; i++)
                     {
