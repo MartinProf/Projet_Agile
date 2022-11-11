@@ -18,8 +18,6 @@ namespace Projet_Agile
         static void Main(string[] args)
         {
 
-            
-             
             bool extConforme = false;
 
             do
@@ -46,6 +44,16 @@ namespace Projet_Agile
             do
             {
                 Console.WriteLine("Veuillez entrer le no d'employé que vous voulez valider:");
+
+                string toPrint = "";
+
+                foreach (var item in validateTimeline.listIdUser())
+                {
+                    toPrint += item + " ";
+                }
+
+                Console.WriteLine(toPrint);
+
                 empNumber = int.Parse(Console.ReadLine());
 
                 if (validateTimeline.empExist(empNumber))
@@ -55,7 +63,9 @@ namespace Projet_Agile
 
             } while (!empExist);
 
-            validateTimeline.validateTimesheet(empNumber, extensionFile);
+            
+            
+
 
             Console.WriteLine("******** TESTS UNITAIRES ********\n\n");
 
@@ -97,43 +107,12 @@ namespace Projet_Agile
 
             Console.WriteLine("\n************************************* Classe ProjectTimeline *********************************\n");
             
-            var date = DateTime.Parse("11-4-2022");
-
             //Classe ProjectTimeline
-            /*
-            Serializer(1, 34, 1, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
-            Serializer(2, 34, 10, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
-            Serializer(3, 34, 100, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
-            Serializer(4, 35, 900, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
-            Serializer(5, 35, 900, 1001, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
-            Serializer(6, 35, 900, 1001, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
-            Serializer(7, 35, 900, 1001, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
-            Serializer(8, 35, 900, 1001, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
-            Serializer(9, 35, 900, 1001, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
-            Serializer(10, 34, 1, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
-            Serializer(11, 34, 10, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
-            Serializer(12, 34, 100, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
-            Serializer(13, 35, 900, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
-            Serializer(14, 35, 900, 1000, DateTime.Parse("2022-11-05T00:00:00"), DateTime.Parse("2022-11-04T12:00:00"));
-            Serializer(15, 35, 900, 1001, DateTime.Parse("2022-11-05T00:00:00"), DateTime.Parse("2022-11-04T12:00:00"));
-            Serializer(16, 35, 900, 1002, DateTime.Parse("2022-11-05T00:00:00"), DateTime.Parse("2022-11-04T12:00:00"));
-            Serializer(17, 35, 900, 1003, DateTime.Parse("2022-11-05T00:00:00"), DateTime.Parse("2022-11-04T12:00:00"));
-            Serializer(18, 35, 900, 1004, DateTime.Parse("2022-11-05T00:00:00"), DateTime.Parse("2022-11-04T12:00:00"));
-            Serializer(19, 34, 1, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
-            Serializer(20, 34, 10, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
-            Serializer(21, 34, 100, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
-            Serializer(22, 35, 900, 1, DateTime.Parse("2022-11-04T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
-            Serializer(23, 35, 900, 1000, DateTime.Parse("2022-11-06T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
-            Serializer(24, 35, 900, 1000, DateTime.Parse("2022-11-06T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
-            Serializer(25, 35, 900, 1002, DateTime.Parse("2022-11-06T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
-            Serializer(26, 35, 900, 1003, DateTime.Parse("2022-11-06T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
-            Serializer(27, 35, 900, 1004, DateTime.Parse("2022-11-06T00:00:00"), DateTime.Parse("2022-11-04T02:00:00"));
-            */
-
+            
             Console.WriteLine(projectTimelinesList[projectTimelinesList.Count() - 1]);
 
             Console.WriteLine("******************************************************************************\n");
-            
+            //GenerateSerializations(1000);
 
             Console.ReadKey();
         }
@@ -180,19 +159,24 @@ namespace Projet_Agile
             return projectTimelinesList;
         }
 
-        public static void GenerateSerializations()
+        /* GENERATEUR DE CARTE DE TEMPS
+        private static void GenerateSerializations(int occurence)
         {
-            Random random = new Random();
+            for (int i = 1; i <= occurence; i++)
+            {
+                Random random = new Random();
 
-            int idTimeline = projectTimelinesList.Count;
-            int idProject = 35;
-            int codeProject = random.Next(1, 2000);
-            int idUser = random.Next(1, 2000);
-            DateTime entry = DateTime.Now.AddDays(random.Next(0, 21));
-            DateTime output = entry.AddHours(random.Next(1, 8));
+                int idTimeline = i;
+                int idProject = 35;
+                int codeProject = random.Next(1, 2000);
+                int idUser = random.Next(1, 2000);
+                DateTime entry = DateTime.Now.AddDays(random.Next(0, 21));
+                DateTime output = entry.AddHours(random.Next(1, 8));
 
-            Serializer(idTimeline, idProject, codeProject, idUser, entry, output);
-        }
+                Serializer(idTimeline, idProject, codeProject, idUser, entry, output);
+            }
+
+        }*/
     }
 }
 
