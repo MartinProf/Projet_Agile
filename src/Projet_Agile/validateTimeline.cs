@@ -38,38 +38,23 @@ namespace Projet_Agile
 
                         DateTime monday = FirstDateOfWeek(year, weekNumber);
                         DateTime sunday = monday.AddDays(6);
-
-                        try
+                        for (int i = 0; i < projectTimelinesList.Count; i++)
                         {
-                            if (empNumber < 1000)
-
+                            if (projectTimelinesList[i].entry >= monday && projectTimelinesList[i].output <= sunday)
                             {
-                                Console.WriteLine("Cet employé n'est pas de type administrateur");
-                            }
-                            else
-                            {
-                                for (int i = 0; i < projectTimelinesList.Count; i++)
+                                if (projectTimelinesList[i].codeProject <= 900)
                                 {
-                                    if (projectTimelinesList[i].entry >= monday && projectTimelinesList[i].output <= sunday)
-                                    {
-                                        if (projectTimelinesList[i].codeProject <= 900)
-                                        {
-                                            double daylyWorkHours = projectTimelinesList[i].minute / 60;
+                                    double daylyWorkHours = projectTimelinesList[i].minute / 60;
 
-                                            weekWorkHours += Math.Round(daylyWorkHours);
-                                        }
-                                    }
-                                }
-                                if (weekWorkHours < 38)
-                                {
-                                    Console.WriteLine("Semaine : " + weekNumber + "L'administrateur n'a pas travaillé le nombre d'heures minimum!");
+                                    weekWorkHours += Math.Round(daylyWorkHours);
                                 }
                             }
                         }
-                        catch (Exception)
+                        if (weekWorkHours < 38)
                         {
-                            throw;
+                            Console.WriteLine("Semaine : " + weekNumber + "L'administrateur n'a pas travaillé le nombre d'heures minimum!");
                         }
+
                     }
                 }
             }
@@ -98,36 +83,21 @@ namespace Projet_Agile
                         DateTime monday = FirstDateOfWeek(year, weekNumber);
                         DateTime sunday = monday.AddDays(6);
 
-                        try
+                        for (int i = 0; i < projectTimelinesList.Count; i++)
                         {
-                            if (empNumber >= 1000)
-
+                            if (projectTimelinesList[i].entry >= monday && projectTimelinesList[i].output <= sunday)
                             {
-                                Console.WriteLine("Cet employé n'est pas de type normal");
-                            }
-                            else
-                            {
-                                for (int i = 0; i < projectTimelinesList.Count; i++)
+                                if (projectTimelinesList[i].codeProject <= 900)
                                 {
-                                    if (projectTimelinesList[i].entry >= monday && projectTimelinesList[i].output <= sunday)
-                                    {
-                                        if (projectTimelinesList[i].codeProject <= 900)
-                                        {
-                                            double daylyWorkHours = projectTimelinesList[i].minute / 60;
+                                    double daylyWorkHours = projectTimelinesList[i].minute / 60;
 
-                                            weekWorkHours += Math.Round(daylyWorkHours);
-                                        }
-                                    }
-                                }
-                                if (weekWorkHours < 38)
-                                {
-                                    Console.WriteLine("Semaine : " + weekNumber + "L'employé n'a pas travaillé le nombre d'heures minimum!");
+                                    weekWorkHours += Math.Round(daylyWorkHours);
                                 }
                             }
                         }
-                        catch (Exception)
+                        if (weekWorkHours < 38)
                         {
-                            throw;
+                            Console.WriteLine("Semaine : " + weekNumber + "L'employé n'a pas travaillé le nombre d'heures minimum!");
                         }
                     }
                 }
@@ -227,21 +197,21 @@ namespace Projet_Agile
             return CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(dateTime, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
 
         }
-        public void getUserInfo(int noUser)
+        public void getUserInfo(int empNumber)
         {
 
-            if (noUser < 1000 && noUser > 0)
+            if (empNumber < 1000 && empNumber > 0)
             {
-                validateAdmin36Hours(noUser);
-                validateUser43Hours(noUser);
-                validateAdminTelework10Hours(noUser);
-                validateAdmin4HoursPerDay(noUser);
+                validateAdmin36Hours(empNumber);
+                validateUser43Hours(empNumber);
+                validateAdminTelework10Hours(empNumber);
+                validateAdmin4HoursPerDay(empNumber);
             }
-            else if (noUser >= 1000)
+            else if (empNumber >= 1000)
             {
-                validateUser38Hours(noUser);
-                validateUser43Hours(noUser);
-               validateUser6HoursPerDay(noUser);
+                validateUser38Hours(empNumber);
+                validateUser43Hours(empNumber);
+                validateUser6HoursPerDay(empNumber);
             }
             else
             {
@@ -312,7 +282,7 @@ namespace Projet_Agile
            
             foreach (var item in projectTimelinesList)
             {
-                if (item.idUser == empNumber && empNumber >= 1000)
+                if (item.idUser == empNumber)
                 {
                     for (int i = 0; i < projectTimelinesList.Count; i++)
                     {
