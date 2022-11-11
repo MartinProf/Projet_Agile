@@ -1,3 +1,4 @@
+10min creation de la class projet
 3h sur des tentative de verification de id admin/employe
 15 min sur un json avec des entrer generique pour test
 1h30 tentative de methode de getUserInfo + push de la methode
