@@ -50,11 +50,10 @@ namespace Projet_Agile
                                 }
                             }
                         }
-                        if (weekWorkHours < 38)
-                        {
-                            Console.WriteLine("Semaine : " + weekNumber + "L'administrateur n'a pas travaillé le nombre d'heures minimum!");
-                        }
-
+                    }
+                    if (weekWorkHours < 36)
+                    {
+                        Console.WriteLine("Semaine : " + weekNumber + "L'administrateur n'a pas travaillé le nombre d'heures minimum!");
                     }
                 }
             }
@@ -95,10 +94,11 @@ namespace Projet_Agile
                                 }
                             }
                         }
-                        if (weekWorkHours < 38)
-                        {
-                            Console.WriteLine("Semaine : " + weekNumber + "L'employé n'a pas travaillé le nombre d'heures minimum!");
-                        }
+                        
+                    }
+                    if (weekWorkHours < 38)
+                    {
+                        Console.WriteLine("Semaine : " + weekNumber + "L'employé n'a pas travaillé le nombre d'heures minimum!");
                     }
                 }
             }
@@ -141,15 +141,17 @@ namespace Projet_Agile
                                     }
                                 }
                             }
-                            if (weekWorkHours > 43)
-                            {
-                                Console.WriteLine("Semaine : " + weekNumber + "L'employé a dépassé les heures de bureau permises!");
-                            }
+                           
                         }
                         catch (Exception)
                         {
                             throw;
                         }
+                        
+                    }
+                    if (weekWorkHours > 43)
+                    {
+                        Console.WriteLine("Semaine : " + weekNumber + "L'employé a dépassé les heures de bureau permises!");
                     }
                 }
             }
@@ -194,12 +196,10 @@ namespace Projet_Agile
                             }
                         }
                     }
-                    if (workFromHomeTime > 600)
-                    {
-                        Console.WriteLine("L'administrateur a depassé les heures maximales permises de télétravail dans la semaine: " + weekNumber + "!");
-                    }
-
-
+                }
+                if (workFromHomeTime > 600)
+                {
+                    Console.WriteLine("L'administrateur a depassé les heures maximales permises de télétravail dans la semaine: " + weekNumber + "!");
                 }
             }
         }
