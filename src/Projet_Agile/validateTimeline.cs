@@ -128,7 +128,7 @@ namespace Projet_Agile
                         DateTime sunday = monday.AddDays(6);
 
                         try
-                        {                          
+                        {
                             for (int i = 0; i < projectTimelinesList.Count; i++)
                             {
                                 if (projectTimelinesList[i].entry >= monday && projectTimelinesList[i].output <= sunday)
@@ -144,7 +144,7 @@ namespace Projet_Agile
                             if (weekWorkHours > 43)
                             {
                                 Console.WriteLine("Semaine : " + weekNumber + "L'employé a dépassé les heures de bureau permises!");
-                            }                           
+                            }
                         }
                         catch (Exception)
                         {
@@ -161,30 +161,70 @@ namespace Projet_Agile
         }
 
         //TODO
-        private void validateAdmin4HoursPerDay(int empNumber) 
+        private void validateAdmin4HoursPerDay(int empNumber)
         {
 
         }
 
-        public bool empExist(int empNumber) 
+        //Fonction validateAdminTelework10Hours, valide si l'administrateur a travaillé moins de 10 heures de télétravail par semaine 
+        public void validateAdminTelework10Hours(int empNumber)
         {
+            int workFromHomeTime = 0;
+            int year = 0;
+            int weekNumber = 0;
+
+            for (int i = 0; i < projectTimelinesList.Count; i++)
+            {
+
+                if (empNumber == projectTimelinesList[i].idUser)
+                {
+                    year = projectTimelinesList[i].entry.Year;
+                    weekNumber = weeknumber(projectTimelinesList[i].entry);
+
+                    DateTime monday = FirstDateOfWeek(year, weekNumber);
+                    DateTime sunday = monday.AddDays(6);
+
+                    for (int j = 0; j < projectTimelinesList.Count; j++)
+                    {
+                        if (projectTimelinesList[j].entry >= monday && projectTimelinesList[j].output <= sunday)
+                        {
+                            if (projectTimelinesList[j].codeProject == 900)
+                            {
+                                workFromHomeTime += projectTimelinesList[j].minute;
+                            }
+                        }
+                    }
+                    if (workFromHomeTime > 600)
+                    {
+                        Console.WriteLine("L'administrateur a depassé les heures maximales permises de télétravail dans la semaine: " + weekNumber + "!");
+                    }
+
+
+                }
+            }
+        }
+
+        //Fonction validateUser6HoursPerDay, valide si l'employé a travaillé moins de 6 heures par jour
+        public void validateUser6HoursPerDay(int empNumber)
+        {
+
             foreach (var item in projectTimelinesList)
             {
                 if (item.idUser == empNumber)
-                    return true;
+                {
+                    for (int i = 0; i < projectTimelinesList.Count; i++)
+                    {
+
+                        if (item.minute < 360)
+
+                            Console.WriteLine("L'employé n'a pas travaillé un minimum de 6h les jours de semaine!");
+                    }
+                }
             }
-
-            return false;
         }
 
-        private int weeknumber(DateTime dateTime) 
-        {
-            return CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(dateTime, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
-
-        }
         public void getUserInfo(int empNumber)
         {
-
             if (empNumber < 1000 && empNumber > 0)
             {
                 validateAdmin36Hours(empNumber);
@@ -203,6 +243,24 @@ namespace Projet_Agile
                 Console.WriteLine("numero de user invalide");
             }
         }
+
+        public bool empExist(int empNumber)
+        {
+            foreach (var item in projectTimelinesList)
+            {
+                if (item.idUser == empNumber)
+                    return true;
+            }
+
+            return false;
+        }
+
+        private int weeknumber(DateTime dateTime)
+        {
+            return CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(dateTime, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+
+        }
+
         private DateTime FirstDateOfWeek(int year, int weekOfYear)
         {
             DateTime jan1 = new DateTime(year, 1, 1);
@@ -223,65 +281,7 @@ namespace Projet_Agile
             return result.AddDays(-3);
         }
 
-        //Fonction validateAdminTelework10Hours, valide si l'administrateur a travaillé moins de 10 heures de télétravail par semaine 
-        public void validateAdminTelework10Hours(int empNumber)
-        {
-            int workFromHomeTime = 0;
-            int year = 0;
-            int weekNumber = 0;
-            
-            for (int i = 0; i < projectTimelinesList.Count; i++)
-                {
-                
-                if (empNumber == projectTimelinesList[i].idUser)
-                    {
-                        year = projectTimelinesList[i].entry.Year;
-                        weekNumber = weeknumber(projectTimelinesList[i].entry);
-
-                        DateTime monday = FirstDateOfWeek(year, weekNumber);
-                        DateTime sunday = monday.AddDays(6);
-
-                        for (int j = 0; j < projectTimelinesList.Count; j++)
-                            {
-                                if (projectTimelinesList[j].entry >= monday && projectTimelinesList[j].output <= sunday)
-                                {
-                                    if (projectTimelinesList[j].codeProject == 900)
-                                    {
-                                        workFromHomeTime += projectTimelinesList[j].minute;
-                                    }
-                                }
-                            }
-                            if (workFromHomeTime > 600)
-                            {
-                                Console.WriteLine("L'administrateur a depassé les heures maximales permises de télétravail dans la semaine: " + weekNumber + "!" );
-                            }
-                        
-                        
-                    }
-                }
-            }
-
-
-        //Fonction validateUser6HoursPerDay, valide si l'employé a travaillé moins de 6 heures par jour
-        public void validateUser6HoursPerDay(int empNumber)
-        {
-           
-            foreach (var item in projectTimelinesList)
-            {
-                if (item.idUser == empNumber)
-                {
-                    for (int i = 0; i < projectTimelinesList.Count; i++)
-                    {
-                        
-                        if (item.minute < 360)
-                            
-                            Console.WriteLine("L'employé n'a pas travaillé un minimum de 6h les jours de semaine!");
-                    }
-                }
-            }
-        }
-
-        public int[] listIdUser() 
+        public int[] listIdUser()
         {
             int[] userList = new int[projectTimelinesList.Count()];
 
@@ -292,6 +292,6 @@ namespace Projet_Agile
 
             return userList.Distinct().ToArray();
         }
-        
+
     }
 }
