@@ -164,7 +164,7 @@ namespace Projet_Agile
         {
             foreach (var item in projectTimelinesList)
             {
-                if (item.idUser == empNumber && empNumber < 1000) 
+                if (item.idUser == empNumber) 
                 {
                     for (int i = 0; i < 5; i++)
                     {
