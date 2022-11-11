@@ -63,12 +63,9 @@ namespace Projet_Agile
 
             } while (!empExist);
 
-            
-            
-
 
             Console.WriteLine("******** TESTS UNITAIRES ********\n\n");
-
+            /*
             Console.WriteLine("\n************************************* Classe Employe *****************************************\n");
 
             //Classe Employe
@@ -105,14 +102,19 @@ namespace Projet_Agile
             Console.WriteLine("Is this telework? = " + project.telework + " codeProject = " + project.codeProject);
             Console.WriteLine("Is this telework? = " + projectTelework.telework + " codeProject = " + projectTelework.codeProject);
 
-            Console.WriteLine("\n************************************* Classe ProjectTimeline *********************************\n");
-            
-            //Classe ProjectTimeline
+            Console.WriteLine("**************************** Lecture dernier object du fichier json *******************************\n");
             
             Console.WriteLine(projectTimelinesList[projectTimelinesList.Count() - 1]);
+            */
+            Console.WriteLine("\n************************************* Classe ProjectTimeline *********************************\n");
+
+            //Classe ProjectTimeline
+
+            validateTimeline.getUserInfo(empNumber);
+            
 
             Console.WriteLine("******************************************************************************\n");
-            //GenerateSerializations(1000);
+
 
             Console.ReadKey();
         }
