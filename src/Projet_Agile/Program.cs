@@ -40,10 +40,14 @@ namespace Projet_Agile
             
             Console.WriteLine(GetTimesheetsList());
             Console.WriteLine("******** TESTS UNITAIRES ********\n\n");
-            Console.WriteLine("======== Validate 6 Hours per Day ========\n");
+            Console.WriteLine("======== Validate Employe Normal 6 Hours at office per Day ========\n");
             
-            timesheets.validate6HoursPerDay();      
+            timesheets.validateNormalEmp6HoursPerDay();
 
+            Console.WriteLine("======== Validate Admin 4 Hours at office per Day ========\n");
+
+            timesheets.validateAdmin4HoursPerDay();
+                
             Console.WriteLine("\n======== Validate 43 Hours Max Per week ========\n");
           
             timesheets.validate43HoursMaxOffice();
@@ -55,6 +59,11 @@ namespace Projet_Agile
             Console.WriteLine("\n======== Validate Employe Normal 38 Hours Min Per week ========\n");
 
             timesheets.validateNormalEmp38Hours();
+
+            Console.WriteLine("\n======== Validate Admin 10 Hours Max Telework Per Week ========\n");
+
+            timesheets.validateAdmin10HoursTeleWork();
+
 
             Console.ReadKey();
 
