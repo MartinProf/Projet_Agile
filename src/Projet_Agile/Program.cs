@@ -15,6 +15,7 @@ namespace Projet_Agile
         public static string jsonTimelineString;
         public static string extensionFile;
         internal static List<ProjectTimeline> projectTimelinesList = new List<ProjectTimeline>();
+        internal static Timesheet timesheets;
         static void Main(string[] args)
         {
 
@@ -37,7 +38,10 @@ namespace Projet_Agile
 
             } while (!extConforme);
 
-            validateTimeline validateTimeline = new validateTimeline();
+            Console.WriteLine(GetTimesheetsList());
+            Console.ReadKey();
+
+            /*validateTimeline validateTimeline = new validateTimeline();
             int empNumber;
             bool empExist = false;
 
@@ -62,7 +66,7 @@ namespace Projet_Agile
                     Console.WriteLine("\nLe numéro " + empNumber + " n'existe pas dans votre feuille de temps.\n");
 
             } while (!empExist);
-
+            */
 
             Console.WriteLine("******** TESTS UNITAIRES ********\n\n");
             /*
@@ -110,41 +114,45 @@ namespace Projet_Agile
 
             //Classe ProjectTimeline
 
-            validateTimeline.getUserInfo(empNumber);
+           // validateTimeline.getUserInfo(empNumber);
             
 
             Console.WriteLine("******************************************************************************\n");
 
 
-            Console.ReadKey();
+          //  Console.ReadKey();
         }
-        
-        public static void Serializer(int idTimeline, int idProject, int codeProject, int idUser, DateTime entry, DateTime output)
+        /* 
+         public static void Serializer(int idTimeline, int idProject, int codeProject, int idUser, DateTime entry, DateTime output)
+         {
+
+             TimeSpan timeSpan = output.Subtract(entry);
+             int minutesEcoule = (int)timeSpan.TotalMinutes;
+
+             var projectTimeline = new ProjectTimeline
+             {
+                 idTimeline = idTimeline,
+                 idProject = idProject,
+                 codeProject = codeProject,
+                 idUser = idUser,
+                 entry = entry,
+                 output = output,
+                 minute = minutesEcoule,
+                 weekNumber = CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(entry, CalendarWeekRule.FirstDay, DayOfWeek.Monday)
+         };
+
+             projectTimelinesList.Add(projectTimeline);
+
+             jsonTimelineString = JsonConvert.SerializeObject(projectTimelinesList);
+
+             File.WriteAllText(extensionFile, jsonTimelineString);
+
+         }
+        */
+        internal static string GetTimesheetsList()
         {
-
-            TimeSpan timeSpan = output.Subtract(entry);
-            int minutesEcoule = (int)timeSpan.TotalMinutes;
-
-            var projectTimeline = new ProjectTimeline
-            {
-                idTimeline = idTimeline,
-                idProject = idProject,
-                codeProject = codeProject,
-                idUser = idUser,
-                entry = entry,
-                output = output,
-                minute = minutesEcoule,
-                weekNumber = CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(entry, CalendarWeekRule.FirstDay, DayOfWeek.Monday)
-        };
-
-            projectTimelinesList.Add(projectTimeline);
-
-            jsonTimelineString = JsonConvert.SerializeObject(projectTimelinesList);
-
-            File.WriteAllText(extensionFile, jsonTimelineString);
-
+            return timesheets.ToString();
         }
-
         public static void Deserializer(string timeSheet)
         {
             string content;
@@ -152,15 +160,15 @@ namespace Projet_Agile
             using (StreamReader file = File.OpenText(timeSheet))
             {
                 content = file.ReadToEnd();
-                projectTimelinesList = JsonConvert.DeserializeObject<List<ProjectTimeline>>(content);
+                timesheets = JsonConvert.DeserializeObject<Timesheet>(content);
             }
         }
 
-        internal static IEnumerable<ProjectTimeline> GetProjectTimelineList()
+        /*internal static IEnumerable<ProjectTimeline> GetProjectTimelineList()
         {
             return projectTimelinesList;
         }
-
+        */
         /* GENERATEUR DE CARTE DE TEMPS
         private static void GenerateSerializations(int occurence)
         {
