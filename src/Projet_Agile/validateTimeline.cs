@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 using static Projet_Agile.Program;
 
 
-namespace Projet_Agile
-{
-    class validateTimeline
+//namespace Projet_Agile
+//{
+   /* class validateTimeline
     {
         List<ProjectTimeline> projectTimelinesList = (List<ProjectTimeline>)Program.GetProjectTimelineList();
 
@@ -23,14 +23,13 @@ namespace Projet_Agile
 
         public void validateAdmin36Hours(int empNumber)
         {
+            double weekWorkHours = 0;
+            int year = 0;
+            int weekNumber = 0;
             try
             {
                 for (int j = 0; j < projectTimelinesList.Count; j++)
                 {
-                    double weekWorkHours = 0;
-                    int year = 0;
-                    int weekNumber = 0;
-
                     if (empNumber == projectTimelinesList[j].idUser)
                     {
                         year = projectTimelinesList[j].entry.Year;
@@ -51,16 +50,16 @@ namespace Projet_Agile
                             }
                         }
                     }
-                    if (weekWorkHours < 36)
-                    {
-                        Console.WriteLine("Semaine : " + weekNumber + "L'administrateur n'a pas travaillé le nombre d'heures minimum!");
-                    }
                 }
             }
             catch (Exception)
             {
-
                 throw;
+            }
+
+            if (weekWorkHours < 36)
+            {
+                Console.WriteLine("Semaine : " + weekNumber + " L'administrateur n'a pas travaillé le nombre d'heures minimum!");
             }
         }
 
@@ -294,4 +293,4 @@ namespace Projet_Agile
         }
 
     }
-}
+}*/
