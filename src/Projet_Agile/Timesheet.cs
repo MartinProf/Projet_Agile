@@ -71,6 +71,149 @@ namespace Projet_Agile
             }
             return returnString;
         }
+
+        public void validateAdmin36Hours()
+        {
+            try
+            {
+                int minutes = 0;
+
+                if(empNumber < 1000)
+                {
+                    foreach (var item in jour1)
+                    {
+                        if (item.codeProject <= 900)
+                        {
+                            minutes += item.minute;
+                        }
+                    }
+                    foreach (var item in jour2)
+                    {
+                        if (item.codeProject <= 900)
+                        {
+                            minutes += item.minute;
+                        }
+                    }
+                    foreach (var item in jour3)
+                    {
+                        if (item.codeProject <= 900)
+                        {
+                            minutes += item.minute;
+                        }
+                    }
+                    foreach (var item in jour4)
+                    {
+                        if (item.codeProject <= 900)
+                        {
+                            minutes += item.minute;
+                        }
+                    }
+                    foreach (var item in jour5)
+                    {
+                        if (item.codeProject <= 900)
+                        {
+                            minutes += item.minute;
+                        }
+                    }
+                    foreach (var item in weekend1)
+                    {
+                        if (item.codeProject <= 900)
+                        {
+                            minutes += item.minute;
+                        }
+                    }
+                    foreach (var item in weekend2)
+                    {
+                        if (item.codeProject <= 900)
+                        {
+                            minutes += item.minute;
+                        }
+                    }
+
+                    if(minutes < (36 * 60))
+                    {
+                        Console.WriteLine("L'employé : #" + empNumber + " n'a pas travaillé le minimum d'heures requises au bureau. Il en a travaillé " + minutes / 60 + " sur 36.");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public void validateNormalEmp38Hours()
+        {
+            try
+            {
+                int minutes = 0;
+
+                if (empNumber >= 1000)
+                {
+                    foreach (var item in jour1)
+                    {
+                        if (item.codeProject <= 900)
+                        {
+                            minutes += item.minute;
+                        }
+                    }
+                    foreach (var item in jour2)
+                    {
+                        if (item.codeProject <= 900)
+                        {
+                            minutes += item.minute;
+                        }
+                    }
+                    foreach (var item in jour3)
+                    {
+                        if (item.codeProject <= 900)
+                        {
+                            minutes += item.minute;
+                        }
+                    }
+                    foreach (var item in jour4)
+                    {
+                        if (item.codeProject <= 900)
+                        {
+                            minutes += item.minute;
+                        }
+                    }
+                    foreach (var item in jour5)
+                    {
+                        if (item.codeProject <= 900)
+                        {
+                            minutes += item.minute;
+                        }
+                    }
+                    foreach (var item in weekend1)
+                    {
+                        if (item.codeProject <= 900)
+                        {
+                            minutes += item.minute;
+                        }
+                    }
+                    foreach (var item in weekend2)
+                    {
+                        if (item.codeProject <= 900)
+                        {
+                            minutes += item.minute;
+                        }
+                    }
+
+                    if (minutes < (38 * 60))
+                    {
+                        Console.WriteLine("L'employé normal : #" + empNumber + " n'a pas travaillé le minimum d'heures requises au bureau. Il en a travaillé " + minutes / 60 + " sur 38.");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         /*Cette fonction valide si l'employé regulier a fait ou non un minimum de 6 heures de travail par jour (Lundi - Vendredi)
         soit télétravail ou au bureau */
         public void validate6HoursPerDay()
