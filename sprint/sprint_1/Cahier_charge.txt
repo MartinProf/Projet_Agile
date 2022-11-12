@@ -1,0 +1,38 @@
+Objectifs du programme: Faire la validation des cartes de temps
+
+Public cible: Le public cible sera un administrateur qui souhaite valide une carte de temps
+
+Rôle :
+1. Project Owner : Martin Vézina (MartinProf)
+2. Scrum Master : Martin Forget (UltimateBooBoo)
+3. Équipe Scrum :
+	- Guillaume Tremblay (Gui-Trem)
+	- Sebastian Toledo (Sebastiant1012)
+	- Anthony Ménard-Boucher (MercyForKohai)
+
+Rencontres (Daily Scrum et rencontres extraordinaires) :
+1. Quotidienne d'une durée maxiumum de 30 min. (heures à confirmer).
+2. Rencontre extraordinaire lors de la remise de nouveaux énoncés (sprint) (dates et heures à confirmer)
+3. Temps alloué pour constater l'avancement et les éventuelles défis.
+
+
+Logiciels
+1. Gestion de projet : JIRA
+2. Conception de graphique (UML) : Visual Paradigm
+3. Programmation : Visual Studio - VIM - Sublime
+4. Programme de gestion de version : Git
+5. MS SQL Server
+
+
+Langages et technologies
+1. C# (possibilité d'implémenter la structure de l'application avec Entity, WPF, .NET ou ASP).
+2. GitHub (nom de dépôt : https://github.com/MartinProf/Projet_Agile.git).
+3. SQL
+
+
+Conception Technique
+Une console sera produite afin d'assiter l'utilisateur en lui demandant un carte de temps à valider
+Le programme acceptera une carte d'entrée sous format json (Voir annexe_1)
+Le programme sortira une fichier de validation avec les messages d'erreur de la carte de temps sous forme json (Voir annexe_2)
+
+
