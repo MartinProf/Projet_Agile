@@ -1,25 +1,24 @@
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
-using Newtonsoft.Json;
 
 namespace Projet_Agile
 {
-    class ProjectTimeline
+    public class WorkPeriod
     {
-       /* public ProjectTimeline() { }
-
-
-        public int codeProject 
-        { 
+        public WorkPeriod() { }
+        [JsonProperty("projet")]
+        public int codeProject
+        {
             get; set;
         }
-        public int minute 
-        { 
-            get; set; 
+        [JsonProperty("minutes")]
+        public int minute
+        {
+            get; set;
         }
 
         public override string ToString()
@@ -28,6 +27,5 @@ namespace Projet_Agile
                     $"codeProject : {codeProject}\n" +
                     $"minute : {minute}\n";
         }
-       */
     }
 }
