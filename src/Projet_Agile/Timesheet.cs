@@ -218,13 +218,12 @@ namespace Projet_Agile
         soit télétravail ou au bureau */
         public void validate6HoursPerDay()
         {   
-            if (empNumber > 1000)
+            if (empNumber >= 1000)
             {
                 int minutesPerDayMonday = 0;
                 foreach (WorkPeriod workPeriod in jour1)
                 {
                     
-
                         minutesPerDayMonday += workPeriod.minute;
                     
                 }
@@ -236,7 +235,6 @@ namespace Projet_Agile
                 foreach (WorkPeriod workPeriod in jour2)
                 {
                    
-
                         minutesPerDayTuesday += workPeriod.minute;
                     
                 }
@@ -249,7 +247,6 @@ namespace Projet_Agile
                 foreach (WorkPeriod workPeriod in jour3)
                 {
                     
-
                         minutesPerDayWednesday += workPeriod.minute;
                     
                 }
@@ -262,7 +259,6 @@ namespace Projet_Agile
                 foreach (WorkPeriod workPeriod in jour4)
                 {
                     
-
                         minutesPerDayThursday += workPeriod.minute;
                     
                 }
@@ -275,7 +271,6 @@ namespace Projet_Agile
                 foreach (WorkPeriod workPeriod in jour5)
                 {
                     
-
                         minutesPerDayFriday += workPeriod.minute;
                     
                 }
@@ -322,39 +317,37 @@ namespace Projet_Agile
         {
             int weeklytotal = 0;
 
-            if (empNumber > 1000)
+           
+            foreach (WorkPeriod workPeriod in jour1)
             {
-               
-                foreach (WorkPeriod workPeriod in jour1)
-                {
-                    if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minute;
-                }
-                foreach (WorkPeriod workPeriod in jour2)
-                {
-                    if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minute;
-                }
-                foreach (WorkPeriod workPeriod in jour3)
-                {
-                    if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minute;
-                }
-                foreach (WorkPeriod workPeriod in jour4)
-                {
-                    if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minute;
-                }
-                foreach (WorkPeriod workPeriod in jour5)
-                {
-                    if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minute;
-                }
-                foreach (WorkPeriod workPeriod in weekend1)
-                {
-                    if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minute;
-                }
-                foreach (WorkPeriod workPeriod in weekend2)
-                {
-                    if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minute;
-                }
-
+                if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minute;
             }
+            foreach (WorkPeriod workPeriod in jour2)
+            {
+                if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minute;
+            }
+            foreach (WorkPeriod workPeriod in jour3)
+            {
+                if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minute;
+            }
+            foreach (WorkPeriod workPeriod in jour4)
+            {
+                if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minute;
+            }
+            foreach (WorkPeriod workPeriod in jour5)
+            {
+                if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minute;
+            }
+            foreach (WorkPeriod workPeriod in weekend1)
+            {
+                if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minute;
+            }
+            foreach (WorkPeriod workPeriod in weekend2)
+            {
+                if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minute;
+            }
+
+            
             if (weeklytotal > 2580)
             {
                 Console.WriteLine("L'employé a depassé le temps de travaul permis au bureau (43heures / 2580 minutes)!   temps travaillé ce jour-ci: " + weeklytotal + " Minutes.");
