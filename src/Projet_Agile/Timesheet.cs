@@ -71,6 +71,152 @@ namespace Projet_Agile
             }
             return returnString;
         }
+        /*Cette fonction valide si l'employé regulier a fait ou non un minimum de 6 heures de travail par jour (Lundi - Vendredi)
+        soit télétravail ou au bureau */
+        public void validate6HoursPerDay()
+        {   
+            if (empNumber > 1000)
+            {
+                int minutesPerDayMonday = 0;
+                foreach (WorkPeriod workPeriod in jour1)
+                {
+                    
 
+                        minutesPerDayMonday += workPeriod.minute;
+                    
+                }
+                if (minutesPerDayMonday < 360)
+                {
+                    Console.WriteLine("L'employé n'a pas travailé le minimum de temps requis (360 minutes) lundi!   temps travaillé ce jour-ci: " + minutesPerDayMonday + " Minutes.");
+                }
+                int minutesPerDayTuesday = 0;
+                foreach (WorkPeriod workPeriod in jour2)
+                {
+                   
+
+                        minutesPerDayTuesday += workPeriod.minute;
+                    
+                }
+                if (minutesPerDayTuesday < 360)
+                {
+                    Console.WriteLine("L'employé n'a pas travailé le minimum de temps requis (360 minutes) le mardi!   temps travaillé ce jour-ci: " + minutesPerDayTuesday + " Minutes.");
+                }
+
+                int minutesPerDayWednesday = 0;
+                foreach (WorkPeriod workPeriod in jour3)
+                {
+                    
+
+                        minutesPerDayWednesday += workPeriod.minute;
+                    
+                }
+                if (minutesPerDayTuesday < 360)
+                {
+                    Console.WriteLine("L'employé n'a pas travailé le minimum de temps requis (360 minutes) le mercredi!   temps travaillé ce jour-ci: " + minutesPerDayWednesday + " Minutes.");
+                }
+                
+                int minutesPerDayThursday = 0;
+                foreach (WorkPeriod workPeriod in jour4)
+                {
+                    
+
+                        minutesPerDayThursday += workPeriod.minute;
+                    
+                }
+                if (minutesPerDayThursday < 360)
+                {
+                    Console.WriteLine("L'employé n'a pas travailé le minimum de temps requis (360 minutes) le jeudi!   temps travaillé ce jour-ci: " + minutesPerDayThursday + " Minutes.");
+                }
+
+                int minutesPerDayFriday = 0;
+                foreach (WorkPeriod workPeriod in jour5)
+                {
+                    
+
+                        minutesPerDayFriday += workPeriod.minute;
+                    
+                }
+                if (minutesPerDayFriday < 360)
+                {
+                    Console.WriteLine("L'employé n'a pas travailé le minimum de temps requis (360 minutes) le Vendredi!   temps travaillé ce jour-ci: " + minutesPerDayFriday + " Minutes.");
+                }
+                /*  J'ai commenté cette parti car les employé ne sont pas obligés de travailler pendant la fin de semaine lol
+                 *  je laisse le code quand même pour l'instant, just in case we need it idk
+                 *  
+                int minutesPerDaySaturday = 0;
+                foreach (WorkPeriod workPeriod in weekend1)
+                {
+                    
+
+                        minutesPerDaySaturday += workPeriod.minute;
+                    
+                }
+                if (minutesPerDaySaturday < 360)
+                {
+                    Console.WriteLine("L'employé n'a pas travailé le minimum d'heures le Samedi!   temps travaillé: " + minutesPerDaySaturday + " Minutes.");
+                }
+
+                int minutesPerDaySunday = 0;
+                foreach (WorkPeriod workPeriod in weekend2)
+                {
+                    
+
+                       minutesPerDaySunday += workPeriod.minute;
+                    
+                }
+                if (minutesPerDaySunday < 360)
+                {
+                    Console.WriteLine("L'employé n'a pas travailé le minimum de temps requis le dimanche!   temps travaillé: " + minutesPerDaySunday + " Minutes.");
+                }
+                */
+
+            }
+            
+        }
+
+        /*Cette fonction valide si l'employé a depassé les heures permises par semaine de travail au bureau (43h / 2580 minutes)*/
+        public void validate43HoursMaxOffice()
+        {
+            int weeklytotal = 0;
+
+            if (empNumber > 1000)
+            {
+               
+                foreach (WorkPeriod workPeriod in jour1)
+                {
+                    if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minute;
+                }
+                foreach (WorkPeriod workPeriod in jour2)
+                {
+                    if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minute;
+                }
+                foreach (WorkPeriod workPeriod in jour3)
+                {
+                    if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minute;
+                }
+                foreach (WorkPeriod workPeriod in jour4)
+                {
+                    if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minute;
+                }
+                foreach (WorkPeriod workPeriod in jour5)
+                {
+                    if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minute;
+                }
+                foreach (WorkPeriod workPeriod in weekend1)
+                {
+                    if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minute;
+                }
+                foreach (WorkPeriod workPeriod in weekend2)
+                {
+                    if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minute;
+                }
+
+            }
+            if (weeklytotal > 2580)
+            {
+                Console.WriteLine("L'employé a depassé le temps de travaul permis au bureau (43heures / 2580 minutes)!   temps travaillé ce jour-ci: " + weeklytotal + " Minutes.");
+            }
+            
+        }
     }
 }
