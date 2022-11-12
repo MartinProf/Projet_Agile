@@ -6,3 +6,8 @@ Journal de bord sprint 1 Martin Forget
 	-9 nov *Modifications méthodes de validation (2hrs)*
 	-10 nov *Création Méthode GenerateSerializations() (30 min)*
 	-10 nov *Journaux de bord perso et équipe (45min)*
+	-11nov *Réévaluation de tout le projet en équipe (1hr)*
+	-11nov *Travail sur la sérialization avec Guillaume et Sebastian (1hr)*
+	-12nov *Essaie personnel sur la sérialization (1h30)*
+	-12nov *Création des nouvelles méthodes 36hours, 38hours, 4hours et 10hours + correctifs (4hrs)
+	-12nov *Journaux de bord perso et équipe (30min)*
