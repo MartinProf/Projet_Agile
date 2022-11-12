@@ -37,8 +37,21 @@ namespace Projet_Agile
                 }
 
             } while (!extConforme);
-
+            
             Console.WriteLine(GetTimesheetsList());
+            Console.WriteLine("******** TESTS UNITAIRES ********\n\n");
+            Console.WriteLine("======== Validate 6 Hours per Day ========\n");
+            
+            timesheets.validate6HoursPerDay();
+            
+
+            Console.WriteLine("\n");
+
+            Console.WriteLine("======== Validate 43 Hours Max Per week ========\n");
+
+          
+            timesheets.validate43HoursMaxOffice();
+
             Console.ReadKey();
 
             /*validateTimeline validateTimeline = new validateTimeline();
@@ -68,7 +81,7 @@ namespace Projet_Agile
             } while (!empExist);
             */
 
-            Console.WriteLine("******** TESTS UNITAIRES ********\n\n");
+          
             /*
             Console.WriteLine("\n************************************* Classe Employe *****************************************\n");
 
@@ -149,6 +162,8 @@ namespace Projet_Agile
 
          }
         */
+        
+        
         internal static string GetTimesheetsList()
         {
             return timesheets.ToString();
