@@ -132,7 +132,7 @@ namespace Projet_Agile
 
                     if(minutes < (36 * 60))
                     {
-                        Console.WriteLine("L'employé : #" + empNumber + " n'a pas travaillé le minimum d'heures requises au bureau. Il en a travaillé " + minutes / 60 + " sur 36.");
+                        Console.WriteLine("L'administrateur : #" + empNumber + " n'a pas travaillé le minimum d'heures requises au bureau. Il en a travaillé " + minutes / 60 + " sur 36 minimum.");
                     }
                 }
             }
@@ -203,7 +203,7 @@ namespace Projet_Agile
 
                     if (minutes < (38 * 60))
                     {
-                        Console.WriteLine("L'employé normal : #" + empNumber + " n'a pas travaillé le minimum d'heures requises au bureau. Il en a travaillé " + minutes / 60 + " sur 38.");
+                        Console.WriteLine("L'employé normal : #" + empNumber + " n'a pas travaillé le minimum d'heures requises au bureau. Il en a travaillé " + minutes / 60 + " sur 38 minimum.");
                     }
                 }
             }
@@ -353,6 +353,77 @@ namespace Projet_Agile
                 Console.WriteLine("L'employé a depassé le temps de travaul permis au bureau (43heures / 2580 minutes)!   temps travaillé ce jour-ci: " + weeklytotal + " Minutes.");
             }
             
+        }
+
+        public void validateAdmin10HoursTeleWork()
+        {
+            try
+            {
+                int minutes = 0;
+
+                if (empNumber < 1000)
+                {
+                    foreach (var item in jour1)
+                    {
+                        if (item.codeProject > 900)
+                        {
+                            minutes += item.minute;
+                        }
+                    }
+                    foreach (var item in jour2)
+                    {
+                        if (item.codeProject > 900)
+                        {
+                            minutes += item.minute;
+                        }
+                    }
+                    foreach (var item in jour3)
+                    {
+                        if (item.codeProject > 900)
+                        {
+                            minutes += item.minute;
+                        }
+                    }
+                    foreach (var item in jour4)
+                    {
+                        if (item.codeProject > 900)
+                        {
+                            minutes += item.minute;
+                        }
+                    }
+                    foreach (var item in jour5)
+                    {
+                        if (item.codeProject > 900)
+                        {
+                            minutes += item.minute;
+                        }
+                    }
+                    foreach (var item in weekend1)
+                    {
+                        if (item.codeProject > 900)
+                        {
+                            minutes += item.minute;
+                        }
+                    }
+                    foreach (var item in weekend2)
+                    {
+                        if (item.codeProject > 900)
+                        {
+                            minutes += item.minute;
+                        }
+                    }
+
+                    if (minutes > (10 * 60))
+                    {
+                        Console.WriteLine("L'administrateur : #" + empNumber + " a dépassé le nombre d'heures permises en télétravail. Il en a travaillé " + minutes / 60 + " sur une possibilité de 10 maximum.");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
