@@ -220,8 +220,11 @@ namespace Projet_Agile
         public void validateNormalEmp6HoursPerDay()
         {   
             if (empNumber >= 1000)
-
-                    if(workPeriod.codeProject <= 900)
+            {
+                int minutesPerDayMonday = 0;
+                foreach (WorkPeriod workPeriod in jour2)
+                {
+                    if (workPeriod.codeProject <= 900)
                     {
                         minutesPerDayMonday += workPeriod.minute;
 
