@@ -40,6 +40,7 @@ namespace Projet_Agile
             
             Console.WriteLine(GetTimesheetsList());
             Console.WriteLine("******** TESTS UNITAIRES ********\n\n");
+
             Console.WriteLine("======== Validate Employe Normal 6 Hours at office per Day ========\n");
             
             timesheets.validateNormalEmp6HoursPerDay();

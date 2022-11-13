@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -71,6 +71,7 @@ namespace Projet_Agile
             }
             return returnString;
         }
+
 
         public void validateAdmin36Hours()
         {
@@ -219,10 +220,7 @@ namespace Projet_Agile
         public void validateNormalEmp6HoursPerDay()
         {   
             if (empNumber >= 1000)
-            {
-                int minutesPerDayMonday = 0;
-                foreach (WorkPeriod workPeriod in jour1)
-                {
+
                     if(workPeriod.codeProject <= 900)
                     {
                         minutesPerDayMonday += workPeriod.minute;
@@ -248,11 +246,13 @@ namespace Projet_Agile
                 if (minutesPerDayTuesday < 360)
                 {
                     Console.WriteLine("L'employé normal : #" + empNumber + " n'a pas travaillé le minimum de temps requis (360 minutes) le mardi!   temps travaillé ce jour-ci: " + minutesPerDayTuesday + " Minutes.");
+
                 }
 
                 int minutesPerDayWednesday = 0;
                 foreach (WorkPeriod workPeriod in jour3)
                 {
+
 
                     if (workPeriod.codeProject <= 900)
                     {
@@ -263,11 +263,13 @@ namespace Projet_Agile
                 if (minutesPerDayWednesday < 360)
                 {
                     Console.WriteLine("L'employé normal : #" + empNumber + " n'a pas travaillé le minimum de temps requis (360 minutes) le mercredi!   temps travaillé ce jour-ci: " + minutesPerDayWednesday + " Minutes.");
+
                 }
                 
                 int minutesPerDayThursday = 0;
                 foreach (WorkPeriod workPeriod in jour4)
                 {
+
 
                     if (workPeriod.codeProject <= 900)
                     {
@@ -278,11 +280,13 @@ namespace Projet_Agile
                 if (minutesPerDayThursday < 360)
                 {
                     Console.WriteLine("L'employé normal : #" + empNumber + " n'a pas travaillé le minimum de temps requis (360 minutes) le jeudi!   temps travaillé ce jour-ci: " + minutesPerDayThursday + " Minutes.");
+
                 }
 
                 int minutesPerDayFriday = 0;
                 foreach (WorkPeriod workPeriod in jour5)
                 {
+
 
                     if (workPeriod.codeProject <= 900)
                     {
@@ -423,6 +427,7 @@ namespace Projet_Agile
             
         }
 
+
         public void validateAdmin10HoursTeleWork()
         {
             try
@@ -493,5 +498,6 @@ namespace Projet_Agile
                 throw;
             }
         }
+
     }
 }
