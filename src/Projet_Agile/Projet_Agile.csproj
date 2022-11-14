@@ -46,16 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administrator.cs" />
-    <Compile Include="CarteDeTemps.cs" />
-    <Compile Include="Employe.cs" />
-    <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Result.cs" />
-    <Compile Include="Timesheet.cs" />
-    <Compile Include="validateTimeline.cs" />
+    <Compile Include="TimeSheet.cs" />
+    <Compile Include="Validate.cs" />
     <Compile Include="WorkPeriod.cs" />
   </ItemGroup>
   <ItemGroup>
