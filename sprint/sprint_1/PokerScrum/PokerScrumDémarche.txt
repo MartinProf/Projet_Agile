@@ -8,4 +8,4 @@ Si cela était impossible, chose qui ne s’est pas produite, nous aurions consu
 
 Une fois, tous les points réglés, et tout le travail accompli, nous sommes passés à un dernier vote. La façon de procéder a été la même qu’au préalable à l’exception d’une  condition supplémentaire qui visait à obtenir un 100 de tous les membres. Ce vote consistait à établir si, oui ou non, le sprint 1 était terminé et convenait aux attentes de chacun. 
 
-Quand un 100 fût attribué par tous (All in!), les dernières tâches ont été fermées et le projet a pu être considéré comme achevé.
+Quand un 100 fût attribué par tous (All in!), les dernières tâches ont été fermées et le projet a pu être considéré comme achevé. (La capture d'écran est représentative de cet étape.).
