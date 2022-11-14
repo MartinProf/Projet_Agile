@@ -48,7 +48,6 @@
   <ItemGroup>
 
     <Compile Include="Program.cs" />
-    <Compile Include="Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Result.cs" />
     <Compile Include="TimeSheet.cs" />
