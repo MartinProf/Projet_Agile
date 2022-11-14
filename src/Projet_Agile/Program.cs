@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -15,7 +16,7 @@ namespace Projet_Agile
         public static string jsonTimelineString;
         public static string extensionFile;
         internal static List<ProjectTimeline> projectTimelinesList = new List<ProjectTimeline>();
-        internal static Timesheet timesheets;
+        internal static Timesheet timesheets = new Timesheet();
         static void Main(string[] args)
         {
 
@@ -188,8 +189,80 @@ namespace Projet_Agile
 
             using (StreamReader file = File.OpenText(timeSheet))
             {
+                CarteDeTemps carteDeTemps= new CarteDeTemps();
+                List<WorkPeriod> workPeriods= new List<WorkPeriod>();
                 content = file.ReadToEnd();
-                timesheets = JsonConvert.DeserializeObject<Timesheet>(content);
+                JObject data = (JObject)JsonConvert.DeserializeObject(content);
+                timesheets.empNumber = (int)data.Property("numero employe").Value;
+                foreach (var work in data.Property("jour1").Value)
+                {
+                    WorkPeriod tempWorkPeriod= new WorkPeriod();
+                    tempWorkPeriod.codeProject = (int)work["projet"];
+                    tempWorkPeriod.minute = (int)work["minutes"];
+                    workPeriods.Add(tempWorkPeriod);                   
+                }
+                carteDeTemps.oneWeek.Add(workPeriods);
+                workPeriods = new List<WorkPeriod>();
+                foreach (var work in data.Property("jour2").Value)
+                {         
+                    WorkPeriod tempWorkPeriod = new WorkPeriod();
+                    tempWorkPeriod.codeProject = (int)work["projet"];
+                    tempWorkPeriod.minute = (int)work["minutes"];
+                    workPeriods.Add(tempWorkPeriod);
+                }
+                carteDeTemps.oneWeek.Add(workPeriods);
+                workPeriods = new List<WorkPeriod>();
+                foreach (var work in data.Property("jour3").Value)
+                {
+                    
+                    WorkPeriod tempWorkPeriod = new WorkPeriod();
+                    tempWorkPeriod.codeProject = (int)work["projet"];
+                    tempWorkPeriod.minute = (int)work["minutes"];
+                    workPeriods.Add(tempWorkPeriod);
+                }
+                carteDeTemps.oneWeek.Add(workPeriods);
+                workPeriods = new List<WorkPeriod>();
+                foreach (var work in data.Property("jour4").Value)
+                {
+                    
+                    WorkPeriod tempWorkPeriod = new WorkPeriod();
+                    tempWorkPeriod.codeProject = (int)work["projet"];
+                    tempWorkPeriod.minute = (int)work["minutes"];
+                    workPeriods.Add(tempWorkPeriod);
+                }
+                carteDeTemps.oneWeek.Add(workPeriods);
+                workPeriods = new List<WorkPeriod>();
+                foreach (var work in data.Property("jour5").Value)
+                {
+                    
+                    WorkPeriod tempWorkPeriod = new WorkPeriod();
+                    tempWorkPeriod.codeProject = (int)work["projet"];
+                    tempWorkPeriod.minute = (int)work["minutes"];
+                    workPeriods.Add(tempWorkPeriod);
+                }
+                carteDeTemps.oneWeek.Add(workPeriods);
+                workPeriods = new List<WorkPeriod>();
+                foreach (var work in data.Property("weekendl").Value)
+                {
+                    
+                    WorkPeriod tempWorkPeriod = new WorkPeriod();
+                    tempWorkPeriod.codeProject = (int)work["projet"];
+                    tempWorkPeriod.minute = (int)work["minutes"];
+                    workPeriods.Add(tempWorkPeriod);
+                }
+                carteDeTemps.oneWeek.Add(workPeriods);
+                workPeriods = new List<WorkPeriod>();
+                foreach (var work in data.Property("weekend2").Value)
+                {
+                    
+                    WorkPeriod tempWorkPeriod = new WorkPeriod();
+                    tempWorkPeriod.codeProject = (int)work["projet"];
+                    tempWorkPeriod.minute = (int)work["minutes"];
+                    workPeriods.Add(tempWorkPeriod);
+                }         
+                carteDeTemps.oneWeek.Add(workPeriods);
+                timesheets.carteDeTemps = carteDeTemps;
+                //timesheets = JsonConvert.DeserializeObject<Timesheet>(content);
             }
         }
 
