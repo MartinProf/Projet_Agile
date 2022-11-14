@@ -1,5 +1,6 @@
 
 	-31oct au 7nov *Création de class project (15min) et Différente tentative de différentiation entre admin et employé(3h)*
-	-9 nov *Création Méthode getInfoUser(1h)*
+	-9 nov  *Création Méthode getInfoUser(1h)*
 	-10 nov *ajustement de getInfoUser et des validations (2hrs)
 	-11 nov *creation de nouvelle classes pour deserialisation de .json (6hrs)*
+	-13 nov *Ajout de class CarteDeTemps + modification de la deserialization et ajustement des validations pour fonctionner avec le nouveau system (4h)*
