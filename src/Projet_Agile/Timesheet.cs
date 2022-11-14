@@ -40,9 +40,7 @@ namespace Projet_Agile
                             {
                                 minutes += item.minute;
                             }
-                        }
-
-                        
+                        }                       
                     }
                     if (minutes < (36 * 60))
                     {
@@ -52,7 +50,6 @@ namespace Projet_Agile
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -73,8 +70,7 @@ namespace Projet_Agile
                             {
                                 minutes += item.minute;
                             }
-                        }
-                       
+                        }                       
                     }
                     if (minutes < (38 * 60))
                     {
@@ -97,8 +93,7 @@ namespace Projet_Agile
             {
                 int minutesPerDay = 0;
                 foreach (List<WorkPeriod> jour in carteDeTemps.oneWeek)
-                {
-                    
+                {                  
                     foreach (WorkPeriod workPeriod in jour)
                     {
                         if (workPeriod.codeProject <= 900)
@@ -110,12 +105,8 @@ namespace Projet_Agile
                     {
                         Console.WriteLine("L'employé normal : #" + empNumber + " n'a pas travaillé le minimum de temps requis (360 minutes) " + carteDeTemps.DayName(jour) + "! temps travaillé ce jour-ci: " + minutesPerDay + " Minutes.");
                     }
-
-                }
-               
-
-            }
-            
+                }              
+            }           
         }
 
         public void validateAdmin4HoursPerDay()
@@ -124,15 +115,13 @@ namespace Projet_Agile
             {
                 int minutesPerDay = 0;
                 foreach (List<WorkPeriod> jour in carteDeTemps.oneWeek)
-                {
-                    
+                {                   
                     foreach (WorkPeriod workPeriod in jour)
                     {
                         if (workPeriod.codeProject <= 900)
                         {
                             minutesPerDay += workPeriod.minute;
                         }
-
                     }
                     if (minutesPerDay < 240)
                     {
@@ -191,6 +180,5 @@ namespace Projet_Agile
                 throw;
             }
         }
-
     }
 }
