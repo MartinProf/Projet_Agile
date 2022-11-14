@@ -159,7 +159,7 @@ namespace Projet_Agile
                     if (minutesPerDay < 360)
                     {
                         //Console.WriteLine("L'employé normal : #" + empNumber + " n'a pas travaillé le minimum de temps requis (360 minutes) lundi!   temps travaillé ce jour-ci: " + minutesPerDayMonday + " Minutes.");
-                        text3 += "L'employé normal : #" + empNumber + " n'a pas travaillé le minimum de temps requis (360 minutes) lundi!   temps travaillé ce jour-ci: " + minutesPerDay + " Minutes. ";
+                        text3 += "L'employé normal : #" + empNumber + " n'a pas travaillé le minimum de temps requis (360 minutes) " + carteDeTemps.DayName(jour) + "! temps travaillé ce jour-ci: " + minutesPerDay + " Minutes. ";
                         createOrAddToResultJson();
                     }
                 }              
@@ -183,7 +183,7 @@ namespace Projet_Agile
                     if (minutesPerDay < 240)
                     {
                         // Console.WriteLine("L'employé normal : #" + empNumber + " n'a pas travaillé le minimum de temps requis (240 minutes) le lundi!   temps travaillé ce jour-ci: " + minutesPerDayMonday + " Minutes.");
-                        text4 += "L'employé normal : #" + empNumber + " n'a pas travaillé le minimum de temps requis (240 minutes) le lundi!   temps travaillé ce jour-ci: " + minutesPerDay + " Minutes. ";
+                        text4 += "L'employé normal : #" + empNumber + " n'a pas travaillé le minimum de temps requis (360 minutes) " + carteDeTemps.DayName(jour) + "! temps travaillé ce jour-ci: " + minutesPerDay + " Minutes. ";
                         createOrAddToResultJson();
                     }
                 }
