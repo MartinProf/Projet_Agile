@@ -50,7 +50,6 @@ namespace Projet_Agile
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
