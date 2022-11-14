@@ -66,6 +66,7 @@ namespace Projet_Agile
 
             timesheets.validateAdmin10HoursTeleWork();
 
+            timesheets.readResultJson();
 
             Console.ReadKey();
 
