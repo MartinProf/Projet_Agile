@@ -68,6 +68,9 @@ namespace Projet_Agile
 
             timesheets.readResultJson();
 
+            Console.WriteLine("Veuillez entrer l'extension de fichier de votre feuille de temps: ");
+            
+
             Console.ReadKey();
 
             /*validateTimeline validateTimeline = new validateTimeline();
