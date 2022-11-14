@@ -16,7 +16,7 @@ namespace Projet_Agile
         public static string jsonTimelineString;
         public static string extensionFile;
        
-        internal static Timesheet timesheets = new Timesheet();
+        internal static Validate validation = new Validate();
         static void Main(string[] args)
         {
 
@@ -44,29 +44,35 @@ namespace Projet_Agile
 
             Console.WriteLine("======== Validate Employe Normal 6 Hours at office per Day ========\n");
             
-            timesheets.validateNormalEmp6HoursPerDay();
+            validation.validateNormalEmp6HoursPerDay();
 
             Console.WriteLine("======== Validate Admin 4 Hours at office per Day ========\n");
 
-            timesheets.validateAdmin4HoursPerDay();
+            validation.validateAdmin4HoursPerDay();
                 
             Console.WriteLine("\n======== Validate 43 Hours Max Per week ========\n");
-          
-            timesheets.validate43HoursMaxOffice();
+
+            validation.validate43HoursMaxOffice();
 
             Console.WriteLine("\n======== Validate Admin 36 Hours Min Per week ========\n");
 
-            timesheets.validateAdmin36Hours();
+            validation.validateAdmin36Hours();
 
             Console.WriteLine("\n======== Validate Employe Normal 38 Hours Min Per week ========\n");
 
-            timesheets.validateNormalEmp38Hours();
+            validation.validateNormalEmp38Hours();
 
             Console.WriteLine("\n======== Validate Admin 10 Hours Max Telework Per Week ========\n");
 
-            timesheets.validateAdmin10HoursTeleWork();
+            validation.validateAdmin10HoursTeleWork();
+            string resultFile = Console.ReadLine();
 
-            timesheets.readResultJson();
+            if (resultFile != string.Empty)
+            {
+                validation.readResultJson(resultFile);
+            }
+
+           
 
             Console.WriteLine("Veuillez entrer l'extension de fichier de votre feuille de temps: ");
             
@@ -92,7 +98,7 @@ namespace Projet_Agile
         
         internal static string GetTimesheetsList()
         {
-            return timesheets.ToString();
+            return validation.ToString();
         }
         public static void Deserializer(string timeSheet)
         {
@@ -100,11 +106,11 @@ namespace Projet_Agile
 
             using (StreamReader file = File.OpenText(timeSheet))
             {
-                CarteDeTemps carteDeTemps= new CarteDeTemps();
+                TimeSheet timeSt= new TimeSheet();
                 List<WorkPeriod> workPeriods= new List<WorkPeriod>();
                 content = file.ReadToEnd();
                 JObject data = (JObject)JsonConvert.DeserializeObject(content);
-                timesheets.empNumber = (int)data.Property("numero employe").Value;
+                validation.empNumber = (int)data.Property("numero employe").Value;
                 foreach (var work in data.Property("jour1").Value)
                 {
                     WorkPeriod tempWorkPeriod= new WorkPeriod();
@@ -112,7 +118,7 @@ namespace Projet_Agile
                     tempWorkPeriod.minute = (int)work["minutes"];
                     workPeriods.Add(tempWorkPeriod);                   
                 }
-                carteDeTemps.oneWeek.Add(workPeriods);
+                timeSt.oneWeek.Add(workPeriods);
                 workPeriods = new List<WorkPeriod>();
                 foreach (var work in data.Property("jour2").Value)
                 {         
@@ -121,7 +127,7 @@ namespace Projet_Agile
                     tempWorkPeriod.minute = (int)work["minutes"];
                     workPeriods.Add(tempWorkPeriod);
                 }
-                carteDeTemps.oneWeek.Add(workPeriods);
+                timeSt.oneWeek.Add(workPeriods);
                 workPeriods = new List<WorkPeriod>();
                 foreach (var work in data.Property("jour3").Value)
                 {
@@ -131,7 +137,7 @@ namespace Projet_Agile
                     tempWorkPeriod.minute = (int)work["minutes"];
                     workPeriods.Add(tempWorkPeriod);
                 }
-                carteDeTemps.oneWeek.Add(workPeriods);
+                timeSt.oneWeek.Add(workPeriods);
                 workPeriods = new List<WorkPeriod>();
                 foreach (var work in data.Property("jour4").Value)
                 {
@@ -141,7 +147,7 @@ namespace Projet_Agile
                     tempWorkPeriod.minute = (int)work["minutes"];
                     workPeriods.Add(tempWorkPeriod);
                 }
-                carteDeTemps.oneWeek.Add(workPeriods);
+                timeSt.oneWeek.Add(workPeriods);
                 workPeriods = new List<WorkPeriod>();
                 foreach (var work in data.Property("jour5").Value)
                 {
@@ -151,7 +157,7 @@ namespace Projet_Agile
                     tempWorkPeriod.minute = (int)work["minutes"];
                     workPeriods.Add(tempWorkPeriod);
                 }
-                carteDeTemps.oneWeek.Add(workPeriods);
+                timeSt.oneWeek.Add(workPeriods);
                 workPeriods = new List<WorkPeriod>();
                 foreach (var work in data.Property("weekendl").Value)
                 {
@@ -161,7 +167,7 @@ namespace Projet_Agile
                     tempWorkPeriod.minute = (int)work["minutes"];
                     workPeriods.Add(tempWorkPeriod);
                 }
-                carteDeTemps.oneWeek.Add(workPeriods);
+                timeSt.oneWeek.Add(workPeriods);
                 workPeriods = new List<WorkPeriod>();
                 foreach (var work in data.Property("weekend2").Value)
                 {
@@ -170,9 +176,9 @@ namespace Projet_Agile
                     tempWorkPeriod.codeProject = (int)work["projet"];
                     tempWorkPeriod.minute = (int)work["minutes"];
                     workPeriods.Add(tempWorkPeriod);
-                }         
-                carteDeTemps.oneWeek.Add(workPeriods);
-                timesheets.carteDeTemps = carteDeTemps;
+                }
+                timeSt.oneWeek.Add(workPeriods);
+                validation.timeSt = timeSt;
                 //timesheets = JsonConvert.DeserializeObject<Timesheet>(content);
             }
         }
