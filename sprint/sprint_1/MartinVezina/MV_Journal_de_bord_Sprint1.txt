@@ -8,6 +8,8 @@
 8 nov: 2h Correctif sur la gestion des erreurs des fichiers json
 9 nov: 2h Bug avec git, correction du master et fichiers flottants
 10 nov: 5h Program.cs
-
+12 nov: 1h Élaboration du Cahier de charge(À FINIR)
+14 nov: 2h rencontre PokerScrum
+14 nov: 2h Refaire le diagramme UML avec nouvelle orientation du projet.
 
 Gestion des merges du git durant la durée du sprint_1
