@@ -65,6 +65,9 @@ namespace Projet_Agile
             Console.WriteLine("\n======== Validate Admin 10 Hours Max Telework Per Week ========\n");
 
             validation.validateAdmin10HoursTeleWork();
+
+            Console.WriteLine("Veuillez entrer l'extension de fichier de votre feuille de temps ex: nomFichierResult.json: ");
+
             string resultFile = Console.ReadLine();
 
             if (resultFile != string.Empty)
