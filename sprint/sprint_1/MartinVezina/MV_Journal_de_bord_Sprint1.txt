@@ -11,5 +11,6 @@
 12 nov: 1h Élaboration du Cahier de charge(À FINIR)
 14 nov: 2h rencontre PokerScrum
 14 nov: 2h Refaire le diagramme UML avec nouvelle orientation du projet.
+15 nov: 2h Cahier de charge
 
 Gestion des merges du git durant la durée du sprint_1
