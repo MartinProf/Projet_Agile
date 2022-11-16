@@ -18,25 +18,25 @@ namespace Projet_Agile
             switch (oneWeek.IndexOf(singleDay))
             {
                 case 0:
-                    return "Lundi: \n";
+                    return "Lundi: ";
 
                 case 1:
-                    return "Mardi: \n";
+                    return "Mardi: ";
 
                 case 2:
-                    return "Mercredi: \n";
+                    return "Mercredi: ";
 
                 case 3:
-                    return "Jeudi: \n";
+                    return "Jeudi: ";
 
                 case 4:
-                    return "Vendredi: \n";
+                    return "Vendredi: ";
 
                 case 5:
-                    return "Samedi: \n";
+                    return "Samedi: ";
 
                 case 6:
-                    return "Dimanche: \n";
+                    return "Dimanche: ";
                 default:
                     return "???";
 

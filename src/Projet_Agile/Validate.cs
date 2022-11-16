@@ -69,7 +69,7 @@ namespace Projet_Agile
 
                 foreach (DictionaryEntry entry in dictionary)
                 {
-                    Console.WriteLine(entry.Key + ": " + entry.Value);
+                    Console.WriteLine(entry.Key + ": " + entry.Value + "\n");
                 }
             }
             else
