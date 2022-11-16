@@ -61,27 +61,11 @@ namespace Projet_Agile
             {
                 validation.readResultJson(resultFile);
             }
-
-           
-
-            Console.WriteLine("Veuillez entrer l'extension de fichier de votre feuille de temps: ");
             
 
             Console.ReadKey();
 
-          
-            
-           
-            
-            Console.WriteLine("\n************************************* Classe ProjectTimeline *********************************\n");
-
-            
-            
-
-            Console.WriteLine("******************************************************************************\n");
-
-
-         
+                  
         }
         
         
@@ -169,7 +153,6 @@ namespace Projet_Agile
                 }
                 timeSt.oneWeek.Add(workPeriods);
                 validation.timeSt = timeSt;
-                //timesheets = JsonConvert.DeserializeObject<Timesheet>(content);
             }
         }
 
