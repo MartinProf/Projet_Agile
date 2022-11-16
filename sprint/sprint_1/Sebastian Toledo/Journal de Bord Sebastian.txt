@@ -1,0 +1,8 @@
+2 nov: 1h Travail sur les premieres classes du projet
+3 nov: 3h Recherche sur la gestion des fichier json avec .Net
+4 nov: 5h Recherche sur la gestion des fichier json avec .Net
+
+10 nov: 4h Travail sur les validations de la premier projet
+10 nov: 4h Travail et planification sur la nouvel version du projet
+14 nov: 5h Travail sur les validations de la nouvel version du projet
+14 nov: 2h Nettoyage du code
