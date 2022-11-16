@@ -1,38 +1,67 @@
-Objectifs du programme: Faire la validation des cartes de temps
+Objectifs du programme : 
+	Faire la validation des cartes de temps afin de réduire le temps de validation.
+	Le programme aura donc pour but de faire une vérification de toutes les règles mises en place par l’entreprise 
+B34 et générera un fichier de résultat.
 
-Public cible: Le public cible sera un administrateur qui souhaite valide une carte de temps
+Public cible : 
+	Le public cible sera un utilisateur souhaitant valider une carte de temps.
 
-Rôle :
-1. Project Owner : Martin Vézina (MartinProf)
-2. Scrum Master : Martin Forget (UltimateBooBoo)
-3. Équipe Scrum :
-	- Guillaume Tremblay (Gui-Trem)
-	- Sebastian Toledo (Sebastiant1012)
-	- Anthony Ménard-Boucher (MercyForKohai)
+Explication :
+	L’utilisateur pourra entrer une carte de temps (format « json ») valide dans le programme.
+	Le système fera la validation de toutes les règles préétablies dans l’énoncé du sprint_1.
+	Toutes les règles enfreintes seront transférées dans un fichier résultat.json.
+
+Répartition des tâches des membres de l’équipe pour le Sprint_1 :
+	1. Project Owner: Martin Vézina (MartinProf)
+	2. Scrum Master: Martin Forget (UltimateBooBoo)
+	3. Équipe Scrum:
+		– Guillaume Tremblay (Gui-Trem)
+		– Sebastian Toledo (Sebastiant1012)
+		- 
+
+Répartition des tâches à chacun des membres de l’équipe pour le Sprint_2 et + :
+	1. Project Owner: Sebastian Toledo (Sebastiant1012)
+	2. Scrum Master: Anthony Ménard-Boucher (MercyForKohai)
+	3. Équipe Scrum :
+		– Guillaume Tremblay (Gui-Trem)
+		– Martin Vézina (MartinProf)
+		—Martin Forget (UltimateBooBoo)
+
+Le product Owner :
+	Il sera le représentant du client et élaborera le UML, le « backlog » et les sprints.
+
+Le Scrum Master :
+	Il sera le leader de l’équipe de développement. 
+	Il rédigera les journaux de bord pour les rencontres « Scrums ».
+	Il organisera les sous-tâches dans le logiciel de planification (Jira).
 
 Rencontres (Daily Scrum et rencontres extraordinaires) :
-1. Quotidienne d'une durée maxiumum de 30 min. (heures à confirmer).
-2. Rencontre extraordinaire lors de la remise de nouveaux énoncés (sprint) (dates et heures à confirmer)
-3. Temps alloué pour constater l'avancement et les éventuelles défis.
+	1. Quotidienne d’une durée maximum de 30 min. (heures à confirmer).
+	2. Rencontre extraordinaire lors de la remise de nouveaux énoncés (sprint) (dates et heures à confirmer)
+	3. Temps alloué pour constater l’avancement du projet et d’éventuels défis.
 
 
 Logiciels
-1. Gestion de projet : JIRA
-2. Conception de graphique (UML) : Visual Paradigm
-3. Programmation : Visual Studio - VIM - Sublime
-4. Programme de gestion de version : Git
-5. MS SQL Server
+	1. Gestion de projet : JIRA
+	2. Conception de graphique (UML) : Visual Paradigm
+	3. Programmation : Visual Studio—VIM—Sublime
+	4. Programme de gestion de version : Git
+	5. MS SQL Server
 
 
 Langages et technologies
-1. C# (possibilité d'implémenter la structure de l'application avec Entity, WPF, .NET ou ASP).
-2. GitHub (nom de dépôt : https://github.com/MartinProf/Projet_Agile.git).
-3. SQL
+	1. C# (possibilité d’implémenter la structure de l’application avec Entity, WPF, .NET ou ASP).
+	2. GitHub (nom de dépôt : https://github.com/MartinProf/Projet_Agile.git).
+	3. SQL
 
 
-Conception Technique
-Une console sera produite afin d'assiter l'utilisateur en lui demandant un carte de temps à valider
-Le programme acceptera une carte d'entrée sous format json (Voir annexe_1)
-Le programme sortira une fichier de validation avec les messages d'erreur de la carte de temps sous forme json (Voir annexe_2)
-
-
+Conception technique
+	 L’utilisateur devra interagir avec une console pour valider une carte de temps.
+	Le programme acceptera une carte en entrée de format « json » (voir annexe_1).
+	Le programme retournera un fichier de validation avec les messages d’erreurs de format « json » (voir annexe_2).
+	Les normes de programmation utilisées sont présentes dans le dossier racine.
+	Les captures d’écran UML seront déposées dans le dossier d’images.
+	Le document des « Scrums » seront archivés dans le dossier sprint.
+	Pour chacun des sprints, chaque élève tiendra un journal de bord qui sera mis dans un dossier à leur nom.
+	Le Scrum Master déposera la documentation de chacun des « Scrums » dans le dossier sprint/"journaux de bord ».
+	Une version fonctionnelle du programme sera maintenue à jour par l’intermédiaire du dépôt « github » https://github.com/MartinProf/Projet_Agile.git sous l’onglet « Releases »
