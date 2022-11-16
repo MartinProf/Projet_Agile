@@ -52,6 +52,9 @@ namespace Projet_Agile
             validation.validateNormalEmp38Hours();
 
             validation.validateAdmin10HoursTeleWork();
+
+            Console.WriteLine("Veuillez entrer l'extension de fichier de votre feuille de temps ex: nomFichierResult.json: ");
+
             string resultFile = Console.ReadLine();
 
             if (resultFile != string.Empty)
