@@ -40,34 +40,18 @@ namespace Projet_Agile
             } while (!extConforme);
             
             Console.WriteLine(GetTimesheetsList());
-            Console.WriteLine("******** TESTS UNITAIRES ********\n\n");
-
-            Console.WriteLine("======== Validate Employe Normal 6 Hours at office per Day ========\n");
             
             validation.validateNormalEmp6HoursPerDay();
 
-            Console.WriteLine("======== Validate Admin 4 Hours at office per Day ========\n");
-
             validation.validateAdmin4HoursPerDay();
-                
-            Console.WriteLine("\n======== Validate 43 Hours Max Per week ========\n");
 
             validation.validate43HoursMaxOffice();
 
-            Console.WriteLine("\n======== Validate Admin 36 Hours Min Per week ========\n");
-
             validation.validateAdmin36Hours();
-
-            Console.WriteLine("\n======== Validate Employe Normal 38 Hours Min Per week ========\n");
 
             validation.validateNormalEmp38Hours();
 
-            Console.WriteLine("\n======== Validate Admin 10 Hours Max Telework Per Week ========\n");
-
             validation.validateAdmin10HoursTeleWork();
-
-            Console.WriteLine("Veuillez entrer l'extension de fichier de votre feuille de temps ex: nomFichierResult.json: ");
-
             string resultFile = Console.ReadLine();
 
             if (resultFile != string.Empty)
