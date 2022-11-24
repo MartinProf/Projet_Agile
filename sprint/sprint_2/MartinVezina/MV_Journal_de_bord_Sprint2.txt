@@ -1,0 +1,3 @@
+23 nov: 30min - Rencontre scrum
+
+Gestion des merges du git durant la durée du sprint_2
