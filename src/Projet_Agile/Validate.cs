@@ -55,13 +55,16 @@ namespace Projet_Agile
         public void createOrAddToResultJson(string fileName)
         {
             fileName = Program.extensionFile;
-            extension = System.IO.Path.GetExtension(fileName);
+            extension = Path.GetExtension(fileName);
             string fileName2 = fileName.Substring(0, fileName.Length - extension.Length);
             fileName2 += "Result.json";
             Result result = new Result
             {
-                numEmploye = empNumber,
-                errorCodes = new List<string>()
+                NumEmploye = empNumber,
+                Year = year,
+                WeekNumber = weekNumber,
+                
+                ErrorCodes = new List<string>()
                 {
                     text1,
                     text2,
