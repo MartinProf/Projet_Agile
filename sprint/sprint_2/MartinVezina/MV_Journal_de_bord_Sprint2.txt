@@ -1,3 +1,4 @@
-23 nov: 30min - Rencontre scrum
+23 nov: 30min - Rencontre scrum(fixé les todo)
+24 nov: 1h11 - Rencontre scrum(explication du projet et distribution des tâches)
 
 Gestion des merges du git durant la durée du sprint_2
