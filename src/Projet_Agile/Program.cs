@@ -19,7 +19,7 @@ namespace Projet_Agile
         internal static Validate validation = new Validate();
         static void Main(string[] args)
         {
-
+            
             bool extConforme = false;
 
             do
@@ -63,6 +63,17 @@ namespace Projet_Agile
             }
             
 
+            /*
+            WorkPeriod workPeriod = new WorkPeriod(200,200);
+            WorkPeriod workPeriod2 = new WorkPeriod(100,100);
+            List<WorkPeriod> a = new List<WorkPeriod>();
+            a.Add(workPeriod);
+            a.Add(workPeriod2);
+
+            TimeSheetGenerator timeSheetGenerator = new TimeSheetGenerator(200,2022,48,a,a,a,a,a,a,a);
+            Generate("testDeJson",timeSheetGenerator);
+            */
+
             Console.ReadKey();
 
                   
@@ -81,10 +92,13 @@ namespace Projet_Agile
             using (StreamReader file = File.OpenText(timeSheet))
             {
                 TimeSheet timeSt= new TimeSheet();
-                List<WorkPeriod> workPeriods= new List<WorkPeriod>();
                 content = file.ReadToEnd();
                 JObject data = (JObject)JsonConvert.DeserializeObject(content);
                 validation.empNumber = (int)data.Property("numero employe").Value;
+                validation.year = (int)data.Property("annee").Value;
+                validation.weekNumber = (int)data.Property("numero semaine").Value;
+
+                List<WorkPeriod> workPeriods = new List<WorkPeriod>();
                 foreach (var work in data.Property("jour1").Value)
                 {
                     WorkPeriod tempWorkPeriod= new WorkPeriod();
@@ -93,6 +107,7 @@ namespace Projet_Agile
                     workPeriods.Add(tempWorkPeriod);                   
                 }
                 timeSt.oneWeek.Add(workPeriods);
+               
                 workPeriods = new List<WorkPeriod>();
                 foreach (var work in data.Property("jour2").Value)
                 {         
@@ -102,6 +117,7 @@ namespace Projet_Agile
                     workPeriods.Add(tempWorkPeriod);
                 }
                 timeSt.oneWeek.Add(workPeriods);
+                
                 workPeriods = new List<WorkPeriod>();
                 foreach (var work in data.Property("jour3").Value)
                 {
@@ -112,6 +128,7 @@ namespace Projet_Agile
                     workPeriods.Add(tempWorkPeriod);
                 }
                 timeSt.oneWeek.Add(workPeriods);
+               
                 workPeriods = new List<WorkPeriod>();
                 foreach (var work in data.Property("jour4").Value)
                 {
@@ -122,6 +139,7 @@ namespace Projet_Agile
                     workPeriods.Add(tempWorkPeriod);
                 }
                 timeSt.oneWeek.Add(workPeriods);
+                
                 workPeriods = new List<WorkPeriod>();
                 foreach (var work in data.Property("jour5").Value)
                 {
@@ -132,6 +150,7 @@ namespace Projet_Agile
                     workPeriods.Add(tempWorkPeriod);
                 }
                 timeSt.oneWeek.Add(workPeriods);
+                
                 workPeriods = new List<WorkPeriod>();
                 foreach (var work in data.Property("weekendl").Value)
                 {
@@ -142,6 +161,7 @@ namespace Projet_Agile
                     workPeriods.Add(tempWorkPeriod);
                 }
                 timeSt.oneWeek.Add(workPeriods);
+                
                 workPeriods = new List<WorkPeriod>();
                 foreach (var work in data.Property("weekend2").Value)
                 {
@@ -155,8 +175,17 @@ namespace Projet_Agile
                 validation.timeSt = timeSt;
             }
         }
+        public static void Generate(string fileName, TimeSheetGenerator b)
+        {
+            string extension = fileName + ".json";
 
-        
+            var jsonGenerator = JsonConvert.SerializeObject(b);
+
+            File.WriteAllText(extension, jsonGenerator);
+
+            Console.WriteLine(jsonGenerator);
+        }
+
     }
 }
 
