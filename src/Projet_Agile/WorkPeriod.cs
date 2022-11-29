@@ -10,6 +10,13 @@ namespace Projet_Agile
     public class WorkPeriod
     {
         public WorkPeriod() { }
+
+        public WorkPeriod(int codeProject, int minute)
+        {
+            this.codeProject = codeProject;
+            this.minute = minute;
+        }
+
         [JsonProperty("projet")]
         public int codeProject
         {

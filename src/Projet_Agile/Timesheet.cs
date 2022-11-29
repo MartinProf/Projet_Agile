@@ -12,7 +12,9 @@ namespace Projet_Agile
         {
             oneWeek = new List<List<WorkPeriod>>();
         }
+
         public List<List<WorkPeriod>> oneWeek { get; set; }
+
         public string DayName(List<WorkPeriod> singleDay)
         {
             switch (oneWeek.IndexOf(singleDay))

@@ -8,7 +8,11 @@ namespace Projet_Agile
 {
     public class Result
     {
-        public int numEmploye { get; set; }
-        public List<string> errorCodes { get; set; }
+        public int NumEmploye { get; set; }
+
+        public int Year { get; set; }
+
+        public int WeekNumber {get;set;}
+        public List<string> ErrorCodes { get; set; }
     }
 }

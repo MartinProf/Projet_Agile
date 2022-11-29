@@ -20,16 +20,34 @@ namespace Projet_Agile
         string text6 = "";
         string fileName = Program.extensionFile;
         string extension = Path.GetExtension(Program.extensionFile);
+
         public Validate() { }
+
         [JsonProperty("numero employe")]
         public int empNumber
         {
             get; set;
         }
+
+        [JsonProperty("annee")]
+        public int year
+        {
+            get; set;
+        }
+
+        [JsonProperty("numero semaine")]
+        public int weekNumber
+        {
+            get; set;
+        }
+
         public TimeSheet timeSt { get; set; }
+
         public override string ToString()
         {
-            string returnString = $"employe number : {empNumber}\n";
+            string returnString = $"numero employe : {empNumber}\n";
+            returnString += $"annee : {year}\n";
+            returnString += $"numero semaine : {weekNumber}\n";
             returnString += timeSt.ToString();
             return returnString;
         }
@@ -37,13 +55,16 @@ namespace Projet_Agile
         public void createOrAddToResultJson(string fileName)
         {
             fileName = Program.extensionFile;
-            extension = System.IO.Path.GetExtension(fileName);
+            extension = Path.GetExtension(fileName);
             string fileName2 = fileName.Substring(0, fileName.Length - extension.Length);
             fileName2 += "Result.json";
             Result result = new Result
             {
-                numEmploye = empNumber,
-                errorCodes = new List<string>()
+                NumEmploye = empNumber,
+                Year = year,
+                WeekNumber = weekNumber,
+                
+                ErrorCodes = new List<string>()
                 {
                     text1,
                     text2,
@@ -77,7 +98,6 @@ namespace Projet_Agile
                 Console.WriteLine("Test");
             }
         }
-
 
         public void validateAdmin36Hours()
         {
@@ -210,7 +230,6 @@ namespace Projet_Agile
                 createOrAddToResultJson(fileName);
             }
         }
-
 
         public void validateAdmin10HoursTeleWork()
         {
