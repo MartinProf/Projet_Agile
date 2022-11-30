@@ -11,7 +11,7 @@ namespace Projet_Agile
 {
     class Validate
     {
-       
+
         string text1 = "";
         string text2 = "";
         string text3 = "";
@@ -63,7 +63,7 @@ namespace Projet_Agile
                 NumEmploye = empNumber,
                 Year = year,
                 WeekNumber = weekNumber,
-                
+
                 ErrorCodes = new List<string>()
                 {
                     text1,
@@ -132,13 +132,13 @@ namespace Projet_Agile
             }
         }
 
-        public void validateNormalEmp38Hours()
+        public void validateProdEmp38Hours()
         {
             try
             {
                 int minutes = 0;
 
-                if (empNumber >= 1000)
+                if (empNumber >= 1000 && empNumber < 2000)
                 {
                     foreach (List<WorkPeriod> jour in timeSt.oneWeek)
                     {
@@ -152,7 +152,36 @@ namespace Projet_Agile
                     }
                     if (minutes < (38 * 60))
                     {
-                        text2 = "L'employé normal : #" + empNumber + " n'a pas travaillé le minimum d'heures requises au bureau. Il en a travaillé " + minutes / 60 + " sur 38 minimum.";
+                        text2 = "L'employé de production : #" + empNumber + " n'a pas travaillé le minimum d'heures requises au bureau. Il en a travaillé " + minutes / 60 + " sur 38 minimum.";
+                        createOrAddToResultJson(fileName);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public void validateExploitEmp38Hours()
+        {
+            try
+            {
+                int minutes = 0;
+
+                if (empNumber >= 2000)
+                {
+                    foreach (List<WorkPeriod> jour in timeSt.oneWeek)
+                    {
+                        foreach (var item in jour)
+                        {
+                            minutes += item.minute;
+                        }
+                    }
+                    if (minutes < (38 * 60))
+                    {
+                        text2 = "L'employé d'exploitation : #" + empNumber + " n'a pas travaillé le minimum d'heures requises. Il en a travaillé " + minutes / 60 + " sur 38 minimum.";
                         createOrAddToResultJson(fileName);
                     }
                 }
@@ -182,7 +211,7 @@ namespace Projet_Agile
                     }
                     if (minutesPerDay < 360)
                     {
-                        text3 += "L'employé normal : #" + empNumber + " n'a pas travaillé le minimum de temps requis (360 minutes) " + timeSt.DayName(jour) + "! temps travaillé ce jour-ci: " + minutesPerDay + " Minutes. ";
+                        text3 += "Les employés de production et d'exploitation : #" + empNumber + " n'ont pas travaillé le minimum de temps requis (360 minutes) " + timeSt.DayName(jour) + "! temps travaillé ce jour-ci: " + minutesPerDay + " Minutes. ";
                         createOrAddToResultJson(fileName);
                     }
                 }
@@ -205,7 +234,7 @@ namespace Projet_Agile
                     }
                     if (minutesPerDay < 240)
                     {
-                        text4 += "L'employé normal : #" + empNumber + " n'a pas travaillé le minimum de temps requis (240 minutes) " + timeSt.DayName(jour) + "! temps travaillé ce jour-ci: " + minutesPerDay + " Minutes. ";
+                        text4 += "Les employés de production et d'exploitation : #" + empNumber + " n'ont pas travaillé le minimum de temps requis (240 minutes) " + timeSt.DayName(jour) + "! temps travaillé ce jour-ci: " + minutesPerDay + " Minutes. ";
                         createOrAddToResultJson(fileName);
                     }
                 }
@@ -226,7 +255,7 @@ namespace Projet_Agile
             }
             if (weeklytotal > 2580)
             {
-                text5 = "L'employé a depassé le temps de travail permis au bureau (43heures / 2580 minutes)!   temps travaillé ce jour-ci: " + weeklytotal + " Minutes.";
+                text5 = "Les employés de production et d'exploitation ont depassé le temps de travail permis au bureau (43heures / 2580 minutes)!   temps travaillé ce jour-ci: " + weeklytotal + " Minutes.";
                 createOrAddToResultJson(fileName);
             }
         }
