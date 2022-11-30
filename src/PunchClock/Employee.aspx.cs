@@ -15,9 +15,28 @@ namespace PunchClock
         {
             int yearNow = int.Parse(DateTime.Now.ToString("yyyy"));
             List<string> listWeek = numberOfWeekNumber(yearNow);
+            
+            foreach (string number in listWeek)
+            {
+                dropDownListWeek.Items.Add(number);
+            }
 
             txtYear.Text = DateTime.Now.ToString("yyyy");
-            //dropDownListWeek.DataSource = listWeek;
+
+        }
+
+        protected void dropDownListWeek_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int year = int.Parse(txtYear.Text);
+            int week = int.Parse(dropDownListWeek.SelectedValue);
+            TBLundi.Text = firstMondayOfWeek(week, year).ToString("dd-MMMM-yyyy");
+            TBMardi.Text = firstMondayOfWeek(week, year).AddDays(1).ToString("dd-MMMM-yyyy");
+            TBMercredi.Text = firstMondayOfWeek(week, year).AddDays(2).ToString("dd-MMMM-yyyy");
+            TBJeudi.Text = firstMondayOfWeek(week, year).AddDays(3).ToString("dd-MMMM-yyyy");
+            TBVendredi.Text = firstMondayOfWeek(week, year).AddDays(4).ToString("dd-MMMM-yyyy");
+            TBSamedi.Text = firstMondayOfWeek(week, year).AddDays(5).ToString("dd-MMMM-yyyy");
+            TBDimanche.Text = firstMondayOfWeek(week, year).AddDays(6).ToString("dd-MMMM-yyyy");
+
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)
@@ -256,14 +275,38 @@ namespace PunchClock
                 );
 
             List<string> week = new List<string>();
+            int result = 0;
 
             for (int i = 0; i < weekNo; i++)
             {
-                int result = i+1;
+                result = i+1;
                 week.Add(result.ToString());
             }
 
             return week;
         }
+
+        public DateTime firstMondayOfWeek(int week, int year) {
+            var date = new DateTime(year, 01, 01);
+            var firstDayOfYear = date.DayOfWeek;
+            var result = date.AddDays(week * 7);
+
+            if (firstDayOfYear == DayOfWeek.Monday)
+                return result.Date;
+            if (firstDayOfYear == DayOfWeek.Tuesday)
+                return result.AddDays(-1).Date;
+            if (firstDayOfYear == DayOfWeek.Wednesday)
+                return result.AddDays(-2).Date;
+            if (firstDayOfYear == DayOfWeek.Thursday)
+                return result.AddDays(-3).Date;
+            if (firstDayOfYear == DayOfWeek.Friday)
+                return result.AddDays(-4).Date;
+            if (firstDayOfYear == DayOfWeek.Saturday)
+                return result.AddDays(-5).Date;
+            return result.AddDays(-6).Date;
+
+        }
+
+
     }
 }
