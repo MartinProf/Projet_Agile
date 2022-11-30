@@ -145,7 +145,7 @@
                         <asp:TextBox ID="txtYear" runat="server" CssClass="auto-style6"></asp:TextBox>
                         </strong></td>
                     <td class="auto-style7"><strong><span class="auto-style11">Week number: </span>
-                        <asp:DropDownList ID="dropDownListWeek" runat="server" CssClass="auto-style6"></asp:DropDownList>
+                        <asp:DropDownList ID="dropDownListWeek" runat="server" autopostback="true" CssClass="auto-style6" OnSelectedIndexChanged="dropDownListWeek_SelectedIndexChanged"></asp:DropDownList>
                         </strong></td>
                     <td class="auto-style12"><strong>Emplopyee ID:
                         <asp:TextBox ID="txtEmpId" runat="server" CssClass="auto-style6"></asp:TextBox>
@@ -167,13 +167,13 @@
             <hr>
             <table class="auto-style14">
                 <tr>
-                    <td class="auto-style13"><strong>Monday</strong></td>
-                    <td class="auto-style13"><strong>Tuesday</strong></td>
-                    <td class="auto-style13"><strong>Wednesday</strong></td>
-                    <td class="auto-style15"><strong>Thursday</strong></td>
-                    <td class="auto-style13"><strong>Friday</strong></td>
-                    <td class="auto-style13"><strong>Saturday</strong></td>
-                    <td class="auto-style13"><strong>Sunday</strong></td>
+                    <td class="auto-style13"><strong>Monday</strong><asp:TextBox ID="TBLundi" runat="server"></asp:TextBox></td>
+                    <td class="auto-style13"><strong>Tuesday</strong><asp:TextBox ID="TBMardi" runat="server"></asp:TextBox></td>
+                    <td class="auto-style13"><strong>Wednesday</strong><asp:TextBox ID="TBMercredi" runat="server"></asp:TextBox></td>
+                    <td class="auto-style15"><strong>Thursday</strong><asp:TextBox ID="TBJeudi" runat="server"></asp:TextBox></td>
+                    <td class="auto-style13"><strong>Friday</strong><asp:TextBox ID="TBVendredi" runat="server"></asp:TextBox></td>
+                    <td class="auto-style13"><strong>Saturday</strong><asp:TextBox ID="TBSamedi" runat="server"></asp:TextBox></td>
+                    <td class="auto-style13"><strong>Sunday</strong><asp:TextBox ID="TBDimanche" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td class="auto-style7"><span class="auto-style11"><strong>Code projet</strong></span><strong><span class="auto-style11">: </span>
