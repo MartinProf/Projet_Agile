@@ -33,13 +33,13 @@ namespace PunchClock
         protected global::System.Web.UI.WebControls.TextBox txtYear;
 
         /// <summary>
-        /// Contrôle txtWeek.
+        /// Contrôle dropDownListWeek.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtWeek;
+        protected global::System.Web.UI.WebControls.DropDownList dropDownListWeek;
 
         /// <summary>
         /// Contrôle txtEmpId.

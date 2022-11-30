@@ -145,7 +145,7 @@
                         <asp:TextBox ID="txtYear" runat="server" CssClass="auto-style6"></asp:TextBox>
                         </strong></td>
                     <td class="auto-style7"><strong><span class="auto-style11">Week number: </span>
-                        <asp:TextBox ID="txtWeek" runat="server" CssClass="auto-style6"></asp:TextBox>
+                        <asp:DropDownList ID="dropDownListWeek" runat="server" CssClass="auto-style6"></asp:DropDownList>
                         </strong></td>
                     <td class="auto-style12"><strong>Emplopyee ID:
                         <asp:TextBox ID="txtEmpId" runat="server" CssClass="auto-style6"></asp:TextBox>

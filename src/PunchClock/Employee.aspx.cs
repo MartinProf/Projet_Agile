@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Calendar = System.Globalization.Calendar;
 
 namespace PunchClock
 {
@@ -11,7 +13,11 @@ namespace PunchClock
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            int yearNow = int.Parse(DateTime.Now.ToString("yyyy"));
+            List<string> listWeek = numberOfWeekNumber(yearNow);
 
+            txtYear.Text = DateTime.Now.ToString("yyyy");
+            //dropDownListWeek.DataSource = listWeek;
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)
@@ -21,12 +27,8 @@ namespace PunchClock
 
         protected void cbSickMonday_CheckedChanged(object sender, EventArgs e)
         {
-            
-                
                 txtMinutesMonday.Text = "420";
                 txtProjetMonday.Text = "999";
-
-            
         }
         
 
@@ -231,6 +233,37 @@ namespace PunchClock
                 result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
                 lblResultSunday.Text += result;
             }
+        }
+
+        private bool ItsHoliday(DateTime date) {
+            string[] holidays = new string[12] { "01-01-2022", "15-04-2022", "23-05-2022", "24-06-2022", "01-07-2022", "01-08-2022", "05-09-2022", "30-09-2022", "10-10-2022", "11-11-2022", "25-12-2022", "26-12-2022" };
+            string dateNewFormat = date.ToString("dd-mm-yyyy");
+
+            foreach (string item in holidays)
+            {
+                if (dateNewFormat == item) return true;
+            }
+
+            return false;
+        }
+
+        public List<string> numberOfWeekNumber(int year) {
+            var currentCulture = CultureInfo.CurrentCulture;
+            var weekNo = currentCulture.Calendar.GetWeekOfYear(
+                new DateTime(year, 12, 31),
+                currentCulture.DateTimeFormat.CalendarWeekRule,
+                currentCulture.DateTimeFormat.FirstDayOfWeek
+                );
+
+            List<string> week = new List<string>();
+
+            for (int i = 0; i < weekNo; i++)
+            {
+                int result = i+1;
+                week.Add(result.ToString());
+            }
+
+            return week;
         }
     }
 }
