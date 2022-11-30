@@ -49,7 +49,9 @@ namespace Projet_Agile
 
             validation.validateAdmin36Hours();
 
-            validation.validateNormalEmp38Hours();
+            validation.validateProdEmp38Hours();
+
+            validation.validateExploitEmp38Hours();
 
             validation.validateAdmin10HoursTeleWork();
 
@@ -98,12 +100,36 @@ namespace Projet_Agile
                 validation.weekNumber = (int)data.Property("numero semaine").Value;
 
                 List<WorkPeriod> workPeriods = new List<WorkPeriod>();
+                int totalTimeWorkedJour1 = 0;
+                int totalTimeWorkedJour2 = 0;
+                int totalTimeWorkedJour3 = 0;
+                int totalTimeWorkedJour4 = 0;
+                int totalTimeWorkedJour5 = 0;
+                int totalTimeWorkedWeekend1 = 0;
+                int totalTimeWorkedWeekend2 = 0;
+
                 foreach (var work in data.Property("jour1").Value)
                 {
                     WorkPeriod tempWorkPeriod= new WorkPeriod();
-                    tempWorkPeriod.codeProject = (int)work["projet"];
-                    tempWorkPeriod.minute = (int)work["minutes"];
-                    workPeriods.Add(tempWorkPeriod);                   
+                    if(totalTimeWorkedJour1 <= (24 * 60))
+                    {
+                        tempWorkPeriod.codeProject = (int)work["projet"];
+                        tempWorkPeriod.minute = (int)work["minutes"];
+                        totalTimeWorkedJour1 += tempWorkPeriod.minute;
+                        if (totalTimeWorkedJour1 <= (24 * 60))
+                        {
+                            workPeriods.Add(tempWorkPeriod);
+                        }
+                        else
+                        {
+                            Console.WriteLine("dépassement");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("dépassement");
+                    }
+
                 }
                 timeSt.oneWeek.Add(workPeriods);
                
