@@ -22,13 +22,13 @@ namespace PunchClock
             }
 
             txtYear.Text = DateTime.Now.ToString("yyyy");
-
         }
 
         protected void dropDownListWeek_SelectedIndexChanged(object sender, EventArgs e)
         {
             int year = int.Parse(txtYear.Text);
             int week = int.Parse(dropDownListWeek.SelectedValue);
+
             TBLundi.Text = firstMondayOfWeek(week, year).ToString("dd-MMMM-yyyy");
             TBMardi.Text = firstMondayOfWeek(week, year).AddDays(1).ToString("dd-MMMM-yyyy");
             TBMercredi.Text = firstMondayOfWeek(week, year).AddDays(2).ToString("dd-MMMM-yyyy");
@@ -36,6 +36,32 @@ namespace PunchClock
             TBVendredi.Text = firstMondayOfWeek(week, year).AddDays(4).ToString("dd-MMMM-yyyy");
             TBSamedi.Text = firstMondayOfWeek(week, year).AddDays(5).ToString("dd-MMMM-yyyy");
             TBDimanche.Text = firstMondayOfWeek(week, year).AddDays(6).ToString("dd-MMMM-yyyy");
+
+            if (ItsHoliday( firstMondayOfWeek(week, year))) 
+            {
+                txtProjetMonday.Text = "420";
+                txtMinutesMonday.Text = "998";
+            }
+            if (ItsHoliday(firstMondayOfWeek(week, year).AddDays(1)))
+            {
+                txtProjetTuesday.Text = "420";
+                txtMinutesTuesday.Text = "998";
+            }
+            if (ItsHoliday(firstMondayOfWeek(week, year).AddDays(2)))
+            {
+                txtProjetWednesday.Text = "420";
+                txtMinutesWednesday.Text = "998";
+            }
+            if (ItsHoliday(firstMondayOfWeek(week, year).AddDays(3)))
+            {
+                txtProjetThursday.Text = "420";
+                txtMinutesThursday.Text = "998";
+            }
+            if (ItsHoliday(firstMondayOfWeek(week, year).AddDays(4)))
+            {
+                txtProjetFriday.Text = "420";
+                txtMinutesFriday.Text = "998";
+            }
 
         }
 
@@ -256,7 +282,7 @@ namespace PunchClock
 
         private bool ItsHoliday(DateTime date) {
             string[] holidays = new string[12] { "01-01-2022", "15-04-2022", "23-05-2022", "24-06-2022", "01-07-2022", "01-08-2022", "05-09-2022", "30-09-2022", "10-10-2022", "11-11-2022", "25-12-2022", "26-12-2022" };
-            string dateNewFormat = date.ToString("dd-mm-yyyy");
+            string dateNewFormat = date.ToString("dd-MM-yyyy");
 
             foreach (string item in holidays)
             {
@@ -306,7 +332,6 @@ namespace PunchClock
             return result.AddDays(-6).Date;
 
         }
-
 
     }
 }
