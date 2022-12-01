@@ -1,0 +1,85 @@
+--Résumé agile de groupe.
+
+
+-Méthode de projet:
+	1. Méthode prédictif: WBS (waterfall)
+		-Établie le projet après discussion avec le client (scope du projet fixe).
+		-Établie un échéancier et un coût au projet (variable).
+		-Développe la solution.
+		-Intègre la solution (s'il n'y a pas de problème, sinon retour au développement de la solution).
+	
+	2. Méthode adaptatif: 
+		-est incrémental et itératif perspective timeboxed(sprint et coût fixe) 
+		-Le contenu du produit est variable.
+		-La conception et le développement est intégré par sprint.
+--------------------------------------------------------------------------------------------------------------------------
+
+-Rôles:
+	1.Product Owner:
+ 		-L'intermédiaire avec le client, celui qui nous transmet les exigences du client, prend les décisions.
+
+	2.Scrum Master:
+		 -Guide de l'équipe de Scrum, gestionnaire d'équipe.
+
+	3.Équipe Scrum: 
+		-Des programmeurs qui travaillent ensemble pour la réalisation du projet.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+-Évènements:
+
+	1.Évènements: User stories
+		-Product owner idea : Mise en mots des fonctionnalités demandées.
+		-Dev team user stories : Représentation des fonctionnalités demandées.
+
+	2.Évènements: Sprint planning
+		-Explication des éléments a développés.
+		-Planification des tâches des sprints/du sprint actuel (Temps/couts).
+
+	3.Évènements: Daily scrum
+		-Rencontre de 15 mins.
+		-Travail fait depuis le dernier scrum.
+		-Travail qui va être fait au prochain scrum.
+		-Problèmes rencontrés.
+
+	4.Évènements - Sprint Review
+		-Réunion 1h-4h.
+		-Vérifications des tâches accomplies et non accomplies du sprint initial.
+		-Discussion des problèmes rencontrées, replacer et transférer au prochain sprint s'ils sont toujours demandés.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+-Livrable en SCRUM
+	1. Vision du produit: Répond aux questions quoi et pourquoi.
+		-C'est ici que le Product Owner montre sa vision du projet
+
+	2. Backlog du produit: Défini la liste des livrables (avec caractéristiques).
+		-Défini les User story qui répondent à des besoins précis (rôle, besoin, justification)
+		-Structure du document:  Id;Catégorie;Description User story;Status;Efforts(heures);Sprint;Priorité(fonction obligatoire et essentiel);Commentraires.
+		-Pour le calcul des sprint -->> On prend le nombre d'heure de l'équipe disponible sur 1 mois et on divise les efforts en heure de disponibilité.
+
+	3. Plan de livraison: Planification dans le temps et en argents.
+		-Structure du document.
+		-Plan de livraison: Livrable; début;Durée;fin;Efforts;Status;Date Livraison; But.
+		-Plan du sprint: Sprint;Début;Durée;Fin;Efforts;Status;Date livraison;But;Livraison.
+
+	4. Backlog du sprint: Listes des tâches nécessaires pour les fonctionnalités.
+
+	5. Burndown du sprint: Rapport d'avancement.
+
+	6. Listes de problèmes: C'est la liste des problèmes rencontrés et elle est géré par le Scrum Master.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+-Trois piliers:
+
+	1.Transparence
+		-Tous les processus doivent être visibles des participants.
+
+	2.Inspection
+		- Vérification de l'avancement du projet de façons courante.
+
+	3.Adaptation
+		-Ajuster dès que possible les dérivées détectées au besoin.
+
