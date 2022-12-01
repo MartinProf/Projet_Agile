@@ -1,0 +1,9 @@
+Dure du scrum :29 mins
+
+-Présentation des nouvelles user story.
+
+-Présentation du Resume_agile.
+
+-Retour sur le cahier de charge (à faire).
+
+-Présentation de l'interface utilisateur pour les fenêtres (Login),(patron),(employé).

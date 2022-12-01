@@ -1,0 +1,5 @@
+-2022-11-25: Création du résumé d'équipe sur la mérhode agile Scrum 2-3h.
+
+-2022-11-27: Reformulation des tâches et user story,création des épics. 1h.
+
+-2022-11-28: Rédaction du cahier de charge avec sebastien. 3h45.

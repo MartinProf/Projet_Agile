@@ -1,0 +1,15 @@
+--Duree du srum/sprint planning 1h 11m 29s.
+
+-Ameliorerer les users story utiliser la formulation donner par le prof. Regrouper les story qui sont similiaire en epic et effectuer les taches pour chaque story.
+
+-Explications des storys.
+
+-Division des taches.
+
+-Formulation du cahier de charge. (ASP .NET) semble etre la techno qu'on a choisi.
+
+-Creation des graphiques.
+
+-Retour sur le resumee du sprint pour tout le monde.
+
+
