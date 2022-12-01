@@ -39,28 +39,28 @@ namespace PunchClock
 
             if (ItsHoliday( firstMondayOfWeek(week, year))) 
             {
-                txtProjetMonday.Text = "420";
-                txtMinutesMonday.Text = "998";
+                txtProjetMonday.Text = "998";
+                txtMinutesMonday.Text = "420";
             }
             if (ItsHoliday(firstMondayOfWeek(week, year).AddDays(1)))
             {
-                txtProjetTuesday.Text = "420";
-                txtMinutesTuesday.Text = "998";
+                txtProjetTuesday.Text = "998";
+                txtMinutesTuesday.Text = "420";
             }
             if (ItsHoliday(firstMondayOfWeek(week, year).AddDays(2)))
             {
-                txtProjetWednesday.Text = "420";
-                txtMinutesWednesday.Text = "998";
+                txtProjetWednesday.Text = "998";
+                txtMinutesWednesday.Text = "420";
             }
             if (ItsHoliday(firstMondayOfWeek(week, year).AddDays(3)))
             {
-                txtProjetThursday.Text = "420";
-                txtMinutesThursday.Text = "998";
+                txtProjetThursday.Text = "998";
+                txtMinutesThursday.Text = "420";
             }
             if (ItsHoliday(firstMondayOfWeek(week, year).AddDays(4)))
             {
-                txtProjetFriday.Text = "420";
-                txtMinutesFriday.Text = "998";
+                txtProjetFriday.Text = "998";
+                txtMinutesFriday.Text = "420";
             }
 
         }
@@ -70,40 +70,54 @@ namespace PunchClock
             Response.Redirect("Login.aspx");
         }
 
-        protected void cbSickMonday_CheckedChanged(object sender, EventArgs e)
-        {
-                txtMinutesMonday.Text = "420";
-                txtProjetMonday.Text = "999";
-        }
-        
-
         protected void btnAddMonday_Click(object sender, EventArgs e)
         {
             string resultProjet = "";
             string resultMinutes = "";
 
             string result = "";
-            if (cbSickMonday.Checked)
+
+            resultProjet = txtProjetMonday.Text;
+            resultMinutes = txtMinutesMonday.Text;
+
+            if (txtProjetMonday.BackColor != System.Drawing.Color.LightGray)
             {
-                txtMinutesMonday.Text = "420";
-                txtProjetMonday.Text = "999";
-
-                resultProjet = txtProjetMonday.Text;
-                resultMinutes = txtMinutesMonday.Text;
-
-                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes;
-
-                lblResultMonday.Text = result;
-
-            }else
-            {
-                resultProjet = txtProjetMonday.Text;
-                resultMinutes = txtMinutesMonday.Text;
-
-                result = "Project Code: " + resultProjet+  "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
                 lblResultMonday.Text += result;
+
+                if (cbSickMonday.Checked)
+                {
+                    btnAddMonday.Enabled = false;
+                }
+                if (resultProjet == "998")
+                {
+                    txtProjetMonday.BackColor = System.Drawing.Color.LightGray;
+                    txtMinutesMonday.BackColor = System.Drawing.Color.LightGray;
+                }
+                txtProjetMonday.Text = "";
+                txtMinutesMonday.Text = "";
             }
-            
+            else if (txtProjetMonday.BackColor == System.Drawing.Color.LightGray && int.Parse(resultProjet) >= 900)
+            {
+                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                lblResultMonday.Text += result;
+
+                if (cbSickMonday.Checked)
+                {
+                    btnAddMonday.Enabled = false;
+                }
+                if (resultProjet == "998")
+                {
+                    txtProjetMonday.BackColor = System.Drawing.Color.LightGray;
+                    txtMinutesMonday.BackColor = System.Drawing.Color.LightGray;
+                }
+                txtProjetMonday.Text = "";
+                txtMinutesMonday.Text = "";
+            }
+            else
+            {
+                Response.Write("<script>alert('Seul le temps en télétravail est accepté pour cette journée');</script>");
+            }
         }
 
         protected void btnAddTuesday_Click(object sender, EventArgs e)
@@ -112,27 +126,49 @@ namespace PunchClock
             string resultMinutes = "";
 
             string result = "";
-            if (cbSickTuesday.Checked)
+
+            resultProjet = txtProjetTuesday.Text;
+            resultMinutes = txtMinutesTuesday.Text;
+
+            if (txtProjetTuesday.BackColor != System.Drawing.Color.LightGray)
             {
-                txtMinutesTuesday.Text = "420";
-                txtProjetTuesday.Text = "999";
+                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                lblResultTuesday.Text += result;
 
-                resultProjet = txtProjetTuesday.Text;
-                resultMinutes = txtMinutesTuesday.Text;
+                if (cbSickTuesday.Checked)
+                {
+                    btnAddTuesday.Enabled = false;
+                }
+                if (resultProjet == "998")
+                {
+                    txtProjetTuesday.BackColor = System.Drawing.Color.LightGray;
+                    txtMinutesTuesday.BackColor = System.Drawing.Color.LightGray;
+                }
+                txtProjetTuesday.Text = "";
+                txtMinutesTuesday.Text = "";
+            }
+            else if (txtProjetTuesday.BackColor == System.Drawing.Color.LightGray && int.Parse(resultProjet) >= 900)
+            {
+                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                lblResultTuesday.Text += result;
 
-                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes;
-
-                lblResultTuesday.Text = result;
-
+                if (cbSickTuesday.Checked)
+                {
+                    btnAddTuesday.Enabled = false;
+                }
+                if (resultProjet == "998")
+                {
+                    txtProjetTuesday.BackColor = System.Drawing.Color.LightGray;
+                    txtMinutesTuesday.BackColor = System.Drawing.Color.LightGray;
+                }
+                txtProjetTuesday.Text = "";
+                txtMinutesTuesday.Text = "";
             }
             else
             {
-                resultProjet = txtProjetTuesday.Text;
-                resultMinutes = txtMinutesTuesday.Text;
-
-                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
-                lblResultTuesday.Text += result;
+                Response.Write("<script>alert('Seul le temps en télétravail est accepté pour cette journée');</script>");
             }
+
         }
 
         protected void btnAddWednesday_Click(object sender, EventArgs e)
@@ -141,26 +177,49 @@ namespace PunchClock
             string resultMinutes = "";
 
             string result = "";
-            if (cbSickWednesday.Checked)
+
+            resultProjet = txtProjetWednesday.Text;
+            resultMinutes = txtMinutesWednesday.Text;
+
+            if (txtProjetWednesday.BackColor != System.Drawing.Color.LightGray)
             {
-                txtMinutesWednesday.Text = "420";
-                txtProjetWednesday.Text = "999";
+                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                lblResultWednesday.Text += result;
 
-                resultProjet = txtProjetWednesday.Text;
-                resultMinutes = txtMinutesWednesday.Text;
+                if (cbSickWednesday.Checked)
+                {
+                    btnAddWednesday.Enabled = false;
+                }
+                if (resultProjet == "998")
+                {
+                    txtProjetWednesday.BackColor = System.Drawing.Color.LightGray;
+                    txtMinutesWednesday.BackColor = System.Drawing.Color.LightGray;
+                }
 
-                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes;
+                txtProjetWednesday.Text = "";
+                txtMinutesWednesday.Text = "";
+            }
+            else if (txtProjetWednesday.BackColor == System.Drawing.Color.LightGray && int.Parse(resultProjet) >= 900)
+            {
+                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                lblResultWednesday.Text += result;
 
-                lblResultWednesday.Text = result;
+                if (cbSickWednesday.Checked)
+                {
+                    btnAddWednesday.Enabled = false;
+                }
+                if (resultProjet == "998")
+                {
+                    txtProjetWednesday.BackColor = System.Drawing.Color.LightGray;
+                    txtMinutesWednesday.BackColor = System.Drawing.Color.LightGray;
+                }
 
+                txtProjetWednesday.Text = "";
+                txtMinutesWednesday.Text = "";
             }
             else
             {
-                resultProjet = txtProjetWednesday.Text;
-                resultMinutes = txtMinutesWednesday.Text;
-
-                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
-                lblResultWednesday.Text += result;
+                Response.Write("<script>alert('Seul le temps en télétravail est accepté pour cette journée');</script>");
             }
         }
 
@@ -170,26 +229,49 @@ namespace PunchClock
             string resultMinutes = "";
 
             string result = "";
-            if (cbSickThursday.Checked)
+
+            resultProjet = txtProjetThursday.Text;
+            resultMinutes = txtMinutesThursday.Text;
+
+            if (txtProjetThursday.BackColor != System.Drawing.Color.LightGray)
             {
-                txtMinutesThursday.Text = "420";
-                txtProjetThursday.Text = "999";
+                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                lblResultThursday.Text += result;
 
-                resultProjet = txtProjetThursday.Text;
-                resultMinutes = txtMinutesThursday.Text;
+                if (cbSickThursday.Checked)
+                {
+                    btnAddThursday.Enabled = false;
+                }
+                if (resultProjet == "998")
+                {
+                    txtProjetThursday.BackColor = System.Drawing.Color.LightGray;
+                    txtMinutesThursday.BackColor = System.Drawing.Color.LightGray;
+                }
 
-                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes;
+                txtProjetThursday.Text = "";
+                txtMinutesThursday.Text = "";
+            }
+            else if (txtProjetThursday.BackColor == System.Drawing.Color.LightGray && int.Parse(resultProjet) >= 900)
+            {
+                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                lblResultThursday.Text += result;
 
-                lblResultThursday.Text = result;
+                if (cbSickThursday.Checked)
+                {
+                    btnAddThursday.Enabled = false;
+                }
+                if (resultProjet == "998")
+                {
+                    txtProjetThursday.BackColor = System.Drawing.Color.LightGray;
+                    txtMinutesThursday.BackColor = System.Drawing.Color.LightGray;
+                }
 
+                txtProjetThursday.Text = "";
+                txtMinutesThursday.Text = "";
             }
             else
             {
-                resultProjet = txtProjetThursday.Text;
-                resultMinutes = txtMinutesThursday.Text;
-
-                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
-                lblResultThursday.Text += result;
+                Response.Write("<script>alert('Seul le temps en télétravail est accepté pour cette journée');</script>");
             }
         }
 
@@ -199,27 +281,52 @@ namespace PunchClock
             string resultMinutes = "";
 
             string result = "";
-            if (cbSickFriday.Checked)
+
+            resultProjet = txtProjetFriday.Text;
+            resultMinutes = txtMinutesFriday.Text;
+
+            if (txtProjetFriday.BackColor != System.Drawing.Color.LightGray) 
             {
-                txtMinutesFriday.Text = "420";
-                txtProjetFriday.Text = "999";
-
-                resultProjet = txtProjetFriday.Text;
-                resultMinutes = txtMinutesFriday.Text;
-
-                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes;
-
-                lblResultFriday.Text = result;
-
-            }
-            else
-            {
-                resultProjet = txtProjetFriday.Text;
-                resultMinutes = txtMinutesFriday.Text;
-
                 result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
                 lblResultFriday.Text += result;
+
+                if (cbSickFriday.Checked)
+                {
+                    btnAddFriday.Enabled = false;
+                }
+                if (resultProjet == "998")
+                {
+                    txtProjetFriday.BackColor = System.Drawing.Color.LightGray;
+                    txtMinutesFriday.BackColor = System.Drawing.Color.LightGray;
+                }
+
+                txtProjetFriday.Text = "";
+                txtMinutesFriday.Text = "";
+
             }
+            else if (txtProjetFriday.BackColor == System.Drawing.Color.LightGray && int.Parse(resultProjet) >= 900)
+            {
+                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                lblResultFriday.Text += result;
+
+                if (cbSickFriday.Checked)
+                {
+                    btnAddFriday.Enabled = false;
+                }
+                if (resultProjet == "998")
+                {
+                    txtProjetFriday.BackColor = System.Drawing.Color.LightGray;
+                    txtMinutesFriday.BackColor = System.Drawing.Color.LightGray;
+                }
+
+                txtProjetFriday.Text = "";
+                txtMinutesFriday.Text = "";
+            }
+            else 
+            {
+                Response.Write("<script>alert('Seul le temps en télétravail est accepté pour cette journée');</script>");
+            }
+
         }
 
         protected void btnAddSaturday_Click(object sender, EventArgs e)
@@ -228,27 +335,23 @@ namespace PunchClock
             string resultMinutes = "";
 
             string result = "";
-            if (cbSickSaturday.Checked)
-            {
-                txtMinutesSaturday.Text = "420";
-                txtProjetSaturday.Text = "999";
 
-                resultProjet = txtProjetSaturday.Text;
-                resultMinutes = txtMinutesSaturday.Text;
+            resultProjet = txtProjetSaturday.Text;
+            resultMinutes = txtMinutesSaturday.Text;
 
-                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes;
-
-                lblResultSaturday.Text = result;
-
-            }
+            if (int.Parse(resultProjet) == 998)
+                Response.Write("<script>alert('Les fériés ne sont pas permis durant la fin de semaine');</script>");
             else
             {
-                resultProjet = txtProjetSaturday.Text;
-                resultMinutes = txtMinutesSaturday.Text;
-
                 result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
                 lblResultSaturday.Text += result;
+
+                txtProjetSaturday.Text = "";
+                txtMinutesSaturday.Text = "";
             }
+
+
+            
         }
 
         protected void btnAddSunday_Click(object sender, EventArgs e)
@@ -257,27 +360,21 @@ namespace PunchClock
             string resultMinutes = "";
 
             string result = "";
-            if (cbSickSunday.Checked)
-            {
-                txtMinutesSunday.Text = "420";
-                txtProjetSunday.Text = "999";
 
-                resultProjet = txtProjetSunday.Text;
-                resultMinutes = txtMinutesSunday.Text;
+            resultProjet = txtProjetSunday.Text;
+            resultMinutes = txtMinutesSunday.Text;
 
-                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes;
-
-                lblResultSunday.Text = result;
-
-            }
+            if (int.Parse(resultProjet) == 998)
+                Response.Write("<script>alert('Les fériés ne sont pas permis durant la fin de semaine');</script>");
             else
             {
-                resultProjet = txtProjetSunday.Text;
-                resultMinutes = txtMinutesSunday.Text;
-
                 result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
                 lblResultSunday.Text += result;
+
+                txtProjetSunday.Text = "";
+                txtMinutesSunday.Text = "";
             }
+
         }
 
         private bool ItsHoliday(DateTime date) {
@@ -333,5 +430,72 @@ namespace PunchClock
 
         }
 
+        protected void cbSickMonday_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbSickMonday.Checked)
+            {
+                txtProjetMonday.Text = "999";
+                txtMinutesMonday.Text = "420";
+            }
+            else
+            {
+                txtProjetMonday.Text = "";
+                txtMinutesMonday.Text = "";
+            }
+        }
+        protected void cbSickTuesday_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbSickTuesday.Checked)
+            {
+                txtProjetTuesday.Text = "999";
+                txtMinutesTuesday.Text = "420";
+            }
+            else {
+                txtProjetTuesday.Text = "";
+                txtMinutesTuesday.Text = "";
+            }
+        }
+
+        protected void cbSickWednesday_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbSickWednesday.Checked)
+            {
+                txtProjetWednesday.Text = "999";
+                txtMinutesWednesday.Text = "420";
+            }
+            else
+            {
+                txtProjetWednesday.Text = "";
+                txtMinutesWednesday.Text = "";
+            }
+        }
+
+        protected void cbSickThursday_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbSickThursday.Checked)
+            {
+                txtProjetThursday.Text = "999";
+                txtMinutesThursday.Text = "420";
+            }
+            else
+            {
+                txtProjetThursday.Text = "";
+                txtMinutesThursday.Text = "";
+            }
+        }
+
+        protected void cbSickFriday_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbSickFriday.Checked)
+            {
+                txtProjetFriday.Text = "999";
+                txtMinutesFriday.Text = "420";
+            }
+            else
+            {
+                txtProjetFriday.Text = "";
+                txtMinutesFriday.Text = "";
+            }
+        }
     }
 }
