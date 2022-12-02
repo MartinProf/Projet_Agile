@@ -118,7 +118,7 @@
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>
-                    <td class="auto-style3"><strong>Employee timsheet form</strong></td>
+                    <td class="auto-style3"><strong>Employee timesheet form</strong></td>
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>
@@ -128,7 +128,7 @@
                     <td>&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
-                    <td class="auto-style8">Please fill all&nbsp; areas with the required information.</td>
+                    <td class="auto-style8">Please fill in all the required information.</td>
                     <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style7">
                         &nbsp;</td>
@@ -152,7 +152,7 @@
                     <td class="auto-style7"><strong><span class="auto-style11">Week number: </span>
                         <asp:DropDownList ID="dropDownListWeek" runat="server" autopostback="true" CssClass="auto-style6" OnSelectedIndexChanged="dropDownListWeek_SelectedIndexChanged"></asp:DropDownList>
                         </strong></td>
-                    <td class="auto-style12"><strong>Emplopyee ID:
+                    <td class="auto-style12"><strong>Employee ID:
                         <asp:TextBox ID="txtEmpId" runat="server" CssClass="auto-style6"></asp:TextBox>
                         </strong></td>
                     <td>&nbsp;</td>
