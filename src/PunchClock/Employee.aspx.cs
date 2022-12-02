@@ -78,21 +78,25 @@ namespace PunchClock
             string resultMinutes = "";
 
             string result = "";
+            string resultAffichage = "";
 
             resultProjet = txtProjetMonday.Text;
             resultMinutes = txtMinutesMonday.Text;
 
             if (txtProjetMonday.BackColor != System.Drawing.Color.LightGray)
             {
-                if (lblResultMonday.Text.Equals(""))
+                resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                lblResultMonday.Text += resultAffichage;
+
+                if (LabelLundi.Text.Equals(""))
                 {
-                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
-                    lblResultMonday.Text += result;
+                    result = "{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    LabelLundi.Text += result;
                 }
                 else
                 {
-                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
-                    lblResultMonday.Text += result;
+                    result = "\n,{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    LabelLundi.Text += result;
                 }
 
                 if (cbSickMonday.Checked)
@@ -109,15 +113,18 @@ namespace PunchClock
             }
             else if (txtProjetMonday.BackColor == System.Drawing.Color.LightGray && int.Parse(resultProjet) >= 900)
             {
-                if (lblResultMonday.Text.Equals(""))
+                resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                lblResultMonday.Text += resultAffichage;
+
+                if (LabelLundi.Text.Equals(""))
                 {
-                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
-                    lblResultMonday.Text += result;
+                    result = "{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    LabelLundi.Text += result;
                 }
                 else
                 {
-                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
-                    lblResultMonday.Text += result;
+                    result = "\n,{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    LabelLundi.Text += result;
                 }
 
                 if (cbSickMonday.Checked)
@@ -144,21 +151,25 @@ namespace PunchClock
             string resultMinutes = "";
 
             string result = "";
+            string resultAffichage = "";
 
             resultProjet = txtProjetTuesday.Text;
             resultMinutes = txtMinutesTuesday.Text;
 
             if (txtProjetTuesday.BackColor != System.Drawing.Color.LightGray)
             {
-                if (lblResultTuesday.Text.Equals(""))
+                resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                lblResultTuesday.Text += resultAffichage;
+
+                if (LabelMardi.Text.Equals(""))
                 {
-                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
-                    lblResultTuesday.Text += result;
+                    result = "{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    LabelMardi.Text += result;
                 }
                 else
                 {
-                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
-                    lblResultTuesday.Text += result;
+                    result = "\n,{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    LabelMardi.Text += result;
                 }
 
                 if (cbSickTuesday.Checked)
@@ -175,15 +186,18 @@ namespace PunchClock
             }
             else if (txtProjetTuesday.BackColor == System.Drawing.Color.LightGray && int.Parse(resultProjet) >= 900)
             {
-                if (lblResultTuesday.Text.Equals(""))
+                resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                lblResultTuesday.Text += resultAffichage;
+
+                if (LabelMardi.Text.Equals(""))
                 {
-                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
-                    lblResultTuesday.Text += result;
+                    result = "{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    LabelMardi.Text += result;
                 }
                 else
                 {
-                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
-                    lblResultTuesday.Text += result;
+                    result = "\n,{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    LabelMardi.Text += result;
                 }
 
                 if (cbSickTuesday.Checked)
@@ -211,21 +225,27 @@ namespace PunchClock
             string resultMinutes = "";
 
             string result = "";
+            string resultAffichage = "";
 
             resultProjet = txtProjetWednesday.Text;
             resultMinutes = txtMinutesWednesday.Text;
 
             if (txtProjetWednesday.BackColor != System.Drawing.Color.LightGray)
             {
-                if (lblResultWednesday.Text.Equals(""))
+                resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                lblResultWednesday.Text += resultAffichage;
+
+                if (LabelMercredi.Text.Equals(""))
                 {
-                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    result = "{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
                     lblResultWednesday.Text += result;
+                    LabelMercredi.Text += result;
                 }
                 else
                 {
-                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    result = "\n,{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
                     lblResultWednesday.Text += result;
+                    LabelMercredi.Text += result;
                 }
 
                 if (cbSickWednesday.Checked)
@@ -243,15 +263,18 @@ namespace PunchClock
             }
             else if (txtProjetWednesday.BackColor == System.Drawing.Color.LightGray && int.Parse(resultProjet) >= 900)
             {
-                if (lblResultWednesday.Text.Equals(""))
+                resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                lblResultWednesday.Text += resultAffichage;
+
+                if (LabelMercredi.Text.Equals(""))
                 {
-                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
-                    lblResultWednesday.Text += result;
+                    result = "{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    LabelMercredi.Text += result;
                 }
                 else
                 {
-                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
-                    lblResultWednesday.Text += result;
+                    result = "\n,{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    LabelMercredi.Text += result;
                 }
 
                 if (cbSickWednesday.Checked)
@@ -279,21 +302,25 @@ namespace PunchClock
             string resultMinutes = "";
 
             string result = "";
+            string resultAffichage = "";
 
             resultProjet = txtProjetThursday.Text;
             resultMinutes = txtMinutesThursday.Text;
 
             if (txtProjetThursday.BackColor != System.Drawing.Color.LightGray)
             {
-                if (lblResultThursday.Text.Equals(""))
+                resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                lblResultThursday.Text += resultAffichage;
+
+                if (LabelJeudi.Text.Equals(""))
                 {
-                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
-                    lblResultThursday.Text += result;
+                    result = "{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    LabelJeudi.Text += result;
                 }
                 else
                 {
-                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
-                    lblResultThursday.Text += result;
+                    result = "\n,{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    LabelJeudi.Text += result;
                 }
 
                 if (cbSickThursday.Checked)
@@ -311,15 +338,18 @@ namespace PunchClock
             }
             else if (txtProjetThursday.BackColor == System.Drawing.Color.LightGray && int.Parse(resultProjet) >= 900)
             {
-                if (lblResultThursday.Text.Equals(""))
+                resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                lblResultThursday.Text += resultAffichage;
+
+                if (LabelJeudi.Text.Equals(""))
                 {
-                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
-                    lblResultThursday.Text += result;
+                    result = "{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    LabelJeudi.Text += result;
                 }
                 else
                 {
-                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
-                    lblResultThursday.Text += result;
+                    result = "\n,{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    LabelJeudi.Text += result;
                 }
 
                 if (cbSickThursday.Checked)
@@ -347,21 +377,25 @@ namespace PunchClock
             string resultMinutes = "";
 
             string result = "";
+            string resultAffichage = "";
 
             resultProjet = txtProjetFriday.Text;
             resultMinutes = txtMinutesFriday.Text;
 
             if (txtProjetFriday.BackColor != System.Drawing.Color.LightGray) 
             {
-                if (lblResultFriday.Text.Equals(""))
+                resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                lblResultFriday.Text += resultAffichage;
+
+                if (LabelVendredi.Text.Equals(""))
                 {
-                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
-                    lblResultFriday.Text += result;
+                    result = "{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    LabelVendredi.Text += result;
                 }
                 else
                 {
-                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
-                    lblResultFriday.Text += result;
+                    result = "\n,{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    LabelVendredi.Text += result;
                 }
 
                 if (cbSickFriday.Checked)
@@ -380,15 +414,18 @@ namespace PunchClock
             }
             else if (txtProjetFriday.BackColor == System.Drawing.Color.LightGray && int.Parse(resultProjet) >= 900)
             {
-                if (lblResultFriday.Text.Equals(""))
+                resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                lblResultFriday.Text += resultAffichage;
+
+                if (LabelVendredi.Text.Equals(""))
                 {
-                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
-                    lblResultFriday.Text += result;
+                    result = "{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    LabelVendredi.Text += result;
                 }
                 else
                 {
-                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
-                    lblResultFriday.Text += result;
+                    result = "\n,{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    LabelVendredi.Text += result;
                 }
 
                 if (cbSickFriday.Checked)
@@ -417,6 +454,7 @@ namespace PunchClock
             string resultMinutes = "";
 
             string result = "";
+            string resultAffichage = "";
 
             resultProjet = txtProjetSaturday.Text;
             resultMinutes = txtMinutesSaturday.Text;
@@ -425,15 +463,18 @@ namespace PunchClock
                 Response.Write("<script>alert('Les fériés ne sont pas permis durant la fin de semaine');</script>");
             else
             {
-                if (lblResultSaturday.Text.Equals(""))
+                resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                lblResultSaturday.Text += resultAffichage;
+
+                if (LabelSamedi.Text.Equals(""))
                 {
-                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
-                    lblResultSaturday.Text += result;
+                    result = "{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    LabelSamedi.Text += result;
                 }
                 else
                 {
-                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
-                    lblResultSaturday.Text += result;
+                    result = "\n,{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    LabelSamedi.Text += result;
                 }
 
                 txtProjetSaturday.Text = "";
@@ -450,6 +491,7 @@ namespace PunchClock
             string resultMinutes = "";
 
             string result = "";
+            string resultAffichage = "";
 
             resultProjet = txtProjetSunday.Text;
             resultMinutes = txtMinutesSunday.Text;
@@ -458,17 +500,19 @@ namespace PunchClock
                 Response.Write("<script>alert('Les fériés ne sont pas permis durant la fin de semaine');</script>");
             else
             {
-                if (lblResultSunday.Text.Equals(""))
+                resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                lblResultSunday.Text += resultAffichage;
+
+                if (LabelDimanche.Text.Equals(""))
                 {
-                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
-                    lblResultSunday.Text += result;
+                    result = "{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    LabelDimanche.Text += result;
                 }
                 else 
                 {
-                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
-                    lblResultSunday.Text += result;
+                    result = "\n,{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    LabelDimanche.Text += result;
                 }
-
 
                 txtProjetSunday.Text = "";
                 txtMinutesSunday.Text = "";
@@ -607,8 +651,8 @@ namespace PunchClock
                 string year = txtYear.Text;
                 string weekNumber = dropDownListWeek.SelectedValue;
                 jsonFile = stringJsonGenerator(id, year, weekNumber);
-                jsonName = id + "-" + year + "-" + weekNumber + ".json";
-                LabelTestJson.Text = jsonFile;
+                jsonName = id + "-" + year + "-" + weekNumber;
+                LabelTestJson.Text = jsonFile + jsonName;
                 
             }
             catch (Exception)
@@ -618,9 +662,18 @@ namespace PunchClock
 
             }
 
-            //File.WriteAllText(jsonName, jsonFile);
-
-            //Projet_Agile.Program.Generate(jsonName, jsonFile);
+            
+            try
+            {
+                if (String.IsNullOrWhiteSpace(jsonName) || String.IsNullOrWhiteSpace(jsonFile))
+                    LabelTestJson.Text = "Please enter File name and its content";
+                else
+                    WriteToFile(jsonName, jsonFile);
+            }
+            catch (Exception ex)
+            {
+                LabelTestJson.Text = ex.Message.ToString();
+            }
         }
 
         private string stringJsonGenerator(string id, string year, string weekNumber)
@@ -629,22 +682,39 @@ namespace PunchClock
             jsonFormat += "\"numero employe:\":" + id;
             jsonFormat += ",\n\"annee\":" + year;
             jsonFormat += ",\n\"numero semaine\":" + weekNumber;
-            jsonFormat += ",\n\"jour1\":[" + lblResultMonday.Text + "],";
-            jsonFormat += "\"jour2\":[" + lblResultTuesday.Text + "],";
-            jsonFormat += "\"jour3\":[" + lblResultWednesday.Text + "],";
-            jsonFormat += "\"jour4\":[" + lblResultThursday.Text + "],";
-            jsonFormat += "\"jour5\":[" + lblResultFriday.Text + "],";
-            jsonFormat += "\"weekendl\":[" + lblResultSaturday.Text + "],";
-            jsonFormat += "\"weekend2\":[" + lblResultSunday.Text + "]}";
+            jsonFormat += ",\n\"jour1\":\n[\n" + LabelLundi.Text + "\n]\n,\n";
+            jsonFormat += "\"jour2\":\n[\n" + LabelMardi.Text + "\n]\n,\n";
+            jsonFormat += "\"jour3\":\n[\n" + LabelMercredi.Text + "\n]\n,\n";
+            jsonFormat += "\"jour4\":\n[\n" + LabelJeudi.Text + "\n]\n,\n";
+            jsonFormat += "\"jour5\":\n[\n" + LabelVendredi.Text + "\n]\n,\n";
+            jsonFormat += "\"weekendl\":\n[\n" + LabelSamedi.Text + "\n]\n,\n";
+            jsonFormat += "\"weekend2\":\n[\n" + LabelDimanche.Text + "\n]\n}";
 
             return jsonFormat;
         }
 
-        public static async Task jsonCreator(string jsonName, string jsonFile) 
+        public void WriteToFile(string fileName, string fileContent)
         {
-            //using Streamwriter file = new(jsonName, append: true);
+            try
+            {
+                fileName += ".json";
+                string FolderPath = @"C:\FeuillesTemps\";
+                if (!Directory.Exists(FolderPath))
+                    Directory.CreateDirectory(FolderPath);
 
-            //await file.WriteAllTextAsync(jsonFile);
+                if (!File.Exists(FolderPath + fileName))
+                    File.Create(FolderPath + fileName).Close();
+
+                StreamWriter stream = new StreamWriter(FolderPath + fileName, true);
+                stream.WriteLine(fileContent);
+                stream.Close();
+
+                LabelTestJson.Text = "Le fichier json a été sauvegardé dans le dossier: C:\\FeuillesTemps ";
+            }
+            catch (Exception ex)
+            {
+                LabelTestJson.Text = "Erreur survenue:" + ex.Message.ToString();
+            }
         }
     }
 }
