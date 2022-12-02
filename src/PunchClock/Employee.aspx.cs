@@ -238,13 +238,11 @@ namespace PunchClock
                 if (LabelMercredi.Text.Equals(""))
                 {
                     result = "{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
-                    lblResultWednesday.Text += result;
                     LabelMercredi.Text += result;
                 }
                 else
                 {
                     result = "\n,{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
-                    lblResultWednesday.Text += result;
                     LabelMercredi.Text += result;
                 }
 
@@ -652,8 +650,6 @@ namespace PunchClock
                 string weekNumber = dropDownListWeek.SelectedValue;
                 jsonFile = stringJsonGenerator(id, year, weekNumber);
                 jsonName = id + "-" + year + "-" + weekNumber;
-                LabelTestJson.Text = jsonFile + jsonName;
-                
             }
             catch (Exception)
             {
