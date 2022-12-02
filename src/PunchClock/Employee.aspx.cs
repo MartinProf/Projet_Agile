@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -82,8 +84,16 @@ namespace PunchClock
 
             if (txtProjetMonday.BackColor != System.Drawing.Color.LightGray)
             {
-                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
-                lblResultMonday.Text += result;
+                if (lblResultMonday.Text.Equals(""))
+                {
+                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultMonday.Text += result;
+                }
+                else
+                {
+                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultMonday.Text += result;
+                }
 
                 if (cbSickMonday.Checked)
                 {
@@ -99,8 +109,16 @@ namespace PunchClock
             }
             else if (txtProjetMonday.BackColor == System.Drawing.Color.LightGray && int.Parse(resultProjet) >= 900)
             {
-                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
-                lblResultMonday.Text += result;
+                if (lblResultMonday.Text.Equals(""))
+                {
+                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultMonday.Text += result;
+                }
+                else
+                {
+                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultMonday.Text += result;
+                }
 
                 if (cbSickMonday.Checked)
                 {
@@ -132,8 +150,16 @@ namespace PunchClock
 
             if (txtProjetTuesday.BackColor != System.Drawing.Color.LightGray)
             {
-                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
-                lblResultTuesday.Text += result;
+                if (lblResultTuesday.Text.Equals(""))
+                {
+                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultTuesday.Text += result;
+                }
+                else
+                {
+                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultTuesday.Text += result;
+                }
 
                 if (cbSickTuesday.Checked)
                 {
@@ -149,8 +175,16 @@ namespace PunchClock
             }
             else if (txtProjetTuesday.BackColor == System.Drawing.Color.LightGray && int.Parse(resultProjet) >= 900)
             {
-                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
-                lblResultTuesday.Text += result;
+                if (lblResultTuesday.Text.Equals(""))
+                {
+                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultTuesday.Text += result;
+                }
+                else
+                {
+                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultTuesday.Text += result;
+                }
 
                 if (cbSickTuesday.Checked)
                 {
@@ -183,8 +217,16 @@ namespace PunchClock
 
             if (txtProjetWednesday.BackColor != System.Drawing.Color.LightGray)
             {
-                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
-                lblResultWednesday.Text += result;
+                if (lblResultWednesday.Text.Equals(""))
+                {
+                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultWednesday.Text += result;
+                }
+                else
+                {
+                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultWednesday.Text += result;
+                }
 
                 if (cbSickWednesday.Checked)
                 {
@@ -201,8 +243,16 @@ namespace PunchClock
             }
             else if (txtProjetWednesday.BackColor == System.Drawing.Color.LightGray && int.Parse(resultProjet) >= 900)
             {
-                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
-                lblResultWednesday.Text += result;
+                if (lblResultWednesday.Text.Equals(""))
+                {
+                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultWednesday.Text += result;
+                }
+                else
+                {
+                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultWednesday.Text += result;
+                }
 
                 if (cbSickWednesday.Checked)
                 {
@@ -235,8 +285,16 @@ namespace PunchClock
 
             if (txtProjetThursday.BackColor != System.Drawing.Color.LightGray)
             {
-                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
-                lblResultThursday.Text += result;
+                if (lblResultThursday.Text.Equals(""))
+                {
+                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultThursday.Text += result;
+                }
+                else
+                {
+                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultThursday.Text += result;
+                }
 
                 if (cbSickThursday.Checked)
                 {
@@ -253,8 +311,16 @@ namespace PunchClock
             }
             else if (txtProjetThursday.BackColor == System.Drawing.Color.LightGray && int.Parse(resultProjet) >= 900)
             {
-                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
-                lblResultThursday.Text += result;
+                if (lblResultThursday.Text.Equals(""))
+                {
+                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultThursday.Text += result;
+                }
+                else
+                {
+                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultThursday.Text += result;
+                }
 
                 if (cbSickThursday.Checked)
                 {
@@ -287,8 +353,16 @@ namespace PunchClock
 
             if (txtProjetFriday.BackColor != System.Drawing.Color.LightGray) 
             {
-                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
-                lblResultFriday.Text += result;
+                if (lblResultFriday.Text.Equals(""))
+                {
+                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultFriday.Text += result;
+                }
+                else
+                {
+                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultFriday.Text += result;
+                }
 
                 if (cbSickFriday.Checked)
                 {
@@ -306,8 +380,16 @@ namespace PunchClock
             }
             else if (txtProjetFriday.BackColor == System.Drawing.Color.LightGray && int.Parse(resultProjet) >= 900)
             {
-                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
-                lblResultFriday.Text += result;
+                if (lblResultFriday.Text.Equals(""))
+                {
+                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultFriday.Text += result;
+                }
+                else
+                {
+                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultFriday.Text += result;
+                }
 
                 if (cbSickFriday.Checked)
                 {
@@ -343,8 +425,16 @@ namespace PunchClock
                 Response.Write("<script>alert('Les fériés ne sont pas permis durant la fin de semaine');</script>");
             else
             {
-                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
-                lblResultSaturday.Text += result;
+                if (lblResultSaturday.Text.Equals(""))
+                {
+                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultSaturday.Text += result;
+                }
+                else
+                {
+                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultSaturday.Text += result;
+                }
 
                 txtProjetSaturday.Text = "";
                 txtMinutesSaturday.Text = "";
@@ -368,8 +458,17 @@ namespace PunchClock
                 Response.Write("<script>alert('Les fériés ne sont pas permis durant la fin de semaine');</script>");
             else
             {
-                result = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
-                lblResultSunday.Text += result;
+                if (lblResultSunday.Text.Equals(""))
+                {
+                    result = "{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultSunday.Text += result;
+                }
+                else 
+                {
+                    result = ",{project: " + resultProjet + ",<br/>" + "\nminutes: " + resultMinutes + "}<br/><br/>";
+                    lblResultSunday.Text += result;
+                }
+
 
                 txtProjetSunday.Text = "";
                 txtMinutesSunday.Text = "";
@@ -496,6 +595,56 @@ namespace PunchClock
                 txtProjetFriday.Text = "";
                 txtMinutesFriday.Text = "";
             }
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string jsonFile = "";
+            string jsonName = "";
+            try
+            {
+                string id = txtEmpId.Text;
+                string year = txtYear.Text;
+                string weekNumber = dropDownListWeek.SelectedValue;
+                jsonFile = stringJsonGenerator(id, year, weekNumber);
+                jsonName = id + "-" + year + "-" + weekNumber + ".json";
+                LabelTestJson.Text = jsonFile;
+                
+            }
+            catch (Exception)
+            {
+
+                Response.Write("<script>alert('Un des champs est manquant!');</script>");
+
+            }
+
+            //File.WriteAllText(jsonName, jsonFile);
+
+            //Projet_Agile.Program.Generate(jsonName, jsonFile);
+        }
+
+        private string stringJsonGenerator(string id, string year, string weekNumber)
+        {
+            string jsonFormat = "{";
+            jsonFormat += "\"numero employe:\":" + id;
+            jsonFormat += ",\n\"annee\":" + year;
+            jsonFormat += ",\n\"numero semaine\":" + weekNumber;
+            jsonFormat += ",\n\"jour1\":[" + lblResultMonday.Text + "],";
+            jsonFormat += "\"jour2\":[" + lblResultTuesday.Text + "],";
+            jsonFormat += "\"jour3\":[" + lblResultWednesday.Text + "],";
+            jsonFormat += "\"jour4\":[" + lblResultThursday.Text + "],";
+            jsonFormat += "\"jour5\":[" + lblResultFriday.Text + "],";
+            jsonFormat += "\"weekendl\":[" + lblResultSaturday.Text + "],";
+            jsonFormat += "\"weekend2\":[" + lblResultSunday.Text + "]}";
+
+            return jsonFormat;
+        }
+
+        public static async Task jsonCreator(string jsonName, string jsonFile) 
+        {
+            //using Streamwriter file = new(jsonName, append: true);
+
+            //await file.WriteAllTextAsync(jsonFile);
         }
     }
 }
