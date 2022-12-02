@@ -3,6 +3,7 @@
 24 nov: 3h00 - Nouvelle forme du json avec l'ajout des items année et # de semaine
 28 nov: 30min - Rencontre pour MaJ où on en ai rendu
 28 nov: 1h00 - Meeting dans chatroom pour répondre aux intérrogations
-30 nov: 5h00 - Implémentation weeknumber firstmondaybyweek + implementation dans l'interface
+30 nov: 7h00 - Implémentation weeknumber firstmondaybyweek + implementation dans l'interface
+1 dec: 3h00 - Tentative de faire un json avec le submit
 
 Gestion des merges du git durant la durée du sprint_2
