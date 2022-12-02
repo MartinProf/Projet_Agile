@@ -322,7 +322,15 @@
                
             </table>
         </div>
-        <asp:Label ID="LabelTestJson" runat="server" Text=""></asp:Label>
+         <asp:Label ID="LabelTestJson" runat="server" Text=""></asp:Label>
+
+        <asp:Label ID="LabelLundi" runat="server" Text=""></asp:Label>
+        <asp:Label ID="LabelMardi" runat="server" Text=""></asp:Label>
+        <asp:Label ID="LabelMercredi" runat="server" Text=""></asp:Label>
+        <asp:Label ID="LabelJeudi" runat="server" Text=""></asp:Label>
+        <asp:Label ID="LabelVendredi" runat="server" Text=""></asp:Label>
+        <asp:Label ID="LabelSamedi" runat="server" Text=""></asp:Label>
+        <asp:Label ID="LabelDimanche" runat="server" Text=""></asp:Label>
     </form>
 </body>
 </html>
