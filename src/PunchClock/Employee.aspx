@@ -310,7 +310,7 @@
             <table style="width: 100%;">
                 <tr>
                     <td class="auto-style10">
-                        <asp:Button ID="btnSubmit" runat="server" Height="30px" Text="Submit" Width="100px" />
+                        <asp:Button ID="btnSubmit" runat="server" Height="30px" Text="Submit" Width="100px" OnClick="btnSubmit_Click" />
                     </td>
                     <td class="auto-style7">
                         <asp:Button ID="btnReset" runat="server" Height="30px" Text="Reset" Width="100px" />
@@ -322,6 +322,7 @@
                
             </table>
         </div>
+        <asp:Label ID="LabelTestJson" runat="server" Text=""></asp:Label>
     </form>
 </body>
 </html>
