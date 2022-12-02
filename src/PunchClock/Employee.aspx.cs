@@ -72,9 +72,116 @@ namespace PunchClock
             Response.Redirect("Login.aspx");
         }
 
-        protected void btnAddMonday_Click(object sender, EventArgs e)
+        protected void addDayWeek(TextBox inputProjetDay, TextBox inputMinutesDay,Label resultDay, Label day, CheckBox sickDay, Button addDay)
+        {
+            string  resultProjet = "";
+            string  resultMinutes = "";
+
+            string result = "";
+            string resultAffichage = "";
+
+            resultProjet = inputProjetDay.Text;
+            resultMinutes = inputMinutesDay.Text;
+
+            if (inputProjetDay.BackColor != System.Drawing.Color.LightGray)
+            {
+                resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                resultDay.Text += resultAffichage;
+
+                if (day.Text.Equals(""))
+                {
+                    result = "{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    day.Text += result;
+                }
+                else
+                {
+                    result = "\n,{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    day.Text += result;
+                }
+
+                if (sickDay.Checked)
+                {
+                    addDay.Enabled = false;
+                }
+                if (resultProjet == "998")
+                {
+                    inputProjetDay.BackColor = System.Drawing.Color.LightGray;
+                    inputMinutesDay.BackColor = System.Drawing.Color.LightGray;
+                }
+                inputProjetDay.Text = "";
+                inputMinutesDay.Text = "";
+            }
+            else if (inputProjetDay.BackColor == System.Drawing.Color.LightGray && int.Parse(resultProjet) >= 900)
+            {
+                resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                resultDay.Text += resultAffichage;
+
+                if (day.Text.Equals(""))
+                {
+                    result = "{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    day.Text += result;
+                }
+                else
+                {
+                    result = "\n,{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    day.Text += result;
+                }
+
+                if (sickDay.Checked)
+                {
+                    addDay.Enabled = false;
+                }
+                if (resultProjet == "998")
+                {
+                    inputProjetDay.BackColor = System.Drawing.Color.LightGray;
+                    inputMinutesDay.BackColor = System.Drawing.Color.LightGray;
+                }
+                inputProjetDay.Text = "";
+                inputMinutesDay.Text = "";
+            }
+            else
+            {
+                Response.Write("<script>alert('Seul le temps en télétravail est accepté pour cette journée');</script>");
+            }
+        }
+        protected void addWeekend(TextBox inputProjetDay, TextBox inputMinutesDay, Label resultDay, Label day)
         {
             string resultProjet = "";
+            string resultMinutes = "";
+
+            string result = "";
+            string resultAffichage = "";
+
+            resultProjet = inputProjetDay.Text;
+            resultMinutes = inputMinutesDay.Text;
+
+            if (int.Parse(resultProjet) == 998)
+                Response.Write("<script>alert('Les fériés ne sont pas permis durant la fin de semaine');</script>");
+            else
+            {
+                resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                resultDay.Text += resultAffichage;
+
+                if (day.Text.Equals(""))
+                {
+                    result = "{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    day.Text += result;
+                }
+                else
+                {
+                    result = "\n,{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    day.Text += result;
+                }
+
+                inputProjetDay.Text = "";
+                inputMinutesDay.Text = "";
+            }
+        }
+        protected void btnAddMonday_Click(object sender, EventArgs e)
+        {
+
+            addDayWeek(txtProjetMonday, txtMinutesMonday, lblResultMonday, LabelLundi, cbSickMonday, btnAddMonday);
+            /*string resultProjet = "";
             string resultMinutes = "";
 
             string result = "";
@@ -142,12 +249,13 @@ namespace PunchClock
             else
             {
                 Response.Write("<script>alert('Seul le temps en télétravail est accepté pour cette journée');</script>");
-            }
+            }*/
         }
 
         protected void btnAddTuesday_Click(object sender, EventArgs e)
         {
-            string resultProjet = "";
+            addDayWeek(txtProjetTuesday, txtMinutesTuesday, lblResultTuesday, LabelMardi, cbSickTuesday, btnAddTuesday);
+            /*string resultProjet = "";
             string resultMinutes = "";
 
             string result = "";
@@ -215,12 +323,14 @@ namespace PunchClock
             else
             {
                 Response.Write("<script>alert('Seul le temps en télétravail est accepté pour cette journée');</script>");
-            }
+            }*/
 
         }
 
         protected void btnAddWednesday_Click(object sender, EventArgs e)
         {
+            addDayWeek(txtProjetWednesday, txtMinutesWednesday, lblResultWednesday, LabelMercredi, cbSickWednesday, btnAddWednesday);
+            /*
             string resultProjet = "";
             string resultMinutes = "";
 
@@ -291,11 +401,13 @@ namespace PunchClock
             else
             {
                 Response.Write("<script>alert('Seul le temps en télétravail est accepté pour cette journée');</script>");
-            }
+            }*/
         }
 
         protected void btnAddThursday_Click(object sender, EventArgs e)
         {
+            addDayWeek(txtProjetThursday, txtMinutesThursday, lblResultThursday, LabelJeudi, cbSickThursday, btnAddThursday);
+            /*
             string resultProjet = "";
             string resultMinutes = "";
 
@@ -366,11 +478,13 @@ namespace PunchClock
             else
             {
                 Response.Write("<script>alert('Seul le temps en télétravail est accepté pour cette journée');</script>");
-            }
+            }*/
         }
 
         protected void btnAddFriday_Click(object sender, EventArgs e)
         {
+            addDayWeek(txtProjetFriday, txtMinutesFriday, lblResultFriday, LabelVendredi, cbSickFriday, btnAddFriday);
+            /*
             string resultProjet = "";
             string resultMinutes = "";
 
@@ -442,12 +556,14 @@ namespace PunchClock
             else 
             {
                 Response.Write("<script>alert('Seul le temps en télétravail est accepté pour cette journée');</script>");
-            }
+            }*/
 
         }
 
         protected void btnAddSaturday_Click(object sender, EventArgs e)
         {
+            addWeekend(txtProjetSaturday, txtMinutesSaturday, lblResultSaturday, LabelSamedi);
+            /*
             string resultProjet = "";
             string resultMinutes = "";
 
@@ -478,13 +594,15 @@ namespace PunchClock
                 txtProjetSaturday.Text = "";
                 txtMinutesSaturday.Text = "";
             }
+            */
 
 
-            
         }
 
         protected void btnAddSunday_Click(object sender, EventArgs e)
         {
+            addWeekend(txtProjetSunday, txtMinutesSunday, lblResultSunday, LabelDimanche);
+            /*
             string resultProjet = "";
             string resultMinutes = "";
 
@@ -514,7 +632,7 @@ namespace PunchClock
 
                 txtProjetSunday.Text = "";
                 txtMinutesSunday.Text = "";
-            }
+            }*/
 
         }
 
