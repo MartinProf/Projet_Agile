@@ -505,7 +505,9 @@ namespace PunchClock
             try
             {
                 if (String.IsNullOrWhiteSpace(jsonName) || String.IsNullOrWhiteSpace(jsonFile))
-                    LabelTestJson.Text = "Please enter File name and its content";
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateJsonWalert();", true);
+                }
                 else
                     WriteToFile(jsonName, jsonFile);
             }

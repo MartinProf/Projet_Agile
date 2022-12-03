@@ -61,6 +61,18 @@
         }
     </script>
 
+    <script type="text/javascript">
+        function validateJsonWalert() {
+            swal({
+                title: 'Warning!',
+                text: 'Please enter File name and its content',
+                icon: "warning",
+                type: 'warning'
+            });
+        }
+    </script>
+    
+
    
     <title></title>
     <style type="text/css">
