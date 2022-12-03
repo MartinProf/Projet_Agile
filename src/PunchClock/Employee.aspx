@@ -4,6 +4,64 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript">
+         function validate24alert() {
+             swal({
+                 title: 'Error!',
+                 text: 'Une journée n\'a que 24 heures!',
+                 icon: "error",
+                 type: 'error'
+             });
+         }
+    </script>
+
+    <script type="text/javascript">
+        function validateTelealert() {
+            swal({
+                title: 'Error!',
+                text: 'Seul le temps en télétravail est accepté pour cette journée',
+                icon: "error",
+                type: 'error'
+            });
+        }
+    </script>
+
+    <script type="text/javascript">
+        function validateFeriealert() {
+            swal({
+                title: 'Error!',
+                text: 'Les fériés ne sont pas permis durant la fin de semaine',
+                icon: "error",
+                type: 'error'
+            });
+        }
+    </script>
+
+    <script type="text/javascript">
+        function validateChampsRequisalert() {
+            swal({
+                title: 'Warning!',
+                text: 'Vous devez remplir tous les champs requis',
+                icon: "warning",
+                type: 'warning'
+            });
+        }
+    </script>
+
+    <script type="text/javascript">
+        function validateJsonalert() {
+            swal({
+                title: 'Fichier Enregistré!',
+                text: 'Le fichier json a été sauvegardé dans le dossier: C:\\FeuillesTemps',
+                icon: "success",
+                type: 'success'
+            });
+        }
+    </script>
+
+   
     <title></title>
     <style type="text/css">
         hr {

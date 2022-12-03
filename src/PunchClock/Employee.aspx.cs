@@ -11,8 +11,19 @@ using Calendar = System.Globalization.Calendar;
 
 namespace PunchClock
 {
+
     public partial class Employee : System.Web.UI.Page
     {
+        static int totalTimeWorkedJour1 = 0;
+        static int totalTimeWorkedJour2 = 0;
+        static int totalTimeWorkedJour3 = 0;
+        static int totalTimeWorkedJour4 = 0;
+        static int totalTimeWorkedJour5 = 0;
+        static int totalTimeWorkedWeekend1 = 0;
+        static int totalTimeWorkedWeekend2 = 0;
+        string resultMinutes = "0";
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             int yearNow = int.Parse(DateTime.Now.ToString("yyyy"));
@@ -75,7 +86,7 @@ namespace PunchClock
         protected void addDayWeek(TextBox inputProjetDay, TextBox inputMinutesDay,Label resultDay, Label day, CheckBox sickDay, Button addDay)
         {
             string  resultProjet = "";
-            string  resultMinutes = "";
+            resultMinutes = "0";
 
             string result = "";
             string resultAffichage = "";
@@ -141,13 +152,13 @@ namespace PunchClock
             }
             else
             {
-                Response.Write("<script>alert('Seul le temps en télétravail est accepté pour cette journée');</script>");
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateTelealert();", true);
             }
         }
         protected void addWeekend(TextBox inputProjetDay, TextBox inputMinutesDay, Label resultDay, Label day)
         {
             string resultProjet = "";
-            string resultMinutes = "";
+            resultMinutes = "0";
 
             string result = "";
             string resultAffichage = "";
@@ -155,61 +166,192 @@ namespace PunchClock
             resultProjet = inputProjetDay.Text;
             resultMinutes = inputMinutesDay.Text;
 
-            if (int.Parse(resultProjet) == 998)
-                Response.Write("<script>alert('Les fériés ne sont pas permis durant la fin de semaine');</script>");
-            else
+            try
             {
-                resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
-                resultDay.Text += resultAffichage;
-
-                if (day.Text.Equals(""))
+                if (int.Parse(resultProjet) == 998)
                 {
-                    result = "{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
-                    day.Text += result;
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateFeriealert();", true);
                 }
                 else
                 {
-                    result = "\n,{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
-                    day.Text += result;
-                }
+                    resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                    resultDay.Text += resultAffichage;
 
-                inputProjetDay.Text = "";
-                inputMinutesDay.Text = "";
+                    if (day.Text.Equals(""))
+                    {
+                        result = "{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                        day.Text += result;
+                    }
+                    else
+                    {
+                        result = "\n,{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                        day.Text += result;
+                    }
+
+                    inputProjetDay.Text = "";
+                    inputMinutesDay.Text = "";
+                }
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
         protected void btnAddMonday_Click(object sender, EventArgs e)
         {
-            addDayWeek(txtProjetMonday, txtMinutesMonday, lblResultMonday, LabelLundi, cbSickMonday, btnAddMonday);
+            try
+            {
+                resultMinutes = txtMinutesMonday.Text;
+                totalTimeWorkedJour1 += int.Parse(resultMinutes);
+                if (totalTimeWorkedJour1 <= (24 * 60))
+                {
+                    addDayWeek(txtProjetMonday, txtMinutesMonday, lblResultMonday, LabelLundi, cbSickMonday, btnAddMonday);
+                }
+                else
+                {
+                    totalTimeWorkedJour1 = 0;
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validate24alert();", true);
+                }
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateChampsRequisalert();", true);
+            }
+
         }
 
         protected void btnAddTuesday_Click(object sender, EventArgs e)
         {
-            addDayWeek(txtProjetTuesday, txtMinutesTuesday, lblResultTuesday, LabelMardi, cbSickTuesday, btnAddTuesday);
+            try
+            {
+                resultMinutes = txtMinutesTuesday.Text;
+                totalTimeWorkedJour2 += int.Parse(resultMinutes);
+                if (totalTimeWorkedJour2 <= (24 * 60))
+                {
+                    addDayWeek(txtProjetTuesday, txtMinutesTuesday, lblResultTuesday, LabelMardi, cbSickTuesday, btnAddTuesday);
+                }
+                else
+                {
+                    totalTimeWorkedJour2 = 0;
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validate24alert();", true);
+                }
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateChampsRequisalert();", true);
+            }
         }
 
         protected void btnAddWednesday_Click(object sender, EventArgs e)
         {
-            addDayWeek(txtProjetWednesday, txtMinutesWednesday, lblResultWednesday, LabelMercredi, cbSickWednesday, btnAddWednesday);
+            try
+            {
+                resultMinutes = txtMinutesWednesday.Text;
+                totalTimeWorkedJour3 += int.Parse(resultMinutes);
+                if (totalTimeWorkedJour3 <= (24 * 60))
+                {
+                    addDayWeek(txtProjetWednesday, txtMinutesWednesday, lblResultWednesday, LabelMercredi, cbSickWednesday, btnAddWednesday);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validate24alert();", true);
+                }
+            }
+            catch (Exception)
+            {
+                totalTimeWorkedJour3 = 0;
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateChampsRequisalert();", true);
+            }
         }
 
         protected void btnAddThursday_Click(object sender, EventArgs e)
         {
-            addDayWeek(txtProjetThursday, txtMinutesThursday, lblResultThursday, LabelJeudi, cbSickThursday, btnAddThursday);
+            try
+            {
+                resultMinutes = txtMinutesThursday.Text;
+                totalTimeWorkedJour4 += int.Parse(resultMinutes);
+                if (totalTimeWorkedJour4 <= (24 * 60))
+                {
+                    addDayWeek(txtProjetThursday, txtMinutesThursday, lblResultThursday, LabelJeudi, cbSickThursday, btnAddThursday);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validate24alert();", true);
+                }
+            }
+            catch (Exception)
+            {
+                totalTimeWorkedJour4 = 0;
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateChampsRequisalert();", true);
+            }
         }
 
         protected void btnAddFriday_Click(object sender, EventArgs e)
         {
-            addDayWeek(txtProjetFriday, txtMinutesFriday, lblResultFriday, LabelVendredi, cbSickFriday, btnAddFriday);
+            try
+            {
+                resultMinutes = txtMinutesFriday.Text;
+                totalTimeWorkedJour5 += int.Parse(resultMinutes);
+                if (totalTimeWorkedJour5 <= (24 * 60))
+                {
+                    addDayWeek(txtProjetFriday, txtMinutesFriday, lblResultFriday, LabelVendredi, cbSickFriday, btnAddFriday);
+                }
+                else
+                {
+                    totalTimeWorkedJour5 = 0;
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validate24alert();", true);
+                }
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateChampsRequisalert();", true);
+            }
         }
 
         protected void btnAddSaturday_Click(object sender, EventArgs e)
         {
-            addWeekend(txtProjetSaturday, txtMinutesSaturday, lblResultSaturday, LabelSamedi);
+            try
+            {
+                resultMinutes = txtMinutesSaturday.Text;
+                totalTimeWorkedWeekend1 += int.Parse(resultMinutes);
+                if (totalTimeWorkedWeekend1 <= (24 * 60))
+                {
+                    addWeekend(txtProjetSaturday, txtMinutesSaturday, lblResultSaturday, LabelSamedi);
+                }
+                else
+                {
+                    totalTimeWorkedWeekend1 = 0;
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validate24alert();", true);
+                }
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateChampsRequisalert();", true);
+            }
         }
 
         protected void btnAddSunday_Click(object sender, EventArgs e)
         {
-            addWeekend(txtProjetSunday, txtMinutesSunday, lblResultSunday, LabelDimanche);
+            try
+            {
+                resultMinutes = txtMinutesSunday.Text;
+                totalTimeWorkedWeekend2 += int.Parse(resultMinutes);
+                if (totalTimeWorkedWeekend2 <= (24 * 60))
+                {
+                    addWeekend(txtProjetSunday, txtMinutesSunday, lblResultSunday, LabelDimanche);
+                }
+                else
+                {
+                    totalTimeWorkedWeekend2 = 0;
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validate24alert();", true);
+                }
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateChampsRequisalert();", true);
+            }
         }
 
         private bool ItsHoliday(DateTime date) {
@@ -337,6 +479,7 @@ namespace PunchClock
         {
             string jsonFile = "";
             string jsonName = "";
+
             try
             {
                 string id = txtEmpId.Text;
@@ -344,15 +487,21 @@ namespace PunchClock
                 string weekNumber = dropDownListWeek.SelectedValue;
                 jsonFile = stringJsonGenerator(id, year, weekNumber);
                 jsonName = id + "-" + year + "-" + weekNumber;
+
+                totalTimeWorkedJour1 = 0;
+                totalTimeWorkedJour2 = 0;
+                totalTimeWorkedJour3 = 0;
+                totalTimeWorkedJour4 = 0;
+                totalTimeWorkedJour5 = 0;
+                totalTimeWorkedWeekend1 = 0;
+                totalTimeWorkedWeekend2 = 0;
             }
             catch (Exception)
             {
-
-                Response.Write("<script>alert('Un des champs est manquant!');</script>");
-
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateChampsRequisalert();", true);
             }
-
             
+
             try
             {
                 if (String.IsNullOrWhiteSpace(jsonName) || String.IsNullOrWhiteSpace(jsonFile))
@@ -399,7 +548,7 @@ namespace PunchClock
                 stream.WriteLine(fileContent);
                 stream.Close();
 
-                LabelTestJson.Text = "Le fichier json a été sauvegardé dans le dossier: C:\\FeuillesTemps ";
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateJsonalert();", true);
             }
             catch (Exception ex)
             {
