@@ -49,16 +49,20 @@
                
                 
             </table>
+            <asp:Label ID="lbFileName" runat="server" Text=""></asp:Label>
             <br/>
             <br/>
             <table style="width: 100%;">
                     <tr>
                         <td class="auto-style3">
-                            <asp:Button ID="btnLoadTimesheet" runat="server" CssClass="auto-style2" Text="Load Timesheet" Width="220px" />
+                            
+                            <asp:FileUpload ID="btnLoadTimesheet" runat="server" />
+                            <asp:Button ID="btnValidate" runat="server" CssClass="auto-style2" Text="Validate TimeSheet" Width="220px" OnClick="btnValidate_Click" />
                         </td>
                         <td>&nbsp;</td>
                         <td class="auto-style3">
-                            <asp:Button ID="btnValidate" runat="server" CssClass="auto-style2" Text="Validate TimeSheet" Width="220px" />
+                            <asp:Button ID="btnAccept" CssClass="auto-style2" Text="Accept TimeSheet" runat="server" OnClick="btnAccept_Click"  />
+                            <asp:Button ID="btnRefuse" CssClass="auto-style2" Text="Refuse TimeSheet" runat="server" OnClick="btnRefuse_Click"  />
                         </td>
                     </tr>
                    
