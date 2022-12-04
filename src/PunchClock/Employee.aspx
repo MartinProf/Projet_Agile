@@ -72,6 +72,27 @@
         }
     </script>
     
+    <script type="text/javascript">
+        function validate4AdminWalert() {
+            swal({
+                title: 'Warning!',
+                text: 'Les administrateurs doivent travailler un minimum de 4 heures au bureau les jours ouvrables',
+                icon: "warning",
+                type: 'warning'
+            });
+        }
+    </script>
+
+    <script type="text/javascript">
+        function validateFerieBureauWalert() {
+            swal({
+                title: 'Warning!',
+                text: 'Il est impossible de travailler au bureau les jours fériés',
+                icon: "warning",
+                type: 'warning'
+            });
+        }
+    </script>
 
    
     <title></title>
