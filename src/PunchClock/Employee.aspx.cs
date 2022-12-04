@@ -23,11 +23,14 @@ namespace PunchClock
         static int totalTimeWorkedWeekend1 = 0;
         static int totalTimeWorkedWeekend2 = 0;
         static int fourHoursAdmin = 0;
+        string resultProjet = "0";
         string resultMinutes = "0";
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack) 
+            { 
             int yearNow = int.Parse(DateTime.Now.ToString("yyyy"));
             List<string> listWeek = numberOfWeekNumber(yearNow);
             
@@ -37,6 +40,7 @@ namespace PunchClock
             }
 
             txtYear.Text = DateTime.Now.ToString("yyyy");
+            }
         }
 
         protected void dropDownListWeek_SelectedIndexChanged(object sender, EventArgs e)
@@ -103,7 +107,7 @@ namespace PunchClock
 
         protected void addDayWeek(TextBox inputProjetDay, TextBox inputMinutesDay,Label resultDay, Label day, CheckBox sickDay, Button addDay)
         {
-            string  resultProjet = "";
+            resultProjet = "0";
             resultMinutes = "0";
 
             string result = "";
@@ -122,12 +126,12 @@ namespace PunchClock
 
                     if (day.Text.Equals(""))
                     {
-                        result = "{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                        result = "{\"project\": " + resultProjet + "," + "\n\"minutes\": " + resultMinutes + "}";
                         day.Text += result;
                     }
                     else
                     {
-                        result = "\n,{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                        result = "\n,{\"project\": " + resultProjet + "," + "\n\"minutes\": " + resultMinutes + "}";
                         day.Text += result;
                     }
 
@@ -153,12 +157,12 @@ namespace PunchClock
 
                 if (day.Text.Equals(""))
                 {
-                    result = "{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    result = "{\"project\": " + resultProjet + "," + "\n\"minutes\": " + resultMinutes + "}";
                     day.Text += result;
                 }
                 else
                 {
-                    result = "\n,{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                    result = "\n,{\"project\": " + resultProjet + "," + "\n\"minutes\": " + resultMinutes + "}";
                     day.Text += result;
                 }
 
@@ -181,7 +185,7 @@ namespace PunchClock
         }
         protected void addWeekend(TextBox inputProjetDay, TextBox inputMinutesDay, Label resultDay, Label day)
         {
-            string resultProjet = "";
+            resultProjet = "0";
             resultMinutes = "0";
 
             string result = "";
@@ -208,14 +212,15 @@ namespace PunchClock
 
                     if (day.Text.Equals(""))
                     {
-                        result = "{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                        result = "{\"project\": " + resultProjet + "," + "\n\"minutes\": " + resultMinutes + "}";
                         day.Text += result;
                     }
                     else
                     {
-                        result = "\n,{\"project:\" " + resultProjet + "," + "\n\"minutes:\" " + resultMinutes + "}";
+                        result = "\n,{\"project\": " + resultProjet + "," + "\n\"minutes\": " + resultMinutes + "}";
                         day.Text += result;
                     }
+
 
                     inputProjetDay.Text = "";
                     inputMinutesDay.Text = "";
@@ -605,7 +610,7 @@ namespace PunchClock
         private string stringJsonGenerator(string id, string year, string weekNumber)
         {
             string jsonFormat = "{";
-            jsonFormat += "\"numero employe:\":" + id;
+            jsonFormat += "\"numero employe\":" + id;
             jsonFormat += ",\n\"annee\":" + year;
             jsonFormat += ",\n\"numero semaine\":" + weekNumber;
             jsonFormat += ",\n\"jour1\":\n[\n" + LabelLundi.Text + "\n]\n,\n";
