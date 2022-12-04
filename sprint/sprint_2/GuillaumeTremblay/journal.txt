@@ -1,2 +1,3 @@
 
 	-02 dec  *Generalisation des boutton d'ajout de la page employee(3h)*
+	-03 dec  *ajout de la verification de 4h pour admin(2h)*

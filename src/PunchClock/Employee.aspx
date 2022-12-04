@@ -72,6 +72,16 @@
         }
     </script>
     
+    <script type="text/javascript">
+        function validate4halert() {
+            swal({
+                title: 'Warning!',
+                text: 'Vous avez pas travailler au min 4h dans une des journees',
+                icon: "warning",
+                type: 'warning'
+            });
+        }
+    </script>
 
    
     <title></title>
@@ -319,7 +329,7 @@
                     <td class="auto-style22">
                         <asp:Button ID="btnAddMonday" runat="server" Text="Add" Width="67px" autopostback="true" OnClick="btnAddMonday_Click" />
                     &nbsp;
-                        <asp:Button ID="btnRestartMonday" runat="server" Text="Restart" Width="67px" />
+                        <asp:Button ID="btnRestartMonday" runat="server" Text="Restart" Width="67px" OnClick="btnRestartMonday_Click" />
                     </td>
                     <td class="auto-style22">
                         <asp:Button ID="btnAddTuesday" runat="server" Text="Add" Width="67px" autopostback="true" OnClick="btnAddTuesday_Click" />
