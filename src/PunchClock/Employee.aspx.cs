@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Calendar = System.Globalization.Calendar;
@@ -51,7 +52,7 @@ namespace PunchClock
             TBSamedi.Text = firstMondayOfWeek(week, year).AddDays(5).ToString("dd-MMMM-yyyy");
             TBDimanche.Text = firstMondayOfWeek(week, year).AddDays(6).ToString("dd-MMMM-yyyy");
 
-            if (ItsHoliday( firstMondayOfWeek(week, year))) 
+            if (ItsHoliday(firstMondayOfWeek(week, year))) 
             {
                 txtProjetMonday.Text = "998";
                 txtMinutesMonday.Text = "420";
@@ -143,6 +144,7 @@ namespace PunchClock
                     inputMinutesDay.Text = "";
                 
 
+
             }
             else if (inputProjetDay.BackColor == System.Drawing.Color.LightGray && int.Parse(resultProjet) >= 900)
             {
@@ -193,7 +195,7 @@ namespace PunchClock
                 
                 if (int.Parse(resultProjet) == 998)
                 {
-                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateFeriealert();", true);
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup","validateFeriealert();", true);
                 }
                 else if(int.Parse(resultProjet) < 900)
                 {
@@ -235,6 +237,7 @@ namespace PunchClock
                 if (totalTimeWorkedJour1 <= (24 * 60))
                 {
                     addDayWeek(txtProjetMonday, txtMinutesMonday, lblResultMonday, LabelLundi, cbSickMonday, btnAddMonday);
+
                 }
                 else
                 {
@@ -508,25 +511,78 @@ namespace PunchClock
         {
             string jsonFile = "";
             string jsonName = "";
-          
+
             try
             {
-                string id = txtEmpId.Text;
-                string year = txtYear.Text;
-                string weekNumber = dropDownListWeek.SelectedValue;
-                jsonFile = stringJsonGenerator(id, year, weekNumber);
-                jsonName = id + "-" + year + "-" + weekNumber;
+                int empID =Int32.Parse(txtEmpId.Text);
+                if (empID <= 999)
+                {
+                    if (totalTimeWorkedJour1 >= 240 && totalTimeWorkedJour2 >= 240 && totalTimeWorkedJour3 >= 240 && totalTimeWorkedJour4 >= 240 && totalTimeWorkedJour5 >= 240)
+                    {
+                        string idadmin = txtEmpId.Text;
+                        string yearadmin = txtYear.Text;
+                        string weekNumberadmin = dropDownListWeek.SelectedValue;
+                        jsonFile = stringJsonGenerator(idadmin, yearadmin, weekNumberadmin);
+                        jsonName = idadmin + "-" + yearadmin + "-" + weekNumberadmin;
 
-                totalTimeWorkedJour1 = 0;
-                totalTimeWorkedJour2 = 0;
-                totalTimeWorkedJour3 = 0;
-                totalTimeWorkedJour4 = 0;
-                totalTimeWorkedJour5 = 0;
-                totalTimeWorkedWeekend1 = 0;
-                totalTimeWorkedWeekend2 = 0;
+                        totalTimeWorkedJour1 = 0;
+                        totalTimeWorkedJour2 = 0;
+                        totalTimeWorkedJour3 = 0;
+                        totalTimeWorkedJour4 = 0;
+                        totalTimeWorkedJour5 = 0;
+                        totalTimeWorkedWeekend1 = 0;
+                        totalTimeWorkedWeekend2 = 0;
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validate4halert();", true);
+                    }
+                }
+                if (empID >= 1000 && empID <= 1999)
+                {
+                    string id = txtEmpId.Text;
+                    string year = txtYear.Text;
+                    string weekNumber = dropDownListWeek.SelectedValue;
+                    jsonFile = stringJsonGenerator(id, year, weekNumber);
+                    jsonName = id + "-" + year + "-" + weekNumber;
+
+                    totalTimeWorkedJour1 = 0;
+                    totalTimeWorkedJour2 = 0;
+                    totalTimeWorkedJour3 = 0;
+                    totalTimeWorkedJour4 = 0;
+                    totalTimeWorkedJour5 = 0;
+                    totalTimeWorkedWeekend1 = 0;
+                    totalTimeWorkedWeekend2 = 0;
+                }
+                else
+                {
+                    
+                }
+                if (empID >= 2000)
+                {
+                    string id = txtEmpId.Text;
+                    string year = txtYear.Text;
+                    string weekNumber = dropDownListWeek.SelectedValue;
+                    jsonFile = stringJsonGenerator(id, year, weekNumber);
+                    jsonName = id + "-" + year + "-" + weekNumber;
+
+                    totalTimeWorkedJour1 = 0;
+                    totalTimeWorkedJour2 = 0;
+                    totalTimeWorkedJour3 = 0;
+                    totalTimeWorkedJour4 = 0;
+                    totalTimeWorkedJour5 = 0;
+                    totalTimeWorkedWeekend1 = 0;
+                    totalTimeWorkedWeekend2 = 0;
+                }
+                else
+                {
+
+                }
+
             }
             catch (Exception)
             {
+                
                 ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateChampsRequisalert();", true);
             }
                       
@@ -585,6 +641,11 @@ namespace PunchClock
             {
                 LabelTestJson.Text = "Erreur survenue:" + ex.Message.ToString();
             }
+        }
+
+        protected void btnRestartMonday_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
