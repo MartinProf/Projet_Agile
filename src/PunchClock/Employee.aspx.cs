@@ -538,46 +538,57 @@ namespace PunchClock
                         ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validate4halert();", true);
                     }
                 }
-                if (empID >= 1000 && empID <= 1999)
+                if (empID >= 1000)
                 {
-                    string id = txtEmpId.Text;
-                    string year = txtYear.Text;
-                    string weekNumber = dropDownListWeek.SelectedValue;
-                    jsonFile = stringJsonGenerator(id, year, weekNumber);
-                    jsonName = id + "-" + year + "-" + weekNumber;
+                    if (totalTimeWorkedJour1 >= 360 && totalTimeWorkedJour2 >= 360 && totalTimeWorkedJour3 >= 360 && totalTimeWorkedJour4 >= 360 && totalTimeWorkedJour5 >= 360)
+                    {
+                        string id = txtEmpId.Text;
+                        string year = txtYear.Text;
+                        string weekNumber = dropDownListWeek.SelectedValue;
+                        jsonFile = stringJsonGenerator(id, year, weekNumber);
+                        jsonName = id + "-" + year + "-" + weekNumber;
 
-                    totalTimeWorkedJour1 = 0;
-                    totalTimeWorkedJour2 = 0;
-                    totalTimeWorkedJour3 = 0;
-                    totalTimeWorkedJour4 = 0;
-                    totalTimeWorkedJour5 = 0;
-                    totalTimeWorkedWeekend1 = 0;
-                    totalTimeWorkedWeekend2 = 0;
+                        totalTimeWorkedJour1 = 0;
+                        totalTimeWorkedJour2 = 0;
+                        totalTimeWorkedJour3 = 0;
+                        totalTimeWorkedJour4 = 0;
+                        totalTimeWorkedJour5 = 0;
+                        totalTimeWorkedWeekend1 = 0;
+                        totalTimeWorkedWeekend2 = 0;
+                        if (empID >= 2000)
+                        {
+                            /*id = txtEmpId.Text;
+                            year = txtYear.Text;
+                            weekNumber = dropDownListWeek.SelectedValue;
+                            jsonFile = stringJsonGenerator(id, year, weekNumber);
+                            jsonName = id + "-" + year + "-" + weekNumber;
+
+                            totalTimeWorkedJour1 = 0;
+                            totalTimeWorkedJour2 = 0;
+                            totalTimeWorkedJour3 = 0;
+                            totalTimeWorkedJour4 = 0;
+                            totalTimeWorkedJour5 = 0;
+                            totalTimeWorkedWeekend1 = 0;
+                            totalTimeWorkedWeekend2 = 0;
+                            */
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validate6hEmpWalert();", true);
+                    }
+                    
+  
                 }
                 else
                 {
                     
                 }
-                if (empID >= 2000)
-                {
-                    string id = txtEmpId.Text;
-                    string year = txtYear.Text;
-                    string weekNumber = dropDownListWeek.SelectedValue;
-                    jsonFile = stringJsonGenerator(id, year, weekNumber);
-                    jsonName = id + "-" + year + "-" + weekNumber;
 
-                    totalTimeWorkedJour1 = 0;
-                    totalTimeWorkedJour2 = 0;
-                    totalTimeWorkedJour3 = 0;
-                    totalTimeWorkedJour4 = 0;
-                    totalTimeWorkedJour5 = 0;
-                    totalTimeWorkedWeekend1 = 0;
-                    totalTimeWorkedWeekend2 = 0;
-                }
-                else
-                {
-
-                }
 
             }
             catch (Exception)

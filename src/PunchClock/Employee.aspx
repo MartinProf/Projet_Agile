@@ -96,6 +96,18 @@
         }
     </script>
 
+    <script type="text/javascript">
+        function validate6hEmpWalert() {
+            swal({
+                title: 'Warning!',
+                text: 'Les employees doivent travailler au min 6h par jours',
+
+                icon: "warning",
+                type: 'warning'
+            });
+        }
+    </script>
+
    
     <title></title>
     <style type="text/css">
