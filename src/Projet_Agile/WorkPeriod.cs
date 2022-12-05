@@ -14,7 +14,7 @@ namespace Projet_Agile
         public WorkPeriod(int codeProject, int minute)
         {
             this.codeProject = codeProject;
-            this.minute = minute;
+            this.minutes = minute;
         }
 
         [JsonProperty("projet")]
@@ -23,7 +23,7 @@ namespace Projet_Agile
             get; set;
         }
         [JsonProperty("minutes")]
-        public int minute
+        public int minutes
         {
             get; set;
         }
@@ -32,7 +32,7 @@ namespace Projet_Agile
         {
             return
                     $"codeProject : {codeProject}\n" +
-                    $"minute : {minute}\n";
+                    $"minute : {minutes}\n";
         }
     }
 }
