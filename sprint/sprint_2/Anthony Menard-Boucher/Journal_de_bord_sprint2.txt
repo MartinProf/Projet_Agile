@@ -5,3 +5,5 @@
 -2022-11-28: Rédaction du cahier de charge avec sebastien. 3h45.
 
 -2022-12-04: Modification de la page patron/manager. Correction de lignes pour la creation des jsons. 4h
+
+-2022-12-04: Test des validations sur le projet present et resulsutat mis dans un .txt 2h
