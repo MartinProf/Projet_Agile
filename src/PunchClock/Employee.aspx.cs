@@ -116,12 +116,12 @@ namespace PunchClock
 
                     if (day.Text.Equals(""))
                     {
-                        result = "{\"codeProject\":\"" + resultProjet + "\",\"minute\":\"" + resultMinutes + "\"}";
+                        result = "{\"codeProject\":\"" + resultProjet + "\",\"minutes\":\"" + resultMinutes + "\"}";
                         day.Text += result;
                     }
                     else
                     {
-                        result = ",{\"codeProject\":\"" + resultProjet + "\",\"minute\":\"" + resultMinutes + "\"}";
+                        result = ",{\"codeProject\":\"" + resultProjet + "\",\"minutes\":\"" + resultMinutes + "\"}";
                         day.Text += result;
                     }
 
@@ -152,12 +152,12 @@ namespace PunchClock
 
                 if (day.Text.Equals(""))
                 {
-                    result = "{\"codeProject\":\"" + resultProjet + "\",\"minute\":\"" + resultMinutes + "\"}";
+                    result = "{\"codeProject\":\"" + resultProjet + "\",\"minutes\":\"" + resultMinutes + "\"}";
                     day.Text += result;
                 }
                 else
                 {
-                    result = ",{\"codeProject\":\"" + resultProjet + "\",\"minute\":\"" + resultMinutes + "\"}";
+                    result = ",{\"codeProject\":\"" + resultProjet + "\",\"minutes\":\"" + resultMinutes + "\"}";
                     day.Text += result;
                 }
 
@@ -203,12 +203,12 @@ namespace PunchClock
 
                     if (day.Text.Equals(""))
                     {
-                        result = "{\"codeProject\":\"" + resultProjet + "\",\"minute\":\"" + resultMinutes + "\"}";
+                        result = "{\"codeProject\":\"" + resultProjet + "\",\"minutes\":\"" + resultMinutes + "\"}";
                         day.Text += result;
                     }
                     else
                     {
-                        result = ",{\"codeProject\":\"" + resultProjet + "\",\"minute\":\"" + resultMinutes + "\"}";
+                        result = ",{\"codeProject\":\"" + resultProjet + "\",\"minutes\":\"" + resultMinutes + "\"}";
                         day.Text += result;
                     }
 
