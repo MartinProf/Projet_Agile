@@ -527,7 +527,7 @@ namespace PunchClock
                         }
                         else
                         {
-                            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validate4halert()", true);
+                            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validate4AdminWalert()", true);
                         }
                     }
                     else
