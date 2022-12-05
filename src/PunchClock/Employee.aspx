@@ -85,11 +85,10 @@
     </script>
 
     <script type="text/javascript">
-        function validateFerieBureauWalert() {
+        function validateFerieBureaualert() {
             swal({
                 title: 'Warning!',
                 text: 'Il est impossible de travailler au bureau les jours fériés',
-
                 icon: "warning",
                 type: 'warning'
             });
@@ -101,7 +100,17 @@
             swal({
                 title: 'Warning!',
                 text: 'Les employees doivent travailler au min 6h par jours',
+                icon: "warning",
+                type: 'warning'
+            });
+        }
+    </script>
 
+    <script type="text/javascript">
+        function validate36hEmpWalert() {
+            swal({
+                title: 'Warning!',
+                text: 'Les employees de l\'administration doivent travailler au min 36h au bureau par semaine',
                 icon: "warning",
                 type: 'warning'
             });
