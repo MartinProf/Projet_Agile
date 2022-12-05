@@ -114,8 +114,8 @@ namespace Projet_Agile
                     if(totalTimeWorkedJour1 <= (24 * 60))
                     {
                         tempWorkPeriod.codeProject = (int)work["projet"];
-                        tempWorkPeriod.minutes = (int)work["minutes"];
-                        totalTimeWorkedJour1 += tempWorkPeriod.minutes;
+                        tempWorkPeriod.minute = (int)work["minutes"];
+                        totalTimeWorkedJour1 += tempWorkPeriod.minute;
                         if (totalTimeWorkedJour1 <= (24 * 60))
                         {
                             workPeriods.Add(tempWorkPeriod);
@@ -138,7 +138,7 @@ namespace Projet_Agile
                 {         
                     WorkPeriod tempWorkPeriod = new WorkPeriod();
                     tempWorkPeriod.codeProject = (int)work["projet"];
-                    tempWorkPeriod.minutes = (int)work["minutes"];
+                    tempWorkPeriod.minute = (int)work["minutes"];
                     workPeriods.Add(tempWorkPeriod);
                 }
                 timeSt.oneWeek.Add(workPeriods);
@@ -149,7 +149,7 @@ namespace Projet_Agile
                     
                     WorkPeriod tempWorkPeriod = new WorkPeriod();
                     tempWorkPeriod.codeProject = (int)work["projet"];
-                    tempWorkPeriod.minutes = (int)work["minutes"];
+                    tempWorkPeriod.minute = (int)work["minutes"];
                     workPeriods.Add(tempWorkPeriod);
                 }
                 timeSt.oneWeek.Add(workPeriods);
@@ -160,7 +160,7 @@ namespace Projet_Agile
                     
                     WorkPeriod tempWorkPeriod = new WorkPeriod();
                     tempWorkPeriod.codeProject = (int)work["projet"];
-                    tempWorkPeriod.minutes = (int)work["minutes"];
+                    tempWorkPeriod.minute = (int)work["minutes"];
                     workPeriods.Add(tempWorkPeriod);
                 }
                 timeSt.oneWeek.Add(workPeriods);
@@ -171,7 +171,7 @@ namespace Projet_Agile
                     
                     WorkPeriod tempWorkPeriod = new WorkPeriod();
                     tempWorkPeriod.codeProject = (int)work["projet"];
-                    tempWorkPeriod.minutes = (int)work["minutes"];
+                    tempWorkPeriod.minute = (int)work["minutes"];
                     workPeriods.Add(tempWorkPeriod);
                 }
                 timeSt.oneWeek.Add(workPeriods);
@@ -182,7 +182,7 @@ namespace Projet_Agile
                     
                     WorkPeriod tempWorkPeriod = new WorkPeriod();
                     tempWorkPeriod.codeProject = (int)work["projet"];
-                    tempWorkPeriod.minutes = (int)work["minutes"];
+                    tempWorkPeriod.minute = (int)work["minutes"];
                     workPeriods.Add(tempWorkPeriod);
                 }
                 timeSt.oneWeek.Add(workPeriods);
@@ -193,7 +193,7 @@ namespace Projet_Agile
                     
                     WorkPeriod tempWorkPeriod = new WorkPeriod();
                     tempWorkPeriod.codeProject = (int)work["projet"];
-                    tempWorkPeriod.minutes = (int)work["minutes"];
+                    tempWorkPeriod.minute = (int)work["minutes"];
                     workPeriods.Add(tempWorkPeriod);
                 }
                 timeSt.oneWeek.Add(workPeriods);

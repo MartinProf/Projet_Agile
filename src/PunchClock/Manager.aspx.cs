@@ -62,7 +62,7 @@ namespace PunchClock
                     {
                         
                         a = a+ "Code projet : "+(int.Parse($"{item.codeProject}")) + " ";
-                        a = a + "Minutes : "+(int.Parse($"{item.minutes}")) + " ";
+                        a = a + "Minutes : "+(int.Parse($"{item.minute}")) + " ";
                     }
 
                     

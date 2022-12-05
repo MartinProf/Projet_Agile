@@ -8,4 +8,3 @@
 4 déc: 2h30 validation 24 heures dans ASP.NET + messages sweetalert
 4 déc: 30min - correction jours fériés 
 5 déc: 2h00 - correction fériés + travail bureau et validation 36hrs
-6 déc: 1h00 - travail avec Guillaume (sick days fixed (travail bureau)) + correction validations
