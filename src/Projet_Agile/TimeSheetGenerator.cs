@@ -10,6 +10,9 @@ namespace Projet_Agile
 {
     public class TimeSheetGenerator
     {
+        public TimeSheetGenerator()
+        {
+        }
 
         public TimeSheetGenerator(int empNumber, int year, int weekNumber, List<WorkPeriod> lundi,
             List<WorkPeriod> mardi, List<WorkPeriod> mercredi, List<WorkPeriod> jeudi,
@@ -25,7 +28,6 @@ namespace Projet_Agile
             this.jour5 = vendredi;
             this.weekendl = samedi;
             this.weekend2 = dimanche;
-
         }
 
 
