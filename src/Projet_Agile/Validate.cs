@@ -113,7 +113,7 @@ namespace Projet_Agile
                         {
                             if (item.codeProject <= 900)
                             {
-                                minutes += item.minute;
+                                minutes += item.minutes;
                             }
                         }
                     }
@@ -146,7 +146,7 @@ namespace Projet_Agile
                         {
                             if (item.codeProject <= 900)
                             {
-                                minutes += item.minute;
+                                minutes += item.minutes;
                             }
                         }
                     }
@@ -176,7 +176,7 @@ namespace Projet_Agile
                     {
                         foreach (var item in jour)
                         {
-                            minutes += item.minute;
+                            minutes += item.minutes;
                         }
                     }
                     if (minutes < (38 * 60))
@@ -206,7 +206,7 @@ namespace Projet_Agile
                     {
                         if (workPeriod.codeProject <= 900)
                         {
-                            minutesPerDay += workPeriod.minute;
+                            minutesPerDay += workPeriod.minutes;
                         }
                     }
                     if (minutesPerDay < 360)
@@ -229,7 +229,7 @@ namespace Projet_Agile
                     {
                         if (workPeriod.codeProject <= 900)
                         {
-                            minutesPerDay += workPeriod.minute;
+                            minutesPerDay += workPeriod.minutes;
                         }
                     }
                     if (minutesPerDay < 240)
@@ -250,7 +250,7 @@ namespace Projet_Agile
             {
                 foreach (WorkPeriod workPeriod in jour)
                 {
-                    if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minute;
+                    if (workPeriod.codeProject <= 900) weeklytotal += workPeriod.minutes;
                 }
             }
             if (weeklytotal > 2580)
@@ -274,7 +274,7 @@ namespace Projet_Agile
                         {
                             if (item.codeProject > 900)
                             {
-                                minutes += item.minute;
+                                minutes += item.minutes;
                             }
                         }
                     }
