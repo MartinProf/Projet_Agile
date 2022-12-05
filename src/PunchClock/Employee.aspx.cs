@@ -33,8 +33,15 @@ namespace PunchClock
             { 
             int yearNow = int.Parse(DateTime.Now.ToString("yyyy"));
             List<string> listWeek = numberOfWeekNumber(yearNow);
-            
-            foreach (string number in listWeek)
+                totalTimeWorkedJour1 = 0;
+                totalTimeWorkedJour2 = 0;
+                totalTimeWorkedJour3 = 0;
+                totalTimeWorkedJour4 = 0;
+                totalTimeWorkedJour5 = 0;
+                totalTimeWorkedWeekend1 = 0;
+                totalTimeWorkedWeekend2 = 0;
+
+                foreach (string number in listWeek)
             {
                 dropDownListWeek.Items.Add(number);
             }
