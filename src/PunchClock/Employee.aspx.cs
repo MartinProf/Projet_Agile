@@ -116,12 +116,12 @@ namespace PunchClock
 
                     if (day.Text.Equals(""))
                     {
-                        result = "{\"project\": " + resultProjet + "," + "\n\"minutes\": " + resultMinutes + "}";
+                        result = "{\"codeProject\":\"" + resultProjet + "\",\"minute\":\"" + resultMinutes + "\"}";
                         day.Text += result;
                     }
                     else
                     {
-                        result = "\n,{\"project\": " + resultProjet + "," + "\n\"minutes\": " + resultMinutes + "}";
+                        result = ",{\"codeProject\":\"" + resultProjet + "\",\"minute\":\"" + resultMinutes + "\"}";
                         day.Text += result;
                     }
 
@@ -131,14 +131,15 @@ namespace PunchClock
                     }
                     if (resultProjet == "998")
                     {
-                    inputProjetDay.BackColor = System.Drawing.Color.LightGray;
-                    inputMinutesDay.BackColor = System.Drawing.Color.LightGray;
+                        inputProjetDay.BackColor = System.Drawing.Color.LightGray;
+                        inputMinutesDay.BackColor = System.Drawing.Color.LightGray;
                     }
                     if (ItsHoliday(DateTime.Parse(DaysDatesForHollidays.Text)) && int.Parse(resultProjet) < 900)
                     {
                         ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateFerieBureaualert();", true);
                     }
-                inputProjetDay.Text = "";
+
+                    inputProjetDay.Text = "";
                     inputMinutesDay.Text = "";
                 
 
@@ -151,12 +152,12 @@ namespace PunchClock
 
                 if (day.Text.Equals(""))
                 {
-                    result = "{\"project\": " + resultProjet + "," + "\n\"minutes\": " + resultMinutes + "}";
+                    result = "{\"codeProject\":\"" + resultProjet + "\",\"minute\":\"" + resultMinutes + "\"}";
                     day.Text += result;
                 }
                 else
                 {
-                    result = "\n,{\"project\": " + resultProjet + "," + "\n\"minutes\": " + resultMinutes + "}";
+                    result = ",{\"codeProject\":\"" + resultProjet + "\",\"minute\":\"" + resultMinutes + "\"}";
                     day.Text += result;
                 }
 
@@ -202,12 +203,12 @@ namespace PunchClock
 
                     if (day.Text.Equals(""))
                     {
-                        result = "{\"project\": " + resultProjet + "," + "\n\"minutes\": " + resultMinutes + "}";
+                        result = "{\"codeProject\":\"" + resultProjet + "\",\"minute\":\"" + resultMinutes + "\"}";
                         day.Text += result;
                     }
                     else
                     {
-                        result = "\n,{\"project\": " + resultProjet + "," + "\n\"minutes\": " + resultMinutes + "}";
+                        result = ",{\"codeProject\":\"" + resultProjet + "\",\"minute\":\"" + resultMinutes + "\"}";
                         day.Text += result;
                     }
 
@@ -594,7 +595,7 @@ namespace PunchClock
                 {
                     
                 }
-
+                LabelTestJson.Text = stringJsonGenerator(txtEmpId.Text.ToString(), txtYear.Text.ToString(), dropDownListWeek.Text.ToString());
 
             }
             catch (Exception)
@@ -621,17 +622,16 @@ namespace PunchClock
 
         private string stringJsonGenerator(string id, string year, string weekNumber)
         {
-            string jsonFormat = "{";
-            jsonFormat += "\"numero employe\":" + id;
-            jsonFormat += ",\n\"annee\":" + year;
-            jsonFormat += ",\n\"numero semaine\":" + weekNumber;
-            jsonFormat += ",\n\"jour1\":\n[\n" + LabelLundi.Text + "\n]\n,\n";
-            jsonFormat += "\"jour2\":\n[\n" + LabelMardi.Text + "\n]\n,\n";
-            jsonFormat += "\"jour3\":\n[\n" + LabelMercredi.Text + "\n]\n,\n";
-            jsonFormat += "\"jour4\":\n[\n" + LabelJeudi.Text + "\n]\n,\n";
-            jsonFormat += "\"jour5\":\n[\n" + LabelVendredi.Text + "\n]\n,\n";
-            jsonFormat += "\"weekendl\":\n[\n" + LabelSamedi.Text + "\n]\n,\n";
-            jsonFormat += "\"weekend2\":\n[\n" + LabelDimanche.Text + "\n]\n}";
+            string jsonFormat = "{\"numero_employe\":\"" + id + "\",";
+            jsonFormat += "\"annee\":\"" + year + "\",";
+            jsonFormat += "\"numero_semaine\":\"" + weekNumber + "\",";
+            jsonFormat += "\"jour1\":[" + LabelLundi.Text + "],";
+            jsonFormat += "\"jour2\":[" + LabelMardi.Text + "],";
+            jsonFormat += "\"jour3\":[" + LabelMercredi.Text + "],";
+            jsonFormat += "\"jour4\":[" + LabelJeudi.Text + "],";
+            jsonFormat += "\"jour5\":[" + LabelVendredi.Text + "],";
+            jsonFormat += "\"weekendl\":[" + LabelSamedi.Text + "],";
+            jsonFormat += "\"weekend2\":[" + LabelDimanche.Text + "]}";
 
             return jsonFormat;
         }
