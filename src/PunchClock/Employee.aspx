@@ -116,6 +116,18 @@
         }
     </script>
 
+
+      <script type="text/javascript">
+          function validate38hEmpWalert() {
+              swal({
+                  title: 'Warning!',
+                  text: 'Les employees de production et d\'exploitation doivent travailler au min 38h au bureau par semaine',
+                  icon: "warning",
+                  type: 'warning'
+              });
+          }
+      </script>
+
    
     <title></title>
     <style type="text/css">
