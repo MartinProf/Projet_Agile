@@ -15,48 +15,48 @@ namespace Projet_Agile
             List<WorkPeriod> mardi, List<WorkPeriod> mercredi, List<WorkPeriod> jeudi,
             List<WorkPeriod> vendredi, List<WorkPeriod> samedi, List<WorkPeriod> dimanche)
         {
-            this.EmpNumber = empNumber;
-            this.Year = year;
-            this.WeekNumber = weekNumber;
-            this.Lundi = lundi;
-            this.Mardi = mardi;
-            this.Mercredi = mercredi;
-            this.Jeudi = jeudi;
-            this.Vendredi = vendredi;
-            this.Samedi = samedi;
-            this.Dimanche = dimanche;
+            this.numero_employe = empNumber;
+            this.annee = year;
+            this.numero_semaine = weekNumber;
+            this.jour1 = lundi;
+            this.jour2 = mardi;
+            this.jour3 = mercredi;
+            this.jour4 = jeudi;
+            this.jour5 = vendredi;
+            this.weekendl = samedi;
+            this.weekend2 = dimanche;
 
         }
 
 
-        [JsonProperty("numero employe")]
-        public int EmpNumber { get; set; }
+        [JsonProperty("numero_employe")]
+        public int numero_employe { get; set; }
 
         [JsonProperty("annee")]
-        public int Year { get; set; }
+        public int annee { get; set; }
 
-        [JsonProperty("numero semaine")]
-        public int WeekNumber { get; set; }
+        [JsonProperty("numero_semaine")]
+        public int numero_semaine { get; set; }
 
         [JsonProperty("jour1")]
-        public List<WorkPeriod> Lundi { get; set; }
+        public List<WorkPeriod> jour1 { get; set; }
 
         [JsonProperty("jour2")]
-        public List<WorkPeriod> Mardi { get; set; }
+        public List<WorkPeriod> jour2 { get; set; }
 
         [JsonProperty("jour3")]
-        public List<WorkPeriod> Mercredi { get; set; }
+        public List<WorkPeriod> jour3 { get; set; }
 
         [JsonProperty("jour4")]
-        public List<WorkPeriod> Jeudi { get; set; }
+        public List<WorkPeriod> jour4 { get; set; }
 
         [JsonProperty("jour5")]
-        public List<WorkPeriod> Vendredi { get; set; }
+        public List<WorkPeriod> jour5 { get; set; }
 
         [JsonProperty("weekendl")]
-        public List<WorkPeriod> Samedi { get; set; }
+        public List<WorkPeriod> weekendl { get; set; }
 
         [JsonProperty("weekend2")]
-        public List<WorkPeriod> Dimanche { get; set; }
+        public List<WorkPeriod> weekend2 { get; set; }
     }
 }
