@@ -22,7 +22,7 @@ namespace PunchClock
         static int totalTimeWorkedJour5 = 0;
         static int totalTimeWorkedWeekend1 = 0;
         static int totalTimeWorkedWeekend2 = 0;
-        static int fourHoursAdmin = 0;
+        static int totalTimeHome = 0;
         string resultProjet = "0";
         string resultMinutes = "0";
 
@@ -106,13 +106,11 @@ namespace PunchClock
 
             resultProjet = inputProjetDay.Text;
             resultMinutes = inputMinutesDay.Text;
-
-            if (inputProjetDay.BackColor != System.Drawing.Color.LightGray || int.Parse(resultProjet) == 999)
+            if ( int.Parse(resultProjet) == 999 || int.Parse(resultProjet) < 900)
             {
-
+                System.Diagnostics.Debug.WriteLine("first if");
                 resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
                 resultDay.Text += resultAffichage;
-
 
                     if (day.Text.Equals(""))
                     {
@@ -145,11 +143,11 @@ namespace PunchClock
 
 
             }
-            else if (inputProjetDay.BackColor == System.Drawing.Color.LightGray && int.Parse(resultProjet) >= 900 && int.Parse(resultProjet) != 999)
+            else if (int.Parse(resultProjet) >= 900 && int.Parse(resultProjet) != 999)
             {
                 resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
                 resultDay.Text += resultAffichage;
-
+                totalTimeHome += int.Parse(resultMinutes);
                 if (day.Text.Equals(""))
                 {
                     result = "{\"codeProject\":\"" + resultProjet + "\",\"minutes\":\"" + resultMinutes + "\"}";
@@ -191,6 +189,10 @@ namespace PunchClock
 
             try
             {
+                if (int.Parse(resultProjet)>=900 && int.Parse(resultProjet) != 999 && int.Parse(resultProjet) != 998)
+                {
+                    totalTimeHome += int.Parse(resultMinutes);
+                }
 
                 if (int.Parse(resultProjet) == 998)
                 {
@@ -211,7 +213,7 @@ namespace PunchClock
                         result = ",{\"codeProject\":\"" + resultProjet + "\",\"minutes\":\"" + resultMinutes + "\"}";
                         day.Text += result;
                     }
-
+                
 
                     inputProjetDay.Text = "";
                     inputMinutesDay.Text = "";
@@ -230,6 +232,7 @@ namespace PunchClock
             {
                 resultMinutes = txtMinutesMonday.Text;
                 totalTimeWorkedJour1 += int.Parse(resultMinutes);
+                
                 if (totalTimeWorkedJour1 <= (24 * 60))
                 {
                     addDayWeek(txtProjetMonday, txtMinutesMonday, TBLundi, lblResultMonday, LabelLundi, cbSickMonday, btnAddMonday);
