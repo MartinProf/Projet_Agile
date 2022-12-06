@@ -98,7 +98,7 @@
         function validate6hEmpWalert() {
             swal({
                 title: 'Warning!',
-                text: 'Les employees doivent travailler au min 6h par jours',
+                text: 'Les employés doivent travailler au min 6h par jours',
                 icon: "warning",
                 type: 'warning'
             });
@@ -109,7 +109,7 @@
         function validate36hEmpWalert() {
             swal({
                 title: 'Warning!',
-                text: 'Les employees de l\'administration doivent travailler au min 36h au bureau par semaine',
+                text: 'Les employés de l\'administration doivent travailler au min 36h au bureau par semaine',
                 icon: "warning",
                 type: 'warning'
             });
@@ -121,13 +121,24 @@
           function validate38hEmpWalert() {
               swal({
                   title: 'Warning!',
-                  text: 'Les employees de production et d\'exploitation doivent travailler au min 38h au bureau par semaine',
+                  text: 'Les employés de production et d\'exploitation doivent travailler au min 38h au bureau par semaine',
                   icon: "warning",
                   type: 'warning'
               });
           }
       </script>
-
+    
+    
+        <script type="text/javascript">
+            function validate10hAdminWalert() {
+                swal({
+                    title: 'Warning!',
+                    text: 'Les administrateurs doivent travailler un maximum de 10 heures par semaine de la maison',
+                    icon: "warning",
+                    type: 'warning'
+                });
+            }
+        </script>
    
     <title></title>
     <style type="text/css">
