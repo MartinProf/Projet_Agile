@@ -40,6 +40,9 @@ namespace PunchClock
                 totalTimeWorkedJour5 = 0;
                 totalTimeWorkedWeekend1 = 0;
                 totalTimeWorkedWeekend2 = 0;
+                totalTimeHome = 0;
+                resultProjet = "0";
+                resultMinutes = "0";
 
                 foreach (string number in listWeek)
                 {
@@ -518,7 +521,7 @@ namespace PunchClock
             try
             {
                 int empID = Int32.Parse(txtEmpId.Text);
-                if (empID <= 999)
+                if (empID <= 999 && string.IsNullOrWhiteSpace(txtEmpId.Text))
                 {
                     int totalWeekTimeWorked = totalTimeWorkedJour1 + totalTimeWorkedJour2 + totalTimeWorkedJour3 + totalTimeWorkedJour4 + totalTimeWorkedJour5 + totalTimeWorkedWeekend1 + totalTimeWorkedWeekend2;
                     int tenHoursRemote = (totalWeekTimeWorked + totalTimeWorkedWeekend1 + totalTimeWorkedWeekend2) - totalTimeHome;
