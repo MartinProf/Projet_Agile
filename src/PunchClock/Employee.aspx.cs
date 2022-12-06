@@ -521,24 +521,31 @@ namespace PunchClock
                 if (empID <= 999)
                 {
                     int totalWeekTimeWorked = totalTimeWorkedJour1 + totalTimeWorkedJour2 + totalTimeWorkedJour3 + totalTimeWorkedJour4 + totalTimeWorkedJour5 + totalTimeWorkedWeekend1 + totalTimeWorkedWeekend2;
+                    int tenHoursRemote = (totalWeekTimeWorked + totalTimeWorkedWeekend1 + totalTimeWorkedWeekend2) - totalTimeHome;
                     if (totalTimeWorkedJour1 >= 240 && totalTimeWorkedJour2 >= 240 && totalTimeWorkedJour3 >= 240 && totalTimeWorkedJour4 >= 240 && totalTimeWorkedJour5 >= 240)
                     {
                         if (totalWeekTimeWorked >= (36 * 60))
                         {
+                            if(tenHoursRemote <= (10 * 60))
+                            {
+                                string idadmin = txtEmpId.Text;
+                                string yearadmin = txtYear.Text;
+                                string weekNumberadmin = dropDownListWeek.SelectedValue;
+                                jsonFile = stringJsonGenerator(idadmin, yearadmin, weekNumberadmin);
+                                jsonName = idadmin + "-" + yearadmin + "-" + weekNumberadmin;
 
-                            string idadmin = txtEmpId.Text;
-                            string yearadmin = txtYear.Text;
-                            string weekNumberadmin = dropDownListWeek.SelectedValue;
-                            jsonFile = stringJsonGenerator(idadmin, yearadmin, weekNumberadmin);
-                            jsonName = idadmin + "-" + yearadmin + "-" + weekNumberadmin;
-
-                            totalTimeWorkedJour1 = 0;
-                            totalTimeWorkedJour2 = 0;
-                            totalTimeWorkedJour3 = 0;
-                            totalTimeWorkedJour4 = 0;
-                            totalTimeWorkedJour5 = 0;
-                            totalTimeWorkedWeekend1 = 0;
-                            totalTimeWorkedWeekend2 = 0;
+                                totalTimeWorkedJour1 = 0;
+                                totalTimeWorkedJour2 = 0;
+                                totalTimeWorkedJour3 = 0;
+                                totalTimeWorkedJour4 = 0;
+                                totalTimeWorkedJour5 = 0;
+                                totalTimeWorkedWeekend1 = 0;
+                                totalTimeWorkedWeekend2 = 0;
+                            }
+                            else
+                            {
+                                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validate10hAdminWalert()", true);
+                            }
 
                         }
                         else
