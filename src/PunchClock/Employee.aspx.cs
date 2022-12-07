@@ -235,6 +235,10 @@ namespace PunchClock
                         totalTimeHomeA += int.Parse(resultMinutes);
 
                     }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateTelealert();", true);
+                    }
 
                     if (int.Parse(resultProjet) == 998)
                     {
@@ -259,15 +263,12 @@ namespace PunchClock
 
                         inputProjetDay.Text = "";
                         inputMinutesDay.Text = "";
-                    }
-
-
-                    else
-                    {
-                        ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateNumEmpAndTBDayalert();", true);
-                    }
+                    }        
                 }
-                    
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateNumEmpAndTBDayalert();", true);
+                }
 
             }
             catch (Exception)
