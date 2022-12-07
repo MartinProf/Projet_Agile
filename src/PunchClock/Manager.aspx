@@ -89,11 +89,10 @@
                     <td>&nbsp;</td>
                 </tr>
             </table>
-            <>
             <table style="width: 100%;">
                 <tr>
                     <td class="auto-style8">
-                            <asp:Button ID="btnLogout" runat="server" CssClass="auto-style2" Text="Logout" Width="220px" />
+                            <asp:Button ID="btnLogout" runat="server" CssClass="auto-style2" Text="Logout" Width="220px" OnClick="btnLogout_Click1" />
                         </td>
                     
                 </tr>
