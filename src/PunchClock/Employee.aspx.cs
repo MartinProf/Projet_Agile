@@ -909,7 +909,7 @@ namespace PunchClock
             txtMinutesFriday.Text = "";
             txtMinutesSaturday.Text = "";
             txtMinutesSunday.Text = "";
-            txtEmpId.Text = "";
+            txtEmpId.Text = "1";
             lblResultMonday.Text = "";
             lblResultTuesday.Text = "";
             lblResultWednesday.Text = "";
