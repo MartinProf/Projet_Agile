@@ -121,7 +121,7 @@
           function validate38hEmpWalert() {
               swal({
                   title: 'Warning!',
-                  text: 'Les employés de production et d\'exploitation doivent travailler au min 38h au bureau par semaine',
+                  text: 'Vous n\'avez pas atteint le 38h de bureau par semaine minimum, sans télétravail si vous êtes employé de production ou sans restrictions si vous êtes emploé de exploitation',
                   icon: "warning",
                   type: 'warning'
               });
@@ -149,6 +149,17 @@
                     type: 'warning'
                 });
             }
+    </script>
+
+    <script type="text/javascript">
+        function validate43WHalert() {
+            swal({
+                title: 'Warning!',
+                text: 'Vous avez entré trop d\'heures de travail au bureau',
+                icon: "warning",
+                type: 'warning'
+            });
+        }
     </script>
 
 
