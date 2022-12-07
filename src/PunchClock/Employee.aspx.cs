@@ -618,6 +618,8 @@ namespace PunchClock
             {
                 txtProjetMonday.Text = "999";
                 txtMinutesMonday.Text = "420";
+                totalTimeWorkedJour1 = 0;
+
             }
             else
             {
@@ -631,6 +633,8 @@ namespace PunchClock
             {
                 txtProjetTuesday.Text = "999";
                 txtMinutesTuesday.Text = "420";
+                totalTimeWorkedJour2 = 0;
+
             }
             else
             {
@@ -645,6 +649,7 @@ namespace PunchClock
             {
                 txtProjetWednesday.Text = "999";
                 txtMinutesWednesday.Text = "420";
+                totalTimeWorkedJour3 = 0;
             }
             else
             {
@@ -659,6 +664,7 @@ namespace PunchClock
             {
                 txtProjetThursday.Text = "999";
                 txtMinutesThursday.Text = "420";
+                totalTimeWorkedJour4 = 0;
             }
             else
             {
@@ -673,6 +679,7 @@ namespace PunchClock
             {
                 txtProjetFriday.Text = "999";
                 txtMinutesFriday.Text = "420";
+                totalTimeWorkedJour5 = 0;
             }
             else
             {
@@ -685,7 +692,7 @@ namespace PunchClock
         {
             string jsonFile = "";
             string jsonName = "";
-
+            System.Diagnostics.Debug.WriteLine(totalTimeWorkedJour1);
             try
             {
                 int empID = Int32.Parse(txtEmpId.Text);
