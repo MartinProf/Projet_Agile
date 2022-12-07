@@ -162,8 +162,8 @@
         }
         .auto-style3 {
             text-align: center;
-            font-size: x-large;
-            color: #000099;
+            font-size: xx-large;
+            color: #D7D6D4;
             height: 75px;
         }
         .auto-style4 {
@@ -181,8 +181,8 @@
             text-align: center;
         }
         .auto-style8 {
-            font-size: medium;
-            color: #000099;
+            font-size: large;
+            color: #D7D6D4;
             text-align: center;
         }
         .auto-style9 {
@@ -221,6 +221,9 @@
             width: 164px;
             height: 47px;
         }
+        body{
+            background-color: #152238;
+        }
         .auto-style17 {
             font-size: medium;
             color: #000099;
@@ -256,6 +259,51 @@
             text-align: center;
             height: 47px;
         }
+        .auto-style25 {
+            color: #D7D6D4;
+        }
+        .auto-style26 {
+            color: #FFE1FF;
+        }
+        .auto-style27 {
+            color: #D7D6D4;
+            font-size: medium;
+        }
+        .auto-style28 {
+            text-align: center;
+            height: 36px;
+            color: #D7D6D4;
+        }
+        .auto-style29 {
+            color: #FFFFFF;
+        }
+        .auto-style30 {
+            color: #FFFFFF;
+            font-size: large;
+        }
+        .auto-style31 {
+            color: #FFFFFF;
+            font-size: x-large;
+        }
+        .auto-style32 {
+            font-size: medium;
+            margin-bottom: 0px;
+        }
+        .auto-style33 {
+            font-size: large;
+        }
+        .auto-style34 {
+            color: #D7D6D4;
+            font-size: large;
+        }
+        .auto-style35 {
+            color: #FFFFFF;
+            font-size: large;
+            background-color: #152238;
+        }
+        .auto-style36 {
+            background-color: #152238;
+        }
     </style>
 </head>
 <body>
@@ -267,7 +315,7 @@
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>
-                    <td class="auto-style3"><strong>Employee timesheet form</strong></td>
+                    <td class="auto-style3"><strong><em>Employee timesheet form</em></strong></td>
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>
@@ -294,14 +342,15 @@
                 <tr>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
-                    <td class="auto-style10"><strong><span class="auto-style11">Year: </span>
+                    <td class="auto-style10"><strong><span class="auto-style31">Year:</span><span class="auto-style30"> </span>
                         <asp:TextBox ID="txtYear" runat="server" CssClass="auto-style6"></asp:TextBox>
                     </strong></td>
-                    <td class="auto-style7"><strong><span class="auto-style11">Week number: </span>
-                        <asp:DropDownList ID="dropDownListWeek" runat="server" AutoPostBack="true" CssClass="auto-style6" OnSelectedIndexChanged="dropDownListWeek_SelectedIndexChanged"></asp:DropDownList>
-                    </strong></td>
-                    <td class="auto-style12"><strong>Employee ID:
+                    <td class="auto-style7"><strong><span class="auto-style31">Employee ID:</span><span class="auto-style25"> </span>
                         <asp:TextBox ID="txtEmpId" runat="server" CssClass="auto-style6"></asp:TextBox>
+                    </strong></td>
+                    <td class="auto-style12"><strong><span class="auto-style31">Week:</span><span class="auto-style25">
+                        </span>
+                        <asp:DropDownList ID="dropDownListWeek" runat="server" AutoPostBack="true" CssClass="auto-style6" OnSelectedIndexChanged="dropDownListWeek_SelectedIndexChanged" Height="27px" Width="148px"></asp:DropDownList>
                     </strong></td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -320,76 +369,81 @@
             <hr>
             <table class="auto-style14">
                 <tr>
-                    <td class="auto-style13"><strong>Monday</strong><asp:TextBox ID="TBLundi" runat="server"></asp:TextBox></td>
-                    <td class="auto-style13"><strong>Tuesday</strong><asp:TextBox ID="TBMardi" runat="server"></asp:TextBox></td>
-                    <td class="auto-style13"><strong>Wednesday</strong><asp:TextBox ID="TBMercredi" runat="server"></asp:TextBox></td>
-                    <td class="auto-style15"><strong>Thursday</strong><asp:TextBox ID="TBJeudi" runat="server"></asp:TextBox></td>
-                    <td class="auto-style13"><strong>Friday</strong><asp:TextBox ID="TBVendredi" runat="server"></asp:TextBox></td>
-                    <td class="auto-style13"><strong>Saturday</strong><asp:TextBox ID="TBSamedi" runat="server"></asp:TextBox></td>
-                    <td class="auto-style13"><strong>Sunday</strong><asp:TextBox ID="TBDimanche" runat="server"></asp:TextBox></td>
+                    <td class="auto-style13"><strong><span class="auto-style31">Monday</span><span class="auto-style25"><br />
+                        </span></strong><asp:TextBox ID="TBLundi" runat="server"></asp:TextBox></td>
+                    <td class="auto-style13"><strong><span class="auto-style31">Tuesday</span><span class="auto-style25"><br />
+                        </span></strong><asp:TextBox ID="TBMardi" runat="server"></asp:TextBox></td>
+                    <td class="auto-style13"><strong><span class="auto-style31">Wednesday</span><span class="auto-style25"><br />
+                        </span></strong><asp:TextBox ID="TBMercredi" runat="server"></asp:TextBox></td>
+                    <td class="auto-style15"><span class="auto-style31"><strong>Thursday</strong></span><asp:TextBox ID="TBJeudi" runat="server"></asp:TextBox></td>
+                    <td class="auto-style13"><strong><span class="auto-style31">Friday</span><span class="auto-style25"><br />
+                        </span></strong><asp:TextBox ID="TBVendredi" runat="server"></asp:TextBox></td>
+                    <td class="auto-style13"><strong><span class="auto-style31">Saturday</span><span class="auto-style25"><br />
+                        </span></strong><asp:TextBox ID="TBSamedi" runat="server"></asp:TextBox></td>
+                    <td class="auto-style13"><strong><span class="auto-style31">Sunday</span><span class="auto-style25"><br />
+                        </span></strong><asp:TextBox ID="TBDimanche" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td class="auto-style24"><span class="auto-style11"><strong>Code projet</strong></span><strong><span class="auto-style11">: </span>
+                    <td class="auto-style24"><span class="auto-style30"><strong>Code projet</strong></span><strong><span class="auto-style25">: </span>
                         <asp:TextBox ID="txtProjetMonday" runat="server" CssClass="auto-style6" Width="60px"></asp:TextBox>
                     </strong></td>
-                    <td class="auto-style24"><span class="auto-style11"><strong>Code projet</strong></span><strong><span class="auto-style11">: </span>
+                    <td class="auto-style24"><span class="auto-style30"><strong>Code projet</strong></span><strong><span class="auto-style25">: </span>
                         <asp:TextBox ID="txtProjetTuesday" runat="server" CssClass="auto-style6" Width="60px"></asp:TextBox>
                     </strong></td>
-                    <td class="auto-style24"><span class="auto-style11"><strong>Code projet</strong></span><strong><span class="auto-style11">: </span>
+                    <td class="auto-style24"><span class="auto-style30"><strong>Code projet</strong></span><strong><span class="auto-style30">: </span>
                         <asp:TextBox ID="txtProjetWednesday" runat="server" CssClass="auto-style6" Width="60px"></asp:TextBox>
                     </strong></td>
-                    <td class="auto-style16"><span class="auto-style11"><strong>Code projet</strong></span><strong><span class="auto-style11">: </span>
-                        <asp:TextBox ID="txtProjetThursday" runat="server" CssClass="auto-style6" Width="60px"></asp:TextBox>
+                    <td class="auto-style16"><span class="auto-style30"><strong>Code projet:</strong></span><strong><asp:TextBox ID="txtProjetThursday" runat="server" CssClass="auto-style32" Width="57px"></asp:TextBox>
                     </strong></td>
-                    <td class="auto-style24"><span class="auto-style11"><strong>Code projet</strong></span><strong><span class="auto-style11">: </span>
+                    <td class="auto-style24"><span class="auto-style30"><strong>Code projet</strong></span><strong><span class="auto-style25">: </span>
                         <asp:TextBox ID="txtProjetFriday" runat="server" CssClass="auto-style6" Width="60px"></asp:TextBox>
                     </strong></td>
-                    <td class="auto-style24"><span class="auto-style11"><strong>Code projet</strong></span><strong><span class="auto-style11">: </span>
+                    <td class="auto-style24"><span class="auto-style30"><strong>Code projet</strong></span><strong><span class="auto-style25">: </span>
                         <asp:TextBox ID="txtProjetSaturday" runat="server" CssClass="auto-style6" Width="60px"></asp:TextBox>
                     </strong></td>
-                    <td class="auto-style24"><span class="auto-style11"><strong>Code projet</strong></span><strong><span class="auto-style11">:</span><asp:TextBox ID="txtProjetSunday" runat="server" CssClass="auto-style6" Width="60px"></asp:TextBox>
+                    <td class="auto-style24"><span class="auto-style30"><strong>Code projet</strong></span><strong><span class="auto-style11">:</span><asp:TextBox ID="txtProjetSunday" runat="server" CssClass="auto-style6" Width="60px"></asp:TextBox>
                     </strong></td>
                 </tr>
                 <tr>
-                    <td class="auto-style17"><strong>Minutes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <td class="auto-style17"><strong><span class="auto-style29"><span class="auto-style33">Minutes:&nbsp;&nbsp;</span>&nbsp;</span><span class="auto-style25">&nbsp;&nbsp;&nbsp;</span>
                         <asp:TextBox ID="txtMinutesMonday" runat="server" CssClass="auto-style12" Width="60px"></asp:TextBox>
                     </strong></td>
-                    <td class="auto-style18"><strong><span class="auto-style11">Minutes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                    <td class="auto-style18"><strong><span class="auto-style30">Minutes:&nbsp;</span><span class="auto-style29">&nbsp;&nbsp;</span><span class="auto-style25">&nbsp;</span><span class="auto-style11">&nbsp;&nbsp; </span>
                         <asp:TextBox ID="txtMinutesTuesday" runat="server" CssClass="auto-style12" Width="60px"></asp:TextBox>
                     </strong></td>
-                    <td class="auto-style18"><strong><span class="auto-style11">Minutes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                    <td class="auto-style18"><strong><span class="auto-style35">Minutes:&nbsp;</span><span class="auto-style11"><span class="auto-style36">&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp; </span>
                         <asp:TextBox ID="txtMinutesWednesday" runat="server" CssClass="auto-style12" Width="60px"></asp:TextBox>
                     </strong></td>
-                    <td class="auto-style19"><strong><span class="auto-style11">Minutes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-                        <asp:TextBox ID="txtMinutesThursday" runat="server" CssClass="auto-style12" Width="60px"></asp:TextBox>
+                    <td class="auto-style19"><strong><span class="auto-style30">Minutes:</span><span class="auto-style34">&nbsp;&nbsp;&nbsp;</span><span class="auto-style11">&nbsp;&nbsp;&nbsp; </span>
+                        <asp:TextBox ID="txtMinutesThursday" runat="server" CssClass="auto-style12" Width="52px"></asp:TextBox>
                     </strong></td>
-                    <td class="auto-style18"><strong><span class="auto-style11">Minutes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                    <td class="auto-style18"><strong><span class="auto-style30">Minutes:&nbsp;&nbsp;</span><span class="auto-style25">&nbsp;</span><span class="auto-style11">&nbsp;&nbsp;&nbsp; </span>
                         <asp:TextBox ID="txtMinutesFriday" runat="server" CssClass="auto-style12" Width="60px"></asp:TextBox>
                     </strong></td>
-                    <td class="auto-style18"><strong><span class="auto-style11">Minutes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                    <td class="auto-style18"><strong><span class="auto-style30">Minutes:&nbsp;</span><span class="auto-style25">&nbsp;&nbsp;&nbsp;</span><span class="auto-style11">&nbsp;&nbsp; </span>
                         <asp:TextBox ID="txtMinutesSaturday" runat="server" CssClass="auto-style12" Width="60px"></asp:TextBox>
                     </strong></td>
-                    <td class="auto-style18"><strong><span class="auto-style11">Minutes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                    <td class="auto-style18"><strong><span class="auto-style30">Minutes:&nbsp;</span><span class="auto-style25">&nbsp;&nbsp;</span><span class="auto-style11">&nbsp;&nbsp;&nbsp; </span>
                         <asp:TextBox ID="txtMinutesSunday" runat="server" CssClass="auto-style12" Width="60px"></asp:TextBox>
                     </strong></td>
                 </tr>
                 <tr>
-                    <td class="auto-style20">
+                    <td class="auto-style28">
                         <strong>
-                            <asp:CheckBox Text="Sick day" ID="cbSickMonday" runat="server" CssClass="auto-style12" AutoPostBack="true" OnCheckedChanged="cbSickMonday_CheckedChanged" />
+                            <asp:CheckBox Text="Sick day" ID="cbSickMonday" runat="server" CssClass="auto-style27" AutoPostBack="true" OnCheckedChanged="cbSickMonday_CheckedChanged" />
                         </strong>
                     </td>
                     <td class="auto-style20"><strong>
-                        <asp:CheckBox Text="Sick day" ID="cbSickTuesday" runat="server" CssClass="auto-style12" AutoPostBack="true" OnCheckedChanged="cbSickTuesday_CheckedChanged" />
+                        <asp:CheckBox Text="Sick day" ID="cbSickTuesday" runat="server" CssClass="auto-style27" AutoPostBack="true" OnCheckedChanged="cbSickTuesday_CheckedChanged" />
                     </strong></td>
                     <td class="auto-style20"><strong>
-                        <asp:CheckBox Text="Sick day" ID="cbSickWednesday" runat="server" CssClass="auto-style12" AutoPostBack="true" OnCheckedChanged="cbSickWednesday_CheckedChanged" />
+                        <asp:CheckBox Text="Sick day" ID="cbSickWednesday" runat="server" CssClass="auto-style27" AutoPostBack="true" OnCheckedChanged="cbSickWednesday_CheckedChanged" />
                     </strong></td>
                     <td class="auto-style21"><strong>
-                        <asp:CheckBox Text="Sick day" ID="cbSickThursday" runat="server" CssClass="auto-style12" AutoPostBack="true" OnCheckedChanged="cbSickThursday_CheckedChanged" />
+                        <asp:CheckBox Text="Sick day" ID="cbSickThursday" runat="server" CssClass="auto-style27" AutoPostBack="true" OnCheckedChanged="cbSickThursday_CheckedChanged" />
                     </strong></td>
                     <td class="auto-style20"><strong>
-                        <asp:CheckBox Text="Sick day" ID="cbSickFriday" runat="server" CssClass="auto-style12" AutoPostBack="true" OnCheckedChanged="cbSickFriday_CheckedChanged" />
+                        <asp:CheckBox Text="Sick day" ID="cbSickFriday" runat="server" CssClass="auto-style27" AutoPostBack="true" OnCheckedChanged="cbSickFriday_CheckedChanged" />
                     </strong></td>
 
                 </tr>
@@ -432,25 +486,25 @@
                 </tr>
                 <tr>
                     <td class="auto-style7">
-                        <asp:Label ID="lblResultMonday" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblResultMonday" runat="server" Text="" CssClass="auto-style26"></asp:Label>
                     </td>
                     <td class="auto-style7">
-                        <asp:Label ID="lblResultTuesday" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblResultTuesday" runat="server" Text="" CssClass="auto-style26"></asp:Label>
                     </td>
                     <td class="auto-style7">
-                        <asp:Label ID="lblResultWednesday" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblResultWednesday" runat="server" Text="" CssClass="auto-style26"></asp:Label>
                     </td>
                     <td class="auto-style7">
-                        <asp:Label ID="lblResultThursday" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblResultThursday" runat="server" Text="" CssClass="auto-style26"></asp:Label>
                     </td>
                     <td class="auto-style7">
-                        <asp:Label ID="lblResultFriday" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblResultFriday" runat="server" Text="" CssClass="auto-style26"></asp:Label>
                     </td>
                     <td class="auto-style7">
-                        <asp:Label ID="lblResultSaturday" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblResultSaturday" runat="server" Text="" CssClass="auto-style26"></asp:Label>
                     </td>
                     <td class="auto-style7">
-                        <asp:Label ID="lblResultSunday" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblResultSunday" runat="server" Text="" CssClass="auto-style26"></asp:Label>
                     </td>
                 </tr>
             </table>
@@ -464,13 +518,13 @@
                         <asp:Button ID="btnReset" runat="server" Height="30px" Text="Reset" Width="100px" OnClick="btnReset_Click" />
                     </td>
                     <td class="auto-style23">
-                        <asp:Button ID="btnLogout" runat="server" Height="30px" Text="Logout" Width="100px" OnClick="btnLogout_Click" />
+                        <asp:Button ID="btnLogout" runat="server" Height="30px" Text="Go back" Width="100px" OnClick="btnLogout_Click" />
                     </td>
                 </tr>
 
             </table>
         </div>
-        <asp:Label ID="LabelTestJson" runat="server" Text=""></asp:Label>
+        <asp:Label ID="LabelTestJson" runat="server" Text="" CssClass="auto-style29"></asp:Label>
 
         <asp:Label ID="LabelLundi" runat="server" Text="" ForeColor="White"></asp:Label>
         <asp:Label ID="LabelMardi" runat="server" Text="" ForeColor="White"></asp:Label>

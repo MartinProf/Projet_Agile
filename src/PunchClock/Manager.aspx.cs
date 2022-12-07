@@ -26,153 +26,169 @@ namespace PunchClock
 
         protected void btnValidate_Click(object sender, EventArgs e)
         {
-            string fileName = btnLoadTimesheet.PostedFile.FileName;
-            string a = "";
-            string content = "";
-            string FolderPath = @"C:\FeuillesTemps\";
-            if (Directory.Exists(FolderPath))
+            if (btnLoadTimesheet.HasFile)
             {
-                if (File.Exists(FolderPath+fileName))
+                string fileName = btnLoadTimesheet.PostedFile.FileName;
+                string a = "";
+                string employeeID = "";
+                string year = "";
+                string week = "";
+                string monday = "";
+                string  tuesday= "";
+                string wednesday = "";
+                string thursday = "";
+                string friday = "";
+                string saturday = "";
+                string sunday = "";
+                int heuresTotal = 0;
+                string FolderPath = @"C:\FeuillesTemps\";
+                if (Directory.Exists(FolderPath))
                 {
-                    
-                    string jsonFile = File.ReadAllText(FolderPath + fileName);
-                    dynamic test = JsonConvert.DeserializeObject(jsonFile);
-
-                    content += "Employé:" + test.numero_employe + "<br>";
-                    content += "Année:" + test.annee + "<br>";
-                    content += "Semaine:" + test.numero_semaine + "<br>";
-                    content += "Jour1:" + test.jour1 + "<br>";
-                    content += "Jour2:" + test.jour2 + "<br>";
-                    content += "Jour3:" + test.jour3 + "<br>";
-                    content += "Jour4:" + test.jour4 + "<br>";
-                    content += "Jour5:" + test.jour5 + "<br>";
-                    content += "Jour5 minutes première occurence:" + test.jour5[0].minutes + "<br>";
-                    content += "Weekend1:" + test.weekendl + "<br>";
-                    content += "Weekend2:" + test.weekend2 + "<br><br><br>";
-
-                    TimeSheetGenerator g = JsonConvert.DeserializeObject<TimeSheetGenerator>(jsonFile);
-
-                    content = content + ($"Numero employe: {g.numero_employe}") + "<br>";
-
-                    content = content + ($"Annee: {g.annee}") + "<br>";
-
-                    content = content + ($"Semaine : {g.numero_semaine}") + "<br>";
-
-                    foreach (var item in g.jour1)
+                    if (File.Exists(FolderPath + fileName))
                     {
-                        
-                        a = a+ "Code projet : "+(int.Parse($"{item.codeProject}")) + " ";
-                        a = a + "Minutes : "+(int.Parse($"{item.minutes}")) + " ";
+
+                        string jsonFile = File.ReadAllText(FolderPath + fileName);
+                        dynamic test = JsonConvert.DeserializeObject(jsonFile);
+
+                        employeeID +=  test.numero_employe + "<br>";
+                        year +=  test.annee + " <br> ";
+                        week +=  test.numero_semaine + "<br>";
+
+                        foreach (var item in test.jour1)
+                        {
+                            a = a + "<br>Project code: " + item.codeProject + "<br> ";
+                            a = a + "Minutes: " + item.minutes + "<br> ";
+                            heuresTotal += (int)item.minutes;
+                        }
+                        monday +=  a + "<br>";
+                        a = "";
+                        foreach (var item in test.jour2)
+                        {
+                            a = a + "Project code: " + item.codeProject + "<br> ";
+                            a = a + "Minutes: " + item.minutes + "<br> ";
+                            heuresTotal += (int)item.minutes;
+                        }
+                        tuesday += a + "<br>";
+                        a = "";
+                        foreach (var item in test.jour3)
+                        {
+                            a = a + "Project code: " + item.codeProject + " <br>";
+                            a = a + "Minutes: " + item.minutes + "<br> ";
+                            heuresTotal += (int)item.minutes;
+                        }
+                        wednesday +=  a + "<br>";
+                        a = "";
+                        foreach (var item in test.jour4)
+                        {
+                            a = a + "Project code: " + item.codeProject + "<br> ";
+                            a = a + "Minutes: " + item.minutes + "<br> ";
+                            heuresTotal += (int)item.minutes;
+                        }
+                        thursday +=  a + "<br>";
+                        a = "";
+                        foreach (var item in test.jour5)
+                        {
+                            a = a + "Project code: " + item.codeProject + "<br> ";
+                            a = a + "Minutes: " + item.minutes + "<br> ";
+                            heuresTotal += (int)item.minutes;
+                        }
+                        friday += a + "<br>";
+                        a = "";
+                        foreach (var item in test.weekendl)
+                        {
+                            a = a + "Project code: " + item.codeProject + "<br> ";
+                            a = a + "Minutes: " + item.minutes + "<br> ";
+                            heuresTotal += (int)item.minutes;
+                        }
+                        saturday +=  a + "<br>";
+                        a = "";
+                        foreach (var item in test.weekend2)
+                        {
+                            a = a + "Project code: " + item.codeProject + "<br> ";
+                            a = a + "Minutes: " + item.minutes + "<br> ";
+                            heuresTotal += (int)item.minutes;
+                        }
+                        sunday +=  a + "<br>";
+
+                        //Response.Write(content + "<br>" + "Heures total: " + heuresTotal / 60);
+                        // lblJsonOpened.Text = content;
+                        lblYear.Text += year;
+                        lblWeekNumber.Text += week;
+                        lblEmployeeId.Text += employeeID;
+                        lblMonday.Text = monday;
+                        lblTuesday.Text = tuesday;
+                        lblWednesday.Text = wednesday;
+                        lblThursday.Text = thursday;
+                        lblFriday.Text = friday;
+                        lblSaturday.Text = saturday;
+                        lblSunday.Text = sunday;
                     }
-
-                    
-                    content = content + ("jour1 : " + a) + "<br>";
-
-                    a = "";
-
-                    foreach (var item in g.jour2)
+                    else
                     {
-                        a = a + ($"{item}");
+                        Response.Write("<script>alert('Le ficher " + fileName + " n'est pas un json')</script>");
                     }
-
-                    content = content + ("jour2 : " + a) + "<br>";
-
-                    a = "";
-
-                    foreach (var item in g.jour3)
-                    {
-                        a = a + ($"{item}");
-                    }
-
-                    content = content + ("jour3 : " + a) + "<br>";
-
-                    a = "";
-
-                    foreach (var item in g.jour4)
-                    {
-                        a = a + ($"{item}");
-                    }
-
-                    content = content + ("jour4 : " + a) + "<br>";
-
-                    a = "";
-
-                    foreach (var item in g.jour5)
-                    {
-                        a = a + ($"{item}");
-                    }
-
-                    content = content + ("jour5 : " + a) + "<br>";
-
-                    a = "";
-
-                    foreach (var item in g.weekendl)
-                    {
-                        a = a + ($"{item}");
-                    }
-
-                    content = content + ("jour6 : " + a) + "<br>";
-
-                    a = "";
-
-                    foreach (var item in g.weekend2)
-                    {
-                        a = a + ($"{item}");
-                    }
-
-                    content = content + ("jour7 : " + a);
-
-
-                    Response.Write( content );
+                    lbFileName.Text = btnLoadTimesheet.PostedFile.FileName;
                 }
-                else
-                {
-                    Response.Write("<script>alert('Fichier inexistant " + fileName + "')</script>");
-                }
-                lbFileName.Text = btnLoadTimesheet.PostedFile.FileName;
             }
-            
+
         }
 
         protected void btnAccept_Click(object sender, EventArgs e)
         {
-            string fileName = lbFileName.Text;
-            string folderPathA = @"c:\FeuillesTemps\FeuillesAccepte\";
-            string path = @"c:\FeuillesTemps\";
-            if (!Directory.Exists(folderPathA))
-                Directory.CreateDirectory(folderPathA);
-            try
+            if (lbFileName.Text != string.Empty)
             {
-                
-                 
-                File.Move(path+fileName, folderPathA+fileName);
-                
+                string fileName = lbFileName.Text;
+                string folderPathA = @"c:\FeuillesTemps\FeuillesAccepte\";
+                string path = @"c:\FeuillesTemps\";
+                if (!Directory.Exists(folderPathA))
+                    Directory.CreateDirectory(folderPathA);
+                try
+                {
+                    File.Move(path + fileName, folderPathA + fileName);
+                    lbFileName.Text = string.Empty;
+                    Response.Write("<script>alert('La feuille a ete accepte')</script>");
+                }
+                catch (Exception g)
+                {
+                    Response.Write(g.ToString());
+                }
             }
-            catch (Exception g)
+            else
             {
-                Response.Write(g.ToString());
+                Response.Write("<script>alert('Veuillez appuyer sur le bouton validate avant')</script>");
             }
         }
 
         protected void btnRefuse_Click(object sender, EventArgs e)
         {
-            string fileName = lbFileName.Text;
-            string folderPathR = @"c:\FeuillesTemps\FeuillesRefuser\";
-            string path = @"c:\FeuillesTemps\";
-            
-            if (!Directory.Exists(folderPathR))
-                Directory.CreateDirectory(folderPathR);
-            try
+            if (lbFileName.Text != string.Empty)
             {
+                string fileName = lbFileName.Text;
+                string folderPathR = @"c:\FeuillesTemps\FeuillesRefuser\";
+                string path = @"c:\FeuillesTemps\";
 
-
-                File.Move(path + fileName, folderPathR + fileName);
-
+                if (!Directory.Exists(folderPathR))
+                    Directory.CreateDirectory(folderPathR);
+                try
+                {
+                    File.Move(path + fileName, folderPathR + fileName);
+                    lbFileName.Text = string.Empty;
+                    Response.Write("<script>alert('La feuille a ete refuse')</script>");
+                }
+                catch (Exception g)
+                {
+                    Response.Write(g.ToString());
+                }
             }
-            catch (Exception g)
+            else
             {
-                Response.Write(g.ToString());
+                Response.Write("<script>alert('Veuillez appuyer sur le bouton validate avant')</script>");
             }
+        }
+
+        protected void btnLogout_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
         }
     }
 }

@@ -121,7 +121,7 @@ namespace PunchClock
         }
         protected void btnLogout_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Login.aspx");
+            Response.Redirect("Welcome.aspx");
         }
 
         protected void addDayWeek(TextBox inputProjetDay, TextBox inputMinutesDay, Label resultDay, Label day, CheckBox sickDay, Button addDay)
@@ -913,6 +913,14 @@ namespace PunchClock
             txtMinutesSaturday.Text = "";
             txtMinutesSunday.Text = "";
             txtEmpId.Text = "";
+
+            lblResultMonday.Text = "";
+            lblResultTuesday.Text = "";
+            lblResultWednesday.Text = "";
+            lblResultThursday.Text = "";
+            lblResultFriday.Text = "";
+            lblResultSaturday.Text = "";
+            lblResultSunday.Text = "";
         }
 
         
