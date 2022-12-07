@@ -133,13 +133,26 @@
             function validate10hAdminWalert() {
                 swal({
                     title: 'Warning!',
-                    text: 'Les administrateurs doivent travailler un maximum de 10 heures par semaine de la maison',
+                    text:'Les administrateurs doivent travailler un maximum de 10 heures par semaine de la maison',
+                    icon: "warning",
+                    type: 'warning'
+                });
+            }
+        </script>
+
+    <script type="text/javascript">
+            function validateNumEmpAndTBDayalert() {
+                swal({
+                    title: 'Warning!',
+                    text: 'Vous devez entrer un numéro d\'employer et sélectionner une semaine',
                     icon: "warning",
                     type: 'warning'
                 });
             }
     </script>
 
+
+   
     <title></title>
     <style type="text/css">
         hr {
