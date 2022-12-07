@@ -298,11 +298,9 @@ namespace PunchClock
                             addDayWeek(txtProjetMonday, txtMinutesMonday, lblResultMonday, LabelLundi, cbSickMonday, btnAddMonday);
                             totalTimeHomeA -= int.Parse(resultMinutes);
                         }
-
                         else if (int.Parse(txtEmpId.Text) >= 1000 || (int.Parse(txtEmpId.Text) <= 999 && int.Parse(txtProjetMonday.Text) < 900))
                         {
                             addDayWeek(txtProjetMonday, txtMinutesMonday, lblResultMonday, LabelLundi, cbSickMonday, btnAddMonday);
-                            totalTimeHomeA -= int.Parse(resultMinutes);
                         }
                         else
                         {
@@ -350,7 +348,6 @@ namespace PunchClock
                         else if (int.Parse(txtEmpId.Text) >= 1000 || (int.Parse(txtEmpId.Text) <= 999 && int.Parse(txtProjetTuesday.Text) < 900))
                         {
                             addDayWeek(txtProjetTuesday, txtMinutesTuesday, lblResultTuesday, LabelMardi, cbSickTuesday, btnAddTuesday);
-                            totalTimeHomeA -= int.Parse(resultMinutes);
                         }
                         else
                         {
@@ -399,7 +396,6 @@ namespace PunchClock
                         else if (int.Parse(txtEmpId.Text) >= 1000 || (int.Parse(txtEmpId.Text) <= 999 && int.Parse(txtProjetWednesday.Text) < 900))
                         {
                             addDayWeek(txtProjetWednesday, txtMinutesWednesday, lblResultWednesday, LabelMercredi, cbSickWednesday, btnAddWednesday);
-                            totalTimeHomeA -= int.Parse(resultMinutes);
                         }
                         else
                         {
@@ -447,7 +443,6 @@ namespace PunchClock
                         else if (int.Parse(txtEmpId.Text) >= 1000 || (int.Parse(txtEmpId.Text) <= 999 && int.Parse(txtProjetThursday.Text) < 900))
                         {
                             addDayWeek(txtProjetThursday, txtMinutesThursday, lblResultThursday, LabelMercredi, cbSickThursday, btnAddThursday);
-                            totalTimeHomeA -= int.Parse(resultMinutes);
                         }
                         else
                         {
@@ -495,7 +490,6 @@ namespace PunchClock
                         else if (int.Parse(txtEmpId.Text) >= 1000 || (int.Parse(txtEmpId.Text) <= 999 && int.Parse(txtProjetFriday.Text) < 900))
                         {
                             addDayWeek(txtProjetFriday, txtMinutesFriday, lblResultFriday, LabelVendredi, cbSickFriday, btnAddFriday);
-                            totalTimeHomeA -= int.Parse(resultMinutes);
                         }
                         else
                         {
@@ -624,17 +618,11 @@ namespace PunchClock
             {
                 txtProjetMonday.Text = "999";
                 txtMinutesMonday.Text = "420";
-                totalTimeHome -= totalTimeWorkedJour1;
-                totalTimeHomeA -= totalTimeWorkedJour1;
-                totalTimeWorkedJour1 = 0;
-                
             }
             else
             {
                 txtProjetMonday.Text = "";
                 txtMinutesMonday.Text = "";
-                totalTimeHome = 0;
-                totalTimeHomeA = 0;
             }
         }
         protected void cbSickTuesday_CheckedChanged(object sender, EventArgs e)
@@ -643,11 +631,6 @@ namespace PunchClock
             {
                 txtProjetTuesday.Text = "999";
                 txtMinutesTuesday.Text = "420";
-                totalTimeHome -= totalTimeWorkedJour2;
-                totalTimeHomeA -= totalTimeWorkedJour2;
-                totalTimeWorkedJour2 = 0;
-                
-
             }
             else
             {
@@ -662,9 +645,6 @@ namespace PunchClock
             {
                 txtProjetWednesday.Text = "999";
                 txtMinutesWednesday.Text = "420";
-                totalTimeHome -= totalTimeWorkedJour3;
-                totalTimeHomeA -= totalTimeWorkedJour3;
-                totalTimeWorkedJour3 = 0;
             }
             else
             {
@@ -679,9 +659,6 @@ namespace PunchClock
             {
                 txtProjetThursday.Text = "999";
                 txtMinutesThursday.Text = "420";
-                totalTimeHome -= totalTimeWorkedJour4;
-                totalTimeHomeA -= totalTimeWorkedJour4;
-                totalTimeWorkedJour4 = 0;
             }
             else
             {
@@ -696,9 +673,6 @@ namespace PunchClock
             {
                 txtProjetFriday.Text = "999";
                 txtMinutesFriday.Text = "420";
-                totalTimeHome -= totalTimeWorkedJour5;
-                totalTimeHomeA -= totalTimeWorkedJour5;
-                totalTimeWorkedJour5 = 0;
             }
             else
             {
@@ -719,9 +693,9 @@ namespace PunchClock
                 {
                     int totalWeekTimeWorked = totalTimeWorkedJour1 + totalTimeWorkedJour2 + totalTimeWorkedJour3 + totalTimeWorkedJour4 + totalTimeWorkedJour5 + totalTimeWorkedWeekend1 + totalTimeWorkedWeekend2;
 
-                    if (totalTimeWorkedJour1 >= 240 && totalTimeWorkedJour2 >= 240 && totalTimeWorkedJour3 >= 240 && totalTimeWorkedJour4 >= 240 && totalTimeWorkedJour5 >= 240)
+                    if ((totalTimeWorkedJour1 - totalTimeHome) >= 240 && (totalTimeWorkedJour2 - totalTimeHome) >= 240 && (totalTimeWorkedJour3 - totalTimeHome) >= 240 && (totalTimeWorkedJour4 - totalTimeHome) >= 240 && (totalTimeWorkedJour5 - totalTimeHome) >= 240)
                     {
-                        if (totalWeekTimeWorked >= (36 * 60))
+                        if ((totalWeekTimeWorked - totalTimeHomeA) >= (36 * 60))
                         {
 
                             string idadmin = txtEmpId.Text;
@@ -754,47 +728,55 @@ namespace PunchClock
                 {
                     int totalWeekTimeWorked = totalTimeWorkedJour1 + totalTimeWorkedJour2 + totalTimeWorkedJour3 + totalTimeWorkedJour4 + totalTimeWorkedJour5 + totalTimeWorkedWeekend1 + totalTimeWorkedWeekend2;
 
-                    if (totalTimeWorkedJour1 >= 360 && totalTimeWorkedJour2 >= 360 && totalTimeWorkedJour3 >= 360 && totalTimeWorkedJour4 >= 360 && totalTimeWorkedJour5 >= 360)
+                    if ((totalTimeWorkedJour1 - totalTimeHome) >= 360 && (totalTimeWorkedJour2 - totalTimeHome) >= 360 && (totalTimeWorkedJour3 - totalTimeHome) >= 360 && (totalTimeWorkedJour4 - totalTimeHome) >= 360 && (totalTimeWorkedJour5 - totalTimeHome) >= 360)
                     {
-                        if (totalWeekTimeWorked >= (38 * 60))
+
+
+                        if ((totalWeekTimeWorked - totalTimeHome) > (43 * 60))
                         {
-
-                            string id = txtEmpId.Text;
-                            string year = txtYear.Text;
-                            string weekNumber = dropDownListWeek.SelectedValue;
-                            jsonFile = stringJsonGenerator(id, year, weekNumber);
-                            jsonName = id + "-" + year + "-" + weekNumber;
-
-                            totalTimeWorkedJour1 = 0;
-                            totalTimeWorkedJour2 = 0;
-                            totalTimeWorkedJour3 = 0;
-                            totalTimeWorkedJour4 = 0;
-                            totalTimeWorkedJour5 = 0;
-                            totalTimeWorkedWeekend1 = 0;
-                            totalTimeWorkedWeekend2 = 0;
-
-                            //if (empID >= 2000)
-                            // {
-                            /*id = txtEmpId.Text;
-                            year = txtYear.Text;
-                            weekNumber = dropDownListWeek.SelectedValue;
-                            jsonFile = stringJsonGenerator(id, year, weekNumber);
-                            jsonName = id + "-" + year + "-" + weekNumber;
-
-                            totalTimeWorkedJour1 = 0;
-                            totalTimeWorkedJour2 = 0;
-                            totalTimeWorkedJour3 = 0;
-                            totalTimeWorkedJour4 = 0;
-                            totalTimeWorkedJour5 = 0;
-                            totalTimeWorkedWeekend1 = 0;
-                            totalTimeWorkedWeekend2 = 0;
-                            */
-                            // }
+                            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validate43WHalert()", true);
                         }
                         else
                         {
-                            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validate38hEmpWalert();", true);
+                            if ((totalWeekTimeWorked - totalTimeHome) >= (38 * 60) && empID < 2000)
+                            {
+                                string id = txtEmpId.Text;
+                                string year = txtYear.Text;
+                                string weekNumber = dropDownListWeek.SelectedValue;
+                                jsonFile = stringJsonGenerator(id, year, weekNumber);
+                                jsonName = id + "-" + year + "-" + weekNumber;
+
+                                totalTimeWorkedJour1 = 0;
+                                totalTimeWorkedJour2 = 0;
+                                totalTimeWorkedJour3 = 0;
+                                totalTimeWorkedJour4 = 0;
+                                totalTimeWorkedJour5 = 0;
+                                totalTimeWorkedWeekend1 = 0;
+                                totalTimeWorkedWeekend2 = 0;
+                            }
+
+                            else if (totalWeekTimeWorked >= (38 * 60) && empID >= 2000)
+                            {
+                                string id = txtEmpId.Text;
+                                string year = txtYear.Text;
+                                string weekNumber = dropDownListWeek.SelectedValue;
+                                jsonFile = stringJsonGenerator(id, year, weekNumber);
+                                jsonName = id + "-" + year + "-" + weekNumber;
+
+                                totalTimeWorkedJour1 = 0;
+                                totalTimeWorkedJour2 = 0;
+                                totalTimeWorkedJour3 = 0;
+                                totalTimeWorkedJour4 = 0;
+                                totalTimeWorkedJour5 = 0;
+                                totalTimeWorkedWeekend1 = 0;
+                                totalTimeWorkedWeekend2 = 0;
+                            }
+                            else
+                            {
+                                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validate38hEmpWalert();", true);
+                            }
                         }
+
                     }
                     else
                     {
@@ -913,16 +895,8 @@ namespace PunchClock
             txtMinutesSaturday.Text = "";
             txtMinutesSunday.Text = "";
             txtEmpId.Text = "";
-
-            lblResultMonday.Text = "";
-            lblResultTuesday.Text = "";
-            lblResultWednesday.Text = "";
-            lblResultThursday.Text = "";
-            lblResultFriday.Text = "";
-            lblResultSaturday.Text = "";
-            lblResultSunday.Text = "";
         }
 
-        
+
     }
 }

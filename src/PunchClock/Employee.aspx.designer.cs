@@ -33,7 +33,7 @@ namespace PunchClock
         protected global::System.Web.UI.WebControls.TextBox txtYear;
 
         /// <summary>
-        /// txtEmpId control.
+        /// Contrôle txtEmpId.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
@@ -42,7 +42,7 @@ namespace PunchClock
         protected global::System.Web.UI.WebControls.TextBox txtEmpId;
 
         /// <summary>
-        /// dropDownListWeek control.
+        /// Contrôle dropDownListWeek.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
