@@ -22,9 +22,20 @@ namespace PunchClock
         static int totalTimeWorkedJour5 = 0;
         static int totalTimeWorkedWeekend1 = 0;
         static int totalTimeWorkedWeekend2 = 0;
+
+        static int totalTimeWorkedJour1Office = 0;
+        static int totalTimeWorkedJour2Office = 0;
+        static int totalTimeWorkedJour3Office = 0;
+        static int totalTimeWorkedJour4Office = 0;
+        static int totalTimeWorkedJour5Office = 0;
+        static int totalTimeWorkedWeekend1Office = 0;
+        static int totalTimeWorkedWeekend2Office = 0;
+
         static int totalWeekTimeWorked = totalTimeWorkedJour1 + totalTimeWorkedJour2 + totalTimeWorkedJour3 + totalTimeWorkedJour4 + totalTimeWorkedJour5 + totalTimeWorkedWeekend1 + totalTimeWorkedWeekend2;
         static int totalTimeHome = 0;
         static int totalTimeHomeA = 0;
+        static int totalTimeOffice = 0;
+        static int totalTimeOfficeA = 0;
 
         string resultProjet = "0";
         string resultMinutes = "0";
@@ -139,6 +150,8 @@ namespace PunchClock
             {
                 if (int.Parse(resultProjet) == 999 || int.Parse(resultProjet) < 900)
                 {
+                    totalTimeOffice += int.Parse(resultMinutes);
+                    totalTimeOfficeA += int.Parse(resultMinutes);
                     resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
                     resultDay.Text += resultAffichage;
 
@@ -232,6 +245,11 @@ namespace PunchClock
                         totalTimeHomeA += int.Parse(resultMinutes);
 
                     }
+                    else
+                    {
+                        totalTimeOffice += int.Parse(resultMinutes);
+                        totalTimeOfficeA += int.Parse(resultMinutes);
+                    }
 
                     if (int.Parse(resultProjet) == 998)
                     {
@@ -285,6 +303,11 @@ namespace PunchClock
                 totalTimeHomeA += int.Parse(resultMinutes);
                 DateTime mondayHollidays = DateTime.Parse(TBLundi.Text);
 
+                if(int.Parse(resultProjet) <= 900)
+                {
+                    totalTimeWorkedJour1Office += int.Parse(resultMinutes);
+                }
+
                 if (ItsHoliday(mondayHollidays) && int.Parse(txtProjetMonday.Text) < 900 && int.Parse(txtProjetMonday.Text) != 998)
                 {
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateFerieBureaualert();", true);
@@ -327,6 +350,11 @@ namespace PunchClock
         {
             try
             {
+                if (int.Parse(resultProjet) <= 900)
+                {
+                    totalTimeWorkedJour2Office += int.Parse(resultMinutes);
+                }
+
                 resultMinutes = txtMinutesTuesday.Text;
                 totalTimeWorkedJour2 += int.Parse(resultMinutes);
                 totalTimeHomeA += int.Parse(resultMinutes);
@@ -375,6 +403,11 @@ namespace PunchClock
         {
             try
             {
+                if (int.Parse(resultProjet) <= 900)
+                {
+                    totalTimeWorkedJour3Office += int.Parse(resultMinutes);
+                }
+
                 resultMinutes = txtMinutesWednesday.Text;
                 totalTimeWorkedJour3 += int.Parse(resultMinutes);
                 totalTimeHomeA += int.Parse(resultMinutes);
@@ -422,6 +455,11 @@ namespace PunchClock
         {
             try
             {
+                if (int.Parse(resultProjet) <= 900)
+                {
+                    totalTimeWorkedJour4Office += int.Parse(resultMinutes);
+                }
+
                 resultMinutes = txtMinutesThursday.Text;
                 totalTimeWorkedJour4 += int.Parse(resultMinutes);
                 totalTimeHomeA += int.Parse(resultMinutes);
@@ -469,6 +507,11 @@ namespace PunchClock
         {
             try
             {
+                if (int.Parse(resultProjet) <= 900)
+                {
+                    totalTimeWorkedJour5Office += int.Parse(resultMinutes);
+                }
+
                 resultMinutes = txtMinutesFriday.Text;
                 totalTimeWorkedJour5 += int.Parse(resultMinutes);
                 totalTimeHomeA += int.Parse(resultMinutes);
@@ -516,6 +559,11 @@ namespace PunchClock
         {
             try
             {
+                if (int.Parse(resultProjet) <= 900)
+                {
+                    totalTimeWorkedWeekend1Office += int.Parse(resultMinutes);
+                }
+
                 resultMinutes = txtMinutesSaturday.Text;
                 totalTimeWorkedWeekend1 += int.Parse(resultMinutes);
                 if (totalTimeWorkedWeekend1 <= (24 * 60))
@@ -538,6 +586,11 @@ namespace PunchClock
         {
             try
             {
+                if (int.Parse(resultProjet) <= 900)
+                {
+                    totalTimeWorkedWeekend2Office += int.Parse(resultMinutes);
+                }
+
                 resultMinutes = txtMinutesSunday.Text;
                 totalTimeWorkedWeekend2 += int.Parse(resultMinutes);
                 if (totalTimeWorkedWeekend2 <= (24 * 60))
@@ -708,7 +761,7 @@ namespace PunchClock
                 {
                     int totalWeekTimeWorked = totalTimeWorkedJour1 + totalTimeWorkedJour2 + totalTimeWorkedJour3 + totalTimeWorkedJour4 + totalTimeWorkedJour5 + totalTimeWorkedWeekend1 + totalTimeWorkedWeekend2;
 
-                    if ((totalTimeWorkedJour1 - totalTimeHome) >= 240 && (totalTimeWorkedJour2 - totalTimeHome) >= 240 && (totalTimeWorkedJour3 - totalTimeHome) >= 240 && (totalTimeWorkedJour4 - totalTimeHome) >= 240 && (totalTimeWorkedJour5 - totalTimeHome) >= 240)
+                    if (totalTimeWorkedJour1Office >= 240 && totalTimeWorkedJour2Office >= 240 && totalTimeWorkedJour3Office >= 240 && totalTimeWorkedJour4Office >= 240 && totalTimeWorkedJour5Office >= 240)
                     {
                         if ((totalWeekTimeWorked - totalTimeHomeA) >= (36 * 60))
                         {
@@ -743,7 +796,7 @@ namespace PunchClock
                 {
                     int totalWeekTimeWorked = totalTimeWorkedJour1 + totalTimeWorkedJour2 + totalTimeWorkedJour3 + totalTimeWorkedJour4 + totalTimeWorkedJour5 + totalTimeWorkedWeekend1 + totalTimeWorkedWeekend2;
 
-                    if ((totalTimeWorkedJour1 - totalTimeHome) >= 360 && (totalTimeWorkedJour2 - totalTimeHome) >= 360 && (totalTimeWorkedJour3 - totalTimeHome) >= 360 && (totalTimeWorkedJour4 - totalTimeHome) >= 360 && (totalTimeWorkedJour5 - totalTimeHome) >= 360)
+                    if (totalTimeWorkedJour1Office >= 360 && totalTimeWorkedJour2Office >= 360 && totalTimeWorkedJour3Office >= 360 && totalTimeWorkedJour4Office >= 360 && totalTimeWorkedJour5Office >= 360)
                     {
 
 
