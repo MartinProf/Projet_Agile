@@ -21,10 +21,7 @@ namespace PunchClock
                 Response.Redirect("Manager.aspx");
 
             }
-            else if (txtUsername.Text == "Employee" && txtPassword.Text == "1234")
-            {
-                Response.Redirect("Employee.aspx");
-            }
+            
             else
                 lblResult.Text = "Wrong usernmae or password! please try again.";
         }
@@ -34,6 +31,11 @@ namespace PunchClock
             txtPassword.Text = "";
             txtUsername.Text = "";
             lblResult.Text = "";
+        }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Welcome.aspx");
         }
     }
 }
