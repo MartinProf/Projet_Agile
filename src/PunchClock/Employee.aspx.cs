@@ -263,10 +263,7 @@ namespace PunchClock
 
                         inputProjetDay.Text = "";
                         inputMinutesDay.Text = "";
-                    }
-
-
-                    
+                    }        
                 }
                 else
                 {
