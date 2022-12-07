@@ -33,15 +33,6 @@ namespace PunchClock
         protected global::System.Web.UI.WebControls.TextBox txtYear;
 
         /// <summary>
-        /// dropDownListWeek control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropDownListWeek;
-
-        /// <summary>
         /// txtEmpId control.
         /// </summary>
         /// <remarks>
@@ -49,6 +40,15 @@ namespace PunchClock
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmpId;
+
+        /// <summary>
+        /// dropDownListWeek control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dropDownListWeek;
 
         /// <summary>
         /// TBLundi control.

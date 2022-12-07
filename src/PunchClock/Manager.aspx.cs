@@ -30,7 +30,16 @@ namespace PunchClock
             {
                 string fileName = btnLoadTimesheet.PostedFile.FileName;
                 string a = "";
-                string content = "";
+                string employeeID = "";
+                string year = "";
+                string week = "";
+                string monday = "";
+                string  tuesday= "";
+                string wednesday = "";
+                string thursday = "";
+                string friday = "";
+                string saturday = "";
+                string sunday = "";
                 int heuresTotal = 0;
                 string FolderPath = @"C:\FeuillesTemps\";
                 if (Directory.Exists(FolderPath))
@@ -41,67 +50,78 @@ namespace PunchClock
                         string jsonFile = File.ReadAllText(FolderPath + fileName);
                         dynamic test = JsonConvert.DeserializeObject(jsonFile);
 
-                        content += "Employé: " + test.numero_employe + "<br>";
-                        content += "Année: " + test.annee + "<br>";
-                        content += "Semaine: " + test.numero_semaine + "<br>";
+                        employeeID +=  test.numero_employe + "<br>";
+                        year +=  test.annee + " <br> ";
+                        week +=  test.numero_semaine + "<br>";
 
                         foreach (var item in test.jour1)
                         {
-                            a = a + "Code du projet: " + item.codeProject + " ";
-                            a = a + "Minutes: " + item.minutes + " ";
+                            a = a + "<br>Project code: " + item.codeProject + "<br> ";
+                            a = a + "Minutes: " + item.minutes + "<br> ";
                             heuresTotal += (int)item.minutes;
                         }
-                        content += "Lundi: " + a + "<br>";
+                        monday +=  a + "<br>";
                         a = "";
                         foreach (var item in test.jour2)
                         {
-                            a = a + "Code du projet: " + item.codeProject + " ";
-                            a = a + "Minutes: " + item.minutes + " ";
+                            a = a + "Project code: " + item.codeProject + "<br> ";
+                            a = a + "Minutes: " + item.minutes + "<br> ";
                             heuresTotal += (int)item.minutes;
                         }
-                        content += "Mardi: " + a + "<br>";
+                        tuesday += a + "<br>";
                         a = "";
                         foreach (var item in test.jour3)
                         {
-                            a = a + "Code du projet: " + item.codeProject + " ";
-                            a = a + "Minutes: " + item.minutes + " ";
+                            a = a + "Project code: " + item.codeProject + " <br>";
+                            a = a + "Minutes: " + item.minutes + "<br> ";
                             heuresTotal += (int)item.minutes;
                         }
-                        content += "Mercredi: " + a + "<br>";
+                        wednesday +=  a + "<br>";
                         a = "";
                         foreach (var item in test.jour4)
                         {
-                            a = a + "Code du projet: " + item.codeProject + " ";
-                            a = a + "Minutes: " + item.minutes + " ";
+                            a = a + "Project code: " + item.codeProject + "<br> ";
+                            a = a + "Minutes: " + item.minutes + "<br> ";
                             heuresTotal += (int)item.minutes;
                         }
-                        content += "Jeudi: " + a + "<br>";
+                        thursday +=  a + "<br>";
                         a = "";
                         foreach (var item in test.jour5)
                         {
-                            a = a + "Code du projet: " + item.codeProject + " ";
-                            a = a + "Minutes: " + item.minutes + " ";
+                            a = a + "Project code: " + item.codeProject + "<br> ";
+                            a = a + "Minutes: " + item.minutes + "<br> ";
                             heuresTotal += (int)item.minutes;
                         }
-                        content += "Vendredi: " + a + "<br>";
+                        friday += a + "<br>";
                         a = "";
                         foreach (var item in test.weekendl)
                         {
-                            a = a + "Code du projet: " + item.codeProject + " ";
-                            a = a + "Minutes: " + item.minutes + " ";
+                            a = a + "Project code: " + item.codeProject + "<br> ";
+                            a = a + "Minutes: " + item.minutes + "<br> ";
                             heuresTotal += (int)item.minutes;
                         }
-                        content += "Samedi: " + a + "<br>";
+                        saturday +=  a + "<br>";
                         a = "";
                         foreach (var item in test.weekend2)
                         {
-                            a = a + "Code du projet: " + item.codeProject + " ";
-                            a = a + "Minutes: " + item.minutes + " ";
+                            a = a + "Project code: " + item.codeProject + "<br> ";
+                            a = a + "Minutes: " + item.minutes + "<br> ";
                             heuresTotal += (int)item.minutes;
                         }
-                        content += "Dimanche: " + a + "<br>";
+                        sunday +=  a + "<br>";
 
-                        Response.Write(content + "<br>" + "Heures total: " + heuresTotal / 60);
+                        //Response.Write(content + "<br>" + "Heures total: " + heuresTotal / 60);
+                        // lblJsonOpened.Text = content;
+                        lblYear.Text += year;
+                        lblWeekNumber.Text += week;
+                        lblEmployeeId.Text += employeeID;
+                        lblMonday.Text = monday;
+                        lblTuesday.Text = tuesday;
+                        lblWednesday.Text = wednesday;
+                        lblThursday.Text = thursday;
+                        lblFriday.Text = friday;
+                        lblSaturday.Text = saturday;
+                        lblSunday.Text = sunday;
                     }
                     else
                     {
