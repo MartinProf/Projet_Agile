@@ -22,7 +22,7 @@ namespace PunchClock
         static int totalTimeWorkedJour5 = 0;
         static int totalTimeWorkedWeekend1 = 0;
         static int totalTimeWorkedWeekend2 = 0;
-        static int totalWeekTimeWorked = totalTimeWorkedJour1 + totalTimeWorkedJour2 + totalTimeWorkedJour3 + totalTimeWorkedJour4 + totalTimeWorkedJour5 + totalTimeWorkedWeekend1 + totalTimeWorkedWeekend2                                            ;
+        static int totalWeekTimeWorked = totalTimeWorkedJour1 + totalTimeWorkedJour2 + totalTimeWorkedJour3 + totalTimeWorkedJour4 + totalTimeWorkedJour5 + totalTimeWorkedWeekend1 + totalTimeWorkedWeekend2;
         static int totalTimeHome = 0;
         static int totalTimeHomeA = 0;
 
@@ -172,24 +172,24 @@ namespace PunchClock
 
 
 
-            }
-            else if (int.Parse(resultProjet) >= 900 && int.Parse(resultProjet) != 999)
-            {
-                resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
-                resultDay.Text += resultAffichage;
-                totalTimeHome += int.Parse(resultMinutes);
-                totalTimeHomeA += int.Parse(resultMinutes);
+                }
+                else if (int.Parse(resultProjet) >= 900 && int.Parse(resultProjet) != 999)
+                {
+                    resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
+                    resultDay.Text += resultAffichage;
+                    totalTimeHome += int.Parse(resultMinutes);
+                    totalTimeHomeA += int.Parse(resultMinutes);
 
-                if (day.Text.Equals(""))
-                {
-                    result = "{\"codeProject\":\"" + resultProjet + "\",\"minutes\":\"" + resultMinutes + "\"}";
-                    day.Text += result;
-                }
-                else
-                {
-                    result = ",{\"codeProject\":\"" + resultProjet + "\",\"minutes\":\"" + resultMinutes + "\"}";
-                    day.Text += result;
-                }
+                    if (day.Text.Equals(""))
+                    {
+                        result = "{\"codeProject\":\"" + resultProjet + "\",\"minutes\":\"" + resultMinutes + "\"}";
+                        day.Text += result;
+                    }
+                    else
+                    {
+                        result = ",{\"codeProject\":\"" + resultProjet + "\",\"minutes\":\"" + resultMinutes + "\"}";
+                        day.Text += result;
+                    }
 
                     if (sickDay.Checked)
                     {
@@ -212,7 +212,7 @@ namespace PunchClock
             {
                 ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateNumEmpAndTBDayalert();", true);
             }
-            
+
         }
         protected void addWeekend(TextBox inputProjetDay, TextBox inputMinutesDay, Label resultDay, Label day)
         {
@@ -227,12 +227,14 @@ namespace PunchClock
 
             try
             {
-                if (int.Parse(resultProjet) >= 900 && int.Parse(resultProjet) != 999 && int.Parse(resultProjet) != 998)
+                if (!string.IsNullOrEmpty(txtEmpId.Text) && validateTBweekContent())
                 {
-                    totalTimeHome += int.Parse(resultMinutes);
-                    totalTimeHomeA += int.Parse(resultMinutes);
+                    if (int.Parse(resultProjet) >= 900 && int.Parse(resultProjet) != 999 && int.Parse(resultProjet) != 998)
+                    {
+                        totalTimeHome += int.Parse(resultMinutes);
+                        totalTimeHomeA += int.Parse(resultMinutes);
 
-                }
+                    }
 
                     if (int.Parse(resultProjet) == 998)
                     {
@@ -243,27 +245,30 @@ namespace PunchClock
                         resultAffichage = "Project Code: " + resultProjet + "<br/>" + "\nMinutes: " + resultMinutes + "<br/><br/>";
                         resultDay.Text += resultAffichage;
 
-                    if (day.Text.Equals(""))
-                    {
-                        result = "{\"codeProject\":\"" + resultProjet + "\",\"minutes\":\"" + resultMinutes + "\"}";
-                        day.Text += result;
-                    }
-                    else
-                    {
-                        result = ",{\"codeProject\":\"" + resultProjet + "\",\"minutes\":\"" + resultMinutes + "\"}";
-                        day.Text += result;
-                    }
+                        if (day.Text.Equals(""))
+                        {
+                            result = "{\"codeProject\":\"" + resultProjet + "\",\"minutes\":\"" + resultMinutes + "\"}";
+                            day.Text += result;
+                        }
+                        else
+                        {
+                            result = ",{\"codeProject\":\"" + resultProjet + "\",\"minutes\":\"" + resultMinutes + "\"}";
+                            day.Text += result;
+                        }
 
 
                         inputProjetDay.Text = "";
                         inputMinutesDay.Text = "";
                     }
-                }
-                else
-                {
-                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateNumEmpAndTBDayalert();", true);
+
+
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateNumEmpAndTBDayalert();", true);
+                    }
                 }
                     
+
             }
             catch (Exception)
             {
@@ -591,21 +596,21 @@ namespace PunchClock
                     {
                         if (totalWeekTimeWorked >= (36 * 60))
                         {
-                            
-                                string idadmin = txtEmpId.Text;
-                                string yearadmin = txtYear.Text;
-                                string weekNumberadmin = dropDownListWeek.SelectedValue;
-                                jsonFile = stringJsonGenerator(idadmin, yearadmin, weekNumberadmin);
-                                jsonName = idadmin + "-" + yearadmin + "-" + weekNumberadmin;
 
-                                totalTimeWorkedJour1 = 0;
-                                totalTimeWorkedJour2 = 0;
-                                totalTimeWorkedJour3 = 0;
-                                totalTimeWorkedJour4 = 0;
-                                totalTimeWorkedJour5 = 0;
-                                totalTimeWorkedWeekend1 = 0;
-                                totalTimeWorkedWeekend2 = 0;
-        
+                            string idadmin = txtEmpId.Text;
+                            string yearadmin = txtYear.Text;
+                            string weekNumberadmin = dropDownListWeek.SelectedValue;
+                            jsonFile = stringJsonGenerator(idadmin, yearadmin, weekNumberadmin);
+                            jsonName = idadmin + "-" + yearadmin + "-" + weekNumberadmin;
+
+                            totalTimeWorkedJour1 = 0;
+                            totalTimeWorkedJour2 = 0;
+                            totalTimeWorkedJour3 = 0;
+                            totalTimeWorkedJour4 = 0;
+                            totalTimeWorkedJour5 = 0;
+                            totalTimeWorkedWeekend1 = 0;
+                            totalTimeWorkedWeekend2 = 0;
+
 
                         }
                         else
