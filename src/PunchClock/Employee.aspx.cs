@@ -787,6 +787,14 @@ namespace PunchClock
             txtMinutesSaturday.Text = "";
             txtMinutesSunday.Text = "";
             txtEmpId.Text = "";
+
+            lblResultMonday.Text = "";
+            lblResultTuesday.Text = "";
+            lblResultWednesday.Text = "";
+            lblResultThursday.Text = "";
+            lblResultFriday.Text = "";
+            lblResultSaturday.Text = "";
+            lblResultSunday.Text = "";
         }
 
 
