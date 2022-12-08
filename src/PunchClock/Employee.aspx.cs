@@ -28,9 +28,7 @@ namespace PunchClock
         static int totalTimeWorkedJour3Office = 0;
         static int totalTimeWorkedJour4Office = 0;
         static int totalTimeWorkedJour5Office = 0;
-        static int totalTimeWorkedWeekend1Office = 0;
-        static int totalTimeWorkedWeekend2Office = 0;
-
+ 
         static int totalWeekTimeWorked = totalTimeWorkedJour1 + totalTimeWorkedJour2 + totalTimeWorkedJour3 + totalTimeWorkedJour4 + totalTimeWorkedJour5 + totalTimeWorkedWeekend1 + totalTimeWorkedWeekend2;
         static int totalTimeHome = 0;
         static int totalTimeHomeA = 0;
@@ -302,12 +300,11 @@ namespace PunchClock
                 totalTimeWorkedJour1 += int.Parse(resultMinutes);
                 totalTimeHomeA += int.Parse(resultMinutes);
                 DateTime mondayHollidays = DateTime.Parse(TBLundi.Text);
-
-                if(int.Parse(resultProjet) <= 900)
+                resultProjet = txtProjetMonday.Text;
+                if (int.Parse(resultProjet) <= 900)
                 {
                     totalTimeWorkedJour1Office += int.Parse(resultMinutes);
                 }
-
                 if (ItsHoliday(mondayHollidays) && int.Parse(txtProjetMonday.Text) <= 900 && int.Parse(txtProjetMonday.Text) != 998)
                 {
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateFerieBureaualert();", true);
@@ -354,6 +351,7 @@ namespace PunchClock
                 resultMinutes = txtMinutesTuesday.Text;
                 totalTimeWorkedJour2 += int.Parse(resultMinutes);
                 totalTimeHomeA += int.Parse(resultMinutes);
+                resultProjet = txtProjetTuesday.Text;
                 DateTime tuesdayHollidays = DateTime.Parse(TBMardi.Text);
 
                 if (int.Parse(resultProjet) <= 900)
@@ -407,6 +405,7 @@ namespace PunchClock
                 resultMinutes = txtMinutesWednesday.Text;
                 totalTimeWorkedJour3 += int.Parse(resultMinutes);
                 totalTimeHomeA += int.Parse(resultMinutes);
+                resultProjet = txtProjetWednesday.Text;
                 DateTime wednesdayHollidays = DateTime.Parse(TBMercredi.Text);
                 if (int.Parse(resultProjet) <= 900)
                 {
@@ -458,6 +457,7 @@ namespace PunchClock
                 resultMinutes = txtMinutesThursday.Text;
                 totalTimeWorkedJour4 += int.Parse(resultMinutes);
                 totalTimeHomeA += int.Parse(resultMinutes);
+                resultProjet = txtProjetThursday.Text;
                 DateTime thursdayHollidays = DateTime.Parse(TBLundi.Text);
                 if (int.Parse(resultProjet) <= 900)
                 {
@@ -509,6 +509,7 @@ namespace PunchClock
                 resultMinutes = txtMinutesFriday.Text;
                 totalTimeWorkedJour5 += int.Parse(resultMinutes);
                 totalTimeHomeA += int.Parse(resultMinutes);
+                resultProjet = txtProjetFriday.Text;
                 DateTime fridayHollidays = DateTime.Parse(TBVendredi.Text);
                 if (int.Parse(resultProjet) <= 900)
                 {
@@ -559,12 +560,7 @@ namespace PunchClock
             {
                 resultMinutes = txtMinutesSaturday.Text;
                 totalTimeWorkedWeekend1 += int.Parse(resultMinutes);
-                if (int.Parse(resultProjet) <= 900)
-                {
-                    totalTimeWorkedWeekend1Office += int.Parse(resultMinutes);
-                }
-
-                
+               
                 if (totalTimeWorkedWeekend1 <= (24 * 60))
                 {
                     addWeekend(txtProjetSaturday, txtMinutesSaturday, lblResultSaturday, LabelSamedi);
@@ -586,13 +582,7 @@ namespace PunchClock
             try
             {
                 resultMinutes = txtMinutesSunday.Text;
-                totalTimeWorkedWeekend2 += int.Parse(resultMinutes);
-                if (int.Parse(resultProjet) <= 900)
-                {
-                    totalTimeWorkedWeekend2Office += int.Parse(resultMinutes);
-                }
-
-                
+                totalTimeWorkedWeekend2 += int.Parse(resultMinutes);              
                 if (totalTimeWorkedWeekend2 <= (24 * 60))
                 {
                     addWeekend(txtProjetSunday, txtMinutesSunday, lblResultSunday, LabelDimanche);
