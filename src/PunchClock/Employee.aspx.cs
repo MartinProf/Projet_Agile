@@ -691,6 +691,7 @@ namespace PunchClock
                 totalTimeOffice -= totalTimeWorkedJour1Office;
                 totalTimeOfficeA -= totalTimeWorkedJour1Office;
                 totalTimeWorkedJour1Office = 0;
+                lblResultMonday.Text = "";
             }
             else
             {
@@ -707,6 +708,7 @@ namespace PunchClock
                 totalTimeOffice -= totalTimeWorkedJour2Office;
                 totalTimeOfficeA -= totalTimeWorkedJour2Office;
                 totalTimeWorkedJour2Office = 0;
+                lblResultTuesday.Text = "";
             }
             else
             {
@@ -724,6 +726,7 @@ namespace PunchClock
                 totalTimeOffice -= totalTimeWorkedJour3Office;
                 totalTimeOfficeA -= totalTimeWorkedJour3Office;
                 totalTimeWorkedJour3Office = 0;
+                lblResultWednesday.Text = "";
             }
             else
             {
@@ -741,6 +744,7 @@ namespace PunchClock
                 totalTimeOffice -= totalTimeWorkedJour4Office;
                 totalTimeOfficeA -= totalTimeWorkedJour4Office;
                 totalTimeWorkedJour4Office = 0;
+                lblResultThursday.Text = "";
             }
             else
             {
@@ -758,6 +762,7 @@ namespace PunchClock
                 totalTimeOffice -= totalTimeWorkedJour5Office;
                 totalTimeOfficeA -= totalTimeWorkedJour5Office;
                 totalTimeWorkedJour5Office = 0;
+                lblResultFriday.Text = "";
             }
             else
             {
