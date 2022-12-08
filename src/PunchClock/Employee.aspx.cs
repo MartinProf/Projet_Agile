@@ -379,9 +379,14 @@ namespace PunchClock
             {
                 resultMinutes = txtMinutesTuesday.Text;
                 totalTimeWorkedJour2 += int.Parse(resultMinutes);
-                totalTimeHomeA += int.Parse(resultMinutes);
+                
                 resultProjet = txtProjetTuesday.Text;
                 DateTime tuesdayHollidays = DateTime.Parse(TBMardi.Text);
+
+                if (int.Parse(resultProjet) > 900 && int.Parse(resultProjet) != 998 && int.Parse(resultProjet) != 999)
+                {
+                    totalTimeHomeA += int.Parse(resultMinutes);
+                }
 
                 if (int.Parse(resultProjet) <= 900 || int.Parse(resultProjet) == 998 || int.Parse(resultProjet) == 999)
                 {
@@ -437,9 +442,14 @@ namespace PunchClock
             {
                 resultMinutes = txtMinutesWednesday.Text;
                 totalTimeWorkedJour3 += int.Parse(resultMinutes);
-                totalTimeHomeA += int.Parse(resultMinutes);
+                
                 resultProjet = txtProjetWednesday.Text;
                 DateTime wednesdayHollidays = DateTime.Parse(TBMercredi.Text);
+
+                if (int.Parse(resultProjet) > 900 && int.Parse(resultProjet) != 998 && int.Parse(resultProjet) != 999)
+                {
+                    totalTimeHomeA += int.Parse(resultMinutes);
+                }
                 if (int.Parse(resultProjet) <= 900 || int.Parse(resultProjet) == 998 || int.Parse(resultProjet) == 999)
                 {
                     totalTimeWorkedJour3Office += int.Parse(resultMinutes);
@@ -493,9 +503,14 @@ namespace PunchClock
             {
                 resultMinutes = txtMinutesThursday.Text;
                 totalTimeWorkedJour4 += int.Parse(resultMinutes);
-                totalTimeHomeA += int.Parse(resultMinutes);
+                
                 resultProjet = txtProjetThursday.Text;
                 DateTime thursdayHollidays = DateTime.Parse(TBLundi.Text);
+
+                if (int.Parse(resultProjet) > 900 && int.Parse(resultProjet) != 998 && int.Parse(resultProjet) != 999)
+                {
+                    totalTimeHomeA += int.Parse(resultMinutes);
+                }
                 if (int.Parse(resultProjet) <= 900 || int.Parse(resultProjet) == 998 || int.Parse(resultProjet) == 999)
                 {
                     totalTimeWorkedJour4Office += int.Parse(resultMinutes);
@@ -549,9 +564,14 @@ namespace PunchClock
             {
                 resultMinutes = txtMinutesFriday.Text;
                 totalTimeWorkedJour5 += int.Parse(resultMinutes);
-                totalTimeHomeA += int.Parse(resultMinutes);
+                
                 resultProjet = txtProjetFriday.Text;
                 DateTime fridayHollidays = DateTime.Parse(TBVendredi.Text);
+
+                if (int.Parse(resultProjet) > 900 && int.Parse(resultProjet) != 998 && int.Parse(resultProjet) != 999)
+                {
+                    totalTimeHomeA += int.Parse(resultMinutes);
+                }
                 if (int.Parse(resultProjet) <= 900 || int.Parse(resultProjet) == 998 || int.Parse(resultProjet) == 999)
                 {
                     totalTimeWorkedJour5Office += int.Parse(resultMinutes);
