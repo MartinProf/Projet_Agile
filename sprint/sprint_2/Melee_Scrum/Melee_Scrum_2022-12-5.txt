@@ -1,0 +1,11 @@
+-Rencontre deplacée vers 10h pcq je ne me suis pas reveiller à temps (Anthony).
+
+-Planiffications des validations à faire. Mis dans un txt avec les tests effeutués. 
+
+-Reformuler le Json pour être plus json like.
+
+-Changement à porter au cahier de charge et au jira pour le rendre plus semblable au projet.
+
+-Prochaine rencontre Mercredi 13h pm.
+
+-Duree 42 mins.

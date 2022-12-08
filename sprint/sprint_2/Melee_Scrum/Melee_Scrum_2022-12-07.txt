@@ -1,0 +1,13 @@
+-2022-12-07
+
+-Retour sur les validations qui reste a faire.
+
+-Retour sur le questionement sur le txt des validations.
+
+-Restart bouton retirer. Le reset doit fonctioner.
+
+-Sick day regler
+
+-Rencontre pour regarer et regler les validations a 18h.
+
+-Duree 47mins et 23sec

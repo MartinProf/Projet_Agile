@@ -1,0 +1,25 @@
+-Importer les classes de notre ancient projet (validation par exemple).
+
+-Creation du fichier json avec submit a faire.
+
+-Creation du menu(pas prioritaire).
+
+-Cleanup du code(faire des functions pour reduire lignes de code), Guillaume a pris la tache.
+
+-Creation de message pour les validations/tooltips/blockage, Martin Forget a pris l'initiative.
+
+-Validation avec le prof pour les validations hard implementation/blockage ou plus loose(On ne pert pas de point pour hard implementation).
+
+-Page employe fait un fichier JSON
+
+-Bug dropdown list weekeend-rentrer du temps avant le sick day.
+
+-Func 1-2 fait.
+
+-Faire afficher les JSON avec la page patron.
+
+-Restriction sur le minimums pour forcer le nombre d'heures pour une semaine.
+
+-Prochaine rencontre lundi 8h.
+
+-Duree 1H14.
