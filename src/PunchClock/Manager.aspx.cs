@@ -15,7 +15,7 @@ namespace PunchClock
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)
@@ -147,6 +147,16 @@ namespace PunchClock
                     File.Move(path + fileName, folderPathA + fileName);
                     lbFileName.Text = string.Empty;
                     Response.Write("<script>alert('La feuille a ete accepte')</script>");
+                    lblEmployeeId.Text = "";
+                    lblYear.Text = "";
+                    lblWeekNumber.Text = "";
+                    lblMonday.Text = "";
+                    lblTuesday.Text = "";
+                    lblWednesday.Text = "";
+                    lblThursday.Text = "";
+                    lblFriday.Text = "";
+                    lblSaturday.Text = "";
+                    lblSunday.Text = "";
                 }
                 catch (Exception g)
                 {
@@ -174,6 +184,16 @@ namespace PunchClock
                     File.Move(path + fileName, folderPathR + fileName);
                     lbFileName.Text = string.Empty;
                     Response.Write("<script>alert('La feuille a ete refuse')</script>");
+                    lblEmployeeId.Text = "";
+                    lblYear.Text = "";
+                    lblWeekNumber.Text = "";
+                    lblMonday.Text = "";
+                    lblTuesday.Text = "";
+                    lblWednesday.Text = "";
+                    lblThursday.Text = "";
+                    lblFriday.Text = "";
+                    lblSaturday.Text = "";
+                    lblSunday.Text = "";
                 }
                 catch (Exception g)
                 {
