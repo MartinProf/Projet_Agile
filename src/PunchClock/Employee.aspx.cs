@@ -28,7 +28,9 @@ namespace PunchClock
         static int totalTimeWorkedJour3Office = 0;
         static int totalTimeWorkedJour4Office = 0;
         static int totalTimeWorkedJour5Office = 0;
- 
+        static int totalTimeWorkedWeekend1Office = 0;
+        static int totalTimeWorkedWeekend2Office = 0;
+
         static int totalWeekTimeWorked = totalTimeWorkedJour1 + totalTimeWorkedJour2 + totalTimeWorkedJour3 + totalTimeWorkedJour4 + totalTimeWorkedJour5 + totalTimeWorkedWeekend1 + totalTimeWorkedWeekend2;
         static int totalTimeHome = 0;
         static int totalTimeHomeA = 0;
@@ -66,6 +68,8 @@ namespace PunchClock
             totalTimeWorkedJour3Office = 0;
             totalTimeWorkedJour4Office = 0;
             totalTimeWorkedJour5Office = 0;
+            totalTimeWorkedWeekend1Office = 0;
+            totalTimeWorkedWeekend2Office = 0;
             totalTimeOffice = 0;
             totalTimeOfficeA = 0;
 
@@ -573,7 +577,12 @@ namespace PunchClock
             {
                 resultMinutes = txtMinutesSaturday.Text;
                 totalTimeWorkedWeekend1 += int.Parse(resultMinutes);
-               
+
+                if (int.Parse(resultProjet) <= 900)
+                {
+                    totalTimeWorkedWeekend1Office += int.Parse(resultMinutes);
+                }
+
                 if (totalTimeWorkedWeekend1 <= (24 * 60))
                 {
                     addWeekend(txtProjetSaturday, txtMinutesSaturday, lblResultSaturday, LabelSamedi);
@@ -595,7 +604,12 @@ namespace PunchClock
             try
             {
                 resultMinutes = txtMinutesSunday.Text;
-                totalTimeWorkedWeekend2 += int.Parse(resultMinutes);              
+                totalTimeWorkedWeekend2 += int.Parse(resultMinutes);
+
+                if (int.Parse(resultProjet) <= 900)
+                {
+                    totalTimeWorkedWeekend2Office += int.Parse(resultMinutes);
+                }
                 if (totalTimeWorkedWeekend2 <= (24 * 60))
                 {
                     addWeekend(txtProjetSunday, txtMinutesSunday, lblResultSunday, LabelDimanche);
@@ -763,31 +777,38 @@ namespace PunchClock
                 if (empID <= 999)
                 {
                     int totalWeekTimeWorked = totalTimeWorkedJour1 + totalTimeWorkedJour2 + totalTimeWorkedJour3 + totalTimeWorkedJour4 + totalTimeWorkedJour5 + totalTimeWorkedWeekend1 + totalTimeWorkedWeekend2;
-                    int totalWeekOffice = totalTimeWorkedJour1Office + totalTimeWorkedJour2Office + totalTimeWorkedJour3Office + totalTimeWorkedJour4Office + totalTimeWorkedJour5Office;
+                    int totalWeekOffice = totalTimeWorkedJour1Office + totalTimeWorkedJour2Office + totalTimeWorkedJour3Office + totalTimeWorkedJour4Office + totalTimeWorkedJour5Office + totalTimeWorkedWeekend1Office + totalTimeWorkedWeekend2Office;
                     if (totalTimeWorkedJour1Office >= 240 && totalTimeWorkedJour2Office >= 240 && totalTimeWorkedJour3Office >= 240 && totalTimeWorkedJour4Office >= 240 && totalTimeWorkedJour5Office >= 240)
                     {
-                        if ((totalWeekOffice) >= (36 * 60))
+                        if ((totalWeekOffice) > (43 * 60))
                         {
-
-                            string idadmin = txtEmpId.Text;
-                            string yearadmin = txtYear.Text;
-                            string weekNumberadmin = dropDownListWeek.SelectedValue;
-                            jsonFile = stringJsonGenerator(idadmin, yearadmin, weekNumberadmin);
-                            jsonName = idadmin + "-" + yearadmin + "-" + weekNumberadmin;
-
-                            totalTimeWorkedJour1 = 0;
-                            totalTimeWorkedJour2 = 0;
-                            totalTimeWorkedJour3 = 0;
-                            totalTimeWorkedJour4 = 0;
-                            totalTimeWorkedJour5 = 0;
-                            totalTimeWorkedWeekend1 = 0;
-                            totalTimeWorkedWeekend2 = 0;
-
-
+                            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validate43WHalert()", true);
                         }
                         else
                         {
-                            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validate36hEmpWalert()", true);
+                            if ((totalWeekOffice) >= (36 * 60))
+                            {
+
+                                string idadmin = txtEmpId.Text;
+                                string yearadmin = txtYear.Text;
+                                string weekNumberadmin = dropDownListWeek.SelectedValue;
+                                jsonFile = stringJsonGenerator(idadmin, yearadmin, weekNumberadmin);
+                                jsonName = idadmin + "-" + yearadmin + "-" + weekNumberadmin;
+
+                                totalTimeWorkedJour1 = 0;
+                                totalTimeWorkedJour2 = 0;
+                                totalTimeWorkedJour3 = 0;
+                                totalTimeWorkedJour4 = 0;
+                                totalTimeWorkedJour5 = 0;
+                                totalTimeWorkedWeekend1 = 0;
+                                totalTimeWorkedWeekend2 = 0;
+
+
+                            }
+                            else
+                            {
+                                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validate36hEmpWalert()", true);
+                            }
                         }
                     }
                     else
@@ -798,7 +819,7 @@ namespace PunchClock
                 if (empID >= 1000)
                 {
                     int totalWeekTimeWorked = totalTimeWorkedJour1 + totalTimeWorkedJour2 + totalTimeWorkedJour3 + totalTimeWorkedJour4 + totalTimeWorkedJour5 + totalTimeWorkedWeekend1 + totalTimeWorkedWeekend2;
-                    int totalWeekOffice = totalTimeWorkedJour1Office + totalTimeWorkedJour2Office + totalTimeWorkedJour3Office + totalTimeWorkedJour4Office + totalTimeWorkedJour5Office;
+                    int totalWeekOffice = totalTimeWorkedJour1Office + totalTimeWorkedJour2Office + totalTimeWorkedJour3Office + totalTimeWorkedJour4Office + totalTimeWorkedJour5Office + totalTimeWorkedWeekend1Office + totalTimeWorkedWeekend2Office;
                     if (totalTimeWorkedJour1Office >= 360 && totalTimeWorkedJour2Office >= 360 && totalTimeWorkedJour3Office >= 360 && totalTimeWorkedJour4Office >= 360 && totalTimeWorkedJour5Office >= 360)
                     {
 
@@ -953,6 +974,8 @@ namespace PunchClock
             totalTimeWorkedJour3Office = 0;
             totalTimeWorkedJour4Office = 0;
             totalTimeWorkedJour5Office = 0;
+            totalTimeWorkedWeekend1Office = 0;
+            totalTimeWorkedWeekend2Office = 0;
             totalTimeOffice = 0;
             totalTimeOfficeA = 0;
 
@@ -983,6 +1006,18 @@ namespace PunchClock
             lblResultSunday.Text = "";
         }
 
+        protected void btnFillWeek_Click(object sender, EventArgs e)
+        {
+            txtMinutesTuesday.Text = txtMinutesMonday.Text;
+            txtMinutesWednesday.Text = txtMinutesMonday.Text;
+            txtMinutesThursday.Text = txtMinutesMonday.Text;
+            txtMinutesFriday.Text = txtMinutesMonday.Text;
 
+            txtProjetTuesday.Text = txtProjetMonday.Text;
+            txtProjetWednesday.Text = txtProjetMonday.Text;
+            txtProjetThursday.Text = txtProjetMonday.Text;
+            txtProjetFriday.Text = txtProjetMonday.Text;
+
+        }
     }
 }

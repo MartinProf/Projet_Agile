@@ -503,6 +503,7 @@
                     <td class="auto-style22">
                         <asp:Button ID="btnAddMonday" runat="server" Text="Add" Width="67px" autopostback="true" OnClick="btnAddMonday_Click" />
                         &nbsp;
+                        <asp:Button ID="btnFillWeek" runat="server" OnClick="btnFillWeek_Click" Text="Fill Week" />
                         </td>
                     <td class="auto-style22">
                         <asp:Button ID="btnAddTuesday" runat="server" Text="Add" Width="67px" autopostback="true" OnClick="btnAddTuesday_Click" />
