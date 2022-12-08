@@ -308,7 +308,7 @@ namespace PunchClock
                     totalTimeWorkedJour1Office += int.Parse(resultMinutes);
                 }
 
-                if (ItsHoliday(mondayHollidays) && int.Parse(txtProjetMonday.Text) < 900 && int.Parse(txtProjetMonday.Text) != 998)
+                if (ItsHoliday(mondayHollidays) && int.Parse(txtProjetMonday.Text) <= 900 && int.Parse(txtProjetMonday.Text) != 998)
                 {
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateFerieBureaualert();", true);
                 }
@@ -316,14 +316,15 @@ namespace PunchClock
                 {
                     if (totalTimeWorkedJour1 <= (24 * 60))
                     {
-                        if (totalTimeHomeA <= (10 * 60) && int.Parse(txtEmpId.Text) <= 999 && int.Parse(txtProjetMonday.Text) >= 900)
+                        if (totalTimeHomeA <= (10 * 60) && int.Parse(txtEmpId.Text) <= 999 && int.Parse(txtProjetMonday.Text) > 900)
                         {
                             addDayWeek(txtProjetMonday, txtMinutesMonday, lblResultMonday, LabelLundi, cbSickMonday, btnAddMonday);
                             totalTimeHomeA -= int.Parse(resultMinutes);
                         }
-                        else if (int.Parse(txtEmpId.Text) >= 1000 || (int.Parse(txtEmpId.Text) <= 999 && int.Parse(txtProjetMonday.Text) < 900))
+                        else if (int.Parse(txtEmpId.Text) >= 1000 || (int.Parse(txtEmpId.Text) <= 999 && int.Parse(txtProjetMonday.Text) <= 900))
                         {
                             addDayWeek(txtProjetMonday, txtMinutesMonday, lblResultMonday, LabelLundi, cbSickMonday, btnAddMonday);
+                            totalTimeHomeA -= int.Parse(resultMinutes);
                         }
                         else
                         {
@@ -350,16 +351,15 @@ namespace PunchClock
         {
             try
             {
-                if (int.Parse(resultProjet) <= 900)
-                {
-                    totalTimeWorkedJour2Office += int.Parse(resultMinutes);
-                }
-
                 resultMinutes = txtMinutesTuesday.Text;
                 totalTimeWorkedJour2 += int.Parse(resultMinutes);
                 totalTimeHomeA += int.Parse(resultMinutes);
                 DateTime tuesdayHollidays = DateTime.Parse(TBMardi.Text);
 
+                if (int.Parse(resultProjet) <= 900)
+                {
+                    totalTimeWorkedJour2Office += int.Parse(resultMinutes);
+                }
                 if (ItsHoliday(tuesdayHollidays) && int.Parse(txtProjetTuesday.Text) < 900 && int.Parse(txtProjetTuesday.Text) != 998)
                 {
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateFerieBureaualert();", true);
@@ -376,6 +376,7 @@ namespace PunchClock
                         else if (int.Parse(txtEmpId.Text) >= 1000 || (int.Parse(txtEmpId.Text) <= 999 && int.Parse(txtProjetTuesday.Text) < 900))
                         {
                             addDayWeek(txtProjetTuesday, txtMinutesTuesday, lblResultTuesday, LabelMardi, cbSickTuesday, btnAddTuesday);
+                            totalTimeHomeA -= int.Parse(resultMinutes);
                         }
                         else
                         {
@@ -403,16 +404,14 @@ namespace PunchClock
         {
             try
             {
-                if (int.Parse(resultProjet) <= 900)
-                {
-                    totalTimeWorkedJour3Office += int.Parse(resultMinutes);
-                }
-
                 resultMinutes = txtMinutesWednesday.Text;
                 totalTimeWorkedJour3 += int.Parse(resultMinutes);
                 totalTimeHomeA += int.Parse(resultMinutes);
                 DateTime wednesdayHollidays = DateTime.Parse(TBMercredi.Text);
-
+                if (int.Parse(resultProjet) <= 900)
+                {
+                    totalTimeWorkedJour3Office += int.Parse(resultMinutes);
+                }
                 if (ItsHoliday(wednesdayHollidays) && int.Parse(txtProjetWednesday.Text) < 900 && int.Parse(txtProjetWednesday.Text) != 998)
                 {
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateFerieBureaualert();", true);
@@ -429,6 +428,7 @@ namespace PunchClock
                         else if (int.Parse(txtEmpId.Text) >= 1000 || (int.Parse(txtEmpId.Text) <= 999 && int.Parse(txtProjetWednesday.Text) < 900))
                         {
                             addDayWeek(txtProjetWednesday, txtMinutesWednesday, lblResultWednesday, LabelMercredi, cbSickWednesday, btnAddWednesday);
+                            totalTimeHomeA -= int.Parse(resultMinutes);
                         }
                         else
                         {
@@ -455,16 +455,14 @@ namespace PunchClock
         {
             try
             {
-                if (int.Parse(resultProjet) <= 900)
-                {
-                    totalTimeWorkedJour4Office += int.Parse(resultMinutes);
-                }
-
                 resultMinutes = txtMinutesThursday.Text;
                 totalTimeWorkedJour4 += int.Parse(resultMinutes);
                 totalTimeHomeA += int.Parse(resultMinutes);
                 DateTime thursdayHollidays = DateTime.Parse(TBLundi.Text);
-
+                if (int.Parse(resultProjet) <= 900)
+                {
+                    totalTimeWorkedJour4Office += int.Parse(resultMinutes);
+                }
                 if (ItsHoliday(thursdayHollidays) && int.Parse(txtProjetThursday.Text) < 900 && int.Parse(txtProjetThursday.Text) != 998)
                 {
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateFerieBureaualert();", true);
@@ -481,6 +479,7 @@ namespace PunchClock
                         else if (int.Parse(txtEmpId.Text) >= 1000 || (int.Parse(txtEmpId.Text) <= 999 && int.Parse(txtProjetThursday.Text) < 900))
                         {
                             addDayWeek(txtProjetThursday, txtMinutesThursday, lblResultThursday, LabelMercredi, cbSickThursday, btnAddThursday);
+                            totalTimeHomeA -= int.Parse(resultMinutes);
                         }
                         else
                         {
@@ -507,16 +506,14 @@ namespace PunchClock
         {
             try
             {
-                if (int.Parse(resultProjet) <= 900)
-                {
-                    totalTimeWorkedJour5Office += int.Parse(resultMinutes);
-                }
-
                 resultMinutes = txtMinutesFriday.Text;
                 totalTimeWorkedJour5 += int.Parse(resultMinutes);
                 totalTimeHomeA += int.Parse(resultMinutes);
                 DateTime fridayHollidays = DateTime.Parse(TBVendredi.Text);
-
+                if (int.Parse(resultProjet) <= 900)
+                {
+                    totalTimeWorkedJour5Office += int.Parse(resultMinutes);
+                }
                 if (ItsHoliday(fridayHollidays) && int.Parse(txtProjetFriday.Text) < 900 && int.Parse(txtProjetFriday.Text) != 998)
                 {
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateFerieBureaualert();", true);
@@ -533,6 +530,7 @@ namespace PunchClock
                         else if (int.Parse(txtEmpId.Text) >= 1000 || (int.Parse(txtEmpId.Text) <= 999 && int.Parse(txtProjetFriday.Text) < 900))
                         {
                             addDayWeek(txtProjetFriday, txtMinutesFriday, lblResultFriday, LabelVendredi, cbSickFriday, btnAddFriday);
+
                         }
                         else
                         {
@@ -559,13 +557,14 @@ namespace PunchClock
         {
             try
             {
+                resultMinutes = txtMinutesSaturday.Text;
+                totalTimeWorkedWeekend1 += int.Parse(resultMinutes);
                 if (int.Parse(resultProjet) <= 900)
                 {
                     totalTimeWorkedWeekend1Office += int.Parse(resultMinutes);
                 }
 
-                resultMinutes = txtMinutesSaturday.Text;
-                totalTimeWorkedWeekend1 += int.Parse(resultMinutes);
+                
                 if (totalTimeWorkedWeekend1 <= (24 * 60))
                 {
                     addWeekend(txtProjetSaturday, txtMinutesSaturday, lblResultSaturday, LabelSamedi);
@@ -586,13 +585,14 @@ namespace PunchClock
         {
             try
             {
+                resultMinutes = txtMinutesSunday.Text;
+                totalTimeWorkedWeekend2 += int.Parse(resultMinutes);
                 if (int.Parse(resultProjet) <= 900)
                 {
                     totalTimeWorkedWeekend2Office += int.Parse(resultMinutes);
                 }
 
-                resultMinutes = txtMinutesSunday.Text;
-                totalTimeWorkedWeekend2 += int.Parse(resultMinutes);
+                
                 if (totalTimeWorkedWeekend2 <= (24 * 60))
                 {
                     addWeekend(txtProjetSunday, txtMinutesSunday, lblResultSunday, LabelDimanche);
@@ -760,10 +760,10 @@ namespace PunchClock
                 if (empID <= 999)
                 {
                     int totalWeekTimeWorked = totalTimeWorkedJour1 + totalTimeWorkedJour2 + totalTimeWorkedJour3 + totalTimeWorkedJour4 + totalTimeWorkedJour5 + totalTimeWorkedWeekend1 + totalTimeWorkedWeekend2;
-
+                    int totalWeekOffice = totalTimeWorkedJour1Office + totalTimeWorkedJour2Office + totalTimeWorkedJour3Office + totalTimeWorkedJour4Office + totalTimeWorkedJour5Office;
                     if (totalTimeWorkedJour1Office >= 240 && totalTimeWorkedJour2Office >= 240 && totalTimeWorkedJour3Office >= 240 && totalTimeWorkedJour4Office >= 240 && totalTimeWorkedJour5Office >= 240)
                     {
-                        if ((totalWeekTimeWorked - totalTimeHomeA) >= (36 * 60))
+                        if ((totalWeekOffice) >= (36 * 60))
                         {
 
                             string idadmin = txtEmpId.Text;
@@ -795,18 +795,18 @@ namespace PunchClock
                 if (empID >= 1000)
                 {
                     int totalWeekTimeWorked = totalTimeWorkedJour1 + totalTimeWorkedJour2 + totalTimeWorkedJour3 + totalTimeWorkedJour4 + totalTimeWorkedJour5 + totalTimeWorkedWeekend1 + totalTimeWorkedWeekend2;
-
+                    int totalWeekOffice = totalTimeWorkedJour1Office + totalTimeWorkedJour2Office + totalTimeWorkedJour3Office + totalTimeWorkedJour4Office + totalTimeWorkedJour5Office;
                     if (totalTimeWorkedJour1Office >= 360 && totalTimeWorkedJour2Office >= 360 && totalTimeWorkedJour3Office >= 360 && totalTimeWorkedJour4Office >= 360 && totalTimeWorkedJour5Office >= 360)
                     {
 
 
-                        if ((totalWeekTimeWorked - totalTimeHome) > (43 * 60))
+                        if ((totalWeekOffice) > (43 * 60))
                         {
                             ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validate43WHalert()", true);
                         }
                         else
                         {
-                            if ((totalWeekTimeWorked - totalTimeHome) >= (38 * 60) && empID < 2000)
+                            if ((totalWeekOffice) >= (38 * 60) && empID < 2000)
                             {
                                 string id = txtEmpId.Text;
                                 string year = txtYear.Text;
