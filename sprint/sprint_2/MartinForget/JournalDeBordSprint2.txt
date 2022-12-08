@@ -11,3 +11,5 @@
 5 déc: 1h00 - Travail avec Guillaume (validations)
 6 déc: 30min - début valide10H
 6 déc: 5h. - Travail avec Guillaume (btnReset - plusieurs fix et validations)
+7 déc: 45m - rencontre équipe
+7 déc: 6h00 - travail avec Anthony et Guillaume. Test de chacune des fonctionnalittés et résolution de bugs
