@@ -294,15 +294,6 @@ namespace PunchClock
         protected global::System.Web.UI.WebControls.Button btnAddMonday;
 
         /// <summary>
-        /// Contrôle btnRestartMonday.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRestartMonday;
-
-        /// <summary>
         /// Contrôle btnAddTuesday.
         /// </summary>
         /// <remarks>
@@ -310,15 +301,6 @@ namespace PunchClock
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAddTuesday;
-
-        /// <summary>
-        /// Contrôle btnRestartTuesday.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRestartTuesday;
 
         /// <summary>
         /// Contrôle btnAddWednesday.
@@ -330,15 +312,6 @@ namespace PunchClock
         protected global::System.Web.UI.WebControls.Button btnAddWednesday;
 
         /// <summary>
-        /// Contrôle btnRestartWednesday.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRestartWednesday;
-
-        /// <summary>
         /// Contrôle btnAddThursday.
         /// </summary>
         /// <remarks>
@@ -346,15 +319,6 @@ namespace PunchClock
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAddThursday;
-
-        /// <summary>
-        /// Contrôle btnRestartThursday.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRestartThursday;
 
         /// <summary>
         /// Contrôle btnAddFriday.
@@ -366,15 +330,6 @@ namespace PunchClock
         protected global::System.Web.UI.WebControls.Button btnAddFriday;
 
         /// <summary>
-        /// Contrôle btnRestartFriday.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRestartFriday;
-
-        /// <summary>
         /// Contrôle btnAddSaturday.
         /// </summary>
         /// <remarks>
@@ -384,15 +339,6 @@ namespace PunchClock
         protected global::System.Web.UI.WebControls.Button btnAddSaturday;
 
         /// <summary>
-        /// Contrôle btnRestartSaturday.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRestartSaturday;
-
-        /// <summary>
         /// Contrôle btnAddSunday.
         /// </summary>
         /// <remarks>
@@ -400,15 +346,6 @@ namespace PunchClock
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAddSunday;
-
-        /// <summary>
-        /// Contrôle btnRestartSunday.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRestartSunday;
 
         /// <summary>
         /// Contrôle lblResultMonday.
