@@ -7,3 +7,9 @@
 -2022-12-04: Modification de la page patron/manager. Correction de lignes pour la creation des jsons. 4h
 
 -2022-12-04: Test des validations sur le projet present et resulsutat mis dans un .txt 2h
+
+-2022-12-05 Test de validations sur le projet updater et résultat mis dans un .txt 2h.
+
+-2022-12-06 Test de validations(1h) et changemment au cahier(2h) de charge ainsi que la page manager(1h) 4h.
+
+-2022-12-07 Test de validations avec le groupe de développement pour finir le projet. 4h30.

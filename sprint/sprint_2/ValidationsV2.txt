@@ -1,0 +1,43 @@
+-Fonc 10: Normal = infinite teletravail if heure <= 43h. ----Fait avec code 1000 et 2000----- (Rerifier avec admin une fois implementer)
+
+---------------------------------------------------------------------------------------------- Sprint 1
+
+-Fonc 18: Employe normal = exploitation et production. heure min for exploitation = 38h avec teletravail. employe production code = code >=1000 but code < 2000. employe exploitation code = code >= 2000.  ----Fait ---- (Reverifier une fois que les autres validations sont effectuées)
+
+---------------------------------------------------------------------------------------------- Sprint 2
+
+Fonction completer : 
+
+-Fonc 1: code > 900 teletravail ------Fait-------- *
+
+-Fonc 2: si employe ne travaille pas la journee est vide. -----Fait------- *
+
+-Fonc 3: un employe peut travailler la fin de semaine.  ---- Fait ---- *
+
+-Fonc 4: un employe code <1000 = admin. ---Fait--- *
+
+-Fonc 5: un employe code >= 1000 = normal. ----Non-aplicable a cause de (Fonc 18)-------
+
+-Fonc 6: jour1 a 5 = lundi a vendredi j6-j7 = samedi-dimanche. -------Fait------ *
+
+-Fonc 7: Admin 36h bureau semaine. ---Fait--- *
+
+-Fonc 8: Normal 38h bureau semaine. (Fonc 18). ---- Fait---- *
+
+-Fonc 9: No-one heures > 43 bureau semaine. ----Fait---- * *
+
+-Fonc 11: Normal must do 6h lundi a vendredi. ----Fait avec code 1000 et 2000---- *
+
+-Fonc 12: Admin must do 4h lundi a vendredi. ----Fait ---- *
+
+-Fonc 13: Interface graphique. -----Fait------ *
+
+-Fonc 14: Menu choix patron/employe if patron login window. ---Fait--- *
+
+-Fonc 15: Window patron charger feuille de temps / valider feuille de temps. ---Fait --- *
+
+-Fonc 16: Conger maladie code projet = 999, minutes = 420/7h bureau pas plus de temps permis. ----Fait---- *
+
+-Fonc 17: Conger feriers employe doit charger code projet = 998 minutes = 420/7h bureau il peut faire du teletravail, il ne peut pas mettre conger la fin de semaine. ----Fait ---- *
+
+-Fonc 19: Employe heure par jour = heure <= 24h max 1440 minutes.---Fait----  *
