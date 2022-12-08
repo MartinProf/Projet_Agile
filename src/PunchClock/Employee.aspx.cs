@@ -315,9 +315,12 @@ namespace PunchClock
             {
                 resultMinutes = txtMinutesMonday.Text;
                 totalTimeWorkedJour1 += int.Parse(resultMinutes);
-                totalTimeHomeA += int.Parse(resultMinutes);
                 DateTime mondayHollidays = DateTime.Parse(TBLundi.Text);
                 resultProjet = txtProjetMonday.Text;
+                if(int.Parse(resultProjet) > 900 && int.Parse(resultProjet) != 998 && int.Parse(resultProjet) != 999)
+                {
+                    totalTimeHomeA += int.Parse(resultMinutes);
+                }
                 if (int.Parse(resultProjet) <= 900 || int.Parse(resultProjet) == 998 || int.Parse(resultProjet) == 999)
                 {
                     totalTimeWorkedJour1Office += int.Parse(resultMinutes);
@@ -331,15 +334,22 @@ namespace PunchClock
                 {
                     if (totalTimeWorkedJour1 <= (24 * 60))
                     {
-                        if (totalTimeHomeA <= (10 * 60) && int.Parse(txtEmpId.Text) <= 999 && int.Parse(txtProjetMonday.Text) > 900)
+                        if (totalTimeHomeA <= (10 * 60) && int.Parse(txtEmpId.Text) <= 999 && int.Parse(txtProjetMonday.Text) > 900 && int.Parse(txtProjetMonday.Text) != 998)
                         {
-                            addDayWeek(txtProjetMonday, txtMinutesMonday, lblResultMonday, LabelLundi, cbSickMonday, btnAddMonday);
                             totalTimeHomeA -= int.Parse(resultMinutes);
+                            addDayWeek(txtProjetMonday, txtMinutesMonday, lblResultMonday, LabelLundi, cbSickMonday, btnAddMonday);
+                            
                         }
                         else if (int.Parse(txtEmpId.Text) >= 1000 || (int.Parse(txtEmpId.Text) <= 999 && int.Parse(txtProjetMonday.Text) <= 900))
                         {
-                            addDayWeek(txtProjetMonday, txtMinutesMonday, lblResultMonday, LabelLundi, cbSickMonday, btnAddMonday);
                             totalTimeHomeA -= int.Parse(resultMinutes);
+                            addDayWeek(txtProjetMonday, txtMinutesMonday, lblResultMonday, LabelLundi, cbSickMonday, btnAddMonday);
+                            
+                        }
+                        else if(int.Parse(txtProjetMonday.Text) == 998)
+                        {
+                            addDayWeek(txtProjetMonday, txtMinutesMonday, lblResultMonday, LabelLundi, cbSickMonday, btnAddMonday);
+
                         }
                         else
                         {
@@ -360,7 +370,7 @@ namespace PunchClock
             {
                 ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "validateChampsRequisalert();", true);
             }
-            System.Diagnostics.Debug.WriteLine(totalTimeHomeA);
+            System.Diagnostics.Debug.WriteLine(totalTimeWorkedJour1);
         }
 
         protected void btnAddTuesday_Click(object sender, EventArgs e)
