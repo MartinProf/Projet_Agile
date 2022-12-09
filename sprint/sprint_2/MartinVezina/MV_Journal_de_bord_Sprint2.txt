@@ -8,5 +8,8 @@
 4 déc: 1h00 - Lecture du json marche pas -- à revoir
 5 déc: 1h30 - Correction de la structure json dans employee
 5 déc: 0h30 - Correction pour faire la lecture du fichier json dans manager
+5 déc: 1h00 - Rencontre Scrum
+7 déc: 3h00 - Support moral pour les tests
+7 déc: 1h00 - Rencontre Scrum
 
 Gestion des merges du git durant la durée du sprint_2
