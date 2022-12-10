@@ -1,0 +1,8 @@
+friday 19 novembre - Conception des diagrames UML et Conception de la strucuture initial du projet et le (Front-end)- 6 heures
+Samedi 20 novembre - Même chose que le 19 novembre - 6 heures
+Dimanche 21 novemmbre - Trvail sur les interfaces graphiques du projet -4 heures
+Mercredi 23 novembre - Collaboration avec Le scrum master pour faire les user Stories - 2 heures
+Lundi novembre 28 - Création du cahier de charge en collaboration avec Le scrum master - 4 heures
+Mardi 6 décembre - Révision du cahier de charge - 2 heures
+Mercredi 7 décembre - Refonte visuel du Projet (front-end) - 7 heures
+Jeudi 8 décembre- Révision des diagrames UML et implémentation au cahier de charges  - 2 heures
