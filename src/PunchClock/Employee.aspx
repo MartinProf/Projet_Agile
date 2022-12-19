@@ -7,14 +7,14 @@
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript">
-         function validate24alert() {
-             swal({
-                 title: 'Error!',
-                 text: 'Une journée n\'a que 24 heures!',
-                 icon: "error",
-                 type: 'error'
-             });
-         }
+        function validate24alert() {
+            swal({
+                title: 'Error!',
+                text: 'Une journée n\'a que 24 heures!',
+                icon: "error",
+                type: 'error'
+            });
+        }
     </script>
 
     <script type="text/javascript">
@@ -73,14 +73,14 @@
     </script>
 
     <script type="text/javascript">
-         function validate4AdminWalert() {
-             swal({
-                 title: 'Warning!',
-                 text: 'Les administrateurs doivent travailler un minimum de 4 heures au bureau les jours ouvrables',
-                 icon: "warning",
-                 type: 'warning'
-             });
-         }
+        function validate4AdminWalert() {
+            swal({
+                title: 'Warning!',
+                text: 'Les administrateurs doivent travailler un minimum de 4 heures au bureau les jours ouvrables',
+                icon: "warning",
+                type: 'warning'
+            });
+        }
     </script>
 
     <script type="text/javascript">
@@ -118,37 +118,37 @@
 
 
     <script type="text/javascript">
-          function validate38hEmpWalert() {
-              swal({
-                  title: 'Warning!',
-                  text: 'Vous n\'avez pas atteint le 38h de bureau par semaine minimum, sans télétravail si vous êtes employé de production ou sans restrictions si vous êtes emploé de exploitation',
-                  icon: "warning",
-                  type: 'warning'
-              });
-          }
+        function validate38hEmpWalert() {
+            swal({
+                title: 'Warning!',
+                text: 'Vous n\'avez pas atteint le 38h de bureau par semaine minimum, sans télétravail si vous êtes employé de production ou sans restrictions si vous êtes emploé de exploitation',
+                icon: "warning",
+                type: 'warning'
+            });
+        }
     </script>
 
 
     <script type="text/javascript">
-            function validate10hAdminWalert() {
-                swal({
-                    title: 'Warning!',
-                    text:'Les administrateurs doivent travailler un maximum de 10 heures par semaine de la maison',
-                    icon: "warning",
-                    type: 'warning'
-                });
-            }
-        </script>
+        function validate10hAdminWalert() {
+            swal({
+                title: 'Warning!',
+                text: 'Les administrateurs doivent travailler un maximum de 10 heures par semaine de la maison',
+                icon: "warning",
+                type: 'warning'
+            });
+        }
+    </script>
 
     <script type="text/javascript">
-            function validateNumEmpAndTBDayalert() {
-                swal({
-                    title: 'Warning!',
-                    text: 'Vous devez entrer un numéro d\'employer et sélectionner une semaine',
-                    icon: "warning",
-                    type: 'warning'
-                });
-            }
+        function validateNumEmpAndTBDayalert() {
+            swal({
+                title: 'Warning!',
+                text: 'Vous devez entrer un numéro d\'employer et sélectionner une semaine',
+                icon: "warning",
+                type: 'warning'
+            });
+        }
     </script>
 
     <script type="text/javascript">
@@ -162,147 +162,192 @@
         }
     </script>
 
-        <script type="text/javascript">
-            function validateTransport() {
-                swal({
-                    title: 'Warning!',
-                    text: 'Vous avez entré trop d\'heures de transport entrer',
-                    icon: "warning",
-                    type: 'warning'
-                });
-            }
-        </script>
+    <script type="text/javascript">
+        function validateTransport() {
+            swal({
+                title: 'Warning!',
+                text: 'Vous avez entré trop d\'heures de transport',
+                icon: "warning",
+                type: 'warning'
+            });
+        }
+    </script>
 
-   
+    <script type="text/javascript">
+        function validateBirth() {
+            swal({
+                title: 'Warning!',
+                text: 'Vous ne pouvez pas appliquer le code de projet 995 les week-end',
+                icon: "warning",
+                type: 'warning'
+            });
+        }
+    </script>
+
+
     <title></title>
     <style type="text/css">
         hr {
-             border: 0;
+            border: 0;
             border-bottom: 1px dashed #ccc;
             background: #999;
         }
+
         .auto-style3 {
             text-align: center;
             font-size: xx-large;
             color: #D7D6D4;
             height: 75px;
         }
+
         .auto-style4 {
             height: 75px;
         }
+
         .auto-style5 {
             font-size: large;
             text-align: right;
             color: #000099;
         }
+
         .auto-style6 {
             font-size: medium;
         }
+
         .auto-style7 {
             text-align: center;
         }
+
         .auto-style8 {
             font-size: large;
             color: #D7D6D4;
             text-align: center;
         }
+
         .auto-style9 {
             text-align: right;
             color: #000099;
         }
+
         .auto-style10 {
             text-align: right;
         }
+
         .auto-style11 {
             color: #000099;
         }
+
         .auto-style12 {
             color: #000099;
             font-size: medium;
         }
+
         .auto-style13 {
             text-align: center;
             color: #000099;
             font-size: large;
             height: 38px;
         }
+
         .auto-style14 {
             width: 100%;
             height: 131px;
         }
-        body{
+
+        body {
             background-color: #152238;
         }
+
         .auto-style17 {
             font-size: medium;
             color: #000099;
             text-align: center;
             height: 34px;
+            width: 272px;
         }
+
         .auto-style18 {
             text-align: center;
             height: 34px;
         }
+
         .auto-style20 {
             text-align: center;
             height: 36px;
         }
+
         .auto-style22 {
             text-align: center;
             height: 39px;
         }
+
         .auto-style23 {
             text-align: left;
         }
+
         .auto-style24 {
             text-align: center;
             height: 47px;
         }
+
         .auto-style25 {
             color: #D7D6D4;
         }
+
         .auto-style26 {
             color: #FFE1FF;
         }
+
         .auto-style27 {
             color: #D7D6D4;
             font-size: medium;
         }
+
         .auto-style28 {
             text-align: center;
             height: 36px;
             color: #D7D6D4;
+            width: 272px;
         }
+
         .auto-style29 {
             color: #FFFFFF;
         }
+
         .auto-style30 {
             color: #FFFFFF;
             font-size: large;
         }
+
         .auto-style31 {
             color: #FFFFFF;
             font-size: x-large;
         }
+
         .auto-style32 {
             font-size: medium;
             margin-bottom: 0px;
         }
+
         .auto-style33 {
             font-size: large;
         }
+
         .auto-style34 {
             color: #D7D6D4;
             font-size: large;
         }
+
         .auto-style35 {
             color: #FFFFFF;
             font-size: large;
             background-color: #152238;
         }
+
         .auto-style36 {
             background-color: #152238;
         }
+
         .auto-style37 {
             text-align: center;
             color: #000099;
@@ -310,30 +355,36 @@
             height: 38px;
             width: 288px;
         }
+
         .auto-style38 {
             text-align: center;
             height: 47px;
             width: 288px;
         }
+
         .auto-style39 {
             text-align: center;
             height: 34px;
             width: 288px;
         }
+
         .auto-style40 {
             text-align: center;
             height: 36px;
             width: 288px;
         }
+
         .auto-style41 {
             text-align: center;
             height: 39px;
             width: 288px;
         }
+
         .auto-style42 {
             text-align: center;
             width: 288px;
         }
+
         .auto-style43 {
             text-align: center;
             color: #000099;
@@ -341,29 +392,59 @@
             height: 38px;
             width: 289px;
         }
+
         .auto-style44 {
             text-align: center;
             height: 47px;
             width: 289px;
         }
+
         .auto-style45 {
             text-align: center;
             height: 34px;
             width: 289px;
         }
+
         .auto-style46 {
             text-align: center;
             height: 36px;
             width: 289px;
         }
+
         .auto-style47 {
             text-align: center;
             height: 39px;
             width: 289px;
         }
+
         .auto-style48 {
             text-align: center;
             width: 289px;
+        }
+
+        .auto-style49 {
+            text-align: center;
+            color: #000099;
+            font-size: large;
+            height: 38px;
+            width: 272px;
+        }
+
+        .auto-style50 {
+            text-align: center;
+            height: 47px;
+            width: 272px;
+        }
+
+        .auto-style51 {
+            text-align: center;
+            height: 39px;
+            width: 272px;
+        }
+
+        .auto-style52 {
+            text-align: center;
+            width: 272px;
         }
     </style>
 </head>
@@ -410,7 +491,7 @@
                         <asp:TextBox ID="txtEmpId" runat="server" CssClass="auto-style6"></asp:TextBox>
                     </strong></td>
                     <td class="auto-style12"><strong><span class="auto-style31">Week:</span><span class="auto-style25">
-                        </span>
+                    </span>
                         <asp:DropDownList ID="dropDownListWeek" runat="server" AutoPostBack="true" CssClass="auto-style6" OnSelectedIndexChanged="dropDownListWeek_SelectedIndexChanged" Height="27px" Width="148px"></asp:DropDownList>
                     </strong></td>
                     <td>&nbsp;</td>
@@ -430,23 +511,30 @@
             <hr>
             <table class="auto-style14">
                 <tr>
-                    <td class="auto-style13"><strong><span class="auto-style31">Monday</span><span class="auto-style25"><br />
-                        </span></strong><asp:TextBox ID="TBLundi" runat="server"></asp:TextBox></td>
+                    <td class="auto-style49"><strong><span class="auto-style31">Monday</span><span class="auto-style25"><br />
+                    </span></strong>
+                        <asp:TextBox ID="TBLundi" runat="server"></asp:TextBox></td>
                     <td class="auto-style13"><strong><span class="auto-style31">Tuesday</span><span class="auto-style25"><br />
-                        </span></strong><asp:TextBox ID="TBMardi" runat="server"></asp:TextBox></td>
+                    </span></strong>
+                        <asp:TextBox ID="TBMardi" runat="server"></asp:TextBox></td>
                     <td class="auto-style37"><strong><span class="auto-style31">Wednesday</span><span class="auto-style25"><br />
-                        </span></strong><asp:TextBox ID="TBMercredi" runat="server"></asp:TextBox></td>
+                    </span></strong>
+                        <asp:TextBox ID="TBMercredi" runat="server"></asp:TextBox></td>
                     <td class="auto-style43"><span class="auto-style31"><strong>Thursday</strong></span><span class="auto-style25"><br />
-                        </span><asp:TextBox ID="TBJeudi" runat="server"></asp:TextBox></td>
+                    </span>
+                        <asp:TextBox ID="TBJeudi" runat="server"></asp:TextBox></td>
                     <td class="auto-style13"><strong><span class="auto-style31">Friday</span><span class="auto-style25"><br />
-                        </span></strong><asp:TextBox ID="TBVendredi" runat="server"></asp:TextBox></td>
+                    </span></strong>
+                        <asp:TextBox ID="TBVendredi" runat="server"></asp:TextBox></td>
                     <td class="auto-style13"><strong><span class="auto-style31">Saturday</span><span class="auto-style25"><br />
-                        </span></strong><asp:TextBox ID="TBSamedi" runat="server"></asp:TextBox></td>
+                    </span></strong>
+                        <asp:TextBox ID="TBSamedi" runat="server"></asp:TextBox></td>
                     <td class="auto-style13"><strong><span class="auto-style31">Sunday</span><span class="auto-style25"><br />
-                        </span></strong><asp:TextBox ID="TBDimanche" runat="server"></asp:TextBox></td>
+                    </span></strong>
+                        <asp:TextBox ID="TBDimanche" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td class="auto-style24"><span class="auto-style30"><strong>Code project</strong></span><strong><span class="auto-style25">: </span>
+                    <td class="auto-style50"><span class="auto-style30"><strong>Code project</strong></span><strong><span class="auto-style25">: </span>
                         <asp:TextBox ID="txtProjetMonday" runat="server" CssClass="auto-style6" Width="60px"></asp:TextBox>
                     </strong></td>
                     <td class="auto-style24"><span class="auto-style30"><strong>Code project</strong></span><strong><span class="auto-style25">: </span>
@@ -455,7 +543,8 @@
                     <td class="auto-style38"><span class="auto-style30"><strong>Code project</strong></span><strong><span class="auto-style25">: </span>
                         <asp:TextBox ID="txtProjetWednesday" runat="server" CssClass="auto-style6" Width="60px"></asp:TextBox>
                     </strong></td>
-                    <td class="auto-style44"><span class="auto-style30"><strong>Code project: </strong></span><strong><asp:TextBox ID="txtProjetThursday" runat="server" CssClass="auto-style32" Width="57px"></asp:TextBox>
+                    <td class="auto-style44"><span class="auto-style30"><strong>Code project: </strong></span><strong>
+                        <asp:TextBox ID="txtProjetThursday" runat="server" CssClass="auto-style32" Width="57px"></asp:TextBox>
                     </strong></td>
                     <td class="auto-style24"><span class="auto-style30"><strong>Code project</strong></span><strong><span class="auto-style25">: </span>
                         <asp:TextBox ID="txtProjetFriday" runat="server" CssClass="auto-style6" Width="60px"></asp:TextBox>
@@ -463,7 +552,8 @@
                     <td class="auto-style24"><span class="auto-style30"><strong>Code project</strong></span><strong><span class="auto-style25">: </span>
                         <asp:TextBox ID="txtProjetSaturday" runat="server" CssClass="auto-style6" Width="60px"></asp:TextBox>
                     </strong></td>
-                    <td class="auto-style24"><span class="auto-style30"><strong>Code project</strong></span><strong><span class="auto-style25">: </span><asp:TextBox ID="txtProjetSunday" runat="server" CssClass="auto-style6" Width="60px"></asp:TextBox>
+                    <td class="auto-style24"><span class="auto-style30"><strong>Code project</strong></span><strong><span class="auto-style25">: </span>
+                        <asp:TextBox ID="txtProjetSunday" runat="server" CssClass="auto-style6" Width="60px"></asp:TextBox>
                     </strong></td>
                 </tr>
                 <tr>
@@ -510,38 +600,39 @@
 
                 </tr>
                 <tr>
-                    <td class="auto-style22">
+                    <td class="auto-style51">
                         <asp:Button ID="btnAddMonday" runat="server" Text="Add" Width="67px" autopostback="true" OnClick="btnAddMonday_Click" />
                         &nbsp;
                         <asp:Button ID="btnFillWeek" runat="server" OnClick="btnFillWeek_Click" Text="Fill Week" />
-                        </td>
+                        <asp:Button ID="btnBirth" runat="server" OnClick="btnBirth_Click" Text="Birth Week Off" Style="margin-top: 5px; background: linear-gradient(to right, #FFB6C1, #add8e6); height: 40px" />
+                    </td>
                     <td class="auto-style22">
                         <asp:Button ID="btnAddTuesday" runat="server" Text="Add" Width="67px" autopostback="true" OnClick="btnAddTuesday_Click" />
                         &nbsp;
-                        </td>
+                    </td>
                     <td class="auto-style41">
                         <asp:Button ID="btnAddWednesday" runat="server" Text="Add" Width="67px" autopostback="true" OnClick="btnAddWednesday_Click" />
                         &nbsp;
-                        </td>
+                    </td>
                     <td class="auto-style47">
                         <asp:Button ID="btnAddThursday" runat="server" Text="Add" Width="67px" autopostback="true" OnClick="btnAddThursday_Click" />
                         &nbsp;
-                        </td>
+                    </td>
                     <td class="auto-style22">
                         <asp:Button ID="btnAddFriday" runat="server" Text="Add" Width="67px" autopostback="true" OnClick="btnAddFriday_Click" />
                         &nbsp;
-                        </td>
+                    </td>
                     <td class="auto-style22">
                         <asp:Button ID="btnAddSaturday" runat="server" Text="Add" Width="67px" OnClick="btnAddSaturday_Click" />
                         &nbsp;
-                        </td>
+                    </td>
                     <td class="auto-style22">
                         <asp:Button ID="btnAddSunday" runat="server" Text="Add" Width="67px" OnClick="btnAddSunday_Click" />
                         &nbsp;
-                        </td>
+                    </td>
                 </tr>
                 <tr>
-                    <td class="auto-style7">
+                    <td class="auto-style52">
                         <asp:Label ID="lblResultMonday" runat="server" Text="" CssClass="auto-style26"></asp:Label>
                     </td>
                     <td class="auto-style7">
