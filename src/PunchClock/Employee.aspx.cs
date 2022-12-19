@@ -70,7 +70,13 @@ namespace PunchClock
             totalTimeWorkedWeekend2 = 0;
             totalTimeHome = 0;
             totalTimeHomeA = 0;
-
+            transportJour1 = 0;
+            transportJour2 = 0;
+            transportJour3 = 0;
+            transportJour4 = 0;
+            transportJour5 = 0;
+            transportWeekend1 = 0;
+            transportWeekend2 = 0;
             totalTimeWorkedJour1Office = 0;
             totalTimeWorkedJour2Office = 0;
             totalTimeWorkedJour3Office = 0;
