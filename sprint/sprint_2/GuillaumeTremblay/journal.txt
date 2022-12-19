@@ -2,3 +2,6 @@
 	-02 dec  *Generalisation des boutton d'ajout de la page employee(3h)*
 	-03 dec  *ajout de la verification de 4h pour admin(2h)*
 	-04 dec  *ajout de la verification de 6h pour emp(30m)*
+	-05 dec  *ajout de la verification de 38h pour emp + correction de code(3h) + ajout compteur heure distant(2h)*
+	-06 dec  *travail avec martin, ajout de validation et correction de code (5h)*
+	-07 dec  *temptative de fix sick day et 10hadmin(1h) + travail avec martin, anthony et martin sur les fix des validation(6h)*
