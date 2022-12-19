@@ -162,6 +162,16 @@
         }
     </script>
 
+        <script type="text/javascript">
+            function validateTransport() {
+                swal({
+                    title: 'Warning!',
+                    text: 'Vous avez entré trop d\'heures de transport entrer',
+                    icon: "warning",
+                    type: 'warning'
+                });
+            }
+        </script>
 
    
     <title></title>
