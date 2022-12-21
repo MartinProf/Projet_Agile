@@ -13,9 +13,10 @@ namespace PunchClock
 {
     public partial class Manager : System.Web.UI.Page
     {
+        FeuillesDBEntities myBdd;
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            myBdd = new FeuillesDBEntities();
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)
@@ -144,6 +145,22 @@ namespace PunchClock
                     Directory.CreateDirectory(folderPathA);
                 try
                 {
+                    Feuille feuille = new Feuille();
+                    feuille.numero_employe = lblEmployeeId.Text;
+                    feuille.annee = lblYear.Text;
+                    feuille.numero_semaine = lblWeekNumber.Text;
+                    feuille.jour1 = lblMonday.Text;
+                    feuille.jour2 = lblTuesday.Text;
+                    feuille.jour3 = lblWednesday.Text;
+                    feuille.jour4 = lblThursday.Text;
+                    feuille.jour5 = lblFriday.Text;
+                    feuille.weekend1 = lblSaturday.Text;
+                    feuille.weekend2 = lblSunday.Text;
+
+                    myBdd.Feuilles.Add(feuille);
+
+                    myBdd.SaveChanges();
+
                     File.Move(path + fileName, folderPathA + fileName);
                     lbFileName.Text = string.Empty;
                     Response.Write("<script>alert('La feuille a ete accepte')</script>");
