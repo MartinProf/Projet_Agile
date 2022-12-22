@@ -15,7 +15,7 @@
             font-size: xx-large;
             color: #F7ECEA;
         }
-        body{
+        html body{
             background-color: #152238;
         }
         label{
@@ -58,7 +58,7 @@
         
     </style>
 </head>
-<body style="margin-top: 270px">
+<body style="padding: 270px">
     <form id="form1" runat="server">
         <div class="main">
             <div class="wrapper">
