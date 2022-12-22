@@ -13,8 +13,9 @@
             height: 61px;
             width: 517px;
         }
-        body{
+        html body{
             background-color: #152238;
+            height:100%;
         }
         .auto-style4 {
             width: 573px;
@@ -66,7 +67,7 @@
         }
     </style>
 </head>
-<body style="margin-top: 270px">
+<body style="padding-top: 270px">
     <form id="form1" runat="server">
         <div>
             <table style="width:100%;">

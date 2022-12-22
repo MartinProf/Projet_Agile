@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" style="height:100%">
 <head runat="server">
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -448,7 +448,7 @@
         }
     </style>
 </head>
-<body>
+<body style="height:100%">
     <form id="form1" runat="server">
         <div>
             <table style="width: 100%;">

@@ -1,2 +1,4 @@
+18Déc - 30min  - Bouton Fill week
 19Déc - 2h30 - Daily scrum portant sur le base de données et sur les tâches en générale.
 19Déc - 1h30 - boutton pour le congé de maternité et réglage de bugs
+22Déc - 1h15 - Manuel de l'utilisateur

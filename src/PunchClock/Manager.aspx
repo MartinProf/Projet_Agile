@@ -11,8 +11,9 @@
             border-bottom: 1px dashed #ccc;
             background: #999;
         }
-        body{
+        html body{
             background-color: #152238;
+            height:100%;
         }
         .auto-style1 {
             text-align: center;
