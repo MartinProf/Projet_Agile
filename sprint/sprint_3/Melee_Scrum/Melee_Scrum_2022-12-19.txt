@@ -1,0 +1,9 @@
+- 2022-12-19
+
+- Essai de connection a la base de donnees mongo db echec.
+
+- Retour à SQL pour continuer le  projet.
+
+- Transformer les int en doubles.
+
+- Duree 1h30.

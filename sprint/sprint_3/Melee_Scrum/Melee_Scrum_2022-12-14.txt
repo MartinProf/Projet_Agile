@@ -1,0 +1,9 @@
+- 2022-12-14
+
+- Choix de DB pas encore choisi. Probleme rencontrer 
+
+- Mango préférable (Dificulter a mêtre sur le ASP.net core 3.0). converter json vers sql ? (marche pas).
+
+- Prochaine rencontre lundi 19 8h
+
+- Duree 1h 13 mins
