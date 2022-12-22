@@ -1,0 +1,31 @@
+- 2022-12-12
+
+- Discussion sur les Docs a faire.
+
+- Discussion des demandes et fonc que le client veut.
+
+- Discussion sur quelle BD utiliser.
+
+- Questionement sur comment utiliser les tables SQL pour les ajouts des json au base de donnes ou utiliser MongoDB
+
+- Mattin Vezina BD.
+
+- Martin Forget Doc Utilisateur.
+
+- Sebastian et Anthony Doc technique.
+
+- Video Anthony.
+
+- Fonc 1 Martin Forget.
+
+- Fonc 2 Guillaume Tremblay.
+
+- Fonc 3 Martin Forget.
+
+- Duree 1h45.
+
+-----------------------
+
+- Regler probleme avec dernier sprint faire un pin avec le prob pour equipe dev.
+
+- Faire jira
