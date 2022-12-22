@@ -1,0 +1,20 @@
+CREATE DATABASE FeuillesDB
+go
+
+use FeuillesDB
+go
+
+
+CREATE TABLE Feuilles
+(
+numero_employe varchar(500) PRIMARY KEY,
+annee varchar(500),
+numero_semaine varchar(500),
+jour1 varchar(500),
+jour2 varchar(500),
+jour3 varchar(500),
+jour4 varchar(500),
+jour5 varchar(500),
+weekend1 varchar(500),
+weekend2 varchar(500)
+);
