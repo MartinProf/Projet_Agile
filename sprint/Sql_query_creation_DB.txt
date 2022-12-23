@@ -7,7 +7,8 @@ go
 
 CREATE TABLE Feuilles
 (
-numero_employe varchar(500) PRIMARY KEY,
+nume_annee_numms varchar(500) PRIMARY KEY,
+numero_employe varchar(500),
 annee varchar(500),
 numero_semaine varchar(500),
 jour1 varchar(500),
