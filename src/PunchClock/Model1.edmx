@@ -4,12 +4,13 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FeuillesDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FeuillesDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Feuilles">
           <Key>
-            <PropertyRef Name="numero_employe" />
+            <PropertyRef Name="nume_annee_numms" />
           </Key>
-          <Property Name="numero_employe" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="nume_annee_numms" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="numero_employe" Type="varchar" MaxLength="500" />
           <Property Name="annee" Type="varchar" MaxLength="500" />
           <Property Name="numero_semaine" Type="varchar" MaxLength="500" />
           <Property Name="jour1" Type="varchar" MaxLength="500" />
@@ -23,16 +24,15 @@
         <EntityContainer Name="FeuillesDBModelStoreContainer">
           <EntitySet Name="Feuilles" EntityType="Self.Feuilles" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FeuillesDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Feuille">
           <Key>
-            <PropertyRef Name="numero_employe" />
+            <PropertyRef Name="nume_annee_numms" />
           </Key>
-          <Property Name="numero_employe" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numero_employe" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="annee" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="numero_semaine" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="jour1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
@@ -42,6 +42,7 @@
           <Property Name="jour5" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="weekend1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="weekend2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="nume_annee_numms" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="FeuillesDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Feuilles" EntityType="Self.Feuille" />
@@ -55,6 +56,7 @@
           <EntitySetMapping Name="Feuilles">
             <EntityTypeMapping TypeName="FeuillesDBModel.Feuille">
               <MappingFragment StoreEntitySet="Feuilles">
+                <ScalarProperty Name="nume_annee_numms" ColumnName="nume_annee_numms" />
                 <ScalarProperty Name="numero_employe" ColumnName="numero_employe" />
                 <ScalarProperty Name="annee" ColumnName="annee" />
                 <ScalarProperty Name="numero_semaine" ColumnName="numero_semaine" />

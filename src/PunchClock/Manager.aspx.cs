@@ -51,68 +51,66 @@ namespace PunchClock
                         string jsonFile = File.ReadAllText(FolderPath + fileName);
                         dynamic test = JsonConvert.DeserializeObject(jsonFile);
 
-                        employeeID +=  test.numero_employe + "<br>";
-                        year +=  test.annee + " <br> ";
-                        week +=  test.numero_semaine + "<br>";
+                        employeeID +=  test.numero_employe + '\n';
+                        year +=  test.annee + '\n';
+                        week +=  test.numero_semaine + '\n';
 
                         foreach (var item in test.jour1)
                         {
-                            a = a + "<br>Project code: " + item.codeProject + "<br> ";
-                            a = a + "Minutes: " + item.minutes + "<br> ";
+                            a = a + "Project code: " + item.codeProject + '\n';
+                            a = a + "Minutes: " + item.minutes + '\n';
                             heuresTotal += (int)item.minutes;
                         }
-                        monday +=  a + "<br>";
+                        monday +=  a + '\n';
                         a = "";
                         foreach (var item in test.jour2)
                         {
-                            a = a + "Project code: " + item.codeProject + "<br> ";
-                            a = a + "Minutes: " + item.minutes + "<br> ";
+                            a = a + "Project code: " + item.codeProject + '\n';
+                            a = a + "Minutes: " + item.minutes + '\n';
                             heuresTotal += (int)item.minutes;
                         }
-                        tuesday += a + "<br>";
+                        tuesday += a + '\n';
                         a = "";
                         foreach (var item in test.jour3)
                         {
-                            a = a + "Project code: " + item.codeProject + " <br>";
-                            a = a + "Minutes: " + item.minutes + "<br> ";
+                            a = a + "Project code: " + item.codeProject + '\n';
+                            a = a + "Minutes: " + item.minutes + '\n';
                             heuresTotal += (int)item.minutes;
                         }
-                        wednesday +=  a + "<br>";
+                        wednesday +=  a + '\n';
                         a = "";
                         foreach (var item in test.jour4)
                         {
-                            a = a + "Project code: " + item.codeProject + "<br> ";
-                            a = a + "Minutes: " + item.minutes + "<br> ";
+                            a = a + "Project code: " + item.codeProject + '\n';
+                            a = a + "Minutes: " + item.minutes + '\n';
                             heuresTotal += (int)item.minutes;
                         }
-                        thursday +=  a + "<br>";
+                        thursday +=  a + '\n';
                         a = "";
                         foreach (var item in test.jour5)
                         {
-                            a = a + "Project code: " + item.codeProject + "<br> ";
-                            a = a + "Minutes: " + item.minutes + "<br> ";
+                            a = a + "Project code: " + item.codeProject + '\n';
+                            a = a + "Minutes: " + item.minutes + '\n';
                             heuresTotal += (int)item.minutes;
                         }
-                        friday += a + "<br>";
+                        friday += a + '\n';
                         a = "";
                         foreach (var item in test.weekendl)
                         {
-                            a = a + "Project code: " + item.codeProject + "<br> ";
-                            a = a + "Minutes: " + item.minutes + "<br> ";
+                            a = a + "Project code: " + item.codeProject + '\n';
+                            a = a + "Minutes: " + item.minutes + '\n';
                             heuresTotal += (int)item.minutes;
                         }
-                        saturday +=  a + "<br>";
+                        saturday +=  a + '\n';
                         a = "";
                         foreach (var item in test.weekend2)
                         {
-                            a = a + "Project code: " + item.codeProject + "<br> ";
-                            a = a + "Minutes: " + item.minutes + "<br> ";
+                            a = a + "Project code: " + item.codeProject + '\n';
+                            a = a + "Minutes: " + item.minutes + '\n';
                             heuresTotal += (int)item.minutes;
                         }
-                        sunday +=  a + "<br>";
+                        sunday +=  a + '\n';
 
-                        //Response.Write(content + "<br>" + "Heures total: " + heuresTotal / 60);
-                        // lblJsonOpened.Text = content;
                         lblYear.Text += year;
                         lblWeekNumber.Text += week;
                         lblEmployeeId.Text += employeeID;
@@ -146,6 +144,7 @@ namespace PunchClock
                 try
                 {
                     Feuille feuille = new Feuille();
+                    feuille.nume_annee_numms = lblEmployeeId.Text + lblYear.Text + lblWeekNumber.Text;
                     feuille.numero_employe = lblEmployeeId.Text;
                     feuille.annee = lblYear.Text;
                     feuille.numero_semaine = lblWeekNumber.Text;
