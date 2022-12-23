@@ -65,6 +65,9 @@ télétravail).
 (lundi au vendredi). Les employés doivent travailler même les journées de congé férié.
 7. Les employés de l’administration doivent faire un minimum quotidien de 4 heures au bureau pour les jours
 ouvrables (lundi au vendredi). Les employés doivent travailler même les journées de congé férié.
+8. Bouton fill week pour remplir les jours du lundi au vendredi avec les données entrées le lundi.
+9. Les employé qui travaillent loin du bureau aavec les codes pour le transport en commun (temps complet 60 mins) ou le transport en voiture(temps moitier so 60 mins = 30mins)
+10. Bouton pour les femmes qui ont accoucher.
 
 _Le client s’attend à ce qu’un fichier JSON montre le fonctionnement de chacune des règles._
 
@@ -73,3 +76,5 @@ _Le client s’attend à ce qu’un fichier JSON montre le fonctionnement de cha
 1. Les fichiers d’entrées et de sorties doivent être des documents JSON.
 2. Les sources doivent être entreposées dans un dépôt GIT sous github.
 
+
+Voici le lien youtube pour la video de présentation : https://youtu.be/4vOYR4UXzFk
