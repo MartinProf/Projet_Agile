@@ -24,5 +24,6 @@ namespace PunchClock
         public string jour5 { get; set; }
         public string weekend1 { get; set; }
         public string weekend2 { get; set; }
+        public string nume_annee_numms { get; set; }
     }
 }
