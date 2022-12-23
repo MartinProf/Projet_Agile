@@ -1,0 +1,7 @@
+- 2022-12-12 : Fait le Jira 2h.
+
+- 2022-12-14 : Commencer la documentation avec Seb 2h-3h.
+
+- 2022-12-19 : Implementer le SQL dans le projet 3h.
+
+- 2022-12-22/23 : Finir la doc pour le projet(4h) et changement du sql(4h). 8h
