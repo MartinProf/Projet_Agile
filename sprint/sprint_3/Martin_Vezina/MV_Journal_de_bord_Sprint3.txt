@@ -1,0 +1,6 @@
+12 déc: 2h - Meeting Scrum
+12 déc: 4h - Création base de donnée nosql + tentative d'intégration MVC
+14 déc: 1h - Meeting Scrum
+14 déc: 2h - Création API core .net avec structure MVC Test #2
+19 déc: 1h - Meeting Scrum
+22 déc: 1h - Test avec EntitiesFramework
